@@ -1,0 +1,66 @@
+{
+  "format": "fwcollab.symbolic.state_dag.v1",
+  "id": "DAG-L1-004",
+  "difficulty": "L1",
+  "evaluation_role": "diagnostic",
+  "visibility": "private_reference",
+  "title": "双角色专属出口",
+  "summary": "以two_wave拓扑组合1种元机关：双角色专属出口。",
+  "topology_family": "two_wave",
+  "mechanisms": [
+    "M10"
+  ],
+  "nodes": [
+    {
+      "id": "n000",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "start",
+        "motif": "SYSTEM",
+        "state": "task_ready",
+        "phase": 0
+      },
+      "label": "任务初始状态成立"
+    },
+    {
+      "id": "n001",
+      "kind": "goal",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "goal",
+        "motif": "M10",
+        "state": "both_agents_at_exits",
+        "phase": 0
+      },
+      "label": "双方到达各自专属出口"
+    },
+    {
+      "id": "n002",
+      "kind": "goal",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "team_success",
+        "motif": "SYSTEM",
+        "state": "all_required_goals",
+        "phase": 2
+      },
+      "label": "双方满足团队成功条件"
+    }
+  ],
+  "edges": [
+    {
+      "from": "n000",
+      "to": "n001",
+      "relation": "requires"
+    },
+    {
+      "from": "n001",
+      "to": "n002",
+      "relation": "synchronizes"
+    }
+  ]
+}

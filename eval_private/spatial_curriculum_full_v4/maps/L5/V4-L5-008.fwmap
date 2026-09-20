@@ -1,0 +1,30 @@
+@format fwcollab.symbol_map.v3
+@id V4-L5-008
+@title constructive L5 full-mechanism curriculum 008; crate-held plate door
+@max_steps 1
+@controller c1_plate plate at 8,5 accepts W
+@actuator a1_door door at 2,9 controlled_by all(c1_plate)
+@controller c2_plate plate at 1,14 accepts F
+@actuator a2_platform platform at 7,18 controlled_by all(c2_plate)
+@controller c3_toggle toggle at 8,23
+@controller c4_plate plate at 6,24 accepts W
+@actuator a3_platform platform at 2,27 controlled_by all(c3_toggle,c4_plate)
+@controller c5_lever lever at 1,32
+@controller c6_lever lever at 3,33
+@actuator a4_door door at 7,36 controlled_by all(c5_lever,c6_lever)
+@controller c7_toggle toggle at 8,41
+@actuator a5_platform platform at 2,45 controlled_by all(c7_toggle)
+@controller cap_heavy_plate plate at 2,60 accepts O
+@actuator cap_door door at 7,65 controlled_by all(cap_heavy_plate)
+---
+########################################################################
+#........#....2.#.#........#....L...#........#.........................#
+#F...#...A....#........###.=....#........###.=.............O4#........f#
+#........#........#........#.....L..#........#.........................#
+#........#........#........#........#........#.........................#
+########################################################################
+#........#......#.#.....3..#........#........#...................#.....#
+#W...#........#...=....###......#...D....###.....................E....w#
+#....1...#........#....T...#........#....T...#...................#.....#
+#........#........#........#........#........#...................#.....#
+########################################################################

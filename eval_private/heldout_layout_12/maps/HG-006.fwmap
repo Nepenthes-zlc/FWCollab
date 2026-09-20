@@ -1,0 +1,28 @@
+@format fwcollab.symbol_map.v3
+@id HG-006
+@title held-out layout paired with V4-L4-012; rotatable-mirror light door
+@max_steps 1
+@controller c1_plate plate at 6,5 accepts W
+@actuator a1_platform platform at 2,9 controlled_by all(c1_plate)
+@controller c2_lever lever at 3,14
+@actuator a2_door door at 7,18 controlled_by all(c2_lever)
+@controller c3_lever lever at 6,23
+@controller c4_lever lever at 8,24
+@actuator a3_door door at 2,27 controlled_by any(c3_lever,c4_lever)
+@controller c5_toggle toggle at 3,32
+@actuator a4_door door at 7,36 controlled_by all(c5_toggle)
+@light + direction RIGHT sensor S opens A
+@controller cap_mirror_toggle toggle at 3,50
+@mirror M initial slash controlled_by cap_mirror_toggle
+---
+###############################################################
+#........#........#......#.#........#............+...M........#
+#F...##..=....###......#...C....##...........................f#
+#........#....L...#........#....T...#.............T...........#
+#........#........#........#........#................S........#
+###############################################################
+#....1...#........#....L.#.#........#.....................#...#
+#W...##.......###.B....#........##..D.....................A..w#
+#........#........#.....L..#........#.....................#...#
+#........#........#........#........#.....................#...#
+###############################################################

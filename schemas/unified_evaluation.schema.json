@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fwcollab.local/schemas/unified_evaluation.schema.json",
+  "title": "FWCollab Benchmark v2 unified evaluation envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "task_id", "suite", "evaluator_type", "outcome", "success", "dag_completion", "progress_auc", "dependency_semantics", "dependency_success", "dependency_violations", "handoff_metrics", "information_metrics", "synchronization_metrics", "parallel_join_metrics", "rounds", "runner_status", "raw_evaluation"],
+  "properties": {
+    "format": {"const": "fwcollab.unified_evaluation.v1"},
+    "task_id": {"type": "string", "minLength": 1},
+    "suite": {"enum": ["Core-72", "Information-12", "Sync-8", "Join-8"]},
+    "evaluator_type": {"enum": ["collaboration_evaluator_v1", "information_evaluator_v1", "extension_evaluator_v1"]},
+    "outcome": {"type": "string"},
+    "success": {"type": "boolean"},
+    "dag_completion": {"type": "number", "minimum": 0, "maximum": 1},
+    "progress_auc": {"type": "number", "minimum": 0, "maximum": 1},
+    "dependency_semantics": {"type": "array", "uniqueItems": true, "items": {"enum": ["ENABLE", "MAINTAIN", "INFORMATION", "SYNCHRONIZE"]}},
+    "dependency_success": {"type": "boolean"},
+    "dependency_violations": {"type": "object", "required": ["count", "events"], "properties": {"count": {"type": "integer", "minimum": 0}, "events": {"type": "array"}}},
+    "handoff_metrics": {"type": ["object", "null"]},
+    "information_metrics": {"type": ["object", "null"]},
+    "synchronization_metrics": {"type": ["object", "null"]},
+    "parallel_join_metrics": {"type": ["object", "null"]},
+    "rounds": {"type": "integer", "minimum": 0},
+    "runner_status": {"type": "string"},
+    "raw_evaluation": {"type": "object"}
+  }
+}

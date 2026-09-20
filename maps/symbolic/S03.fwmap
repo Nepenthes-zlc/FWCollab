@@ -1,0 +1,12 @@
+@format fwcollab.symbol_map.v1
+@id S03
+@title S03 双方依次为对方开门
+@max_steps 1
+@plate 1 opens A accepts F
+@plate 2 opens B accepts W
+---
+#################
+#F..1.B..f......#
+#################
+#W..A.2..w......#
+#################

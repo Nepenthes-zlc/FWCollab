@@ -1,0 +1,24 @@
+@format fwcollab.symbol_map.v3
+@id V4-L3-006
+@title constructive L3 full-mechanism curriculum 006; water affinity crossing
+@max_steps 1
+@controller c1_lever lever at 8,5
+@controller c2_lever lever at 6,6
+@actuator a1_door door at 2,9 controlled_by any(c1_lever,c2_lever)
+@controller c3_lever lever at 1,14
+@actuator a2_door door at 7,18 controlled_by all(c3_lever)
+@controller c4_toggle toggle at 8,23
+@controller c5_plate plate at 6,24 accepts W
+@actuator a3_platform platform at 2,27 controlled_by all(c4_toggle,c5_plate)
+---
+######################################################
+#......#.#....L...#......#.#.........................#
+#F...#...A....#........#...=........................f#
+#........#........#........#.........................#
+#........#........#........#.........................#
+######################################################
+#.....L#.#........#.....1#.#...................#.....#
+#W...#........#...B....#.......................~....w#
+#....L...#........#....T...#...................#.....#
+#........#........#........#...................#.....#
+######################################################

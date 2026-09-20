@@ -1,0 +1,12 @@
+@format fwcollab.symbol_map.v1
+@id S06
+@title S06 临时压板解锁拨杆，再永久开门
+@max_steps 1
+@plate 1 opens A accepts F
+@lever L opens B
+---
+#####################
+#F..1...B..^^^^..f..#
+#####################
+#W..A...L..~~~~..w..#
+#####################

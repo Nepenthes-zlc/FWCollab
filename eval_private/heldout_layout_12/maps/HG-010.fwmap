@@ -1,0 +1,31 @@
+@format fwcollab.symbol_map.v3
+@id HG-010
+@title held-out layout paired with V4-L6-007; fixed-reflection orb light door
+@max_steps 1
+@controller c1_plate plate at 1,5 accepts F
+@actuator a1_door door at 7,9 controlled_by all(c1_plate)
+@controller c2_lever lever at 8,14
+@controller c3_lever lever at 6,15
+@actuator a2_door door at 2,18 controlled_by any(c2_lever,c3_lever)
+@controller c4_plate plate at 1,23 accepts F
+@actuator a3_door door at 7,27 controlled_by all(c4_plate)
+@controller c5_plate plate at 8,32 accepts W
+@actuator a4_platform platform at 2,36 controlled_by all(c5_plate)
+@controller c6_lever lever at 1,41
+@controller c7_plate plate at 3,42 accepts F
+@actuator a5_door door at 7,45 controlled_by all(c6_lever,c7_plate)
+@controller c8_toggle toggle at 8,50
+@actuator a6_platform platform at 2,54 controlled_by all(c8_toggle)
+@light + direction RIGHT sensor S opens A
+---
+#################################################################################
+#....1...#........#....2...#........#....L.#.#........#............+...\........#
+#F...##.......###.B....###......#...=....#........###.=................o.......f#
+#........#........#........#......#.#.....4..#........#.........................#
+#........#........#........#........#........#........#................S........#
+#################################################################################
+#........#.....L..#........#........#......#.#........#.....................#...#
+#W...##..A....###......###.C....#........#...E....###.......................A..w#
+#........#....L...#........#....3.#.#........#....T...#.....................#...#
+#........#........#........#........#........#........#.....................#...#
+#################################################################################

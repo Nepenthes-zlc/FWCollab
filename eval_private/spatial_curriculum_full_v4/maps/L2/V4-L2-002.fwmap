@@ -1,0 +1,20 @@
+@format fwcollab.symbol_map.v3
+@id V4-L2-002
+@title constructive L2 full-mechanism curriculum 002; mandatory crate displacement
+@max_steps 1
+@controller c1_plate plate at 6,5 accepts W
+@actuator a1_platform platform at 2,9 controlled_by all(c1_plate)
+@controller c2_lever lever at 3,14
+@actuator a2_door door at 7,18 controlled_by all(c2_lever)
+---
+#############################################
+#......#.#........#...................#.....#
+#F...#...=....###.....................O....f#
+#..#.....#....L...#...................#.....#
+#........#........#...................#.....#
+#############################################
+#....1.#.#........#.........................#
+#W...#........###.B........................w#
+#..#.....#........#.........................#
+#........#........#.........................#
+#############################################

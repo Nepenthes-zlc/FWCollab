@@ -1,0 +1,323 @@
+{
+  "format": "fwcollab.symbolic.state_dag.v1",
+  "id": "DAG-L5-004",
+  "difficulty": "L5",
+  "evaluation_role": "scored",
+  "visibility": "private_reference",
+  "title": "固定反射光感门 × 单向通行 × 持久拨杆门 × 固定反射机关球遮光门",
+  "summary": "以fan_out拓扑组合4种元机关：固定反射光感门 × 单向通行 × 持久拨杆门 × 固定反射机关球遮光门。",
+  "topology_family": "fan_out",
+  "mechanisms": [
+    "M24",
+    "M08",
+    "M17",
+    "M26"
+  ],
+  "nodes": [
+    {
+      "id": "n000",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "start",
+        "motif": "SYSTEM",
+        "state": "task_ready",
+        "phase": 0
+      },
+      "label": "任务初始状态成立"
+    },
+    {
+      "id": "n001",
+      "kind": "condition",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "route",
+        "motif": "M24",
+        "state": "fixed_reflection_aligned",
+        "phase": 0
+      },
+      "label": "固定镜面光路成立"
+    },
+    {
+      "id": "n002",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "sense",
+        "motif": "M24",
+        "state": "sensor_lit",
+        "phase": 0
+      },
+      "label": "反射光点亮传感器"
+    },
+    {
+      "id": "n003",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M24",
+        "state": "door_open",
+        "phase": 0
+      },
+      "label": "反射光感门打开"
+    },
+    {
+      "id": "n004",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M24",
+        "state": "agent_crossed_door",
+        "phase": 0
+      },
+      "label": "角色通过反射光感门"
+    },
+    {
+      "id": "n005",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "commit",
+        "motif": "M08",
+        "state": "return_resources_ready",
+        "phase": 1
+      },
+      "label": "确认穿门前资源已就绪"
+    },
+    {
+      "id": "n006",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M08",
+        "state": "oneway_crossed",
+        "phase": 1
+      },
+      "label": "按允许方向通过单向门"
+    },
+    {
+      "id": "n007",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "reach",
+        "motif": "M17",
+        "state": "lever_reached",
+        "phase": 2
+      },
+      "label": "角色到达持久拨杆"
+    },
+    {
+      "id": "n008",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "latch",
+        "motif": "M17",
+        "state": "door_latched_open",
+        "phase": 2
+      },
+      "label": "拨杆门永久打开"
+    },
+    {
+      "id": "n009",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M17",
+        "state": "partner_crossed_door",
+        "phase": 2
+      },
+      "label": "搭档通过拨杆门"
+    },
+    {
+      "id": "n010",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "position",
+        "motif": "M26",
+        "state": "orb_reflection_state",
+        "phase": 3
+      },
+      "label": "机关球对齐反射光路"
+    },
+    {
+      "id": "n011",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "route",
+        "motif": "M26",
+        "state": "fixed_reflection_desired",
+        "phase": 3
+      },
+      "label": "固定反射光路达到目标状态"
+    },
+    {
+      "id": "n012",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "sense",
+        "motif": "M26",
+        "state": "sensor_desired",
+        "phase": 3
+      },
+      "label": "反射传感器状态正确"
+    },
+    {
+      "id": "n013",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M26",
+        "state": "door_desired_state",
+        "phase": 3
+      },
+      "label": "反射遮光门状态正确"
+    },
+    {
+      "id": "n014",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M26",
+        "state": "partner_crossed_door",
+        "phase": 3
+      },
+      "label": "搭档通过反射遮光门"
+    },
+    {
+      "id": "n015",
+      "kind": "goal",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "team_success",
+        "motif": "SYSTEM",
+        "state": "all_required_goals",
+        "phase": 5
+      },
+      "label": "双方满足团队成功条件"
+    }
+  ],
+  "edges": [
+    {
+      "from": "n001",
+      "to": "n002",
+      "relation": "enables"
+    },
+    {
+      "from": "n002",
+      "to": "n003",
+      "relation": "enables"
+    },
+    {
+      "from": "n003",
+      "to": "n004",
+      "relation": "enables"
+    },
+    {
+      "from": "n005",
+      "to": "n006",
+      "relation": "enables"
+    },
+    {
+      "from": "n007",
+      "to": "n008",
+      "relation": "enables"
+    },
+    {
+      "from": "n008",
+      "to": "n009",
+      "relation": "enables"
+    },
+    {
+      "from": "n007",
+      "to": "n009",
+      "relation": "handoff"
+    },
+    {
+      "from": "n010",
+      "to": "n011",
+      "relation": "enables"
+    },
+    {
+      "from": "n011",
+      "to": "n012",
+      "relation": "enables"
+    },
+    {
+      "from": "n012",
+      "to": "n013",
+      "relation": "enables"
+    },
+    {
+      "from": "n013",
+      "to": "n014",
+      "relation": "enables"
+    },
+    {
+      "from": "n010",
+      "to": "n014",
+      "relation": "handoff"
+    },
+    {
+      "from": "n004",
+      "to": "n005",
+      "relation": "requires"
+    },
+    {
+      "from": "n004",
+      "to": "n007",
+      "relation": "requires"
+    },
+    {
+      "from": "n004",
+      "to": "n010",
+      "relation": "handoff"
+    },
+    {
+      "from": "n000",
+      "to": "n001",
+      "relation": "requires"
+    },
+    {
+      "from": "n006",
+      "to": "n015",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "n009",
+      "to": "n015",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "n014",
+      "to": "n015",
+      "relation": "synchronizes"
+    }
+  ]
+}

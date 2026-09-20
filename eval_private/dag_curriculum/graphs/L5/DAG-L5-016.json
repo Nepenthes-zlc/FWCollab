@@ -1,0 +1,292 @@
+{
+  "format": "fwcollab.symbolic.state_dag.v1",
+  "id": "DAG-L5-016",
+  "difficulty": "L5",
+  "evaluation_role": "scored",
+  "visibility": "private_reference",
+  "title": "角色压板门 × 二态切换门 × 可旋转反射光感门 × 双角色专属出口",
+  "summary": "以fan_in拓扑组合4种元机关：角色压板门 × 二态切换门 × 可旋转反射光感门 × 双角色专属出口。",
+  "topology_family": "fan_in",
+  "mechanisms": [
+    "M11",
+    "M19",
+    "M27",
+    "M10"
+  ],
+  "nodes": [
+    {
+      "id": "n000",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "start",
+        "motif": "SYSTEM",
+        "state": "task_ready",
+        "phase": 0
+      },
+      "label": "任务初始状态成立"
+    },
+    {
+      "id": "n001",
+      "kind": "condition",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "occupy",
+        "motif": "M11",
+        "state": "plate_held",
+        "phase": 0
+      },
+      "label": "角色持续占据压力板"
+    },
+    {
+      "id": "n002",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M11",
+        "state": "door_open",
+        "phase": 0
+      },
+      "label": "压力板门保持打开"
+    },
+    {
+      "id": "n003",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M11",
+        "state": "partner_crossed_door",
+        "phase": 0
+      },
+      "label": "搭档通过压力板门"
+    },
+    {
+      "id": "n004",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "toggle",
+        "motif": "M19",
+        "state": "toggle_desired",
+        "phase": 1
+      },
+      "label": "切换器进入目标状态"
+    },
+    {
+      "id": "n005",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M19",
+        "state": "door_desired_state",
+        "phase": 1
+      },
+      "label": "切换门状态正确"
+    },
+    {
+      "id": "n006",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M19",
+        "state": "partner_crossed_door",
+        "phase": 1
+      },
+      "label": "搭档通过切换门"
+    },
+    {
+      "id": "n007",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "toggle",
+        "motif": "M27",
+        "state": "mirror_toggle_desired",
+        "phase": 2
+      },
+      "label": "镜面切换器状态正确"
+    },
+    {
+      "id": "n008",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "orient",
+        "motif": "M27",
+        "state": "mirror_oriented",
+        "phase": 2
+      },
+      "label": "可旋转镜面对准"
+    },
+    {
+      "id": "n009",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "sense",
+        "motif": "M27",
+        "state": "sensor_lit",
+        "phase": 2
+      },
+      "label": "旋转光路点亮传感器"
+    },
+    {
+      "id": "n010",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M27",
+        "state": "door_open",
+        "phase": 2
+      },
+      "label": "旋镜光感门打开"
+    },
+    {
+      "id": "n011",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M27",
+        "state": "partner_crossed_door",
+        "phase": 2
+      },
+      "label": "搭档通过旋镜光感门"
+    },
+    {
+      "id": "n012",
+      "kind": "goal",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "goal",
+        "motif": "M10",
+        "state": "both_agents_at_exits",
+        "phase": 3
+      },
+      "label": "双方到达各自专属出口"
+    },
+    {
+      "id": "n013",
+      "kind": "goal",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "team_success",
+        "motif": "SYSTEM",
+        "state": "all_required_goals",
+        "phase": 5
+      },
+      "label": "双方满足团队成功条件"
+    }
+  ],
+  "edges": [
+    {
+      "from": "n001",
+      "to": "n002",
+      "relation": "enables"
+    },
+    {
+      "from": "n002",
+      "to": "n003",
+      "relation": "enables"
+    },
+    {
+      "from": "n001",
+      "to": "n003",
+      "relation": "maintains"
+    },
+    {
+      "from": "n004",
+      "to": "n005",
+      "relation": "enables"
+    },
+    {
+      "from": "n005",
+      "to": "n006",
+      "relation": "enables"
+    },
+    {
+      "from": "n004",
+      "to": "n006",
+      "relation": "handoff"
+    },
+    {
+      "from": "n007",
+      "to": "n008",
+      "relation": "enables"
+    },
+    {
+      "from": "n008",
+      "to": "n009",
+      "relation": "enables"
+    },
+    {
+      "from": "n009",
+      "to": "n010",
+      "relation": "enables"
+    },
+    {
+      "from": "n010",
+      "to": "n011",
+      "relation": "enables"
+    },
+    {
+      "from": "n007",
+      "to": "n011",
+      "relation": "handoff"
+    },
+    {
+      "from": "n003",
+      "to": "n012",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "n006",
+      "to": "n012",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "n011",
+      "to": "n012",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "n000",
+      "to": "n001",
+      "relation": "requires"
+    },
+    {
+      "from": "n000",
+      "to": "n004",
+      "relation": "requires"
+    },
+    {
+      "from": "n000",
+      "to": "n007",
+      "relation": "requires"
+    },
+    {
+      "from": "n012",
+      "to": "n013",
+      "relation": "synchronizes"
+    }
+  ]
+}

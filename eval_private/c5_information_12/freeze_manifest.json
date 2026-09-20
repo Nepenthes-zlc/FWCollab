@@ -1,0 +1,162 @@
+{
+  "format": "fwcollab.c5_freeze.v1",
+  "benchmark_version": "c5-v1",
+  "created_at": "2026-09-15T20:28:39.089946+00:00",
+  "statement": "The C5 suite and protocol were frozen before any C5 model episode was run.",
+  "task_count": 12,
+  "condition_count": 4,
+  "replicates": 3,
+  "expected_episodes": 144,
+  "files": [
+    {
+      "path": "docs/C5_INFORMATION_MINISUITE_SPEC.md",
+      "sha256": "8c27877054d707b380d8eadf95ed8eee450a148dac308cba389eac4bee6a6ddd",
+      "bytes": 3472
+    },
+    {
+      "path": "src/fwcollab/c5.py",
+      "sha256": "a3b1d5bc7b51cef3ab22bbda349123378061b435c9aeb103a1adbd07253e7629",
+      "bytes": 14517
+    },
+    {
+      "path": "scripts/build_c5_information_suite.py",
+      "sha256": "e4e7acfca382f2c28b4bb678ef1169b438f0c79b85b55417e2d13f20536048f7",
+      "bytes": 11391
+    },
+    {
+      "path": "scripts/run_c5_information_suite.py",
+      "sha256": "a6d5154c54b49f21247f7af58fa9600e26a04195cd946b80162a019a225fb011",
+      "bytes": 7226
+    },
+    {
+      "path": "eval_private/c5_information_12/manifest.json",
+      "sha256": "cc3861f656c37b4447d8ddd913856923f4d3510f4f649b43432b0319f4197721",
+      "bytes": 10373
+    },
+    {
+      "path": "eval_private/c5_information_12/experiment_spec.json",
+      "sha256": "de6fba92c16c5d59f3585fdc8dc8d1eb3472a6edcf48c71b7c741aa4e7712172",
+      "bytes": 2001
+    },
+    {
+      "path": "eval_private/c5_information_12/maps/C5-001.fwmap",
+      "sha256": "b34b1a155d0bccfe9e38e702b2010d5c447be0f6a3ff1fae243e8a11aaabe136",
+      "bytes": 790
+    },
+    {
+      "path": "eval_private/c5_information_12/maps/C5-002.fwmap",
+      "sha256": "726ea09dacc7e917212aed514d0026026bf5952480878b41d81bc6eed0e12880",
+      "bytes": 790
+    },
+    {
+      "path": "eval_private/c5_information_12/maps/C5-003.fwmap",
+      "sha256": "5cf8150c78e7b6492cf944748c86519ed5d21fbd3719ac2eb82d695e1f3c785a",
+      "bytes": 790
+    },
+    {
+      "path": "eval_private/c5_information_12/maps/C5-004.fwmap",
+      "sha256": "d1e032b28d108736609b3eb0a918f87d406f8fdc329b7f7f6248c1024e0ac02f",
+      "bytes": 790
+    },
+    {
+      "path": "eval_private/c5_information_12/maps/C5-005.fwmap",
+      "sha256": "225b46f3f549a0737752cb6b49e3e6d62459943e65274360e6ed8d68552246d6",
+      "bytes": 790
+    },
+    {
+      "path": "eval_private/c5_information_12/maps/C5-006.fwmap",
+      "sha256": "f32ff042d8f2de63559325b3fac5973685519cfd8a4f3d8b281639b741f94516",
+      "bytes": 790
+    },
+    {
+      "path": "eval_private/c5_information_12/maps/C5-007.fwmap",
+      "sha256": "8f35b12b392ae6d2537debb3ecee7e6d0ea9809488faf78b1c9d9623e1d0292b",
+      "bytes": 790
+    },
+    {
+      "path": "eval_private/c5_information_12/maps/C5-008.fwmap",
+      "sha256": "42dd9063526ddc8b6c6272c106f4066662baffad54a442331082996321dc270f",
+      "bytes": 790
+    },
+    {
+      "path": "eval_private/c5_information_12/maps/C5-009.fwmap",
+      "sha256": "7d8dd5f0ece9b512bcb41b83bce613a69c630c299265808e06f7c72480873007",
+      "bytes": 790
+    },
+    {
+      "path": "eval_private/c5_information_12/maps/C5-010.fwmap",
+      "sha256": "6eb2abc2edd6d16262c971c5034dd26c87a7b1ee7f80271dc97b111ca5ddbbff",
+      "bytes": 790
+    },
+    {
+      "path": "eval_private/c5_information_12/maps/C5-011.fwmap",
+      "sha256": "739323d392a9bee73cffd675d65b17a93394073db987008c95a7bc1660763746",
+      "bytes": 790
+    },
+    {
+      "path": "eval_private/c5_information_12/maps/C5-012.fwmap",
+      "sha256": "dd000dd74512335b5eb7f1ea2a404e6b39881a5b95db6e0c59412754e51e850a",
+      "bytes": 790
+    },
+    {
+      "path": "eval_private/c5_information_12/dags/C5-001.json",
+      "sha256": "4bd0df42318b14ffedd1a2461eaec7db3d993cc3251c54ed9c58fa75ac0ec773",
+      "bytes": 1901
+    },
+    {
+      "path": "eval_private/c5_information_12/dags/C5-002.json",
+      "sha256": "bf9f2d7ff6963752303af6a096b7ac9409b3a0bdaa366826f2182b1bad1a1efa",
+      "bytes": 1898
+    },
+    {
+      "path": "eval_private/c5_information_12/dags/C5-003.json",
+      "sha256": "94f468ded3349156c21a895ab533dde8429416ecccddc028dfa6c559212afcf3",
+      "bytes": 1901
+    },
+    {
+      "path": "eval_private/c5_information_12/dags/C5-004.json",
+      "sha256": "15a533d707487f442b39ce55f61e4454d050dc7c2dd8e1b263c9a761d0323eb3",
+      "bytes": 1901
+    },
+    {
+      "path": "eval_private/c5_information_12/dags/C5-005.json",
+      "sha256": "8cdd4cb6fa94f45b3544acd5d8133d6c6bfe278d8eb87b5c57b0e290ae6a0e37",
+      "bytes": 1897
+    },
+    {
+      "path": "eval_private/c5_information_12/dags/C5-006.json",
+      "sha256": "5f106c448197dc40ff48360a2e20343b7ea8c78a21c580ea49ded61c5fe23c13",
+      "bytes": 1902
+    },
+    {
+      "path": "eval_private/c5_information_12/dags/C5-007.json",
+      "sha256": "6e5b6bf909cd125312fde1b268526b4f263b989e62d624461265a17d74228f09",
+      "bytes": 1902
+    },
+    {
+      "path": "eval_private/c5_information_12/dags/C5-008.json",
+      "sha256": "02279c97631885c1e4725a3b7145c442139c648398102310712469079de1f316",
+      "bytes": 1897
+    },
+    {
+      "path": "eval_private/c5_information_12/dags/C5-009.json",
+      "sha256": "e251cb10576942d245822b1feba21d9c2f816608ca3869d9c8bf121ce5346bf1",
+      "bytes": 1901
+    },
+    {
+      "path": "eval_private/c5_information_12/dags/C5-010.json",
+      "sha256": "2a4df1806ee0fd280fa52f630fbc48de40a4de1c9527192398be2225f6d5167e",
+      "bytes": 1901
+    },
+    {
+      "path": "eval_private/c5_information_12/dags/C5-011.json",
+      "sha256": "9d9c6000df4e83e45876accaa2f66e44ed8bc0f14214e4fb97947d59583ef9d4",
+      "bytes": 1897
+    },
+    {
+      "path": "eval_private/c5_information_12/dags/C5-012.json",
+      "sha256": "0f1318fe0ac1f63f4b387387eb01652d696132adda2f577d2ce46a0ab812b8b1",
+      "bytes": 1902
+    }
+  ]
+}

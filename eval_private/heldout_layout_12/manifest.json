@@ -1,0 +1,6214 @@
+{
+  "format": "fwcollab.heldout_layout_suite.v1",
+  "selection_uses_model_outcomes": false,
+  "intervention": "same_executable_dag_new_spatial_layout",
+  "count": 12,
+  "source_set": "Diagnostic-24",
+  "records": [
+    {
+      "id": "HG-001",
+      "difficulty": "L1",
+      "map": "eval_private/heldout_layout_12/maps/HG-001.fwmap",
+      "dag": "eval_private/heldout_layout_12/dags/DAG-HG-001.json",
+      "source_id": "V4-L1-001",
+      "source_map": "eval_private/spatial_curriculum_full_v4/maps/L1/V4-L1-001.fwmap",
+      "source_dag": "eval_private/spatial_curriculum_full_v4/dags/L1/DAG-V4-L1-001.json",
+      "primary_capability": "M03",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M03",
+        "M10",
+        "M11",
+        "M17"
+      ],
+      "semantic_signature": "a12e2b52a7a409d46b16d9b0b1147e69c8ce6cc0d3787a3375264510d580a190",
+      "source_topology_signature": "243ebe2fa6bf810ea7e17c1171dac90ec28c4aadbb54de14c92eac12d5e3ac43",
+      "topology_signature": "fbd9a7ef3ac3c3b76909d8c77cf0a89d5114e74e0182f97018b78d20a7b94644",
+      "map_fingerprint": "05b7b7ae9f04869d5673aa2b86fb496113f361a12d105e9dce908d87d7c5b98f",
+      "source_layout_variant": 5,
+      "heldout_layout_variant": 4,
+      "stages": [
+        {
+          "stage": 1,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c1_lever",
+              "kind": "lever",
+              "position": [
+                3,
+                5
+              ]
+            },
+            {
+              "id": "c2_plate",
+              "kind": "plate",
+              "position": [
+                1,
+                6
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a1_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                9
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 9,
+            "obstacle_pattern": 4
+          }
+        }
+      ],
+      "capability": {
+        "motif": "M03",
+        "title": "water affinity crossing",
+        "gate_col": 29,
+        "supporter": "F",
+        "traveler": "W",
+        "kind": "terrain"
+      },
+      "witness_rounds": 72,
+      "spatial_metrics": {
+        "walkable_cells": 259,
+        "branch_points": 232,
+        "vertical_witness_steps": 6
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "n000",
+          "predicate_state": "task_ready",
+          "observation_path": "status",
+          "expected_value": "running",
+          "first_true_round": 0,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n001",
+          "predicate_state": "c1_lever_on",
+          "observation_path": "state.controllers.c1_lever",
+          "expected_value": true,
+          "first_true_round": 5,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n002",
+          "predicate_state": "c2_plate_on",
+          "observation_path": "state.controllers.c2_plate",
+          "expected_value": true,
+          "first_true_round": 17,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n003",
+          "predicate_state": "a1_door_on",
+          "observation_path": "state.doors.a1_door",
+          "expected_value": true,
+          "first_true_round": 17,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n004",
+          "predicate_state": "a1_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            10
+          ],
+          "first_true_round": 19,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n005",
+          "predicate_state": "all_required_goals",
+          "observation_path": "status",
+          "expected_value": "team_success",
+          "first_true_round": 72,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n006",
+          "observation_path": "layout.hazards.~",
+          "expected_value": [
+            [
+              7,
+              29
+            ]
+          ],
+          "first_true_round": 24,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n007",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            30
+          ],
+          "first_true_round": 44,
+          "verified": true
+        }
+      ],
+      "edge_evidence": [
+        {
+          "from": "n000",
+          "to": "n001",
+          "relation": "requires",
+          "method": "initial_reachability",
+          "detail": "controller is reachable from the unique lane start",
+          "verified": true
+        },
+        {
+          "from": "n000",
+          "to": "n002",
+          "relation": "requires",
+          "method": "initial_reachability",
+          "detail": "controller is reachable from the unique lane start",
+          "verified": true
+        },
+        {
+          "from": "n001",
+          "to": "n003",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n002",
+          "to": "n003",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n003",
+          "to": "n004",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n004",
+          "to": "n006",
+          "relation": "requires",
+          "method": "ordered_capability_capsule",
+          "detail": "the capability capsule is placed after the controller-room sequence",
+          "verified": true
+        },
+        {
+          "from": "n006",
+          "to": "n007",
+          "relation": "enables",
+          "method": "mandatory_capsule_cut",
+          "detail": "the relevant lane cannot reach its exit without resolving or respecting this capability",
+          "verified": true
+        },
+        {
+          "from": "n007",
+          "to": "n005",
+          "relation": "synchronizes",
+          "method": "exclusive_exit_reachability",
+          "detail": "team success still requires both role-specific exits after the capability crossing",
+          "verified": true
+        }
+      ],
+      "all_nodes_bound": true,
+      "all_edges_verified": true,
+      "capability_verified": true,
+      "same_dag_verified": true,
+      "unseen_topology_verified": true
+    },
+    {
+      "id": "HG-002",
+      "difficulty": "L2",
+      "map": "eval_private/heldout_layout_12/maps/HG-002.fwmap",
+      "dag": "eval_private/heldout_layout_12/dags/DAG-HG-002.json",
+      "source_id": "V4-L2-008",
+      "source_map": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-008.fwmap",
+      "source_dag": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-008.json",
+      "primary_capability": "M30",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M10",
+        "M11",
+        "M14",
+        "M30"
+      ],
+      "semantic_signature": "259a0da19b103c6aaa345918fb77a65ef5c77355b4843700b314a0965308410b",
+      "source_topology_signature": "5b331cbd36b9eb4b063185f73ae4bf17c38dfc21debab1e01e193b963b1a3087",
+      "topology_signature": "6f3fbbe533d3133b3aef70c59dad2025863b33bc247d17ed173f50921e8d3a97",
+      "map_fingerprint": "f380bc05aad7e41f418d06c0e1b671e58d0a6fd6e5c1bdefc935c747dee40afe",
+      "source_layout_variant": 9,
+      "heldout_layout_variant": 14,
+      "stages": [
+        {
+          "stage": 1,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c1_plate",
+              "kind": "plate",
+              "position": [
+                8,
+                5
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a1_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                2,
+                9
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 9,
+            "obstacle_pattern": 2
+          }
+        },
+        {
+          "stage": 2,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c2_plate",
+              "kind": "plate",
+              "position": [
+                1,
+                14
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a2_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                18
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 18,
+            "obstacle_pattern": 2
+          }
+        }
+      ],
+      "capability": {
+        "motif": "M30",
+        "title": "freeze-thaw route",
+        "gate_col": 38,
+        "supporter": "W",
+        "traveler": "F",
+        "kind": "thermal",
+        "freezer_position": [
+          8,
+          33
+        ]
+      },
+      "witness_rounds": 94,
+      "spatial_metrics": {
+        "walkable_cells": 317,
+        "branch_points": 272,
+        "vertical_witness_steps": 10
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "n000",
+          "predicate_state": "task_ready",
+          "observation_path": "status",
+          "expected_value": "running",
+          "first_true_round": 0,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n001",
+          "predicate_state": "c1_plate_on",
+          "observation_path": "state.controllers.c1_plate",
+          "expected_value": true,
+          "first_true_round": 14,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n002",
+          "predicate_state": "a1_platform_on",
+          "observation_path": "state.platforms.a1_platform",
+          "expected_value": true,
+          "first_true_round": 14,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n003",
+          "predicate_state": "a1_platform_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            10
+          ],
+          "first_true_round": 16,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n004",
+          "predicate_state": "c2_plate_on",
+          "observation_path": "state.controllers.c2_plate",
+          "expected_value": true,
+          "first_true_round": 36,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n005",
+          "predicate_state": "a2_door_on",
+          "observation_path": "state.doors.a2_door",
+          "expected_value": true,
+          "first_true_round": 36,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n006",
+          "predicate_state": "a2_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            19
+          ],
+          "first_true_round": 38,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n007",
+          "predicate_state": "all_required_goals",
+          "observation_path": "status",
+          "expected_value": "team_success",
+          "first_true_round": 94,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n008",
+          "observation_path": "state.thermal_frozen.I",
+          "expected_value": true,
+          "first_true_round": 59,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n009",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            39
+          ],
+          "first_true_round": 79,
+          "verified": true
+        }
+      ],
+      "edge_evidence": [
+        {
+          "from": "n000",
+          "to": "n001",
+          "relation": "requires",
+          "method": "initial_reachability",
+          "detail": "controller is reachable from the unique lane start",
+          "verified": true
+        },
+        {
+          "from": "n001",
+          "to": "n002",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n002",
+          "to": "n003",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n003",
+          "to": "n004",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n004",
+          "to": "n005",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n005",
+          "to": "n006",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n006",
+          "to": "n008",
+          "relation": "requires",
+          "method": "ordered_capability_capsule",
+          "detail": "the capability capsule is placed after the controller-room sequence",
+          "verified": true
+        },
+        {
+          "from": "n008",
+          "to": "n009",
+          "relation": "enables",
+          "method": "mandatory_capsule_cut",
+          "detail": "the relevant lane cannot reach its exit without resolving or respecting this capability",
+          "verified": true
+        },
+        {
+          "from": "n009",
+          "to": "n007",
+          "relation": "synchronizes",
+          "method": "exclusive_exit_reachability",
+          "detail": "team success still requires both role-specific exits after the capability crossing",
+          "verified": true
+        }
+      ],
+      "all_nodes_bound": true,
+      "all_edges_verified": true,
+      "capability_verified": true,
+      "same_dag_verified": true,
+      "unseen_topology_verified": true
+    },
+    {
+      "id": "HG-003",
+      "difficulty": "L3",
+      "map": "eval_private/heldout_layout_12/maps/HG-003.fwmap",
+      "dag": "eval_private/heldout_layout_12/dags/DAG-HG-003.json",
+      "source_id": "V4-L3-010",
+      "source_map": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-010.fwmap",
+      "source_dag": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-010.json",
+      "primary_capability": "M09",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M09",
+        "M10",
+        "M11",
+        "M14",
+        "M17"
+      ],
+      "semantic_signature": "909e13b21b12230583e25a326411aba4ff4f03da085f479bb1ea87ceab834428",
+      "source_topology_signature": "4171dbca80af628149193e4e4ab97721137e5c5d80a0911918d7284e4dc3ff71",
+      "topology_signature": "1bf568d88db0d236663d11014a6a86407b747baba11adf420ab24666afd3b223",
+      "map_fingerprint": "2d9386dee2904fa5054000d59debf33fe8b0616e1a576f6c4e83455b94ee9f9e",
+      "source_layout_variant": 168,
+      "heldout_layout_variant": 173,
+      "stages": [
+        {
+          "stage": 1,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c1_plate",
+              "kind": "plate",
+              "position": [
+                6,
+                5
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a1_door",
+            "kind": "door",
+            "positions": [
+              [
+                2,
+                9
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 9,
+            "obstacle_pattern": 5
+          }
+        },
+        {
+          "stage": 2,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c2_lever",
+              "kind": "lever",
+              "position": [
+                3,
+                14
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a2_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                18
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 18,
+            "obstacle_pattern": 4
+          }
+        },
+        {
+          "stage": 3,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c3_plate",
+              "kind": "plate",
+              "position": [
+                6,
+                23
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a3_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                2,
+                27
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 27,
+            "obstacle_pattern": 4
+          }
+        }
+      ],
+      "capability": {
+        "motif": "M09",
+        "title": "mandatory paired portal",
+        "gate_col": 47,
+        "supporter": "F",
+        "traveler": "W",
+        "kind": "portal"
+      },
+      "witness_rounds": 114,
+      "spatial_metrics": {
+        "walkable_cells": 382,
+        "branch_points": 326,
+        "vertical_witness_steps": 14
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "n000",
+          "predicate_state": "task_ready",
+          "observation_path": "status",
+          "expected_value": "running",
+          "first_true_round": 0,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n001",
+          "predicate_state": "c1_plate_on",
+          "observation_path": "state.controllers.c1_plate",
+          "expected_value": true,
+          "first_true_round": 14,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n002",
+          "predicate_state": "a1_door_on",
+          "observation_path": "state.doors.a1_door",
+          "expected_value": true,
+          "first_true_round": 14,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n003",
+          "predicate_state": "a1_door_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            10
+          ],
+          "first_true_round": 16,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n004",
+          "predicate_state": "c2_lever_on",
+          "observation_path": "state.controllers.c2_lever",
+          "expected_value": true,
+          "first_true_round": 27,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n005",
+          "predicate_state": "a2_door_on",
+          "observation_path": "state.doors.a2_door",
+          "expected_value": true,
+          "first_true_round": 27,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n006",
+          "predicate_state": "a2_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            19
+          ],
+          "first_true_round": 38,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n007",
+          "predicate_state": "c3_plate_on",
+          "observation_path": "state.controllers.c3_plate",
+          "expected_value": true,
+          "first_true_round": 58,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n008",
+          "predicate_state": "a3_platform_on",
+          "observation_path": "state.platforms.a3_platform",
+          "expected_value": true,
+          "first_true_round": 58,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n009",
+          "predicate_state": "a3_platform_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            28
+          ],
+          "first_true_round": 60,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n010",
+          "predicate_state": "all_required_goals",
+          "observation_path": "status",
+          "expected_value": "team_success",
+          "first_true_round": 114,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n011",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            49
+          ],
+          "first_true_round": 83,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n012",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            48
+          ],
+          "first_true_round": 84,
+          "verified": true
+        }
+      ],
+      "edge_evidence": [
+        {
+          "from": "n000",
+          "to": "n001",
+          "relation": "requires",
+          "method": "initial_reachability",
+          "detail": "controller is reachable from the unique lane start",
+          "verified": true
+        },
+        {
+          "from": "n001",
+          "to": "n002",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n002",
+          "to": "n003",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n003",
+          "to": "n004",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n004",
+          "to": "n005",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n005",
+          "to": "n006",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n006",
+          "to": "n007",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n007",
+          "to": "n008",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n008",
+          "to": "n009",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n009",
+          "to": "n011",
+          "relation": "requires",
+          "method": "ordered_capability_capsule",
+          "detail": "the capability capsule is placed after the controller-room sequence",
+          "verified": true
+        },
+        {
+          "from": "n011",
+          "to": "n012",
+          "relation": "enables",
+          "method": "mandatory_capsule_cut",
+          "detail": "the relevant lane cannot reach its exit without resolving or respecting this capability",
+          "verified": true
+        },
+        {
+          "from": "n012",
+          "to": "n010",
+          "relation": "synchronizes",
+          "method": "exclusive_exit_reachability",
+          "detail": "team success still requires both role-specific exits after the capability crossing",
+          "verified": true
+        }
+      ],
+      "all_nodes_bound": true,
+      "all_edges_verified": true,
+      "capability_verified": true,
+      "same_dag_verified": true,
+      "unseen_topology_verified": true
+    },
+    {
+      "id": "HG-004",
+      "difficulty": "L3",
+      "map": "eval_private/heldout_layout_12/maps/HG-004.fwmap",
+      "dag": "eval_private/heldout_layout_12/dags/DAG-HG-004.json",
+      "source_id": "V4-L3-004",
+      "source_map": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-004.fwmap",
+      "source_dag": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-004.json",
+      "primary_capability": "M23",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M10",
+        "M11",
+        "M14",
+        "M19",
+        "M23"
+      ],
+      "semantic_signature": "52065103c37fc1602e46e6aa1a12851ce63ad656f65a238d227cb03241700ced",
+      "source_topology_signature": "e5a2409f9dd92d2533a8227f731a084449bf3693ff6d7284265a6201cc0f00c3",
+      "topology_signature": "51c57c83237fcc47eba404a9714b06de10da05ec81af801a77c06729e4f11e8e",
+      "map_fingerprint": "f691204231b1d192f4c0441e0a813260795a18afd16d8148d065ccb38acacb49",
+      "source_layout_variant": 138,
+      "heldout_layout_variant": 148,
+      "stages": [
+        {
+          "stage": 1,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c1_plate",
+              "kind": "plate",
+              "position": [
+                8,
+                5
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a1_door",
+            "kind": "door",
+            "positions": [
+              [
+                2,
+                9
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 9,
+            "obstacle_pattern": 4
+          }
+        },
+        {
+          "stage": 2,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c2_toggle",
+              "kind": "toggle",
+              "position": [
+                1,
+                14
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a2_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                18
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 18,
+            "obstacle_pattern": 0
+          }
+        },
+        {
+          "stage": 3,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c3_plate",
+              "kind": "plate",
+              "position": [
+                8,
+                23
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a3_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                2,
+                27
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 27,
+            "obstacle_pattern": 4
+          }
+        }
+      ],
+      "capability": {
+        "motif": "M23",
+        "title": "orb-cleared light door",
+        "gate_col": 49,
+        "supporter": "F",
+        "traveler": "W",
+        "kind": "light",
+        "blocker_position": [
+          2,
+          43
+        ],
+        "blocker_push": "UP",
+        "pusher_position": [
+          3,
+          43
+        ],
+        "reflected": false,
+        "rotatable": false,
+        "object": "orb"
+      },
+      "witness_rounds": 116,
+      "spatial_metrics": {
+        "walkable_cells": 385,
+        "branch_points": 332,
+        "vertical_witness_steps": 14
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "n000",
+          "predicate_state": "task_ready",
+          "observation_path": "status",
+          "expected_value": "running",
+          "first_true_round": 0,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n001",
+          "predicate_state": "c1_plate_on",
+          "observation_path": "state.controllers.c1_plate",
+          "expected_value": true,
+          "first_true_round": 14,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n002",
+          "predicate_state": "a1_door_on",
+          "observation_path": "state.doors.a1_door",
+          "expected_value": true,
+          "first_true_round": 14,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n003",
+          "predicate_state": "a1_door_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            10
+          ],
+          "first_true_round": 16,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n004",
+          "predicate_state": "c2_toggle_on",
+          "observation_path": "state.controllers.c2_toggle",
+          "expected_value": true,
+          "first_true_round": 27,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n005",
+          "predicate_state": "a2_door_on",
+          "observation_path": "state.doors.a2_door",
+          "expected_value": true,
+          "first_true_round": 27,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n006",
+          "predicate_state": "a2_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            19
+          ],
+          "first_true_round": 38,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n007",
+          "predicate_state": "c3_plate_on",
+          "observation_path": "state.controllers.c3_plate",
+          "expected_value": true,
+          "first_true_round": 58,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n008",
+          "predicate_state": "a3_platform_on",
+          "observation_path": "state.platforms.a3_platform",
+          "expected_value": true,
+          "first_true_round": 58,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n009",
+          "predicate_state": "a3_platform_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            28
+          ],
+          "first_true_round": 60,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n010",
+          "predicate_state": "all_required_goals",
+          "observation_path": "status",
+          "expected_value": "team_success",
+          "first_true_round": 116,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n011",
+          "observation_path": "state.light_sensors.S",
+          "expected_value": true,
+          "first_true_round": 83,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n012",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            50
+          ],
+          "first_true_round": 105,
+          "verified": true
+        }
+      ],
+      "edge_evidence": [
+        {
+          "from": "n000",
+          "to": "n001",
+          "relation": "requires",
+          "method": "initial_reachability",
+          "detail": "controller is reachable from the unique lane start",
+          "verified": true
+        },
+        {
+          "from": "n001",
+          "to": "n002",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n002",
+          "to": "n003",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n003",
+          "to": "n004",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n004",
+          "to": "n005",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n005",
+          "to": "n006",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n006",
+          "to": "n007",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n007",
+          "to": "n008",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n008",
+          "to": "n009",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n009",
+          "to": "n011",
+          "relation": "requires",
+          "method": "ordered_capability_capsule",
+          "detail": "the capability capsule is placed after the controller-room sequence",
+          "verified": true
+        },
+        {
+          "from": "n011",
+          "to": "n012",
+          "relation": "enables",
+          "method": "mandatory_capsule_cut",
+          "detail": "the relevant lane cannot reach its exit without resolving or respecting this capability",
+          "verified": true
+        },
+        {
+          "from": "n012",
+          "to": "n010",
+          "relation": "synchronizes",
+          "method": "exclusive_exit_reachability",
+          "detail": "team success still requires both role-specific exits after the capability crossing",
+          "verified": true
+        }
+      ],
+      "all_nodes_bound": true,
+      "all_edges_verified": true,
+      "capability_verified": true,
+      "same_dag_verified": true,
+      "unseen_topology_verified": true
+    },
+    {
+      "id": "HG-005",
+      "difficulty": "L4",
+      "map": "eval_private/heldout_layout_12/maps/HG-005.fwmap",
+      "dag": "eval_private/heldout_layout_12/dags/DAG-HG-005.json",
+      "source_id": "V4-L4-009",
+      "source_map": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-009.fwmap",
+      "source_dag": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-009.json",
+      "primary_capability": "M22",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M10",
+        "M11",
+        "M17",
+        "M20",
+        "M22"
+      ],
+      "semantic_signature": "63337c8476a7b6846bb8d39b53773689de5c08bd0d73a3b09de5af125afff6ae",
+      "source_topology_signature": "d5e87da2920154f577a77c23a126a093a03d210e2bf8ebc199e7a16e978ef362",
+      "topology_signature": "273b7441dbf26a6cd85e1c9f1ef55452e4129c76dc56264d19be5703a9ea50ed",
+      "map_fingerprint": "d55bfae696ad6979cbcfa4b010d10e31755bee605a13fc6117a2dcb65e9304f9",
+      "source_layout_variant": 348,
+      "heldout_layout_variant": 368,
+      "stages": [
+        {
+          "stage": 1,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c1_plate",
+              "kind": "plate",
+              "position": [
+                3,
+                5
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a1_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                9
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 9,
+            "obstacle_pattern": 2
+          }
+        },
+        {
+          "stage": 2,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c2_toggle",
+              "kind": "toggle",
+              "position": [
+                6,
+                14
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a2_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                2,
+                18
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 18,
+            "obstacle_pattern": 1
+          }
+        },
+        {
+          "stage": 3,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c3_lever",
+              "kind": "lever",
+              "position": [
+                3,
+                23
+              ]
+            },
+            {
+              "id": "c4_lever",
+              "kind": "lever",
+              "position": [
+                1,
+                24
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a3_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                27
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 27,
+            "obstacle_pattern": 4
+          }
+        },
+        {
+          "stage": 4,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c5_plate",
+              "kind": "plate",
+              "position": [
+                6,
+                32
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a4_door",
+            "kind": "door",
+            "positions": [
+              [
+                2,
+                36
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 36,
+            "obstacle_pattern": 1
+          }
+        }
+      ],
+      "capability": {
+        "motif": "M22",
+        "title": "crate-cleared light door",
+        "gate_col": 58,
+        "supporter": "F",
+        "traveler": "W",
+        "kind": "light",
+        "blocker_position": [
+          2,
+          52
+        ],
+        "blocker_push": "UP",
+        "pusher_position": [
+          3,
+          52
+        ],
+        "reflected": false,
+        "rotatable": false,
+        "object": "crate"
+      },
+      "witness_rounds": 140,
+      "spatial_metrics": {
+        "walkable_cells": 443,
+        "branch_points": 372,
+        "vertical_witness_steps": 20
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "n000",
+          "predicate_state": "task_ready",
+          "observation_path": "status",
+          "expected_value": "running",
+          "first_true_round": 0,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n001",
+          "predicate_state": "c1_plate_on",
+          "observation_path": "state.controllers.c1_plate",
+          "expected_value": true,
+          "first_true_round": 14,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n002",
+          "predicate_state": "a1_door_on",
+          "observation_path": "state.doors.a1_door",
+          "expected_value": true,
+          "first_true_round": 14,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n003",
+          "predicate_state": "a1_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            10
+          ],
+          "first_true_round": 16,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n004",
+          "predicate_state": "c2_toggle_on",
+          "observation_path": "state.controllers.c2_toggle",
+          "expected_value": true,
+          "first_true_round": 27,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n005",
+          "predicate_state": "a2_platform_on",
+          "observation_path": "state.platforms.a2_platform",
+          "expected_value": true,
+          "first_true_round": 27,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n006",
+          "predicate_state": "a2_platform_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            19
+          ],
+          "first_true_round": 38,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n007",
+          "predicate_state": "c3_lever_on",
+          "observation_path": "state.controllers.c3_lever",
+          "expected_value": true,
+          "first_true_round": 49,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n008",
+          "predicate_state": "c4_lever_on",
+          "observation_path": "state.controllers.c4_lever",
+          "expected_value": true,
+          "first_true_round": 52,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n009",
+          "predicate_state": "a3_door_on",
+          "observation_path": "state.doors.a3_door",
+          "expected_value": true,
+          "first_true_round": 52,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n010",
+          "predicate_state": "a3_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            28
+          ],
+          "first_true_round": 63,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n011",
+          "predicate_state": "c5_plate_on",
+          "observation_path": "state.controllers.c5_plate",
+          "expected_value": true,
+          "first_true_round": 82,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n012",
+          "predicate_state": "a4_door_on",
+          "observation_path": "state.doors.a4_door",
+          "expected_value": true,
+          "first_true_round": 82,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n013",
+          "predicate_state": "a4_door_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            37
+          ],
+          "first_true_round": 84,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n014",
+          "predicate_state": "all_required_goals",
+          "observation_path": "status",
+          "expected_value": "team_success",
+          "first_true_round": 140,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n015",
+          "observation_path": "state.light_sensors.S",
+          "expected_value": true,
+          "first_true_round": 107,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n016",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            59
+          ],
+          "first_true_round": 129,
+          "verified": true
+        }
+      ],
+      "edge_evidence": [
+        {
+          "from": "n000",
+          "to": "n001",
+          "relation": "requires",
+          "method": "initial_reachability",
+          "detail": "controller is reachable from the unique lane start",
+          "verified": true
+        },
+        {
+          "from": "n001",
+          "to": "n002",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n002",
+          "to": "n003",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n003",
+          "to": "n004",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n004",
+          "to": "n005",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n005",
+          "to": "n006",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n006",
+          "to": "n007",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n006",
+          "to": "n008",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n007",
+          "to": "n009",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n008",
+          "to": "n009",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n009",
+          "to": "n010",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n010",
+          "to": "n011",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n011",
+          "to": "n012",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n012",
+          "to": "n013",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n013",
+          "to": "n015",
+          "relation": "requires",
+          "method": "ordered_capability_capsule",
+          "detail": "the capability capsule is placed after the controller-room sequence",
+          "verified": true
+        },
+        {
+          "from": "n015",
+          "to": "n016",
+          "relation": "enables",
+          "method": "mandatory_capsule_cut",
+          "detail": "the relevant lane cannot reach its exit without resolving or respecting this capability",
+          "verified": true
+        },
+        {
+          "from": "n016",
+          "to": "n014",
+          "relation": "synchronizes",
+          "method": "exclusive_exit_reachability",
+          "detail": "team success still requires both role-specific exits after the capability crossing",
+          "verified": true
+        }
+      ],
+      "all_nodes_bound": true,
+      "all_edges_verified": true,
+      "capability_verified": true,
+      "same_dag_verified": true,
+      "unseen_topology_verified": true
+    },
+    {
+      "id": "HG-006",
+      "difficulty": "L4",
+      "map": "eval_private/heldout_layout_12/maps/HG-006.fwmap",
+      "dag": "eval_private/heldout_layout_12/dags/DAG-HG-006.json",
+      "source_id": "V4-L4-012",
+      "source_map": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-012.fwmap",
+      "source_dag": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-012.json",
+      "primary_capability": "M27",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M10",
+        "M14",
+        "M17",
+        "M19",
+        "M27"
+      ],
+      "semantic_signature": "9319cfaefc9360fb497ff5efb705072c31a08598486b775044c72e5026260cca",
+      "source_topology_signature": "bf2e0f484a8d815a547aaaa2586802d2c02e7bd2c4f9a6d12a5ff41b231c85e0",
+      "topology_signature": "61adafb2086f4022ae69c2eaaae71cf61ef35ea9b14ab702a72fb0e211f27793",
+      "map_fingerprint": "42c13715b68f4dc0a6f947be75ca7d5988f252dd340c407b2297c91feefc3d45",
+      "source_layout_variant": 363,
+      "heldout_layout_variant": 373,
+      "stages": [
+        {
+          "stage": 1,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c1_plate",
+              "kind": "plate",
+              "position": [
+                6,
+                5
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a1_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                2,
+                9
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 9,
+            "obstacle_pattern": 1
+          }
+        },
+        {
+          "stage": 2,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c2_lever",
+              "kind": "lever",
+              "position": [
+                3,
+                14
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a2_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                18
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 18,
+            "obstacle_pattern": 2
+          }
+        },
+        {
+          "stage": 3,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c3_lever",
+              "kind": "lever",
+              "position": [
+                6,
+                23
+              ]
+            },
+            {
+              "id": "c4_lever",
+              "kind": "lever",
+              "position": [
+                8,
+                24
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a3_door",
+            "kind": "door",
+            "positions": [
+              [
+                2,
+                27
+              ]
+            ]
+          },
+          "mode": "any",
+          "room": {
+            "gate_col": 27,
+            "obstacle_pattern": 4
+          }
+        },
+        {
+          "stage": 4,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c5_toggle",
+              "kind": "toggle",
+              "position": [
+                3,
+                32
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a4_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                36
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 36,
+            "obstacle_pattern": 1
+          }
+        }
+      ],
+      "capability": {
+        "motif": "M27",
+        "title": "rotatable-mirror light door",
+        "gate_col": 58,
+        "supporter": "F",
+        "traveler": "W",
+        "kind": "light",
+        "toggle_position": [
+          3,
+          50
+        ],
+        "reflected": true,
+        "rotatable": true,
+        "object": null
+      },
+      "witness_rounds": 140,
+      "spatial_metrics": {
+        "walkable_cells": 443,
+        "branch_points": 372,
+        "vertical_witness_steps": 20
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "n000",
+          "predicate_state": "task_ready",
+          "observation_path": "status",
+          "expected_value": "running",
+          "first_true_round": 0,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n001",
+          "predicate_state": "c1_plate_on",
+          "observation_path": "state.controllers.c1_plate",
+          "expected_value": true,
+          "first_true_round": 14,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n002",
+          "predicate_state": "a1_platform_on",
+          "observation_path": "state.platforms.a1_platform",
+          "expected_value": true,
+          "first_true_round": 14,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n003",
+          "predicate_state": "a1_platform_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            10
+          ],
+          "first_true_round": 16,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n004",
+          "predicate_state": "c2_lever_on",
+          "observation_path": "state.controllers.c2_lever",
+          "expected_value": true,
+          "first_true_round": 27,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n005",
+          "predicate_state": "a2_door_on",
+          "observation_path": "state.doors.a2_door",
+          "expected_value": true,
+          "first_true_round": 27,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n006",
+          "predicate_state": "a2_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            19
+          ],
+          "first_true_round": 38,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n007",
+          "predicate_state": "c3_lever_on",
+          "observation_path": "state.controllers.c3_lever",
+          "expected_value": true,
+          "first_true_round": 49,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n008",
+          "predicate_state": "c4_lever_on",
+          "observation_path": "state.controllers.c4_lever",
+          "expected_value": true,
+          "first_true_round": 52,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n009",
+          "predicate_state": "a3_door_on",
+          "observation_path": "state.doors.a3_door",
+          "expected_value": true,
+          "first_true_round": 49,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n010",
+          "predicate_state": "a3_door_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            28
+          ],
+          "first_true_round": 63,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n011",
+          "predicate_state": "c5_toggle_on",
+          "observation_path": "state.controllers.c5_toggle",
+          "expected_value": true,
+          "first_true_round": 73,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n012",
+          "predicate_state": "a4_door_on",
+          "observation_path": "state.doors.a4_door",
+          "expected_value": true,
+          "first_true_round": 73,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n013",
+          "predicate_state": "a4_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            37
+          ],
+          "first_true_round": 84,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n014",
+          "predicate_state": "all_required_goals",
+          "observation_path": "status",
+          "expected_value": "team_success",
+          "first_true_round": 140,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n015",
+          "observation_path": "state.light_sensors.S",
+          "expected_value": true,
+          "first_true_round": 104,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n016",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            59
+          ],
+          "first_true_round": 126,
+          "verified": true
+        }
+      ],
+      "edge_evidence": [
+        {
+          "from": "n000",
+          "to": "n001",
+          "relation": "requires",
+          "method": "initial_reachability",
+          "detail": "controller is reachable from the unique lane start",
+          "verified": true
+        },
+        {
+          "from": "n001",
+          "to": "n002",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n002",
+          "to": "n003",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n003",
+          "to": "n004",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n004",
+          "to": "n005",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n005",
+          "to": "n006",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n006",
+          "to": "n007",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n006",
+          "to": "n008",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n007",
+          "to": "n009",
+          "relation": "enables",
+          "method": "boolean_truth_table_alternative",
+          "detail": "this input alone is sufficient; target join=any does not claim individual necessity",
+          "verified": true
+        },
+        {
+          "from": "n008",
+          "to": "n009",
+          "relation": "enables",
+          "method": "boolean_truth_table_alternative",
+          "detail": "this input alone is sufficient; target join=any does not claim individual necessity",
+          "verified": true
+        },
+        {
+          "from": "n009",
+          "to": "n010",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n010",
+          "to": "n011",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n011",
+          "to": "n012",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n012",
+          "to": "n013",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n013",
+          "to": "n015",
+          "relation": "requires",
+          "method": "ordered_capability_capsule",
+          "detail": "the capability capsule is placed after the controller-room sequence",
+          "verified": true
+        },
+        {
+          "from": "n015",
+          "to": "n016",
+          "relation": "enables",
+          "method": "mandatory_capsule_cut",
+          "detail": "the relevant lane cannot reach its exit without resolving or respecting this capability",
+          "verified": true
+        },
+        {
+          "from": "n016",
+          "to": "n014",
+          "relation": "synchronizes",
+          "method": "exclusive_exit_reachability",
+          "detail": "team success still requires both role-specific exits after the capability crossing",
+          "verified": true
+        }
+      ],
+      "all_nodes_bound": true,
+      "all_edges_verified": true,
+      "capability_verified": true,
+      "same_dag_verified": true,
+      "unseen_topology_verified": true
+    },
+    {
+      "id": "HG-007",
+      "difficulty": "L5",
+      "map": "eval_private/heldout_layout_12/maps/HG-007.fwmap",
+      "dag": "eval_private/heldout_layout_12/dags/DAG-HG-007.json",
+      "source_id": "V4-L5-011",
+      "source_map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-011.fwmap",
+      "source_dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-011.json",
+      "primary_capability": "M25",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M10",
+        "M11",
+        "M14",
+        "M17",
+        "M20",
+        "M25"
+      ],
+      "semantic_signature": "da01c63ceab9589e6a3acb8c421a0af21a05de882f094a58d51f37d8c70fa69a",
+      "source_topology_signature": "c7530d463e40f851420d0e14aaf13bcc521ddfd0f077be08f97da76cbc604b39",
+      "topology_signature": "0d0be5bfaf3f2f0f5fec36e2658cbd6629b16e0071e4ce9fb2b26fd736ba7f0f",
+      "map_fingerprint": "b9c539bdad18f486b4153e9b4e7aebe5b087b136cfe27897b802999427dcc2a9",
+      "source_layout_variant": 2703,
+      "heldout_layout_variant": 2718,
+      "stages": [
+        {
+          "stage": 1,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c1_plate",
+              "kind": "plate",
+              "position": [
+                3,
+                5
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a1_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                7,
+                9
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 9,
+            "obstacle_pattern": 0
+          }
+        },
+        {
+          "stage": 2,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c2_toggle",
+              "kind": "toggle",
+              "position": [
+                6,
+                14
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a2_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                2,
+                18
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 18,
+            "obstacle_pattern": 3
+          }
+        },
+        {
+          "stage": 3,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c3_lever",
+              "kind": "lever",
+              "position": [
+                3,
+                23
+              ]
+            },
+            {
+              "id": "c4_plate",
+              "kind": "plate",
+              "position": [
+                1,
+                24
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a3_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                27
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 27,
+            "obstacle_pattern": 3
+          }
+        },
+        {
+          "stage": 4,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c5_plate",
+              "kind": "plate",
+              "position": [
+                6,
+                32
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a4_door",
+            "kind": "door",
+            "positions": [
+              [
+                2,
+                36
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 36,
+            "obstacle_pattern": 0
+          }
+        },
+        {
+          "stage": 5,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c6_plate",
+              "kind": "plate",
+              "position": [
+                3,
+                41
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a5_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                7,
+                45
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 45,
+            "obstacle_pattern": 2
+          }
+        }
+      ],
+      "capability": {
+        "motif": "M25",
+        "title": "fixed-reflection crate light door",
+        "gate_col": 67,
+        "supporter": "F",
+        "traveler": "W",
+        "kind": "light",
+        "blocker_position": [
+          2,
+          62
+        ],
+        "blocker_push": "RIGHT",
+        "pusher_position": [
+          2,
+          61
+        ],
+        "reflected": true,
+        "rotatable": false,
+        "object": "crate"
+      },
+      "witness_rounds": 162,
+      "spatial_metrics": {
+        "walkable_cells": 505,
+        "branch_points": 420,
+        "vertical_witness_steps": 24
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "n000",
+          "predicate_state": "task_ready",
+          "observation_path": "status",
+          "expected_value": "running",
+          "first_true_round": 0,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n001",
+          "predicate_state": "c1_plate_on",
+          "observation_path": "state.controllers.c1_plate",
+          "expected_value": true,
+          "first_true_round": 14,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n002",
+          "predicate_state": "a1_platform_on",
+          "observation_path": "state.platforms.a1_platform",
+          "expected_value": true,
+          "first_true_round": 14,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n003",
+          "predicate_state": "a1_platform_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            10
+          ],
+          "first_true_round": 16,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n004",
+          "predicate_state": "c2_toggle_on",
+          "observation_path": "state.controllers.c2_toggle",
+          "expected_value": true,
+          "first_true_round": 27,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n005",
+          "predicate_state": "a2_platform_on",
+          "observation_path": "state.platforms.a2_platform",
+          "expected_value": true,
+          "first_true_round": 27,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n006",
+          "predicate_state": "a2_platform_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            19
+          ],
+          "first_true_round": 38,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n007",
+          "predicate_state": "c3_lever_on",
+          "observation_path": "state.controllers.c3_lever",
+          "expected_value": true,
+          "first_true_round": 49,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n008",
+          "predicate_state": "c4_plate_on",
+          "observation_path": "state.controllers.c4_plate",
+          "expected_value": true,
+          "first_true_round": 61,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n009",
+          "predicate_state": "a3_door_on",
+          "observation_path": "state.doors.a3_door",
+          "expected_value": true,
+          "first_true_round": 61,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n010",
+          "predicate_state": "a3_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            28
+          ],
+          "first_true_round": 63,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n011",
+          "predicate_state": "c5_plate_on",
+          "observation_path": "state.controllers.c5_plate",
+          "expected_value": true,
+          "first_true_round": 82,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n012",
+          "predicate_state": "a4_door_on",
+          "observation_path": "state.doors.a4_door",
+          "expected_value": true,
+          "first_true_round": 82,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n013",
+          "predicate_state": "a4_door_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            37
+          ],
+          "first_true_round": 84,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n014",
+          "predicate_state": "c6_plate_on",
+          "observation_path": "state.controllers.c6_plate",
+          "expected_value": true,
+          "first_true_round": 104,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n015",
+          "predicate_state": "a5_platform_on",
+          "observation_path": "state.platforms.a5_platform",
+          "expected_value": true,
+          "first_true_round": 104,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n016",
+          "predicate_state": "a5_platform_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            46
+          ],
+          "first_true_round": 106,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n017",
+          "predicate_state": "all_required_goals",
+          "observation_path": "status",
+          "expected_value": "team_success",
+          "first_true_round": 162,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n018",
+          "observation_path": "state.light_sensors.S",
+          "expected_value": true,
+          "first_true_round": 128,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n019",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            68
+          ],
+          "first_true_round": 150,
+          "verified": true
+        }
+      ],
+      "edge_evidence": [
+        {
+          "from": "n000",
+          "to": "n001",
+          "relation": "requires",
+          "method": "initial_reachability",
+          "detail": "controller is reachable from the unique lane start",
+          "verified": true
+        },
+        {
+          "from": "n001",
+          "to": "n002",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n002",
+          "to": "n003",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n003",
+          "to": "n004",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n004",
+          "to": "n005",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n005",
+          "to": "n006",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n006",
+          "to": "n007",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n006",
+          "to": "n008",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n007",
+          "to": "n009",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n008",
+          "to": "n009",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n009",
+          "to": "n010",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n010",
+          "to": "n011",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n011",
+          "to": "n012",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n012",
+          "to": "n013",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n013",
+          "to": "n014",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n014",
+          "to": "n015",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n015",
+          "to": "n016",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n016",
+          "to": "n018",
+          "relation": "requires",
+          "method": "ordered_capability_capsule",
+          "detail": "the capability capsule is placed after the controller-room sequence",
+          "verified": true
+        },
+        {
+          "from": "n018",
+          "to": "n019",
+          "relation": "enables",
+          "method": "mandatory_capsule_cut",
+          "detail": "the relevant lane cannot reach its exit without resolving or respecting this capability",
+          "verified": true
+        },
+        {
+          "from": "n019",
+          "to": "n017",
+          "relation": "synchronizes",
+          "method": "exclusive_exit_reachability",
+          "detail": "team success still requires both role-specific exits after the capability crossing",
+          "verified": true
+        }
+      ],
+      "all_nodes_bound": true,
+      "all_edges_verified": true,
+      "capability_verified": true,
+      "same_dag_verified": true,
+      "unseen_topology_verified": true
+    },
+    {
+      "id": "HG-008",
+      "difficulty": "L5",
+      "map": "eval_private/heldout_layout_12/maps/HG-008.fwmap",
+      "dag": "eval_private/heldout_layout_12/dags/DAG-HG-008.json",
+      "source_id": "V4-L5-004",
+      "source_map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-004.fwmap",
+      "source_dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-004.json",
+      "primary_capability": "M06",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M06",
+        "M10",
+        "M14",
+        "M17",
+        "M18",
+        "M19",
+        "M20"
+      ],
+      "semantic_signature": "7fe5dfadac350940f22572a68519cdeafe420409874362d79d33277fe31e3ff3",
+      "source_topology_signature": "812332c3a029ab9a2a5facf6a5405bdd233c26fbcaf1315868fee1ea85e41a86",
+      "topology_signature": "8fac7061eb74806484c2d89eb24c7c6d232f31a1025a331f0f8bb2f39689282b",
+      "map_fingerprint": "1056c1196acbd4121fc1ee8c9c334184fd84611d7caea1dada75decd595d7476",
+      "source_layout_variant": 2668,
+      "heldout_layout_variant": 2673,
+      "stages": [
+        {
+          "stage": 1,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c1_lever",
+              "kind": "lever",
+              "position": [
+                6,
+                5
+              ]
+            },
+            {
+              "id": "c2_lever",
+              "kind": "lever",
+              "position": [
+                8,
+                6
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a1_door",
+            "kind": "door",
+            "positions": [
+              [
+                2,
+                9
+              ]
+            ]
+          },
+          "mode": "any",
+          "room": {
+            "gate_col": 9,
+            "obstacle_pattern": 3
+          }
+        },
+        {
+          "stage": 2,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c3_plate",
+              "kind": "plate",
+              "position": [
+                3,
+                14
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a2_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                7,
+                18
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 18,
+            "obstacle_pattern": 1
+          }
+        },
+        {
+          "stage": 3,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c4_lever",
+              "kind": "lever",
+              "position": [
+                6,
+                23
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a3_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                2,
+                27
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 27,
+            "obstacle_pattern": 2
+          }
+        },
+        {
+          "stage": 4,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c5_toggle",
+              "kind": "toggle",
+              "position": [
+                3,
+                32
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a4_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                36
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 36,
+            "obstacle_pattern": 0
+          }
+        },
+        {
+          "stage": 5,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c6_toggle",
+              "kind": "toggle",
+              "position": [
+                6,
+                41
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a5_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                2,
+                45
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 45,
+            "obstacle_pattern": 2
+          }
+        }
+      ],
+      "capability": {
+        "motif": "M06",
+        "title": "mandatory crate displacement",
+        "gate_col": 65,
+        "supporter": "W",
+        "traveler": "F",
+        "kind": "crate_push"
+      },
+      "witness_rounds": 162,
+      "spatial_metrics": {
+        "walkable_cells": 503,
+        "branch_points": 416,
+        "vertical_witness_steps": 24
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "n000",
+          "predicate_state": "task_ready",
+          "observation_path": "status",
+          "expected_value": "running",
+          "first_true_round": 0,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n001",
+          "predicate_state": "c1_lever_on",
+          "observation_path": "state.controllers.c1_lever",
+          "expected_value": true,
+          "first_true_round": 5,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n002",
+          "predicate_state": "c2_lever_on",
+          "observation_path": "state.controllers.c2_lever",
+          "expected_value": true,
+          "first_true_round": 8,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n003",
+          "predicate_state": "a1_door_on",
+          "observation_path": "state.doors.a1_door",
+          "expected_value": true,
+          "first_true_round": 5,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n004",
+          "predicate_state": "a1_door_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            10
+          ],
+          "first_true_round": 19,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n005",
+          "predicate_state": "c3_plate_on",
+          "observation_path": "state.controllers.c3_plate",
+          "expected_value": true,
+          "first_true_round": 38,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n006",
+          "predicate_state": "a2_platform_on",
+          "observation_path": "state.platforms.a2_platform",
+          "expected_value": true,
+          "first_true_round": 38,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n007",
+          "predicate_state": "a2_platform_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            19
+          ],
+          "first_true_round": 40,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n008",
+          "predicate_state": "c4_lever_on",
+          "observation_path": "state.controllers.c4_lever",
+          "expected_value": true,
+          "first_true_round": 51,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n009",
+          "predicate_state": "a3_platform_on",
+          "observation_path": "state.platforms.a3_platform",
+          "expected_value": true,
+          "first_true_round": 51,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n010",
+          "predicate_state": "a3_platform_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            28
+          ],
+          "first_true_round": 62,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n011",
+          "predicate_state": "c5_toggle_on",
+          "observation_path": "state.controllers.c5_toggle",
+          "expected_value": true,
+          "first_true_round": 73,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n012",
+          "predicate_state": "a4_door_on",
+          "observation_path": "state.doors.a4_door",
+          "expected_value": true,
+          "first_true_round": 73,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n013",
+          "predicate_state": "a4_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            37
+          ],
+          "first_true_round": 84,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n014",
+          "predicate_state": "c6_toggle_on",
+          "observation_path": "state.controllers.c6_toggle",
+          "expected_value": true,
+          "first_true_round": 95,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n015",
+          "predicate_state": "a5_platform_on",
+          "observation_path": "state.platforms.a5_platform",
+          "expected_value": true,
+          "first_true_round": 95,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n016",
+          "predicate_state": "a5_platform_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            46
+          ],
+          "first_true_round": 106,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n017",
+          "predicate_state": "all_required_goals",
+          "observation_path": "status",
+          "expected_value": "team_success",
+          "first_true_round": 162,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n018",
+          "observation_path": "state.crates",
+          "expected_value": [
+            [
+              2,
+              67
+            ]
+          ],
+          "first_true_round": 132,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n019",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            66
+          ],
+          "first_true_round": 132,
+          "verified": true
+        }
+      ],
+      "edge_evidence": [
+        {
+          "from": "n000",
+          "to": "n001",
+          "relation": "requires",
+          "method": "initial_reachability",
+          "detail": "controller is reachable from the unique lane start",
+          "verified": true
+        },
+        {
+          "from": "n000",
+          "to": "n002",
+          "relation": "requires",
+          "method": "initial_reachability",
+          "detail": "controller is reachable from the unique lane start",
+          "verified": true
+        },
+        {
+          "from": "n001",
+          "to": "n003",
+          "relation": "enables",
+          "method": "boolean_truth_table_alternative",
+          "detail": "this input alone is sufficient; target join=any does not claim individual necessity",
+          "verified": true
+        },
+        {
+          "from": "n002",
+          "to": "n003",
+          "relation": "enables",
+          "method": "boolean_truth_table_alternative",
+          "detail": "this input alone is sufficient; target join=any does not claim individual necessity",
+          "verified": true
+        },
+        {
+          "from": "n003",
+          "to": "n004",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n004",
+          "to": "n005",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n005",
+          "to": "n006",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n006",
+          "to": "n007",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n007",
+          "to": "n008",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n008",
+          "to": "n009",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n009",
+          "to": "n010",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n010",
+          "to": "n011",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n011",
+          "to": "n012",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n012",
+          "to": "n013",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n013",
+          "to": "n014",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n014",
+          "to": "n015",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n015",
+          "to": "n016",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n016",
+          "to": "n018",
+          "relation": "requires",
+          "method": "ordered_capability_capsule",
+          "detail": "the capability capsule is placed after the controller-room sequence",
+          "verified": true
+        },
+        {
+          "from": "n018",
+          "to": "n019",
+          "relation": "enables",
+          "method": "mandatory_capsule_cut",
+          "detail": "the relevant lane cannot reach its exit without resolving or respecting this capability",
+          "verified": true
+        },
+        {
+          "from": "n019",
+          "to": "n017",
+          "relation": "synchronizes",
+          "method": "exclusive_exit_reachability",
+          "detail": "team success still requires both role-specific exits after the capability crossing",
+          "verified": true
+        }
+      ],
+      "all_nodes_bound": true,
+      "all_edges_verified": true,
+      "capability_verified": true,
+      "same_dag_verified": true,
+      "unseen_topology_verified": true
+    },
+    {
+      "id": "HG-009",
+      "difficulty": "L6",
+      "map": "eval_private/heldout_layout_12/maps/HG-009.fwmap",
+      "dag": "eval_private/heldout_layout_12/dags/DAG-HG-009.json",
+      "source_id": "V4-L6-010",
+      "source_map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-010.fwmap",
+      "source_dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-010.json",
+      "primary_capability": "M29",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M10",
+        "M11",
+        "M14",
+        "M17",
+        "M20",
+        "M29"
+      ],
+      "semantic_signature": "a31f0558f33979ac506b64c8dcdb026c4b015482d92ca81e30356301604ae866",
+      "source_topology_signature": "bd6f6c1596fb1b4a0e731d6b80008db3ab9c8718a74965f34061c2fb7ad13c49",
+      "topology_signature": "d7e1e8b7bd6b0fef3f61287a6430bbff178d93ba9e0835554e07382fb7a23a34",
+      "map_fingerprint": "db58ab2b0085d6d2e6bb47bb85006c3a5aa9b394d8be20a6ef50617b5d54da47",
+      "source_layout_variant": 21891,
+      "heldout_layout_variant": 21896,
+      "stages": [
+        {
+          "stage": 1,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c1_plate",
+              "kind": "plate",
+              "position": [
+                8,
+                5
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a1_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                2,
+                9
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 9,
+            "obstacle_pattern": 2
+          }
+        },
+        {
+          "stage": 2,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c2_plate",
+              "kind": "plate",
+              "position": [
+                1,
+                14
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a2_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                7,
+                18
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 18,
+            "obstacle_pattern": 1
+          }
+        },
+        {
+          "stage": 3,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c3_plate",
+              "kind": "plate",
+              "position": [
+                8,
+                23
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a3_door",
+            "kind": "door",
+            "positions": [
+              [
+                2,
+                27
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 27,
+            "obstacle_pattern": 2
+          }
+        },
+        {
+          "stage": 4,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c4_lever",
+              "kind": "lever",
+              "position": [
+                1,
+                32
+              ]
+            },
+            {
+              "id": "c5_plate",
+              "kind": "plate",
+              "position": [
+                3,
+                33
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a4_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                36
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 36,
+            "obstacle_pattern": 5
+          }
+        },
+        {
+          "stage": 5,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c6_toggle",
+              "kind": "toggle",
+              "position": [
+                8,
+                41
+              ]
+            },
+            {
+              "id": "c7_plate",
+              "kind": "plate",
+              "position": [
+                6,
+                42
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a5_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                2,
+                45
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 45,
+            "obstacle_pattern": 4
+          }
+        },
+        {
+          "stage": 6,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c8_lever",
+              "kind": "lever",
+              "position": [
+                1,
+                50
+              ]
+            },
+            {
+              "id": "c9_plate",
+              "kind": "plate",
+              "position": [
+                3,
+                51
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a6_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                54
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 54,
+            "obstacle_pattern": 2
+          }
+        }
+      ],
+      "capability": {
+        "motif": "M29",
+        "title": "rotatable-mirror orb light door",
+        "gate_col": 76,
+        "supporter": "F",
+        "traveler": "W",
+        "kind": "light",
+        "toggle_position": [
+          3,
+          68
+        ],
+        "blocker_position": [
+          2,
+          71
+        ],
+        "blocker_push": "RIGHT",
+        "pusher_position": [
+          2,
+          70
+        ],
+        "reflected": true,
+        "rotatable": true,
+        "object": "orb"
+      },
+      "witness_rounds": 192,
+      "spatial_metrics": {
+        "walkable_cells": 563,
+        "branch_points": 458,
+        "vertical_witness_steps": 34
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "n000",
+          "predicate_state": "task_ready",
+          "observation_path": "status",
+          "expected_value": "running",
+          "first_true_round": 0,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n001",
+          "predicate_state": "c1_plate_on",
+          "observation_path": "state.controllers.c1_plate",
+          "expected_value": true,
+          "first_true_round": 14,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n002",
+          "predicate_state": "a1_platform_on",
+          "observation_path": "state.platforms.a1_platform",
+          "expected_value": true,
+          "first_true_round": 14,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n003",
+          "predicate_state": "a1_platform_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            10
+          ],
+          "first_true_round": 16,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n004",
+          "predicate_state": "c2_plate_on",
+          "observation_path": "state.controllers.c2_plate",
+          "expected_value": true,
+          "first_true_round": 36,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n005",
+          "predicate_state": "a2_platform_on",
+          "observation_path": "state.platforms.a2_platform",
+          "expected_value": true,
+          "first_true_round": 36,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n006",
+          "predicate_state": "a2_platform_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            19
+          ],
+          "first_true_round": 38,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n007",
+          "predicate_state": "c3_plate_on",
+          "observation_path": "state.controllers.c3_plate",
+          "expected_value": true,
+          "first_true_round": 58,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n008",
+          "predicate_state": "a3_door_on",
+          "observation_path": "state.doors.a3_door",
+          "expected_value": true,
+          "first_true_round": 58,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n009",
+          "predicate_state": "a3_door_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            28
+          ],
+          "first_true_round": 60,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n010",
+          "predicate_state": "c4_lever_on",
+          "observation_path": "state.controllers.c4_lever",
+          "expected_value": true,
+          "first_true_round": 71,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n011",
+          "predicate_state": "c5_plate_on",
+          "observation_path": "state.controllers.c5_plate",
+          "expected_value": true,
+          "first_true_round": 83,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n012",
+          "predicate_state": "a4_door_on",
+          "observation_path": "state.doors.a4_door",
+          "expected_value": true,
+          "first_true_round": 83,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n013",
+          "predicate_state": "a4_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            37
+          ],
+          "first_true_round": 85,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n014",
+          "predicate_state": "c6_toggle_on",
+          "observation_path": "state.controllers.c6_toggle",
+          "expected_value": true,
+          "first_true_round": 95,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n015",
+          "predicate_state": "c7_plate_on",
+          "observation_path": "state.controllers.c7_plate",
+          "expected_value": true,
+          "first_true_round": 107,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n016",
+          "predicate_state": "a5_platform_on",
+          "observation_path": "state.platforms.a5_platform",
+          "expected_value": true,
+          "first_true_round": 107,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n017",
+          "predicate_state": "a5_platform_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            46
+          ],
+          "first_true_round": 109,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n018",
+          "predicate_state": "c8_lever_on",
+          "observation_path": "state.controllers.c8_lever",
+          "expected_value": true,
+          "first_true_round": 119,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n019",
+          "predicate_state": "c9_plate_on",
+          "observation_path": "state.controllers.c9_plate",
+          "expected_value": true,
+          "first_true_round": 133,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n020",
+          "predicate_state": "a6_door_on",
+          "observation_path": "state.doors.a6_door",
+          "expected_value": true,
+          "first_true_round": 133,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n021",
+          "predicate_state": "a6_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            55
+          ],
+          "first_true_round": 135,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n022",
+          "predicate_state": "all_required_goals",
+          "observation_path": "status",
+          "expected_value": "team_success",
+          "first_true_round": 192,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n023",
+          "observation_path": "state.light_sensors.S",
+          "expected_value": true,
+          "first_true_round": 158,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n024",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            77
+          ],
+          "first_true_round": 180,
+          "verified": true
+        }
+      ],
+      "edge_evidence": [
+        {
+          "from": "n000",
+          "to": "n001",
+          "relation": "requires",
+          "method": "initial_reachability",
+          "detail": "controller is reachable from the unique lane start",
+          "verified": true
+        },
+        {
+          "from": "n001",
+          "to": "n002",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n002",
+          "to": "n003",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n003",
+          "to": "n004",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n004",
+          "to": "n005",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n005",
+          "to": "n006",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n006",
+          "to": "n007",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n007",
+          "to": "n008",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n008",
+          "to": "n009",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n009",
+          "to": "n010",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n009",
+          "to": "n011",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n010",
+          "to": "n012",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n011",
+          "to": "n012",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n012",
+          "to": "n013",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n013",
+          "to": "n014",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n013",
+          "to": "n015",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n014",
+          "to": "n016",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n015",
+          "to": "n016",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n016",
+          "to": "n017",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n017",
+          "to": "n018",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n017",
+          "to": "n019",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n018",
+          "to": "n020",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n019",
+          "to": "n020",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n020",
+          "to": "n021",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n021",
+          "to": "n023",
+          "relation": "requires",
+          "method": "ordered_capability_capsule",
+          "detail": "the capability capsule is placed after the controller-room sequence",
+          "verified": true
+        },
+        {
+          "from": "n023",
+          "to": "n024",
+          "relation": "enables",
+          "method": "mandatory_capsule_cut",
+          "detail": "the relevant lane cannot reach its exit without resolving or respecting this capability",
+          "verified": true
+        },
+        {
+          "from": "n024",
+          "to": "n022",
+          "relation": "synchronizes",
+          "method": "exclusive_exit_reachability",
+          "detail": "team success still requires both role-specific exits after the capability crossing",
+          "verified": true
+        }
+      ],
+      "all_nodes_bound": true,
+      "all_edges_verified": true,
+      "capability_verified": true,
+      "same_dag_verified": true,
+      "unseen_topology_verified": true
+    },
+    {
+      "id": "HG-010",
+      "difficulty": "L6",
+      "map": "eval_private/heldout_layout_12/maps/HG-010.fwmap",
+      "dag": "eval_private/heldout_layout_12/dags/DAG-HG-010.json",
+      "source_id": "V4-L6-007",
+      "source_map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-007.fwmap",
+      "source_dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-007.json",
+      "primary_capability": "M26",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M10",
+        "M11",
+        "M14",
+        "M17",
+        "M20",
+        "M26"
+      ],
+      "semantic_signature": "835580e946baf01592d0f4fe41284cd225df7764767bd11d72c39e5d24f33144",
+      "source_topology_signature": "824432bf570027bd8d9efd1fe525970826088acab6bb28346d92b3d3aefe0494",
+      "topology_signature": "b586180b012d6c191609132389b1b9fea09233a857c87d8590ae384bda778473",
+      "map_fingerprint": "1e00cb9f07637e85a09f3659032d365a1964e6cd9a16e718527969fd8994228f",
+      "source_layout_variant": 21876,
+      "heldout_layout_variant": 21901,
+      "stages": [
+        {
+          "stage": 1,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c1_plate",
+              "kind": "plate",
+              "position": [
+                1,
+                5
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a1_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                9
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 9,
+            "obstacle_pattern": 1
+          }
+        },
+        {
+          "stage": 2,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c2_lever",
+              "kind": "lever",
+              "position": [
+                8,
+                14
+              ]
+            },
+            {
+              "id": "c3_lever",
+              "kind": "lever",
+              "position": [
+                6,
+                15
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a2_door",
+            "kind": "door",
+            "positions": [
+              [
+                2,
+                18
+              ]
+            ]
+          },
+          "mode": "any",
+          "room": {
+            "gate_col": 18,
+            "obstacle_pattern": 2
+          }
+        },
+        {
+          "stage": 3,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c4_plate",
+              "kind": "plate",
+              "position": [
+                1,
+                23
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a3_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                27
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 27,
+            "obstacle_pattern": 2
+          }
+        },
+        {
+          "stage": 4,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c5_plate",
+              "kind": "plate",
+              "position": [
+                8,
+                32
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a4_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                2,
+                36
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 36,
+            "obstacle_pattern": 5
+          }
+        },
+        {
+          "stage": 5,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c6_lever",
+              "kind": "lever",
+              "position": [
+                1,
+                41
+              ]
+            },
+            {
+              "id": "c7_plate",
+              "kind": "plate",
+              "position": [
+                3,
+                42
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a5_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                45
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 45,
+            "obstacle_pattern": 4
+          }
+        },
+        {
+          "stage": 6,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c8_toggle",
+              "kind": "toggle",
+              "position": [
+                8,
+                50
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a6_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                2,
+                54
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 54,
+            "obstacle_pattern": 2
+          }
+        }
+      ],
+      "capability": {
+        "motif": "M26",
+        "title": "fixed-reflection orb light door",
+        "gate_col": 76,
+        "supporter": "F",
+        "traveler": "W",
+        "kind": "light",
+        "blocker_position": [
+          2,
+          71
+        ],
+        "blocker_push": "RIGHT",
+        "pusher_position": [
+          2,
+          70
+        ],
+        "reflected": true,
+        "rotatable": false,
+        "object": "orb"
+      },
+      "witness_rounds": 188,
+      "spatial_metrics": {
+        "walkable_cells": 563,
+        "branch_points": 458,
+        "vertical_witness_steps": 30
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "n000",
+          "predicate_state": "task_ready",
+          "observation_path": "status",
+          "expected_value": "running",
+          "first_true_round": 0,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n001",
+          "predicate_state": "c1_plate_on",
+          "observation_path": "state.controllers.c1_plate",
+          "expected_value": true,
+          "first_true_round": 14,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n002",
+          "predicate_state": "a1_door_on",
+          "observation_path": "state.doors.a1_door",
+          "expected_value": true,
+          "first_true_round": 14,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n003",
+          "predicate_state": "a1_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            10
+          ],
+          "first_true_round": 16,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n004",
+          "predicate_state": "c2_lever_on",
+          "observation_path": "state.controllers.c2_lever",
+          "expected_value": true,
+          "first_true_round": 27,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n005",
+          "predicate_state": "c3_lever_on",
+          "observation_path": "state.controllers.c3_lever",
+          "expected_value": true,
+          "first_true_round": 32,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n006",
+          "predicate_state": "a2_door_on",
+          "observation_path": "state.doors.a2_door",
+          "expected_value": true,
+          "first_true_round": 27,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n007",
+          "predicate_state": "a2_door_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            19
+          ],
+          "first_true_round": 43,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n008",
+          "predicate_state": "c4_plate_on",
+          "observation_path": "state.controllers.c4_plate",
+          "expected_value": true,
+          "first_true_round": 62,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n009",
+          "predicate_state": "a3_door_on",
+          "observation_path": "state.doors.a3_door",
+          "expected_value": true,
+          "first_true_round": 62,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n010",
+          "predicate_state": "a3_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            28
+          ],
+          "first_true_round": 64,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n011",
+          "predicate_state": "c5_plate_on",
+          "observation_path": "state.controllers.c5_plate",
+          "expected_value": true,
+          "first_true_round": 84,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n012",
+          "predicate_state": "a4_platform_on",
+          "observation_path": "state.platforms.a4_platform",
+          "expected_value": true,
+          "first_true_round": 84,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n013",
+          "predicate_state": "a4_platform_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            37
+          ],
+          "first_true_round": 86,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n014",
+          "predicate_state": "c6_lever_on",
+          "observation_path": "state.controllers.c6_lever",
+          "expected_value": true,
+          "first_true_round": 97,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n015",
+          "predicate_state": "c7_plate_on",
+          "observation_path": "state.controllers.c7_plate",
+          "expected_value": true,
+          "first_true_round": 109,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n016",
+          "predicate_state": "a5_door_on",
+          "observation_path": "state.doors.a5_door",
+          "expected_value": true,
+          "first_true_round": 109,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n017",
+          "predicate_state": "a5_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            46
+          ],
+          "first_true_round": 111,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n018",
+          "predicate_state": "c8_toggle_on",
+          "observation_path": "state.controllers.c8_toggle",
+          "expected_value": true,
+          "first_true_round": 121,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n019",
+          "predicate_state": "a6_platform_on",
+          "observation_path": "state.platforms.a6_platform",
+          "expected_value": true,
+          "first_true_round": 121,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n020",
+          "predicate_state": "a6_platform_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            55
+          ],
+          "first_true_round": 132,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n021",
+          "predicate_state": "all_required_goals",
+          "observation_path": "status",
+          "expected_value": "team_success",
+          "first_true_round": 188,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n022",
+          "observation_path": "state.light_sensors.S",
+          "expected_value": true,
+          "first_true_round": 154,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n023",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            77
+          ],
+          "first_true_round": 176,
+          "verified": true
+        }
+      ],
+      "edge_evidence": [
+        {
+          "from": "n000",
+          "to": "n001",
+          "relation": "requires",
+          "method": "initial_reachability",
+          "detail": "controller is reachable from the unique lane start",
+          "verified": true
+        },
+        {
+          "from": "n001",
+          "to": "n002",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n002",
+          "to": "n003",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n003",
+          "to": "n004",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n003",
+          "to": "n005",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n004",
+          "to": "n006",
+          "relation": "enables",
+          "method": "boolean_truth_table_alternative",
+          "detail": "this input alone is sufficient; target join=any does not claim individual necessity",
+          "verified": true
+        },
+        {
+          "from": "n005",
+          "to": "n006",
+          "relation": "enables",
+          "method": "boolean_truth_table_alternative",
+          "detail": "this input alone is sufficient; target join=any does not claim individual necessity",
+          "verified": true
+        },
+        {
+          "from": "n006",
+          "to": "n007",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n007",
+          "to": "n008",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n008",
+          "to": "n009",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n009",
+          "to": "n010",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n010",
+          "to": "n011",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n011",
+          "to": "n012",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n012",
+          "to": "n013",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n013",
+          "to": "n014",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n013",
+          "to": "n015",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n014",
+          "to": "n016",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n015",
+          "to": "n016",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n016",
+          "to": "n017",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n017",
+          "to": "n018",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n018",
+          "to": "n019",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n019",
+          "to": "n020",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n020",
+          "to": "n022",
+          "relation": "requires",
+          "method": "ordered_capability_capsule",
+          "detail": "the capability capsule is placed after the controller-room sequence",
+          "verified": true
+        },
+        {
+          "from": "n022",
+          "to": "n023",
+          "relation": "enables",
+          "method": "mandatory_capsule_cut",
+          "detail": "the relevant lane cannot reach its exit without resolving or respecting this capability",
+          "verified": true
+        },
+        {
+          "from": "n023",
+          "to": "n021",
+          "relation": "synchronizes",
+          "method": "exclusive_exit_reachability",
+          "detail": "team success still requires both role-specific exits after the capability crossing",
+          "verified": true
+        }
+      ],
+      "all_nodes_bound": true,
+      "all_edges_verified": true,
+      "capability_verified": true,
+      "same_dag_verified": true,
+      "unseen_topology_verified": true
+    },
+    {
+      "id": "HG-011",
+      "difficulty": "L7",
+      "map": "eval_private/heldout_layout_12/maps/HG-011.fwmap",
+      "dag": "eval_private/heldout_layout_12/dags/DAG-HG-011.json",
+      "source_id": "V4-L7-009",
+      "source_map": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-009.fwmap",
+      "source_dag": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-009.json",
+      "primary_capability": "M13",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M10",
+        "M11",
+        "M13",
+        "M14",
+        "M17",
+        "M19"
+      ],
+      "semantic_signature": "cdbd4002044b40c995a2d4a72d9425e8e362528a43ebeb423ac4a913c751d6fb",
+      "source_topology_signature": "9dfb7cb8905bba80503ec4ef73b0d4b5c5548f2ad6d1148e6d5d6b4127e515f4",
+      "topology_signature": "0663b9cffdb7f1e7ea5737e2775f8eb6f022a5ffe8cd31ffdcc2947a18a5dc58",
+      "map_fingerprint": "a18006097cb8a32b3c0079d855a51b407a7df7af096bce81698894d81d7f81d4",
+      "source_layout_variant": 173271,
+      "heldout_layout_variant": 173276,
+      "stages": [
+        {
+          "stage": 1,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c1_plate",
+              "kind": "plate",
+              "position": [
+                3,
+                5
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a1_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                7,
+                9
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 9,
+            "obstacle_pattern": 2
+          }
+        },
+        {
+          "stage": 2,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c2_lever",
+              "kind": "lever",
+              "position": [
+                6,
+                14
+              ]
+            },
+            {
+              "id": "c3_lever",
+              "kind": "lever",
+              "position": [
+                8,
+                15
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a2_door",
+            "kind": "door",
+            "positions": [
+              [
+                2,
+                18
+              ]
+            ]
+          },
+          "mode": "any",
+          "room": {
+            "gate_col": 18,
+            "obstacle_pattern": 1
+          }
+        },
+        {
+          "stage": 3,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c4_lever",
+              "kind": "lever",
+              "position": [
+                3,
+                23
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a3_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                27
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 27,
+            "obstacle_pattern": 1
+          }
+        },
+        {
+          "stage": 4,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c5_plate",
+              "kind": "plate",
+              "position": [
+                6,
+                32
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a4_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                2,
+                36
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 36,
+            "obstacle_pattern": 4
+          }
+        },
+        {
+          "stage": 5,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c6_toggle",
+              "kind": "toggle",
+              "position": [
+                3,
+                41
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a5_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                45
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 45,
+            "obstacle_pattern": 1
+          }
+        },
+        {
+          "stage": 6,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c7_plate",
+              "kind": "plate",
+              "position": [
+                6,
+                50
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a6_door",
+            "kind": "door",
+            "positions": [
+              [
+                2,
+                54
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 54,
+            "obstacle_pattern": 4
+          }
+        },
+        {
+          "stage": 7,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c8_lever",
+              "kind": "lever",
+              "position": [
+                3,
+                59
+              ]
+            },
+            {
+              "id": "c9_plate",
+              "kind": "plate",
+              "position": [
+                1,
+                60
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a7_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                63
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 63,
+            "obstacle_pattern": 3
+          }
+        }
+      ],
+      "capability": {
+        "motif": "M13",
+        "title": "orb-held plate door",
+        "gate_col": 83,
+        "supporter": "F",
+        "traveler": "W",
+        "kind": "heavy_plate",
+        "object": "orb",
+        "object_position": [
+          2,
+          77
+        ],
+        "plate_position": [
+          2,
+          79
+        ],
+        "controller_id": "cap_heavy_plate",
+        "actuator_id": "cap_door"
+      },
+      "witness_rounds": 210,
+      "spatial_metrics": {
+        "walkable_cells": 626,
+        "branch_points": 510,
+        "vertical_witness_steps": 34
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "n000",
+          "predicate_state": "task_ready",
+          "observation_path": "status",
+          "expected_value": "running",
+          "first_true_round": 0,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n001",
+          "predicate_state": "c1_plate_on",
+          "observation_path": "state.controllers.c1_plate",
+          "expected_value": true,
+          "first_true_round": 14,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n002",
+          "predicate_state": "a1_platform_on",
+          "observation_path": "state.platforms.a1_platform",
+          "expected_value": true,
+          "first_true_round": 14,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n003",
+          "predicate_state": "a1_platform_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            10
+          ],
+          "first_true_round": 16,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n004",
+          "predicate_state": "c2_lever_on",
+          "observation_path": "state.controllers.c2_lever",
+          "expected_value": true,
+          "first_true_round": 27,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n005",
+          "predicate_state": "c3_lever_on",
+          "observation_path": "state.controllers.c3_lever",
+          "expected_value": true,
+          "first_true_round": 32,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n006",
+          "predicate_state": "a2_door_on",
+          "observation_path": "state.doors.a2_door",
+          "expected_value": true,
+          "first_true_round": 27,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n007",
+          "predicate_state": "a2_door_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            19
+          ],
+          "first_true_round": 43,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n008",
+          "predicate_state": "c4_lever_on",
+          "observation_path": "state.controllers.c4_lever",
+          "expected_value": true,
+          "first_true_round": 53,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n009",
+          "predicate_state": "a3_door_on",
+          "observation_path": "state.doors.a3_door",
+          "expected_value": true,
+          "first_true_round": 53,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n010",
+          "predicate_state": "a3_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            28
+          ],
+          "first_true_round": 64,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n011",
+          "predicate_state": "c5_plate_on",
+          "observation_path": "state.controllers.c5_plate",
+          "expected_value": true,
+          "first_true_round": 84,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n012",
+          "predicate_state": "a4_platform_on",
+          "observation_path": "state.platforms.a4_platform",
+          "expected_value": true,
+          "first_true_round": 84,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n013",
+          "predicate_state": "a4_platform_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            37
+          ],
+          "first_true_round": 86,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n014",
+          "predicate_state": "c6_toggle_on",
+          "observation_path": "state.controllers.c6_toggle",
+          "expected_value": true,
+          "first_true_round": 97,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n015",
+          "predicate_state": "a5_door_on",
+          "observation_path": "state.doors.a5_door",
+          "expected_value": true,
+          "first_true_round": 97,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n016",
+          "predicate_state": "a5_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            46
+          ],
+          "first_true_round": 108,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n017",
+          "predicate_state": "c7_plate_on",
+          "observation_path": "state.controllers.c7_plate",
+          "expected_value": true,
+          "first_true_round": 128,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n018",
+          "predicate_state": "a6_door_on",
+          "observation_path": "state.doors.a6_door",
+          "expected_value": true,
+          "first_true_round": 128,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n019",
+          "predicate_state": "a6_door_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            55
+          ],
+          "first_true_round": 130,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n020",
+          "predicate_state": "c8_lever_on",
+          "observation_path": "state.controllers.c8_lever",
+          "expected_value": true,
+          "first_true_round": 141,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n021",
+          "predicate_state": "c9_plate_on",
+          "observation_path": "state.controllers.c9_plate",
+          "expected_value": true,
+          "first_true_round": 153,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n022",
+          "predicate_state": "a7_door_on",
+          "observation_path": "state.doors.a7_door",
+          "expected_value": true,
+          "first_true_round": 153,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n023",
+          "predicate_state": "a7_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            64
+          ],
+          "first_true_round": 155,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n024",
+          "predicate_state": "all_required_goals",
+          "observation_path": "status",
+          "expected_value": "team_success",
+          "first_true_round": 210,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n025",
+          "observation_path": "state.controllers.cap_heavy_plate",
+          "expected_value": true,
+          "first_true_round": 173,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n026",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            84
+          ],
+          "first_true_round": 193,
+          "verified": true
+        }
+      ],
+      "edge_evidence": [
+        {
+          "from": "n000",
+          "to": "n001",
+          "relation": "requires",
+          "method": "initial_reachability",
+          "detail": "controller is reachable from the unique lane start",
+          "verified": true
+        },
+        {
+          "from": "n001",
+          "to": "n002",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n002",
+          "to": "n003",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n003",
+          "to": "n004",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n003",
+          "to": "n005",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n004",
+          "to": "n006",
+          "relation": "enables",
+          "method": "boolean_truth_table_alternative",
+          "detail": "this input alone is sufficient; target join=any does not claim individual necessity",
+          "verified": true
+        },
+        {
+          "from": "n005",
+          "to": "n006",
+          "relation": "enables",
+          "method": "boolean_truth_table_alternative",
+          "detail": "this input alone is sufficient; target join=any does not claim individual necessity",
+          "verified": true
+        },
+        {
+          "from": "n006",
+          "to": "n007",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n007",
+          "to": "n008",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n008",
+          "to": "n009",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n009",
+          "to": "n010",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n010",
+          "to": "n011",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n011",
+          "to": "n012",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n012",
+          "to": "n013",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n013",
+          "to": "n014",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n014",
+          "to": "n015",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n015",
+          "to": "n016",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n016",
+          "to": "n017",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n017",
+          "to": "n018",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n018",
+          "to": "n019",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n019",
+          "to": "n020",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n019",
+          "to": "n021",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n020",
+          "to": "n022",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n021",
+          "to": "n022",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n022",
+          "to": "n023",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n023",
+          "to": "n025",
+          "relation": "requires",
+          "method": "ordered_capability_capsule",
+          "detail": "the capability capsule is placed after the controller-room sequence",
+          "verified": true
+        },
+        {
+          "from": "n025",
+          "to": "n026",
+          "relation": "enables",
+          "method": "mandatory_capsule_cut",
+          "detail": "the relevant lane cannot reach its exit without resolving or respecting this capability",
+          "verified": true
+        },
+        {
+          "from": "n026",
+          "to": "n024",
+          "relation": "synchronizes",
+          "method": "exclusive_exit_reachability",
+          "detail": "team success still requires both role-specific exits after the capability crossing",
+          "verified": true
+        }
+      ],
+      "all_nodes_bound": true,
+      "all_edges_verified": true,
+      "capability_verified": true,
+      "same_dag_verified": true,
+      "unseen_topology_verified": true
+    },
+    {
+      "id": "HG-012",
+      "difficulty": "L7",
+      "map": "eval_private/heldout_layout_12/maps/HG-012.fwmap",
+      "dag": "eval_private/heldout_layout_12/dags/DAG-HG-012.json",
+      "source_id": "V4-L7-002",
+      "source_map": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-002.fwmap",
+      "source_dag": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-002.json",
+      "primary_capability": "M23",
+      "mechanisms": [
+        "M01",
+        "M02",
+        "M10",
+        "M11",
+        "M14",
+        "M17",
+        "M18",
+        "M23"
+      ],
+      "semantic_signature": "6dbdf10e58b09093f35f72d1eef987f4ca535dca6c9008cd211230bfdb01c557",
+      "source_topology_signature": "9ae00f2ff70baa1723c876bbad1662ad010572a111b3f03d2db6afe67cd7d9a1",
+      "topology_signature": "9b90fc7716598cd6c3e0809eacb84d5bb178cf0d7001e5a50ae1c20b766b97d6",
+      "map_fingerprint": "edb6acffc5821d9c2c92a439888a74dfde634b4ea314510de3f73f46ad91931f",
+      "source_layout_variant": 173236,
+      "heldout_layout_variant": 173266,
+      "stages": [
+        {
+          "stage": 1,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c1_lever",
+              "kind": "lever",
+              "position": [
+                8,
+                5
+              ]
+            },
+            {
+              "id": "c2_lever",
+              "kind": "lever",
+              "position": [
+                6,
+                6
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a1_door",
+            "kind": "door",
+            "positions": [
+              [
+                2,
+                9
+              ]
+            ]
+          },
+          "mode": "any",
+          "room": {
+            "gate_col": 9,
+            "obstacle_pattern": 4
+          }
+        },
+        {
+          "stage": 2,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c3_lever",
+              "kind": "lever",
+              "position": [
+                1,
+                14
+              ]
+            },
+            {
+              "id": "c4_plate",
+              "kind": "plate",
+              "position": [
+                3,
+                15
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a2_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                18
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 18,
+            "obstacle_pattern": 5
+          }
+        },
+        {
+          "stage": 3,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c5_plate",
+              "kind": "plate",
+              "position": [
+                8,
+                23
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a3_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                2,
+                27
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 27,
+            "obstacle_pattern": 0
+          }
+        },
+        {
+          "stage": 4,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c6_lever",
+              "kind": "lever",
+              "position": [
+                1,
+                32
+              ]
+            },
+            {
+              "id": "c7_lever",
+              "kind": "lever",
+              "position": [
+                3,
+                33
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a4_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                36
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 36,
+            "obstacle_pattern": 4
+          }
+        },
+        {
+          "stage": 5,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c8_lever",
+              "kind": "lever",
+              "position": [
+                8,
+                41
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a5_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                2,
+                45
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 45,
+            "obstacle_pattern": 1
+          }
+        },
+        {
+          "stage": 6,
+          "supporter": "F",
+          "traveler": "W",
+          "controllers": [
+            {
+              "id": "c9_lever",
+              "kind": "lever",
+              "position": [
+                1,
+                50
+              ]
+            },
+            {
+              "id": "c10_plate",
+              "kind": "plate",
+              "position": [
+                3,
+                51
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a6_door",
+            "kind": "door",
+            "positions": [
+              [
+                7,
+                54
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 54,
+            "obstacle_pattern": 4
+          }
+        },
+        {
+          "stage": 7,
+          "supporter": "W",
+          "traveler": "F",
+          "controllers": [
+            {
+              "id": "c11_plate",
+              "kind": "plate",
+              "position": [
+                8,
+                59
+              ]
+            }
+          ],
+          "actuator": {
+            "id": "a7_platform",
+            "kind": "platform",
+            "positions": [
+              [
+                2,
+                63
+              ]
+            ]
+          },
+          "mode": "all",
+          "room": {
+            "gate_col": 63,
+            "obstacle_pattern": 3
+          }
+        }
+      ],
+      "capability": {
+        "motif": "M23",
+        "title": "orb-cleared light door",
+        "gate_col": 85,
+        "supporter": "F",
+        "traveler": "W",
+        "kind": "light",
+        "blocker_position": [
+          2,
+          79
+        ],
+        "blocker_push": "UP",
+        "pusher_position": [
+          3,
+          79
+        ],
+        "reflected": false,
+        "rotatable": false,
+        "object": "orb"
+      },
+      "witness_rounds": 212,
+      "spatial_metrics": {
+        "walkable_cells": 631,
+        "branch_points": 518,
+        "vertical_witness_steps": 38
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "n000",
+          "predicate_state": "task_ready",
+          "observation_path": "status",
+          "expected_value": "running",
+          "first_true_round": 0,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n001",
+          "predicate_state": "c1_lever_on",
+          "observation_path": "state.controllers.c1_lever",
+          "expected_value": true,
+          "first_true_round": 5,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n002",
+          "predicate_state": "c2_lever_on",
+          "observation_path": "state.controllers.c2_lever",
+          "expected_value": true,
+          "first_true_round": 8,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n003",
+          "predicate_state": "a1_door_on",
+          "observation_path": "state.doors.a1_door",
+          "expected_value": true,
+          "first_true_round": 5,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n004",
+          "predicate_state": "a1_door_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            10
+          ],
+          "first_true_round": 19,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n005",
+          "predicate_state": "c3_lever_on",
+          "observation_path": "state.controllers.c3_lever",
+          "expected_value": true,
+          "first_true_round": 29,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n006",
+          "predicate_state": "c4_plate_on",
+          "observation_path": "state.controllers.c4_plate",
+          "expected_value": true,
+          "first_true_round": 41,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n007",
+          "predicate_state": "a2_door_on",
+          "observation_path": "state.doors.a2_door",
+          "expected_value": true,
+          "first_true_round": 41,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n008",
+          "predicate_state": "a2_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            19
+          ],
+          "first_true_round": 43,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n009",
+          "predicate_state": "c5_plate_on",
+          "observation_path": "state.controllers.c5_plate",
+          "expected_value": true,
+          "first_true_round": 62,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n010",
+          "predicate_state": "a3_platform_on",
+          "observation_path": "state.platforms.a3_platform",
+          "expected_value": true,
+          "first_true_round": 62,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n011",
+          "predicate_state": "a3_platform_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            28
+          ],
+          "first_true_round": 64,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n012",
+          "predicate_state": "c6_lever_on",
+          "observation_path": "state.controllers.c6_lever",
+          "expected_value": true,
+          "first_true_round": 75,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n013",
+          "predicate_state": "c7_lever_on",
+          "observation_path": "state.controllers.c7_lever",
+          "expected_value": true,
+          "first_true_round": 78,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n014",
+          "predicate_state": "a4_door_on",
+          "observation_path": "state.doors.a4_door",
+          "expected_value": true,
+          "first_true_round": 78,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n015",
+          "predicate_state": "a4_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            37
+          ],
+          "first_true_round": 89,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n016",
+          "predicate_state": "c8_lever_on",
+          "observation_path": "state.controllers.c8_lever",
+          "expected_value": true,
+          "first_true_round": 99,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n017",
+          "predicate_state": "a5_platform_on",
+          "observation_path": "state.platforms.a5_platform",
+          "expected_value": true,
+          "first_true_round": 99,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n018",
+          "predicate_state": "a5_platform_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            46
+          ],
+          "first_true_round": 110,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n019",
+          "predicate_state": "c9_lever_on",
+          "observation_path": "state.controllers.c9_lever",
+          "expected_value": true,
+          "first_true_round": 121,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n020",
+          "predicate_state": "c10_plate_on",
+          "observation_path": "state.controllers.c10_plate",
+          "expected_value": true,
+          "first_true_round": 133,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n021",
+          "predicate_state": "a6_door_on",
+          "observation_path": "state.doors.a6_door",
+          "expected_value": true,
+          "first_true_round": 133,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n022",
+          "predicate_state": "a6_door_crossed",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            55
+          ],
+          "first_true_round": 135,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n023",
+          "predicate_state": "c11_plate_on",
+          "observation_path": "state.controllers.c11_plate",
+          "expected_value": true,
+          "first_true_round": 154,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n024",
+          "predicate_state": "a7_platform_on",
+          "observation_path": "state.platforms.a7_platform",
+          "expected_value": true,
+          "first_true_round": 154,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n025",
+          "predicate_state": "a7_platform_crossed",
+          "observation_path": "state.actors.F",
+          "expected_value": [
+            2,
+            64
+          ],
+          "first_true_round": 156,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n026",
+          "predicate_state": "all_required_goals",
+          "observation_path": "status",
+          "expected_value": "team_success",
+          "first_true_round": 212,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n027",
+          "observation_path": "state.light_sensors.S",
+          "expected_value": true,
+          "first_true_round": 179,
+          "verified": true
+        },
+        {
+          "dag_node_id": "n028",
+          "observation_path": "state.actors.W",
+          "expected_value": [
+            7,
+            86
+          ],
+          "first_true_round": 201,
+          "verified": true
+        }
+      ],
+      "edge_evidence": [
+        {
+          "from": "n000",
+          "to": "n001",
+          "relation": "requires",
+          "method": "initial_reachability",
+          "detail": "controller is reachable from the unique lane start",
+          "verified": true
+        },
+        {
+          "from": "n000",
+          "to": "n002",
+          "relation": "requires",
+          "method": "initial_reachability",
+          "detail": "controller is reachable from the unique lane start",
+          "verified": true
+        },
+        {
+          "from": "n001",
+          "to": "n003",
+          "relation": "enables",
+          "method": "boolean_truth_table_alternative",
+          "detail": "this input alone is sufficient; target join=any does not claim individual necessity",
+          "verified": true
+        },
+        {
+          "from": "n002",
+          "to": "n003",
+          "relation": "enables",
+          "method": "boolean_truth_table_alternative",
+          "detail": "this input alone is sufficient; target join=any does not claim individual necessity",
+          "verified": true
+        },
+        {
+          "from": "n003",
+          "to": "n004",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n004",
+          "to": "n005",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n004",
+          "to": "n006",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n005",
+          "to": "n007",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n006",
+          "to": "n007",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n007",
+          "to": "n008",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n008",
+          "to": "n009",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n009",
+          "to": "n010",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n010",
+          "to": "n011",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n011",
+          "to": "n012",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n011",
+          "to": "n013",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n012",
+          "to": "n014",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n013",
+          "to": "n014",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n014",
+          "to": "n015",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n015",
+          "to": "n016",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n016",
+          "to": "n017",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n017",
+          "to": "n018",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n018",
+          "to": "n019",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n018",
+          "to": "n020",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n019",
+          "to": "n021",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n020",
+          "to": "n021",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n021",
+          "to": "n022",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n022",
+          "to": "n023",
+          "relation": "requires",
+          "method": "ordered_single_lane_cut",
+          "detail": "the preceding actuator lies earlier on the same sealed corridor",
+          "verified": true
+        },
+        {
+          "from": "n023",
+          "to": "n024",
+          "relation": "enables",
+          "method": "boolean_truth_table_necessary",
+          "detail": "forcing this input false while other inputs are true forces the actuator false",
+          "verified": true
+        },
+        {
+          "from": "n024",
+          "to": "n025",
+          "relation": "enables",
+          "method": "single_lane_corridor_cut",
+          "detail": "closed actuator occupies the only traversable cell(s) between traveler start and exit",
+          "verified": true
+        },
+        {
+          "from": "n025",
+          "to": "n027",
+          "relation": "requires",
+          "method": "ordered_capability_capsule",
+          "detail": "the capability capsule is placed after the controller-room sequence",
+          "verified": true
+        },
+        {
+          "from": "n027",
+          "to": "n028",
+          "relation": "enables",
+          "method": "mandatory_capsule_cut",
+          "detail": "the relevant lane cannot reach its exit without resolving or respecting this capability",
+          "verified": true
+        },
+        {
+          "from": "n028",
+          "to": "n026",
+          "relation": "synchronizes",
+          "method": "exclusive_exit_reachability",
+          "detail": "team success still requires both role-specific exits after the capability crossing",
+          "verified": true
+        }
+      ],
+      "all_nodes_bound": true,
+      "all_edges_verified": true,
+      "capability_verified": true,
+      "same_dag_verified": true,
+      "unseen_topology_verified": true
+    }
+  ]
+}

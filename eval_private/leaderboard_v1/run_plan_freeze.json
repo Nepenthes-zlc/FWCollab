@@ -1,0 +1,125 @@
+{
+  "format": "fwcollab.leaderboard.run_plan_freeze.v4",
+  "status": "protocol_frozen_not_executed_horizon_feasibility_pass_model_matrix_pending",
+  "frozen_on": "2026-09-18",
+  "model_calls": 0,
+  "benchmark_model_calls_before_matrix_freeze": 0,
+  "model_matrix_status": "NEEDS_AUTHOR_CONFIRMATION",
+  "model_matrix_path": "eval_private/leaderboard_v1/model_matrix.json",
+  "model_matrix_sha256": null,
+  "standard_52": {
+    "task_count": 52,
+    "core_budget": 200,
+    "information_budget": 30,
+    "sync_budget": 80,
+    "join_budget": 80,
+    "environment_round_ceiling_per_model_replicate": 6440,
+    "logical_role_decision_ceiling_per_model_replicate": 12880
+  },
+  "benchmark_v2_manifest": {
+    "path": "eval_private/benchmark_v2/manifest.json",
+    "sha256": "1173b4f4e574aa50bd31f82306da0e76f170130d5077347bfb00773f728e383c"
+  },
+  "standard_52_run_manifest": {
+    "path": "eval_private/leaderboard_v1/standard_52_run_manifest.json",
+    "sha256": "b3970fdd31ef2259d477a33801c7442be92df6ed3cd7bb3cb07399eaa21a0716"
+  },
+  "leaderboard_protocol": {
+    "base_path": "docs/LEADERBOARD_PROTOCOL_V1.md",
+    "base_sha256": "e23c0ab8204d2e24db6cd4d3b42626f85e89c99d120304ba7cdd104b31e3a62d",
+    "standard_52_authority_path": "docs/LEADERBOARD_RUN_PLAN.md",
+    "standard_52_authority_sha256": "691a0c7913d24cacbb4da04c16ed2894f79e52f1ef3a276b3f08f67278f6caf7"
+  },
+  "prompt_contract": {
+    "definition": "sha256 of canonical JSON for the ordered component list in standard_52_run_manifest.json",
+    "sha256": "862349ef54d6991f1b20102ac6936edde93bb7a0be8d1f849e993dd1e67b9831",
+    "components": [
+      {
+        "path": "src/fwcollab/symbolic/agents.py",
+        "sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3"
+      },
+      {
+        "path": "src/fwcollab/symbolic/rules.py",
+        "sha256": "350e5b68ac8b88da11aabd577f7a68168f524debcd8dea0ca2f68fa0fe46da4e"
+      },
+      {
+        "path": "src/fwcollab/c5.py",
+        "sha256": "a3b1d5bc7b51cef3ab22bbda349123378061b435c9aeb103a1adbd07253e7629"
+      },
+      {
+        "path": "src/fwcollab/symbolic/runner.py",
+        "sha256": "6556a92d7e570b249091d979591a71dda15b84da767ec208ce0c8380e240b100"
+      }
+    ],
+    "snapshot_manifest_sha256": "781b153a2e3103faff1fa4b6959b5335e644fa9166e9ce741aa8087cde0c7f12"
+  },
+  "horizon_feasibility": {
+    "status": "PASS",
+    "within_frozen_horizon": 52,
+    "task_count": 52,
+    "budgets": {
+      "core": 200,
+      "information": 30,
+      "sync": 80,
+      "join": 80
+    },
+    "report": {
+      "path": "artifacts/audits/leaderboard_horizon_feasibility_v1/REPORT.md",
+      "sha256": "343996be172a5d41c47b9ca3acb0859c2cc967b97a95215d11c8ab8f97cbff99"
+    },
+    "per_task": {
+      "path": "artifacts/audits/leaderboard_horizon_feasibility_v1/per_task.csv",
+      "sha256": "fb856aa5897c18e393821f014c38fc9ccb91f556278f2c505bf414bbefaff52d"
+    }
+  },
+  "error_policy_conformance": {
+    "status": "PASS",
+    "cases_passed": 16,
+    "cases_total": 16,
+    "report": {
+      "path": "artifacts/audits/leaderboard_error_policy_v1/REPORT.md",
+      "sha256": "9b00311d5eba2384168a19813a53b34657a6d6da39085d3cfa883b85e9a0a248"
+    },
+    "implementation_scope": "leaderboard_v1_only; historical runner and adapter unchanged"
+  },
+  "canonical_prompt_snapshots": {
+    "status": "PASS_FROZEN",
+    "path": "eval_private/leaderboard_v1/prompt_contract/prompt_contract_manifest.json",
+    "sha256": "781b153a2e3103faff1fa4b6959b5335e644fa9166e9ce741aa8087cde0c7f12",
+    "benchmark_content_used": false,
+    "system_message_present": false,
+    "exact_reproduction_test": true
+  },
+  "unified_evaluation_schema": {
+    "path": "schemas/unified_evaluation.schema.json",
+    "sha256": "e151d1334241b6bc479a3a3d28792a6e953f4bc1da75570cc5a330ba2cbdad22"
+  },
+  "preflight_checklist": {
+    "path": "docs/LEADERBOARD_PREFLIGHT_CHECKLIST.md",
+    "sha256": "86b849568428d883177540650200d6e9fc06c39b83edfaa1059b4c038628c895"
+  },
+  "unchanged_frozen_assets": {
+    "benchmark_v2_freeze": "e042ad324212b317a0d6616d9f1b0389bba4dc311f6da6f070920ec58aea1481",
+    "benchmark_v1_freeze": "f375d465e798e1bdc8161f9662565768299d488c34dc3783c774d22e2847799f",
+    "c5_freeze": "743353e67bc6ad63646199212d2874e3f6d65a7657a766841ac9f08f1475b3e3",
+    "sync_freeze": "31ff5bb16bfa68039de19ef3ef0b281b24bf7a84df4f65f096914fd570d19f4c",
+    "join_freeze": "f00aee35a7d37e8c5676d5db9ff50190dd430262d5fe27d5f4ef889bddc59d4c",
+    "phase2_freeze": "29b93111afd874cda37e848bacd184da4b799bde8faf4a0912dfd27f008830d6",
+    "evaluator_conformance_summary": "81a05fd07273e97f125848ebe1461aa8e5b1df114ff21065df8faf17b7b1ea2b"
+  },
+  "phase2_horizon_sensitivity": {
+    "path": "artifacts/evaluations/phase2_horizon_sensitivity_v1/results.json",
+    "sha256": "fe0e220040e3230c50fc85e394048ec6d957d321ee57ddf9f398465a73189596",
+    "source_episodes": 432,
+    "model_api_calls": 0,
+    "input_mutation": false,
+    "report": {
+      "path": "artifacts/evaluations/phase2_horizon_sensitivity_v1/REPORT.md",
+      "sha256": "0d7b52ee017511a277303138348a6034127c04705b6cfe831d8dce6ae2a56c86"
+    }
+  },
+  "paper_impact_memo": {
+    "path": "docs/HORIZON_FINDING_PAPER_IMPACT.md",
+    "sha256": "764966137132139d0b7a41fec97373bccdd7b996086f07eb89766ae26f885699"
+  }
+}

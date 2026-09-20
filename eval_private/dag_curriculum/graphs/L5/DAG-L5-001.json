@@ -1,0 +1,354 @@
+{
+  "format": "fwcollab.symbolic.state_dag.v1",
+  "id": "DAG-L5-001",
+  "difficulty": "L5",
+  "evaluation_role": "scored",
+  "visibility": "private_reference",
+  "title": "直射光感门 × 固定反射光感门 × 可旋转反射光感门 × 冻结—融化热相系统",
+  "summary": "以hold_handoff拓扑组合4种元机关：直射光感门 × 固定反射光感门 × 可旋转反射光感门 × 冻结—融化热相系统。",
+  "topology_family": "hold_handoff",
+  "mechanisms": [
+    "M21",
+    "M24",
+    "M27",
+    "M30"
+  ],
+  "nodes": [
+    {
+      "id": "n000",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "start",
+        "motif": "SYSTEM",
+        "state": "task_ready",
+        "phase": 0
+      },
+      "label": "任务初始状态成立"
+    },
+    {
+      "id": "n001",
+      "kind": "condition",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "align",
+        "motif": "M21",
+        "state": "direct_beam_clear",
+        "phase": 0
+      },
+      "label": "直射光路保持连通"
+    },
+    {
+      "id": "n002",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "sense",
+        "motif": "M21",
+        "state": "sensor_lit",
+        "phase": 0
+      },
+      "label": "光传感器点亮"
+    },
+    {
+      "id": "n003",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M21",
+        "state": "door_open",
+        "phase": 0
+      },
+      "label": "光感门打开"
+    },
+    {
+      "id": "n004",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M21",
+        "state": "agent_crossed_door",
+        "phase": 0
+      },
+      "label": "角色通过光感门"
+    },
+    {
+      "id": "n005",
+      "kind": "condition",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "route",
+        "motif": "M24",
+        "state": "fixed_reflection_aligned",
+        "phase": 1
+      },
+      "label": "固定镜面光路成立"
+    },
+    {
+      "id": "n006",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "sense",
+        "motif": "M24",
+        "state": "sensor_lit",
+        "phase": 1
+      },
+      "label": "反射光点亮传感器"
+    },
+    {
+      "id": "n007",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M24",
+        "state": "door_open",
+        "phase": 1
+      },
+      "label": "反射光感门打开"
+    },
+    {
+      "id": "n008",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M24",
+        "state": "agent_crossed_door",
+        "phase": 1
+      },
+      "label": "角色通过反射光感门"
+    },
+    {
+      "id": "n009",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "toggle",
+        "motif": "M27",
+        "state": "mirror_toggle_desired",
+        "phase": 2
+      },
+      "label": "镜面切换器状态正确"
+    },
+    {
+      "id": "n010",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "orient",
+        "motif": "M27",
+        "state": "mirror_oriented",
+        "phase": 2
+      },
+      "label": "可旋转镜面对准"
+    },
+    {
+      "id": "n011",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "sense",
+        "motif": "M27",
+        "state": "sensor_lit",
+        "phase": 2
+      },
+      "label": "旋转光路点亮传感器"
+    },
+    {
+      "id": "n012",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M27",
+        "state": "door_open",
+        "phase": 2
+      },
+      "label": "旋镜光感门打开"
+    },
+    {
+      "id": "n013",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M27",
+        "state": "partner_crossed_door",
+        "phase": 2
+      },
+      "label": "搭档通过旋镜光感门"
+    },
+    {
+      "id": "n014",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "control",
+        "motif": "M30",
+        "state": "thermal_control_reached",
+        "phase": 3
+      },
+      "label": "角色到达热相控制器"
+    },
+    {
+      "id": "n015",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "phase",
+        "motif": "M30",
+        "state": "thermal_phase_safe",
+        "phase": 3
+      },
+      "label": "热相地块处于所需状态"
+    },
+    {
+      "id": "n016",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M30",
+        "state": "partner_crossed_thermal",
+        "phase": 3
+      },
+      "label": "所需角色通过热相区域"
+    },
+    {
+      "id": "n017",
+      "kind": "goal",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "team_success",
+        "motif": "SYSTEM",
+        "state": "all_required_goals",
+        "phase": 5
+      },
+      "label": "双方满足团队成功条件"
+    }
+  ],
+  "edges": [
+    {
+      "from": "n001",
+      "to": "n002",
+      "relation": "enables"
+    },
+    {
+      "from": "n002",
+      "to": "n003",
+      "relation": "enables"
+    },
+    {
+      "from": "n003",
+      "to": "n004",
+      "relation": "enables"
+    },
+    {
+      "from": "n005",
+      "to": "n006",
+      "relation": "enables"
+    },
+    {
+      "from": "n006",
+      "to": "n007",
+      "relation": "enables"
+    },
+    {
+      "from": "n007",
+      "to": "n008",
+      "relation": "enables"
+    },
+    {
+      "from": "n009",
+      "to": "n010",
+      "relation": "enables"
+    },
+    {
+      "from": "n010",
+      "to": "n011",
+      "relation": "enables"
+    },
+    {
+      "from": "n011",
+      "to": "n012",
+      "relation": "enables"
+    },
+    {
+      "from": "n012",
+      "to": "n013",
+      "relation": "enables"
+    },
+    {
+      "from": "n009",
+      "to": "n013",
+      "relation": "handoff"
+    },
+    {
+      "from": "n014",
+      "to": "n015",
+      "relation": "enables"
+    },
+    {
+      "from": "n015",
+      "to": "n016",
+      "relation": "enables"
+    },
+    {
+      "from": "n014",
+      "to": "n016",
+      "relation": "handoff"
+    },
+    {
+      "from": "n004",
+      "to": "n005",
+      "relation": "requires"
+    },
+    {
+      "from": "n008",
+      "to": "n009",
+      "relation": "handoff"
+    },
+    {
+      "from": "n013",
+      "to": "n014",
+      "relation": "requires"
+    },
+    {
+      "from": "n001",
+      "to": "n016",
+      "relation": "maintains"
+    },
+    {
+      "from": "n000",
+      "to": "n001",
+      "relation": "requires"
+    },
+    {
+      "from": "n016",
+      "to": "n017",
+      "relation": "synchronizes"
+    }
+  ]
+}

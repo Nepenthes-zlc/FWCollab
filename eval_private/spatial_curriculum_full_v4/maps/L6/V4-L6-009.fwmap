@@ -1,0 +1,35 @@
+@format fwcollab.symbol_map.v3
+@id V4-L6-009
+@title constructive L6 full-mechanism curriculum 009; rotatable-mirror crate light door
+@max_steps 1
+@controller c1_lever lever at 3,5
+@controller c2_lever lever at 1,6
+@actuator a1_door door at 7,9 controlled_by all(c1_lever,c2_lever)
+@controller c3_plate plate at 6,14 accepts W
+@actuator a2_platform platform at 2,18 controlled_by all(c3_plate)
+@controller c4_toggle toggle at 3,23
+@actuator a3_door door at 7,27 controlled_by all(c4_toggle)
+@controller c5_lever lever at 6,32
+@controller c6_lever lever at 8,33
+@actuator a4_door door at 2,36 controlled_by any(c5_lever,c6_lever)
+@controller c7_lever lever at 3,41
+@controller c8_plate plate at 1,42 accepts F
+@actuator a5_door door at 7,45 controlled_by all(c7_lever,c8_plate)
+@controller c9_lever lever at 6,50
+@controller c10_lever lever at 8,51
+@actuator a6_door door at 2,54 controlled_by any(c9_lever,c10_lever)
+@light + direction RIGHT sensor S opens A
+@controller cap_mirror_toggle toggle at 3,68
+@mirror M initial slash controlled_by cap_mirror_toggle
+---
+#################################################################################
+#.....L#.#........#........#........#.....2#.#........#............+...M........#
+#F...#........#...=....##.......#...D....#........###.A................O.......f#
+#....L...#......#.#....T...#......#.#....L...#........#.............T...........#
+#........#........#........#........#........#........#................S........#
+#################################################################################
+#......#.#....1...#........#....L...#......#.#....L...#.....................#...#
+#W...#...A....#........##..C....#........#...E....###.......................A..w#
+#........#......#.#........#.....L#.#........#.....L..#.....................#...#
+#........#........#........#........#........#........#.....................#...#
+#################################################################################

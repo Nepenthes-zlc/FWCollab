@@ -1,0 +1,125 @@
+{
+  "format": "fwcollab.leaderboard.standard_52_run_manifest.v2",
+  "status": "protocol_frozen_model_matrix_pending_not_executed",
+  "benchmark_name": "FWCollab Benchmark v2",
+  "profile": "Standard Track",
+  "task_count": 52,
+  "benchmark_manifest": {
+    "path": "eval_private/benchmark_v2/manifest.json",
+    "sha256": "1173b4f4e574aa50bd31f82306da0e76f170130d5077347bfb00773f728e383c"
+  },
+  "protocol": {
+    "version": "fwcollab.leaderboard_protocol.v1",
+    "path": "docs/LEADERBOARD_PROTOCOL_V1.md",
+    "sha256": "e23c0ab8204d2e24db6cd4d3b42626f85e89c99d120304ba7cdd104b31e3a62d",
+    "replicate_workflow_override": "docs/LEADERBOARD_RUN_PLAN.md"
+  },
+  "unified_evaluation_schema": {
+    "path": "schemas/unified_evaluation.schema.json",
+    "sha256": "e151d1334241b6bc479a3a3d28792a6e953f4bc1da75570cc5a330ba2cbdad22"
+  },
+  "prompt_contract": {
+    "definition": "sha256 of canonical JSON for the ordered source-component path and sha256 pairs below",
+    "sha256": "862349ef54d6991f1b20102ac6936edde93bb7a0be8d1f849e993dd1e67b9831",
+    "components": [
+      {"path": "src/fwcollab/symbolic/agents.py", "sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3"},
+      {"path": "src/fwcollab/symbolic/rules.py", "sha256": "350e5b68ac8b88da11aabd577f7a68168f524debcd8dea0ca2f68fa0fe46da4e"},
+      {"path": "src/fwcollab/c5.py", "sha256": "a3b1d5bc7b51cef3ab22bbda349123378061b435c9aeb103a1adbd07253e7629"},
+      {"path": "src/fwcollab/symbolic/runner.py", "sha256": "6556a92d7e570b249091d979591a71dda15b84da767ec208ce0c8380e240b100"}
+    ]
+  },
+  "core_selection": {
+    "path": "eval_private/collaboration_diagnostic_24/manifest.json",
+    "sha256": "e3f0af67a3b123d0d75f816e760f809d8d6d649bd247868e009ca258eb616eda"
+  },
+  "replicates": [1, 2, 3],
+  "request_seeds": {
+    "1": 2026091801,
+    "2": 2026091802,
+    "3": 2026091803
+  },
+  "fixed_order_rule": "Use ordered_task_ids exactly as written for every model and every replicate.",
+  "track_counts": {
+    "Core-72": 24,
+    "Information-12": 12,
+    "Sync-8": 8,
+    "Join-8": 8
+  },
+  "standard_protocol_budget": {
+    "environment_round_ceiling_per_model_replicate": 6440,
+    "logical_role_decision_ceiling_per_model_replicate": 12880,
+    "note": "Future leaderboard-only override; Benchmark v2 tasks, historical Full-72 budgets, and Phase II fixed-80 results remain unchanged. Absolute Phase II and leaderboard SR are not directly comparable."
+  },
+  "tracks": [
+    {
+      "track": "Core-72",
+      "selection": "Diagnostic-24",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "budget_rule": "fixed 200 rounds for future Standard-52; run-time override of the source task round_budget; does not retroactively alter Phase II fixed-80",
+      "budget_min": 200,
+      "budget_max": 200,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "task_ids": [
+        "V4-L1-001", "V4-L1-002", "V4-L2-008", "V4-L2-006",
+        "V4-L2-007", "V4-L3-010", "V4-L3-004", "V4-L3-009",
+        "V4-L4-009", "V4-L4-012", "V4-L4-005", "V4-L4-008",
+        "V4-L5-011", "V4-L5-004", "V4-L5-006", "V4-L5-005",
+        "V4-L6-010", "V4-L6-007", "V4-L6-009", "V4-L6-008",
+        "V4-L7-001", "V4-L7-009", "V4-L7-003", "V4-L7-002"
+      ]
+    },
+    {
+      "track": "Information-12",
+      "selection": "Information-12",
+      "observation_format": "fwcollab.c5_agent_observation.v1",
+      "budget_rule": "30 rounds",
+      "budget_min": 30,
+      "budget_max": 30,
+      "evaluator_type": "information_evaluator_v1",
+      "task_ids": [
+        "C5-001", "C5-002", "C5-003", "C5-004", "C5-005", "C5-006",
+        "C5-007", "C5-008", "C5-009", "C5-010", "C5-011", "C5-012"
+      ]
+    },
+    {
+      "track": "Sync-8",
+      "selection": "Sync-8",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "budget_rule": "80 rounds",
+      "budget_min": 80,
+      "budget_max": 80,
+      "evaluator_type": "extension_evaluator_v1",
+      "task_ids": [
+        "SYNC-01", "SYNC-02", "SYNC-03", "SYNC-04",
+        "SYNC-05", "SYNC-06", "SYNC-07", "SYNC-08"
+      ]
+    },
+    {
+      "track": "Join-8",
+      "selection": "Join-8",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "budget_rule": "80 rounds",
+      "budget_min": 80,
+      "budget_max": 80,
+      "evaluator_type": "extension_evaluator_v1",
+      "task_ids": [
+        "JOIN-01", "JOIN-02", "JOIN-03", "JOIN-04",
+        "JOIN-05", "JOIN-06", "JOIN-07", "JOIN-08"
+      ]
+    }
+  ],
+  "ordered_task_ids": [
+    "V4-L1-001", "V4-L1-002", "V4-L2-008", "V4-L2-006",
+    "V4-L2-007", "V4-L3-010", "V4-L3-004", "V4-L3-009",
+    "V4-L4-009", "V4-L4-012", "V4-L4-005", "V4-L4-008",
+    "V4-L5-011", "V4-L5-004", "V4-L5-006", "V4-L5-005",
+    "V4-L6-010", "V4-L6-007", "V4-L6-009", "V4-L6-008",
+    "V4-L7-001", "V4-L7-009", "V4-L7-003", "V4-L7-002",
+    "C5-001", "C5-002", "C5-003", "C5-004", "C5-005", "C5-006",
+    "C5-007", "C5-008", "C5-009", "C5-010", "C5-011", "C5-012",
+    "SYNC-01", "SYNC-02", "SYNC-03", "SYNC-04",
+    "SYNC-05", "SYNC-06", "SYNC-07", "SYNC-08",
+    "JOIN-01", "JOIN-02", "JOIN-03", "JOIN-04",
+    "JOIN-05", "JOIN-06", "JOIN-07", "JOIN-08"
+  ]
+}

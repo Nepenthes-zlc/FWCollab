@@ -1,0 +1,481 @@
+{
+  "format": "fwcollab.symbolic.state_dag.v1",
+  "id": "DAG-HG-009",
+  "difficulty": "L6",
+  "evaluation_role": "diagnostic",
+  "visibility": "private_reference",
+  "title": "held-out layout paired with V4-L6-010",
+  "summary": "DAG derived from concrete v3 controller wiring.",
+  "topology_family": "constructive_controller_module",
+  "mechanisms": [
+    "M11",
+    "M14",
+    "M17",
+    "M20",
+    "M29"
+  ],
+  "nodes": [
+    {
+      "id": "n000",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "start",
+        "motif": "SYSTEM",
+        "state": "task_ready",
+        "phase": 0
+      },
+      "label": "start:task_ready"
+    },
+    {
+      "id": "n001",
+      "kind": "condition",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "occupy",
+        "motif": "M14",
+        "state": "c1_plate_on",
+        "phase": 1
+      },
+      "label": "occupy:c1_plate_on"
+    },
+    {
+      "id": "n002",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M14",
+        "state": "a1_platform_on",
+        "phase": 2
+      },
+      "label": "activate:a1_platform_on"
+    },
+    {
+      "id": "n003",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M14",
+        "state": "a1_platform_crossed",
+        "phase": 3
+      },
+      "label": "traverse:a1_platform_crossed"
+    },
+    {
+      "id": "n004",
+      "kind": "condition",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "occupy",
+        "motif": "M14",
+        "state": "c2_plate_on",
+        "phase": 4
+      },
+      "label": "occupy:c2_plate_on"
+    },
+    {
+      "id": "n005",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M14",
+        "state": "a2_platform_on",
+        "phase": 5
+      },
+      "label": "activate:a2_platform_on"
+    },
+    {
+      "id": "n006",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M14",
+        "state": "a2_platform_crossed",
+        "phase": 6
+      },
+      "label": "traverse:a2_platform_crossed"
+    },
+    {
+      "id": "n007",
+      "kind": "condition",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "occupy",
+        "motif": "M11",
+        "state": "c3_plate_on",
+        "phase": 7
+      },
+      "label": "occupy:c3_plate_on"
+    },
+    {
+      "id": "n008",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M11",
+        "state": "a3_door_on",
+        "phase": 8
+      },
+      "label": "activate:a3_door_on"
+    },
+    {
+      "id": "n009",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M11",
+        "state": "a3_door_crossed",
+        "phase": 9
+      },
+      "label": "traverse:a3_door_crossed"
+    },
+    {
+      "id": "n010",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "latch",
+        "motif": "M17",
+        "state": "c4_lever_on",
+        "phase": 10
+      },
+      "label": "latch:c4_lever_on"
+    },
+    {
+      "id": "n011",
+      "kind": "condition",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "occupy",
+        "motif": "M11",
+        "state": "c5_plate_on",
+        "phase": 11
+      },
+      "label": "occupy:c5_plate_on"
+    },
+    {
+      "id": "n012",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M11",
+        "state": "a4_door_on",
+        "phase": 12
+      },
+      "label": "activate:a4_door_on"
+    },
+    {
+      "id": "n013",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M11",
+        "state": "a4_door_crossed",
+        "phase": 13
+      },
+      "label": "traverse:a4_door_crossed"
+    },
+    {
+      "id": "n014",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "toggle",
+        "motif": "M20",
+        "state": "c6_toggle_on",
+        "phase": 14
+      },
+      "label": "toggle:c6_toggle_on"
+    },
+    {
+      "id": "n015",
+      "kind": "condition",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "occupy",
+        "motif": "M14",
+        "state": "c7_plate_on",
+        "phase": 15
+      },
+      "label": "occupy:c7_plate_on"
+    },
+    {
+      "id": "n016",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M14",
+        "state": "a5_platform_on",
+        "phase": 16
+      },
+      "label": "activate:a5_platform_on"
+    },
+    {
+      "id": "n017",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M14",
+        "state": "a5_platform_crossed",
+        "phase": 17
+      },
+      "label": "traverse:a5_platform_crossed"
+    },
+    {
+      "id": "n018",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "latch",
+        "motif": "M17",
+        "state": "c8_lever_on",
+        "phase": 18
+      },
+      "label": "latch:c8_lever_on"
+    },
+    {
+      "id": "n019",
+      "kind": "condition",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "occupy",
+        "motif": "M11",
+        "state": "c9_plate_on",
+        "phase": 19
+      },
+      "label": "occupy:c9_plate_on"
+    },
+    {
+      "id": "n020",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M11",
+        "state": "a6_door_on",
+        "phase": 20
+      },
+      "label": "activate:a6_door_on"
+    },
+    {
+      "id": "n021",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M11",
+        "state": "a6_door_crossed",
+        "phase": 21
+      },
+      "label": "traverse:a6_door_crossed"
+    },
+    {
+      "id": "n022",
+      "kind": "goal",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "team_success",
+        "motif": "SYSTEM",
+        "state": "all_required_goals",
+        "phase": 22
+      },
+      "label": "team_success:all_required_goals"
+    },
+    {
+      "id": "n023",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "engage",
+        "motif": "M29",
+        "state": "m29_engaged",
+        "phase": 23
+      },
+      "label": "engage:rotatable-mirror orb light door"
+    },
+    {
+      "id": "n024",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M29",
+        "state": "m29_crossed",
+        "phase": 24
+      },
+      "label": "traverse:rotatable-mirror orb light door"
+    }
+  ],
+  "edges": [
+    {
+      "from": "n000",
+      "to": "n001",
+      "relation": "requires"
+    },
+    {
+      "from": "n001",
+      "to": "n002",
+      "relation": "enables"
+    },
+    {
+      "from": "n002",
+      "to": "n003",
+      "relation": "enables"
+    },
+    {
+      "from": "n003",
+      "to": "n004",
+      "relation": "requires"
+    },
+    {
+      "from": "n004",
+      "to": "n005",
+      "relation": "enables"
+    },
+    {
+      "from": "n005",
+      "to": "n006",
+      "relation": "enables"
+    },
+    {
+      "from": "n006",
+      "to": "n007",
+      "relation": "requires"
+    },
+    {
+      "from": "n007",
+      "to": "n008",
+      "relation": "enables"
+    },
+    {
+      "from": "n008",
+      "to": "n009",
+      "relation": "enables"
+    },
+    {
+      "from": "n009",
+      "to": "n010",
+      "relation": "requires"
+    },
+    {
+      "from": "n009",
+      "to": "n011",
+      "relation": "requires"
+    },
+    {
+      "from": "n010",
+      "to": "n012",
+      "relation": "enables"
+    },
+    {
+      "from": "n011",
+      "to": "n012",
+      "relation": "enables"
+    },
+    {
+      "from": "n012",
+      "to": "n013",
+      "relation": "enables"
+    },
+    {
+      "from": "n013",
+      "to": "n014",
+      "relation": "requires"
+    },
+    {
+      "from": "n013",
+      "to": "n015",
+      "relation": "requires"
+    },
+    {
+      "from": "n014",
+      "to": "n016",
+      "relation": "enables"
+    },
+    {
+      "from": "n015",
+      "to": "n016",
+      "relation": "enables"
+    },
+    {
+      "from": "n016",
+      "to": "n017",
+      "relation": "enables"
+    },
+    {
+      "from": "n017",
+      "to": "n018",
+      "relation": "requires"
+    },
+    {
+      "from": "n017",
+      "to": "n019",
+      "relation": "requires"
+    },
+    {
+      "from": "n018",
+      "to": "n020",
+      "relation": "enables"
+    },
+    {
+      "from": "n019",
+      "to": "n020",
+      "relation": "enables"
+    },
+    {
+      "from": "n020",
+      "to": "n021",
+      "relation": "enables"
+    },
+    {
+      "from": "n021",
+      "to": "n023",
+      "relation": "requires"
+    },
+    {
+      "from": "n023",
+      "to": "n024",
+      "relation": "enables"
+    },
+    {
+      "from": "n024",
+      "to": "n022",
+      "relation": "synchronizes"
+    }
+  ]
+}

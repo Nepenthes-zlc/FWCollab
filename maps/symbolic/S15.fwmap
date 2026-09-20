@@ -1,0 +1,13 @@
+@format fwcollab.symbol_map.v2
+@id S15
+@title S15 箱子穿越传送门后由另一角色接力推动
+@max_steps 1
+@plate 1 opens A accepts O
+@portal P
+---
+###################
+#WwOP.............#
+###################
+#.....FP1.A..f....#
+#.........#.......#
+###################

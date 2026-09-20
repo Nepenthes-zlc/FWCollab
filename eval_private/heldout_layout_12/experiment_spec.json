@@ -1,0 +1,64 @@
+{
+  "format": "fwcollab.heldout_layout_experiment.v1",
+  "benchmark_version": "heldout-layout-v1",
+  "task_manifest": "eval_private/heldout_layout_12/manifest.json",
+  "selection_uses_model_outcomes": false,
+  "replicates": [1, 2, 3],
+  "request_seeds": {
+    "1": 2026091401,
+    "2": 2026091402,
+    "3": 2026091403
+  },
+  "sampling": {
+    "temperature": 1.0,
+    "seed_is_requested_from_provider": true,
+    "seed_reproducibility_guaranteed": false
+  },
+  "runner": {
+    "max_rounds": 80,
+    "planning_rounds": 0,
+    "coordination_mode": "emergent",
+    "movement_steps": 1,
+    "message_delay_rounds": 1,
+    "request_timeout_seconds": 120.0,
+    "max_output_tokens": 800,
+    "max_retries": 1,
+    "episode_concurrency": 4
+  },
+  "conditions": [
+    {
+      "id": "gpt_selfplay",
+      "label": "GPT Self-play",
+      "communication_enabled": true,
+      "F": {"model": "gpt-5.5", "api_style": "responses"},
+      "W": {"model": "gpt-5.5", "api_style": "responses"}
+    },
+    {
+      "id": "gemini_selfplay",
+      "label": "Gemini Self-play",
+      "communication_enabled": true,
+      "F": {"model": "gemini-3.7-flash", "api_style": "chat_completions"},
+      "W": {"model": "gemini-3.7-flash", "api_style": "chat_completions"}
+    }
+  ],
+  "seen_reference": {
+    "experiment": "eval_private/phase2_v1/experiment_spec.json",
+    "traces": "artifacts/runs/phase2_v1/traces",
+    "pairing": "source_id x condition x replicate"
+  },
+  "primary_metrics": [
+    "success_rate",
+    "dag_completion",
+    "dag_progress_auc",
+    "clean_handoff_rate",
+    "coordination_violation_rate",
+    "rounds_to_success"
+  ],
+  "statistics": {
+    "task_is_bootstrap_unit": true,
+    "average_replicates_within_task_first": true,
+    "paired_bootstrap_samples": 10000,
+    "confidence_level": 0.95,
+    "effect_direction": "seen_minus_heldout"
+  }
+}

@@ -1,0 +1,14 @@
+@format fwcollab.symbol_map.v2
+@id S21
+@title S21 操作切换器旋转镜面并接通光感门
+@max_steps 1
+@toggle T toggles M
+@light + direction RIGHT sensor S opens A
+@mirror M initial slash
+---
+#####################
+#+...M..............#
+#....T..............#
+#F.W.S...A..f..w....#
+#........#..........#
+#####################

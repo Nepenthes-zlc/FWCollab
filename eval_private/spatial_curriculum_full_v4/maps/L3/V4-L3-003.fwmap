@@ -1,0 +1,24 @@
+@format fwcollab.symbol_map.v3
+@id V4-L3-003
+@title constructive L3 full-mechanism curriculum 003; crate-cleared light door
+@max_steps 1
+@controller c1_lever lever at 1,5
+@actuator a1_door door at 7,9 controlled_by all(c1_lever)
+@controller c2_toggle toggle at 8,14
+@actuator a2_platform platform at 2,18 controlled_by all(c2_toggle)
+@controller c3_lever lever at 1,23
+@controller c4_plate plate at 3,24 accepts F
+@actuator a3_door door at 7,27 controlled_by all(c3_lever,c4_plate)
+@light + direction RIGHT sensor S opens A
+---
+######################################################
+#....L...#......#.#....L.#.#.........................#
+#F...##.......#...=....#................+..O..S.....f#
+#........#........#..#..1..#.........................#
+#........#........#........#.........................#
+######################################################
+#........#......#.#......#.#.....................#...#
+#W...##..A....#........#...C.....................A..w#
+#........#....T...#..#.....#.....................#...#
+#........#........#........#.....................#...#
+######################################################

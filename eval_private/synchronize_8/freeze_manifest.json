@@ -1,0 +1,143 @@
+{
+  "format": "fwcollab.extension_freeze.v1",
+  "suite": "Sync-8",
+  "version": "v1",
+  "task_count": 8,
+  "files": [
+    {
+      "path": "artifacts/audits/synchronize_8/REPORT.md",
+      "sha256": "3d1d936e776b89c9ea4e24b15d9fd380fe9e1ed00eac0931209e812e0e2c877c",
+      "bytes": 371
+    },
+    {
+      "path": "artifacts/audits/synchronize_8/summary.json",
+      "sha256": "127f5267025aab23b4fe8fc1a1e6cc73a74053de0daeb492bd3d66a2e87f14a9",
+      "bytes": 242
+    },
+    {
+      "path": "artifacts/evaluations/synchronize_conformance_v1/cases.json",
+      "sha256": "2d1e95faa633f7cdd73b0014ba8ffac3d77c18ffa91a861b86bf720a0043e11f",
+      "bytes": 8892
+    },
+    {
+      "path": "artifacts/evaluations/synchronize_conformance_v1/summary.json",
+      "sha256": "82913fd26487b68f66d022a5de817c413c6cc091a0a588025945c937bb760d0d",
+      "bytes": 205
+    },
+    {
+      "path": "docs/EXTENSION_SUITE_CHANGELOG.md",
+      "sha256": "f15aaa9b43e45abe8ebadff5657b9523a7cf21d23af0564d147f586a8d670ce6",
+      "bytes": 1111
+    },
+    {
+      "path": "docs/SYNCHRONIZE_SUITE_SPEC.md",
+      "sha256": "cd144d52fbec457ef5dcade150c4f3307c2df42a1c80a37b37e996055e7e8036",
+      "bytes": 2583
+    },
+    {
+      "path": "eval_private/synchronize_8/dags/DAG-SYNC-01.json",
+      "sha256": "54314c443ccfaff9a3985b891e04f1c451997448467623f420e2692543f24fed",
+      "bytes": 3523
+    },
+    {
+      "path": "eval_private/synchronize_8/dags/DAG-SYNC-02.json",
+      "sha256": "84b0e41f9184a2defdf8d0ba00c90a45fe3608e8fc9027960f10ed0af67f1ade",
+      "bytes": 3525
+    },
+    {
+      "path": "eval_private/synchronize_8/dags/DAG-SYNC-03.json",
+      "sha256": "01edef43cfa0c13b83b4d2bde0f8821bc9c9e5834fe150055dd81a36b927b1d4",
+      "bytes": 3513
+    },
+    {
+      "path": "eval_private/synchronize_8/dags/DAG-SYNC-04.json",
+      "sha256": "579cf47b7b2a7777373495b3967a80060d6b294efdadc42c30b0c5915eb62f10",
+      "bytes": 3516
+    },
+    {
+      "path": "eval_private/synchronize_8/dags/DAG-SYNC-05.json",
+      "sha256": "d3b2854462dd03597b05ccab74f2f1d942a97fc3a0cf10ae5339ed6e3319dec5",
+      "bytes": 3514
+    },
+    {
+      "path": "eval_private/synchronize_8/dags/DAG-SYNC-06.json",
+      "sha256": "e85aa9476d5f36e9f4e6de8ceee8b38de79b91ce78a219eacac9657eb3703f75",
+      "bytes": 4703
+    },
+    {
+      "path": "eval_private/synchronize_8/dags/DAG-SYNC-07.json",
+      "sha256": "531a7f0426a2919fb16128d245e76539bb0f425c769d2d37ce7e9bd90e9507e3",
+      "bytes": 4805
+    },
+    {
+      "path": "eval_private/synchronize_8/dags/DAG-SYNC-08.json",
+      "sha256": "99972ca274e76b18eee04ba933f04182ce373da280484b57197840bc86150cb3",
+      "bytes": 4706
+    },
+    {
+      "path": "eval_private/synchronize_8/manifest.json",
+      "sha256": "c18afcdbba2ee70f807e11b2198247d9a5bce27fc0187564e76ee67e12b1b90a",
+      "bytes": 42959
+    },
+    {
+      "path": "eval_private/synchronize_8/maps/SYNC-01.fwmap",
+      "sha256": "39c5a56c967b99747cd60d521afc6f9e778dc639a83e1de82aa93586ed6d2476",
+      "bytes": 359
+    },
+    {
+      "path": "eval_private/synchronize_8/maps/SYNC-02.fwmap",
+      "sha256": "04028229efdf1ee8f6c29f6fb70266af1ed7715999317dbf97e4a39415142691",
+      "bytes": 365
+    },
+    {
+      "path": "eval_private/synchronize_8/maps/SYNC-03.fwmap",
+      "sha256": "a2a4634ad1cfbe1db6ff8c2b6f84de5abada2f21c5d4e2bb2edee9fa983f2781",
+      "bytes": 352
+    },
+    {
+      "path": "eval_private/synchronize_8/maps/SYNC-04.fwmap",
+      "sha256": "24ed5c717b65fa0c9d8a9c87507b9fdf63ca9b942ff8d2cc554740927c3d046f",
+      "bytes": 359
+    },
+    {
+      "path": "eval_private/synchronize_8/maps/SYNC-05.fwmap",
+      "sha256": "b647b716eee20e29341a9057743fb4cebaa06953d2684aea037f273a3664ef2b",
+      "bytes": 353
+    },
+    {
+      "path": "eval_private/synchronize_8/maps/SYNC-06.fwmap",
+      "sha256": "586eeeaccb1305939a8aa4eabb24201065af3f1cb90102a0f37c83e92ada301e",
+      "bytes": 472
+    },
+    {
+      "path": "eval_private/synchronize_8/maps/SYNC-07.fwmap",
+      "sha256": "481312c6037d9a3194ae8f367a1a7756ce84ca6633b84c020f3094d914464ec7",
+      "bytes": 488
+    },
+    {
+      "path": "eval_private/synchronize_8/maps/SYNC-08.fwmap",
+      "sha256": "a6e6226581fe60f4031fe6b9eca003b72fc28a29313a9ee4771add230a2d5c42",
+      "bytes": 475
+    },
+    {
+      "path": "eval_private/synchronize_8/witnesses.json",
+      "sha256": "2cb0977eb2a1403b3b6b3817af717fadf7c136a6946022107519a65cfe26f3c5",
+      "bytes": 42670
+    },
+    {
+      "path": "scripts/build_extension_suites.py",
+      "sha256": "7d95c24df1e576e8d9b0c61db7592c02d6da714f0368c94cf9945c51926a6e8c",
+      "bytes": 534
+    },
+    {
+      "path": "src/fwcollab/symbolic/extension_eval.py",
+      "sha256": "c69c74a54cdeedff0b709a6ed236f9972b7a11e9a619cfd192e51f101dff4f35",
+      "bytes": 11396
+    },
+    {
+      "path": "src/fwcollab/symbolic/extension_suites.py",
+      "sha256": "0946a30c2e961cd8fbf40853ba9d0d0ef36190a16eb481e45cb50148aeaf365c",
+      "bytes": 46301
+    }
+  ]
+}

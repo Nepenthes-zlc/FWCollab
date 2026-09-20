@@ -1,0 +1,35 @@
+@format fwcollab.symbol_map.v3
+@id V4-L7-006
+@title constructive L7 full-mechanism curriculum 006; rotatable-mirror crate light door
+@max_steps 1
+@controller c1_plate plate at 8,5 accepts W
+@actuator a1_door door at 2,9 controlled_by all(c1_plate)
+@controller c2_lever lever at 1,14
+@controller c3_plate plate at 3,15 accepts F
+@actuator a2_door door at 7,18 controlled_by all(c2_lever,c3_plate)
+@controller c4_lever lever at 8,23
+@actuator a3_platform platform at 2,27 controlled_by all(c4_lever)
+@controller c5_lever lever at 1,32
+@actuator a4_door door at 7,36 controlled_by all(c5_lever)
+@controller c6_toggle toggle at 8,41
+@actuator a5_platform platform at 2,45 controlled_by all(c6_toggle)
+@controller c7_plate plate at 1,50 accepts F
+@actuator a6_platform platform at 7,54 controlled_by all(c7_plate)
+@controller c8_lever lever at 8,59
+@controller c9_lever lever at 6,60
+@actuator a7_door door at 2,63 controlled_by any(c8_lever,c9_lever)
+@light + direction RIGHT sensor S opens A
+@controller cap_mirror_toggle toggle at 3,77
+@mirror M initial slash controlled_by cap_mirror_toggle
+---
+##########################################################################################
+#........#....L.#.#........#....L.#.#........#....3.#.#......#.#............+...M........#
+#F...#...A....#........#...=....#........##..=....#........#...B................O.......f#
+#........#.....2..#........#........#........#........#..#.....#.............T...........#
+#........#........#........#........#........#........#........#................S........#
+##########################################################################################
+#........#......#.#........#......#.#........#......#.#.....L#.#.....................#...#
+#W...#........#...B....#........#...D....##.......#...=....#.........................A..w#
+#....1...#........#....L...#........#....T...#........#..#.L...#.....................#...#
+#........#........#........#........#........#........#........#.....................#...#
+##########################################################################################

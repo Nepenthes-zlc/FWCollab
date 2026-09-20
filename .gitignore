@@ -1,0 +1,20 @@
+.venv/
+.tools/
+.pytest_cache/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+artifacts/*
+!artifacts/.gitkeep
+
+# Local credentials and provider configuration
+.env
+.env.*
+*.pem
+*.p12
+*.pfx
+*.key
+credentials.json
+secrets.json

@@ -1,0 +1,226 @@
+{
+  "format": "fwcollab.symbolic.state_dag.v1",
+  "id": "DAG-SYNC-07",
+  "difficulty": "L4",
+  "evaluation_role": "diagnostic",
+  "visibility": "private_reference",
+  "title": "maintain_W_to_F_then_sync",
+  "summary": "Bounded temporal synchronization extension DAG.",
+  "topology_family": "sync_composition",
+  "mechanisms": [
+    "M11",
+    "M14"
+  ],
+  "nodes": [
+    {
+      "id": "s",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "start",
+        "motif": "SYSTEM",
+        "state": "task_ready",
+        "phase": 0
+      },
+      "label": "start:task_ready"
+    },
+    {
+      "id": "pre_c",
+      "kind": "condition",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "occupy",
+        "motif": "M11",
+        "state": "prefix_controller_on",
+        "phase": 1
+      },
+      "label": "occupy:prefix_controller_on"
+    },
+    {
+      "id": "pre_a",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M11",
+        "state": "prefix_gate_on",
+        "phase": 2
+      },
+      "label": "activate:prefix_gate_on"
+    },
+    {
+      "id": "pre_x",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M11",
+        "state": "prefix_gate_crossed",
+        "phase": 3
+      },
+      "label": "traverse:prefix_gate_crossed"
+    },
+    {
+      "id": "cf",
+      "kind": "condition",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "occupy",
+        "motif": "M14",
+        "state": "sync_f_on",
+        "phase": 4
+      },
+      "label": "occupy:sync_f_on"
+    },
+    {
+      "id": "cw",
+      "kind": "condition",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "occupy",
+        "motif": "M14",
+        "state": "sync_w_on",
+        "phase": 4
+      },
+      "label": "occupy:sync_w_on"
+    },
+    {
+      "id": "sync",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "synchronize_window",
+        "motif": "M14",
+        "state": "bounded_overlap_met",
+        "phase": 5
+      },
+      "label": "synchronize_window:bounded_overlap_met"
+    },
+    {
+      "id": "gate",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M14",
+        "state": "sync_gate_on",
+        "phase": 6
+      },
+      "label": "activate:sync_gate_on"
+    },
+    {
+      "id": "xf",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M14",
+        "state": "sync_gate_F_crossed",
+        "phase": 7
+      },
+      "label": "traverse:sync_gate_F_crossed"
+    },
+    {
+      "id": "xw",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M14",
+        "state": "sync_gate_W_crossed",
+        "phase": 7
+      },
+      "label": "traverse:sync_gate_W_crossed"
+    },
+    {
+      "id": "g",
+      "kind": "goal",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "team_success",
+        "motif": "SYSTEM",
+        "state": "all_required_goals",
+        "phase": 8
+      },
+      "label": "team_success:all_required_goals"
+    }
+  ],
+  "edges": [
+    {
+      "from": "s",
+      "to": "pre_c",
+      "relation": "requires"
+    },
+    {
+      "from": "pre_c",
+      "to": "pre_a",
+      "relation": "maintains"
+    },
+    {
+      "from": "pre_a",
+      "to": "pre_x",
+      "relation": "enables"
+    },
+    {
+      "from": "pre_c",
+      "to": "pre_x",
+      "relation": "maintains"
+    },
+    {
+      "from": "pre_x",
+      "to": "cf",
+      "relation": "requires"
+    },
+    {
+      "from": "s",
+      "to": "cw",
+      "relation": "requires"
+    },
+    {
+      "from": "cf",
+      "to": "sync",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "cw",
+      "to": "sync",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "sync",
+      "to": "gate",
+      "relation": "enables"
+    },
+    {
+      "from": "gate",
+      "to": "xf",
+      "relation": "enables"
+    },
+    {
+      "from": "gate",
+      "to": "xw",
+      "relation": "enables"
+    },
+    {
+      "from": "xf",
+      "to": "g",
+      "relation": "requires"
+    },
+    {
+      "from": "xw",
+      "to": "g",
+      "relation": "requires"
+    }
+  ]
+}

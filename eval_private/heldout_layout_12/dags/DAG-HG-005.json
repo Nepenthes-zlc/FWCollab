@@ -1,0 +1,326 @@
+{
+  "format": "fwcollab.symbolic.state_dag.v1",
+  "id": "DAG-HG-005",
+  "difficulty": "L4",
+  "evaluation_role": "diagnostic",
+  "visibility": "private_reference",
+  "title": "held-out layout paired with V4-L4-009",
+  "summary": "DAG derived from concrete v3 controller wiring.",
+  "topology_family": "constructive_controller_module",
+  "mechanisms": [
+    "M11",
+    "M17",
+    "M20",
+    "M22"
+  ],
+  "nodes": [
+    {
+      "id": "n000",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "start",
+        "motif": "SYSTEM",
+        "state": "task_ready",
+        "phase": 0
+      },
+      "label": "start:task_ready"
+    },
+    {
+      "id": "n001",
+      "kind": "condition",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "occupy",
+        "motif": "M11",
+        "state": "c1_plate_on",
+        "phase": 1
+      },
+      "label": "occupy:c1_plate_on"
+    },
+    {
+      "id": "n002",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M11",
+        "state": "a1_door_on",
+        "phase": 2
+      },
+      "label": "activate:a1_door_on"
+    },
+    {
+      "id": "n003",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M11",
+        "state": "a1_door_crossed",
+        "phase": 3
+      },
+      "label": "traverse:a1_door_crossed"
+    },
+    {
+      "id": "n004",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "toggle",
+        "motif": "M20",
+        "state": "c2_toggle_on",
+        "phase": 4
+      },
+      "label": "toggle:c2_toggle_on"
+    },
+    {
+      "id": "n005",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M20",
+        "state": "a2_platform_on",
+        "phase": 5
+      },
+      "label": "activate:a2_platform_on"
+    },
+    {
+      "id": "n006",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M20",
+        "state": "a2_platform_crossed",
+        "phase": 6
+      },
+      "label": "traverse:a2_platform_crossed"
+    },
+    {
+      "id": "n007",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "latch",
+        "motif": "M17",
+        "state": "c3_lever_on",
+        "phase": 7
+      },
+      "label": "latch:c3_lever_on"
+    },
+    {
+      "id": "n008",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "latch",
+        "motif": "M17",
+        "state": "c4_lever_on",
+        "phase": 8
+      },
+      "label": "latch:c4_lever_on"
+    },
+    {
+      "id": "n009",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M17",
+        "state": "a3_door_on",
+        "phase": 9
+      },
+      "label": "activate:a3_door_on"
+    },
+    {
+      "id": "n010",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M17",
+        "state": "a3_door_crossed",
+        "phase": 10
+      },
+      "label": "traverse:a3_door_crossed"
+    },
+    {
+      "id": "n011",
+      "kind": "condition",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "occupy",
+        "motif": "M11",
+        "state": "c5_plate_on",
+        "phase": 11
+      },
+      "label": "occupy:c5_plate_on"
+    },
+    {
+      "id": "n012",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M11",
+        "state": "a4_door_on",
+        "phase": 12
+      },
+      "label": "activate:a4_door_on"
+    },
+    {
+      "id": "n013",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M11",
+        "state": "a4_door_crossed",
+        "phase": 13
+      },
+      "label": "traverse:a4_door_crossed"
+    },
+    {
+      "id": "n014",
+      "kind": "goal",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "team_success",
+        "motif": "SYSTEM",
+        "state": "all_required_goals",
+        "phase": 14
+      },
+      "label": "team_success:all_required_goals"
+    },
+    {
+      "id": "n015",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "engage",
+        "motif": "M22",
+        "state": "m22_engaged",
+        "phase": 15
+      },
+      "label": "engage:crate-cleared light door"
+    },
+    {
+      "id": "n016",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M22",
+        "state": "m22_crossed",
+        "phase": 16
+      },
+      "label": "traverse:crate-cleared light door"
+    }
+  ],
+  "edges": [
+    {
+      "from": "n000",
+      "to": "n001",
+      "relation": "requires"
+    },
+    {
+      "from": "n001",
+      "to": "n002",
+      "relation": "enables"
+    },
+    {
+      "from": "n002",
+      "to": "n003",
+      "relation": "enables"
+    },
+    {
+      "from": "n003",
+      "to": "n004",
+      "relation": "requires"
+    },
+    {
+      "from": "n004",
+      "to": "n005",
+      "relation": "enables"
+    },
+    {
+      "from": "n005",
+      "to": "n006",
+      "relation": "enables"
+    },
+    {
+      "from": "n006",
+      "to": "n007",
+      "relation": "requires"
+    },
+    {
+      "from": "n006",
+      "to": "n008",
+      "relation": "requires"
+    },
+    {
+      "from": "n007",
+      "to": "n009",
+      "relation": "enables"
+    },
+    {
+      "from": "n008",
+      "to": "n009",
+      "relation": "enables"
+    },
+    {
+      "from": "n009",
+      "to": "n010",
+      "relation": "enables"
+    },
+    {
+      "from": "n010",
+      "to": "n011",
+      "relation": "requires"
+    },
+    {
+      "from": "n011",
+      "to": "n012",
+      "relation": "enables"
+    },
+    {
+      "from": "n012",
+      "to": "n013",
+      "relation": "enables"
+    },
+    {
+      "from": "n013",
+      "to": "n015",
+      "relation": "requires"
+    },
+    {
+      "from": "n015",
+      "to": "n016",
+      "relation": "enables"
+    },
+    {
+      "from": "n016",
+      "to": "n014",
+      "relation": "synchronizes"
+    }
+  ]
+}

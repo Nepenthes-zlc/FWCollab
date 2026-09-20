@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fwcollab.local/schemas/collaboration_evaluation.schema.json",
+  "title": "FWCollab deterministic collaboration evaluation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format", "task_id", "dag_id", "difficulty", "outcome", "rounds",
+    "summary", "node_results", "handoffs", "dependency_violations",
+    "coordination_violations", "node_regressions", "failure_analysis", "timeline"
+  ],
+  "properties": {
+    "format": {"const": "fwcollab.symbolic.collaboration_evaluation.v1"},
+    "task_id": {"type": "string", "minLength": 1},
+    "dag_id": {"type": "string", "minLength": 1},
+    "difficulty": {"type": "string", "pattern": "^L[1-7]$"},
+    "outcome": {"type": "string"},
+    "rounds": {"type": "integer", "minimum": 0},
+    "summary": {"type": "object"},
+    "node_results": {"type": "array", "items": {"type": "object"}},
+    "handoffs": {"type": "array", "items": {"type": "object"}},
+    "dependency_violations": {"type": "array", "items": {"type": "object"}},
+    "coordination_violations": {"type": "array", "items": {"type": "object"}},
+    "node_regressions": {"type": "array", "items": {"type": "object"}},
+    "failure_analysis": {"type": ["object", "null"]},
+    "timeline": {"type": "array", "items": {"type": "object"}}
+  }
+}

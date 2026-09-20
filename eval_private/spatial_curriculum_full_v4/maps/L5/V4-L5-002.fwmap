@@ -1,0 +1,28 @@
+@format fwcollab.symbol_map.v3
+@id V4-L5-002
+@title constructive L5 full-mechanism curriculum 002; lava affinity crossing
+@max_steps 1
+@controller c1_plate plate at 8,5 accepts W
+@actuator a1_door door at 2,9 controlled_by all(c1_plate)
+@controller c2_lever lever at 1,14
+@controller c3_lever lever at 3,15
+@actuator a2_door door at 7,18 controlled_by all(c2_lever,c3_lever)
+@controller c4_toggle toggle at 8,23
+@controller c5_plate plate at 6,24 accepts W
+@actuator a3_platform platform at 2,27 controlled_by all(c4_toggle,c5_plate)
+@controller c6_plate plate at 1,32 accepts F
+@actuator a4_door door at 7,36 controlled_by all(c6_plate)
+@controller c7_toggle toggle at 8,41
+@actuator a5_platform platform at 2,45 controlled_by all(c7_toggle)
+---
+########################################################################
+#........#....L...#........#....3...#........#...................#.....#
+#F...#...A....#........##..=....#........###.=...................^....f#
+#........#.....L#.#........#........#........#...................#.....#
+#........#........#........#........#........#...................#.....#
+########################################################################
+#........#........#.....2..#........#........#.........................#
+#W...#........#...B....##.......#...D....###..........................w#
+#....1...#......#.#....T...#........#....T...#.........................#
+#........#........#........#........#........#.........................#
+########################################################################

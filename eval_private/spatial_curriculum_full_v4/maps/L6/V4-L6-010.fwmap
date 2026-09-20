@@ -1,0 +1,34 @@
+@format fwcollab.symbol_map.v3
+@id V4-L6-010
+@title constructive L6 full-mechanism curriculum 010; rotatable-mirror orb light door
+@max_steps 1
+@controller c1_plate plate at 6,5 accepts W
+@actuator a1_platform platform at 2,9 controlled_by all(c1_plate)
+@controller c2_plate plate at 3,14 accepts F
+@actuator a2_platform platform at 7,18 controlled_by all(c2_plate)
+@controller c3_plate plate at 6,23 accepts W
+@actuator a3_door door at 2,27 controlled_by all(c3_plate)
+@controller c4_lever lever at 3,32
+@controller c5_plate plate at 1,33 accepts F
+@actuator a4_door door at 7,36 controlled_by all(c4_lever,c5_plate)
+@controller c6_toggle toggle at 6,41
+@controller c7_plate plate at 8,42 accepts W
+@actuator a5_platform platform at 2,45 controlled_by all(c6_toggle,c7_plate)
+@controller c8_lever lever at 3,50
+@controller c9_plate plate at 1,51 accepts F
+@actuator a6_door door at 7,54 controlled_by all(c8_lever,c9_plate)
+@light + direction RIGHT sensor S opens A
+@controller cap_mirror_toggle toggle at 3,68
+@mirror M initial slash controlled_by cap_mirror_toggle
+---
+#################################################################################
+#......#.#........#........#.....4..#......#.#.....6..#............+...M........#
+#F...#...=....#........###.C....#........#...=....###..................o.......f#
+#..#.....#....2...#........#....L.#.#........#....L...#.............T...........#
+#........#........#........#........#........#........#................S........#
+#################################################################################
+#....1.#.#........#....3...#........#....T.#.#........#.....................#...#
+#W...#........#...=....###......#...D....#........###.A.....................A..w#
+#..#.....#........#........#......#.#.....5..#........#.....................#...#
+#........#........#........#........#........#........#.....................#...#
+#################################################################################

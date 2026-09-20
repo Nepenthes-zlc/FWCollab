@@ -1,0 +1,20 @@
+@format fwcollab.symbol_map.v3
+@id V4-L2-003
+@title constructive L2 full-mechanism curriculum 003; mandatory rolling orb displacement
+@max_steps 1
+@controller c1_toggle toggle at 3,5
+@actuator a1_door door at 7,9 controlled_by all(c1_toggle)
+@controller c2_lever lever at 6,14
+@actuator a2_platform platform at 2,18 controlled_by all(c2_lever)
+---
+#############################################
+#........#......#.#.........................#
+#F...###......#...=........................f#
+#....T...#..#.....#.........................#
+#........#........#.........................#
+#############################################
+#........#....L.#.#...................#.....#
+#W...###.A....#.......................o..#.w#
+#........#..#.....#...................#.....#
+#........#........#...................#.....#
+#############################################

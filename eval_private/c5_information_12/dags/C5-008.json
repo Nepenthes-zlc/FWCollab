@@ -1,0 +1,106 @@
+{
+  "format": "fwcollab.c5_executable_dag.v1",
+  "visibility": "private_evaluator_only",
+  "task_id": "C5-008",
+  "nodes": [
+    {
+      "id": "n0",
+      "owner": "team",
+      "predicate": {
+        "op": "start"
+      }
+    },
+    {
+      "id": "n1",
+      "owner": "W",
+      "predicate": {
+        "op": "private_fact_known",
+        "fact": "required_actuator"
+      }
+    },
+    {
+      "id": "n2",
+      "owner": "W",
+      "predicate": {
+        "op": "message_sent",
+        "fact": "gate_beta"
+      }
+    },
+    {
+      "id": "n3",
+      "owner": "F",
+      "predicate": {
+        "op": "message_received",
+        "fact": "gate_beta"
+      }
+    },
+    {
+      "id": "n4",
+      "owner": "F",
+      "predicate": {
+        "op": "controller_on",
+        "id": "c_north"
+      }
+    },
+    {
+      "id": "n5",
+      "owner": "environment",
+      "predicate": {
+        "op": "actuator_on",
+        "id": "gate_beta"
+      }
+    },
+    {
+      "id": "n6",
+      "owner": "W",
+      "predicate": {
+        "op": "crossed_actuator",
+        "id": "gate_beta"
+      }
+    },
+    {
+      "id": "n7",
+      "owner": "team",
+      "predicate": {
+        "op": "team_success"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "n0",
+      "to": "n1",
+      "relation": "requires"
+    },
+    {
+      "from": "n1",
+      "to": "n2",
+      "relation": "information_handoff"
+    },
+    {
+      "from": "n2",
+      "to": "n3",
+      "relation": "delayed_delivery"
+    },
+    {
+      "from": "n3",
+      "to": "n4",
+      "relation": "enables"
+    },
+    {
+      "from": "n4",
+      "to": "n5",
+      "relation": "causes"
+    },
+    {
+      "from": "n5",
+      "to": "n6",
+      "relation": "enables"
+    },
+    {
+      "from": "n6",
+      "to": "n7",
+      "relation": "requires"
+    }
+  ]
+}

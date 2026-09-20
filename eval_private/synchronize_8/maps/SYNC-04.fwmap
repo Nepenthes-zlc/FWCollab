@@ -1,0 +1,13 @@
+@format fwcollab.symbol_map.v3
+@id SYNC-04
+@title asymmetric_W_long_K2
+@max_steps 1
+@controller sync_f plate at 1,10 accepts F
+@controller sync_w plate at 3,10 accepts W
+@actuator sync_gate platform at 1,11;3,11 controlled_by all(sync_f,sync_w)
+---
+#####################
+#....F....1=.......f#
+#####################
+#W........2=.......w#
+#####################

@@ -1,0 +1,36 @@
+@format fwcollab.symbol_map.v3
+@id V4-L7-008
+@title constructive L7 full-mechanism curriculum 008; crate-held plate door
+@max_steps 1
+@controller c1_lever lever at 8,5
+@controller c2_lever lever at 6,6
+@actuator a1_door door at 2,9 controlled_by any(c1_lever,c2_lever)
+@controller c3_lever lever at 1,14
+@controller c4_lever lever at 3,15
+@actuator a2_door door at 7,18 controlled_by all(c3_lever,c4_lever)
+@controller c5_plate plate at 8,23 accepts W
+@actuator a3_platform platform at 2,27 controlled_by all(c5_plate)
+@controller c6_toggle toggle at 1,32
+@actuator a4_door door at 7,36 controlled_by all(c6_toggle)
+@controller c7_toggle toggle at 8,41
+@actuator a5_platform platform at 2,45 controlled_by all(c7_toggle)
+@controller c8_lever lever at 1,50
+@controller c9_plate plate at 3,51 accepts F
+@actuator a6_door door at 7,54 controlled_by all(c8_lever,c9_plate)
+@controller c10_lever lever at 8,59
+@controller c11_lever lever at 6,60
+@actuator a7_door door at 2,63 controlled_by any(c10_lever,c11_lever)
+@controller cap_heavy_plate plate at 2,78 accepts O
+@actuator cap_door door at 7,83 controlled_by all(cap_heavy_plate)
+---
+##########################################################################################
+#......#.#....L...#........#....T.#.#........#....L.#.#......#.#.........................#
+#F...#...A....#........#...=....#........##..=....#........#...B.............O3#........f#
+#........#.....L#.#........#........#........#.....2..#..#.....#.........................#
+#........#........#........#........#........#........#........#.........................#
+##########################################################################################
+#.....L#.#........#........#......#.#........#......#.#.....L#.#...................#.....#
+#W...#........#...B....#........#...D....##.......#...A....#.......................E....w#
+#....L...#......#.#....1...#........#....T...#........#..#.L...#...................#.....#
+#........#........#........#........#........#........#........#...................#.....#
+##########################################################################################

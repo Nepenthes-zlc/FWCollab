@@ -1,0 +1,34 @@
+@format fwcollab.symbol_map.v3
+@id HG-011
+@title held-out layout paired with V4-L7-009; orb-held plate door
+@max_steps 1
+@controller c1_plate plate at 3,5 accepts F
+@actuator a1_platform platform at 7,9 controlled_by all(c1_plate)
+@controller c2_lever lever at 6,14
+@controller c3_lever lever at 8,15
+@actuator a2_door door at 2,18 controlled_by any(c2_lever,c3_lever)
+@controller c4_lever lever at 3,23
+@actuator a3_door door at 7,27 controlled_by all(c4_lever)
+@controller c5_plate plate at 6,32 accepts W
+@actuator a4_platform platform at 2,36 controlled_by all(c5_plate)
+@controller c6_toggle toggle at 3,41
+@actuator a5_door door at 7,45 controlled_by all(c6_toggle)
+@controller c7_plate plate at 6,50 accepts W
+@actuator a6_door door at 2,54 controlled_by all(c7_plate)
+@controller c8_lever lever at 3,59
+@controller c9_plate plate at 1,60 accepts F
+@actuator a7_door door at 7,63 controlled_by all(c8_lever,c9_plate)
+@controller cap_heavy_plate plate at 2,79 accepts O
+@actuator cap_door door at 7,83 controlled_by all(cap_heavy_plate)
+---
+##########################################################################################
+#........#........#........#......#.#........#......#.#.....4#.#.........................#
+#F...###......##..B....##.......#...=....##.......#...A....#.................o.5#.......f#
+#....1...#........#....L...#........#....T...#........#..#.L...#.........................#
+#........#........#........#........#........#........#........#.........................#
+##########################################################################################
+#........#....L...#........#....2.#.#........#....3.#.#......#.#...................#.....#
+#W...###.=....##.......##..C....#........##..E....#........#...B...................E....w#
+#........#.....L..#........#........#........#........#..#.....#...................#.....#
+#........#........#........#........#........#........#........#...................#.....#
+##########################################################################################

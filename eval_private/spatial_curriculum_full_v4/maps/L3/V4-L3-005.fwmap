@@ -1,0 +1,26 @@
+@format fwcollab.symbol_map.v3
+@id V4-L3-005
+@title constructive L3 full-mechanism curriculum 005; rotatable-mirror light door
+@max_steps 1
+@controller c1_lever lever at 1,5
+@controller c2_plate plate at 3,6 accepts F
+@actuator a1_door door at 7,9 controlled_by all(c1_lever,c2_plate)
+@controller c3_lever lever at 8,14
+@actuator a2_platform platform at 2,18 controlled_by all(c3_lever)
+@controller c4_lever lever at 1,23
+@actuator a3_door door at 7,27 controlled_by all(c4_lever)
+@light + direction RIGHT sensor S opens A
+@controller cap_mirror_toggle toggle at 3,41
+@mirror M initial slash controlled_by cap_mirror_toggle
+---
+######################################################
+#....L...#........#....L.#.#............+...M........#
+#F...#........#...=....#............................f#
+#.....1#.#......#.#..#.....#.............T...........#
+#........#........#........#................S........#
+######################################################
+#........#........#......#.#.....................#...#
+#W...#...A....#........#...C.....................A..w#
+#......#.#....L.#.#..#.....#.....................#...#
+#........#........#........#.....................#...#
+######################################################

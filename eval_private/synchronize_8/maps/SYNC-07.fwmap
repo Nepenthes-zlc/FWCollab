@@ -1,0 +1,15 @@
+@format fwcollab.symbol_map.v3
+@id SYNC-07
+@title maintain_W_to_F_then_sync
+@max_steps 1
+@controller prefix_controller plate at 3,3 accepts W
+@actuator prefix_gate door at 1,6 controlled_by all(prefix_controller)
+@controller sync_f plate at 1,10 accepts F
+@controller sync_w plate at 3,10 accepts W
+@actuator sync_gate platform at 1,11;3,11 controlled_by all(sync_f,sync_w)
+---
+#####################
+#F....B...1=.......f#
+#####################
+#W.3......2=.......w#
+#####################

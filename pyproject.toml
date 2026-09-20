@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fwcollab"
+version = "0.1.0.dev0"
+description = "A deterministic symbol-based cooperative planning benchmark inspired by Fireboy and Watergirl mechanics."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "FWCollab contributors" },
+]
+dependencies = [
+  "pydantic>=2.10,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "hypothesis>=6.120,<7",
+  "pytest>=8.3,<9",
+]
+web = []
+
+[project.scripts]
+fwcollab = "fwcollab.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fwcollab"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-config --strict-markers"
+testpaths = ["tests/symbolic", "tests/unit/test_cli_help.py", "tests/unit/test_imports.py"]

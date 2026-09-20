@@ -1,0 +1,354 @@
+{
+  "format": "fwcollab.symbolic.state_dag.v1",
+  "id": "DAG-L6-014",
+  "difficulty": "L6",
+  "evaluation_role": "scored",
+  "visibility": "private_reference",
+  "title": "可推箱子 × 滚动机关球 × 单向通行 × 配对传送 × 双角色专属出口 × 角色压板门 × 箱子压板门",
+  "summary": "以fan_in拓扑组合7种元机关：可推箱子 × 滚动机关球 × 单向通行 × 配对传送 × 双角色专属出口 × 角色压板门 × 箱子压板门。",
+  "topology_family": "fan_in",
+  "mechanisms": [
+    "M06",
+    "M07",
+    "M08",
+    "M09",
+    "M10",
+    "M11",
+    "M12"
+  ],
+  "nodes": [
+    {
+      "id": "n000",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "start",
+        "motif": "SYSTEM",
+        "state": "task_ready",
+        "phase": 0
+      },
+      "label": "任务初始状态成立"
+    },
+    {
+      "id": "n001",
+      "kind": "condition",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "reach",
+        "motif": "M06",
+        "state": "crate_reachable",
+        "phase": 0
+      },
+      "label": "角色到达箱子推动位"
+    },
+    {
+      "id": "n002",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "position",
+        "motif": "M06",
+        "state": "crate_positioned",
+        "phase": 0
+      },
+      "label": "箱子到达目标位置"
+    },
+    {
+      "id": "n003",
+      "kind": "condition",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "align",
+        "motif": "M07",
+        "state": "orb_direction_selected",
+        "phase": 1
+      },
+      "label": "确定机关球推动方向"
+    },
+    {
+      "id": "n004",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "position",
+        "motif": "M07",
+        "state": "orb_stopped",
+        "phase": 1
+      },
+      "label": "机关球停在目标位置"
+    },
+    {
+      "id": "n005",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "commit",
+        "motif": "M08",
+        "state": "return_resources_ready",
+        "phase": 2
+      },
+      "label": "确认穿门前资源已就绪"
+    },
+    {
+      "id": "n006",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M08",
+        "state": "oneway_crossed",
+        "phase": 2
+      },
+      "label": "按允许方向通过单向门"
+    },
+    {
+      "id": "n007",
+      "kind": "condition",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "reach",
+        "motif": "M09",
+        "state": "portal_entry_reached",
+        "phase": 3
+      },
+      "label": "到达传送门入口"
+    },
+    {
+      "id": "n008",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "transport",
+        "motif": "M09",
+        "state": "portal_exit_reached",
+        "phase": 3
+      },
+      "label": "从配对出口出现"
+    },
+    {
+      "id": "n009",
+      "kind": "goal",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "goal",
+        "motif": "M10",
+        "state": "both_agents_at_exits",
+        "phase": 4
+      },
+      "label": "双方到达各自专属出口"
+    },
+    {
+      "id": "n010",
+      "kind": "condition",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "occupy",
+        "motif": "M11",
+        "state": "plate_held",
+        "phase": 5
+      },
+      "label": "角色持续占据压力板"
+    },
+    {
+      "id": "n011",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M11",
+        "state": "door_open",
+        "phase": 5
+      },
+      "label": "压力板门保持打开"
+    },
+    {
+      "id": "n012",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M11",
+        "state": "partner_crossed_door",
+        "phase": 5
+      },
+      "label": "搭档通过压力板门"
+    },
+    {
+      "id": "n013",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "position",
+        "motif": "M12",
+        "state": "crate_on_plate",
+        "phase": 6
+      },
+      "label": "箱子到达压力板"
+    },
+    {
+      "id": "n014",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M12",
+        "state": "door_open",
+        "phase": 6
+      },
+      "label": "箱子压力板门打开"
+    },
+    {
+      "id": "n015",
+      "kind": "event",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M12",
+        "state": "team_crossed_door",
+        "phase": 6
+      },
+      "label": "所需角色通过箱子门"
+    },
+    {
+      "id": "n016",
+      "kind": "goal",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "team_success",
+        "motif": "SYSTEM",
+        "state": "all_required_goals",
+        "phase": 8
+      },
+      "label": "双方满足团队成功条件"
+    }
+  ],
+  "edges": [
+    {
+      "from": "n001",
+      "to": "n002",
+      "relation": "enables"
+    },
+    {
+      "from": "n003",
+      "to": "n004",
+      "relation": "enables"
+    },
+    {
+      "from": "n005",
+      "to": "n006",
+      "relation": "enables"
+    },
+    {
+      "from": "n007",
+      "to": "n008",
+      "relation": "enables"
+    },
+    {
+      "from": "n010",
+      "to": "n011",
+      "relation": "enables"
+    },
+    {
+      "from": "n011",
+      "to": "n012",
+      "relation": "enables"
+    },
+    {
+      "from": "n010",
+      "to": "n012",
+      "relation": "maintains"
+    },
+    {
+      "from": "n013",
+      "to": "n014",
+      "relation": "enables"
+    },
+    {
+      "from": "n014",
+      "to": "n015",
+      "relation": "enables"
+    },
+    {
+      "from": "n002",
+      "to": "n013",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "n004",
+      "to": "n013",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "n006",
+      "to": "n013",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "n008",
+      "to": "n013",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "n009",
+      "to": "n013",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "n012",
+      "to": "n013",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "n000",
+      "to": "n001",
+      "relation": "requires"
+    },
+    {
+      "from": "n000",
+      "to": "n003",
+      "relation": "requires"
+    },
+    {
+      "from": "n000",
+      "to": "n005",
+      "relation": "requires"
+    },
+    {
+      "from": "n000",
+      "to": "n007",
+      "relation": "requires"
+    },
+    {
+      "from": "n000",
+      "to": "n009",
+      "relation": "requires"
+    },
+    {
+      "from": "n000",
+      "to": "n010",
+      "relation": "requires"
+    },
+    {
+      "from": "n015",
+      "to": "n016",
+      "relation": "synchronizes"
+    }
+  ]
+}

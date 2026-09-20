@@ -1,0 +1,21 @@
+@format fwcollab.symbol_map.v3
+@id V4-L2-001
+@title constructive L2 full-mechanism curriculum 001; universal hazard avoidance
+@max_steps 1
+@controller c1_lever lever at 3,5
+@controller c2_lever lever at 1,6
+@actuator a1_door door at 7,9 controlled_by all(c1_lever,c2_lever)
+@controller c3_lever lever at 6,14
+@actuator a2_platform platform at 2,18 controlled_by all(c3_lever)
+---
+#############################################
+#.....L#.#........#.........................#
+#F...#........##..=........................f#
+#....L...#........#.........................#
+#........#........#.........................#
+#############################################
+#......#.#....L...#..............#..........#
+#W...#...A....##..................x........w#
+#........#........#.........................#
+#........#........#.........................#
+#############################################

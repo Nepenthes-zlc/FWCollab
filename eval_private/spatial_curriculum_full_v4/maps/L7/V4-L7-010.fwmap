@@ -1,0 +1,34 @@
+@format fwcollab.symbol_map.v3
+@id V4-L7-010
+@title constructive L7 full-mechanism curriculum 010; freeze-thaw route
+@max_steps 1
+@controller c1_toggle toggle at 8,5
+@actuator a1_platform platform at 2,9 controlled_by all(c1_toggle)
+@controller c2_lever lever at 1,14
+@controller c3_lever lever at 3,15
+@actuator a2_door door at 7,18 controlled_by all(c2_lever,c3_lever)
+@controller c4_toggle toggle at 8,23
+@controller c5_plate plate at 6,24 accepts W
+@actuator a3_platform platform at 2,27 controlled_by all(c4_toggle,c5_plate)
+@controller c6_plate plate at 1,32 accepts F
+@actuator a4_platform platform at 7,36 controlled_by all(c6_plate)
+@controller c7_toggle toggle at 8,41
+@actuator a5_platform platform at 2,45 controlled_by all(c7_toggle)
+@controller c8_lever lever at 1,50
+@actuator a6_door door at 7,54 controlled_by all(c8_lever)
+@controller c9_toggle toggle at 8,59
+@controller c10_plate plate at 6,60 accepts W
+@actuator a7_platform platform at 2,63 controlled_by all(c9_toggle,c10_plate)
+@thermal I initial liquid heater H freezer K
+---
+##########################################################################################
+#........#....L...#........#....2.#.#........#....L.#.#......#.#...................#.....#
+#F...###.=....##.......##..=....#........##..=....#........#...=...................I....f#
+#........#.....L..#........#........#........#........#..#.....#...................#.....#
+#........#........#........#........#........#........#........#...................#.....#
+##########################################################################################
+#........#........#.....1..#......#.#........#......#.#.....3#.#..............H..........#
+#W...###......##..B....##.......#...=....##.......#...A....#............................w#
+#....T...#........#....T...#........#....T...#........#..#.T...#..............K..........#
+#........#........#........#........#........#........#........#.........................#
+##########################################################################################

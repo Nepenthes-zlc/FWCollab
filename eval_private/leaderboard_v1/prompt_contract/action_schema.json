@@ -1,0 +1,128 @@
+{
+  "$defs": {
+    "CoordinationMessage": {
+      "additionalProperties": false,
+      "description": "Small public protocol payload; the runner adds round and hash metadata.",
+      "properties": {
+        "fact": {
+          "default": "",
+          "maxLength": 256,
+          "title": "Fact",
+          "type": "string"
+        },
+        "request": {
+          "default": "",
+          "maxLength": 256,
+          "title": "Request",
+          "type": "string"
+        },
+        "stage": {
+          "default": "",
+          "maxLength": 64,
+          "title": "Stage",
+          "type": "string"
+        },
+        "status": {
+          "default": "INFO",
+          "enum": [
+            "INFO",
+            "READY",
+            "HOLDING",
+            "CROSSED",
+            "RELEASE",
+            "BLOCKED"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "until": {
+          "default": "",
+          "maxLength": 128,
+          "title": "Until",
+          "type": "string"
+        }
+      },
+      "title": "CoordinationMessage",
+      "type": "object"
+    },
+    "SymbolAction": {
+      "additionalProperties": false,
+      "properties": {
+        "move": {
+          "enum": [
+            "UP",
+            "DOWN",
+            "LEFT",
+            "RIGHT",
+            "WAIT"
+          ],
+          "title": "Move",
+          "type": "string"
+        },
+        "steps": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Steps",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "move",
+        "steps"
+      ],
+      "title": "SymbolAction",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "The small, auditable answer requested from each role model.",
+  "properties": {
+    "action": {
+      "$ref": "#/$defs/SymbolAction"
+    },
+    "commitment": {
+      "default": "",
+      "maxLength": 256,
+      "title": "Commitment",
+      "type": "string"
+    },
+    "expected_teammate": {
+      "default": "",
+      "maxLength": 256,
+      "title": "Expected Teammate",
+      "type": "string"
+    },
+    "message": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "#/$defs/CoordinationMessage"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Message"
+    },
+    "reason": {
+      "default": "",
+      "maxLength": 512,
+      "title": "Reason",
+      "type": "string"
+    },
+    "subgoal": {
+      "default": "",
+      "maxLength": 256,
+      "title": "Subgoal",
+      "type": "string"
+    }
+  },
+  "required": [
+    "action"
+  ],
+  "title": "AgentDecision",
+  "type": "object"
+}

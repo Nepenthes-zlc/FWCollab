@@ -1,0 +1,1735 @@
+{
+  "format": "fwcollab.extension_suite_manifest.v1",
+  "suite": "Sync-8",
+  "version": "v1",
+  "task_count": 8,
+  "records": [
+    {
+      "id": "SYNC-01",
+      "suite": "Sync-8",
+      "variant": "primitive_symmetric_door",
+      "tier": "primitive",
+      "mechanisms": [
+        "M11"
+      ],
+      "map": "eval_private/synchronize_8/maps/SYNC-01.fwmap",
+      "dag": "eval_private/synchronize_8/dags/DAG-SYNC-01.json",
+      "source_agents": [
+        "F",
+        "W"
+      ],
+      "dependency_semantics": [
+        "SYNCHRONIZE"
+      ],
+      "composition_motifs": [],
+      "extension_semantics": {
+        "type": "bounded_temporal_synchronize",
+        "synchronization_node_id": "sync",
+        "source_condition_node_ids": {
+          "F": "cf",
+          "W": "cw"
+        },
+        "minimum_overlap_rounds": 1,
+        "requires_live_overlap": true
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "s",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "running"
+        },
+        {
+          "dag_node_id": "cf",
+          "kind": "equals",
+          "observation_path": "state.controllers.sync_f",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "cw",
+          "kind": "equals",
+          "observation_path": "state.controllers.sync_w",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "sync",
+          "kind": "temporal_overlap",
+          "source_agents": [
+            "F",
+            "W"
+          ],
+          "condition_paths": [
+            "state.controllers.sync_f",
+            "state.controllers.sync_w"
+          ],
+          "minimum_overlap_rounds": 1
+        },
+        {
+          "dag_node_id": "gate",
+          "kind": "equals",
+          "observation_path": "state.doors.sync_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "xf",
+          "kind": "actor_column_greater_than",
+          "role": "F",
+          "column": 11
+        },
+        {
+          "dag_node_id": "xw",
+          "kind": "actor_column_greater_than",
+          "role": "W",
+          "column": 11
+        },
+        {
+          "dag_node_id": "g",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "team_success"
+        }
+      ],
+      "controllers": [
+        {
+          "id": "sync_f",
+          "kind": "plate",
+          "role": "F",
+          "position": [
+            1,
+            10
+          ]
+        },
+        {
+          "id": "sync_w",
+          "kind": "plate",
+          "role": "W",
+          "position": [
+            3,
+            10
+          ]
+        }
+      ],
+      "gate": {
+        "id": "sync_gate",
+        "kind": "door",
+        "column": 11,
+        "positions": [
+          [
+            1,
+            11
+          ],
+          [
+            3,
+            11
+          ]
+        ]
+      },
+      "edge_evidence": [
+        {
+          "from": "s",
+          "to": "cf",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "s",
+          "to": "cw",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "cf",
+          "to": "sync",
+          "verified": true,
+          "method": "explicit_temporal_overlap_binding"
+        },
+        {
+          "from": "cw",
+          "to": "sync",
+          "verified": true,
+          "method": "explicit_temporal_overlap_binding"
+        },
+        {
+          "from": "sync",
+          "to": "gate",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "gate",
+          "to": "xf",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "gate",
+          "to": "xw",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "xf",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "xw",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        }
+      ],
+      "witness_valid": true,
+      "replay_valid": true,
+      "bindings_valid": true,
+      "role_wait_valid": true,
+      "no_bypass_valid": true,
+      "necessity_valid": true,
+      "conformance_valid": true,
+      "dag_metrics": {
+        "nodes": 8,
+        "edges": 9,
+        "longest_path": 5,
+        "max_parallel_width": 2,
+        "branch_nodes": 2,
+        "join_nodes": 2,
+        "any_joins": 0,
+        "handoffs": 0,
+        "maintains": 0
+      },
+      "all_edges_evidenced": true
+    },
+    {
+      "id": "SYNC-02",
+      "suite": "Sync-8",
+      "variant": "primitive_symmetric_bridge",
+      "tier": "primitive",
+      "mechanisms": [
+        "M14"
+      ],
+      "map": "eval_private/synchronize_8/maps/SYNC-02.fwmap",
+      "dag": "eval_private/synchronize_8/dags/DAG-SYNC-02.json",
+      "source_agents": [
+        "F",
+        "W"
+      ],
+      "dependency_semantics": [
+        "SYNCHRONIZE"
+      ],
+      "composition_motifs": [],
+      "extension_semantics": {
+        "type": "bounded_temporal_synchronize",
+        "synchronization_node_id": "sync",
+        "source_condition_node_ids": {
+          "F": "cf",
+          "W": "cw"
+        },
+        "minimum_overlap_rounds": 1,
+        "requires_live_overlap": true
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "s",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "running"
+        },
+        {
+          "dag_node_id": "cf",
+          "kind": "equals",
+          "observation_path": "state.controllers.sync_f",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "cw",
+          "kind": "equals",
+          "observation_path": "state.controllers.sync_w",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "sync",
+          "kind": "temporal_overlap",
+          "source_agents": [
+            "F",
+            "W"
+          ],
+          "condition_paths": [
+            "state.controllers.sync_f",
+            "state.controllers.sync_w"
+          ],
+          "minimum_overlap_rounds": 1
+        },
+        {
+          "dag_node_id": "gate",
+          "kind": "equals",
+          "observation_path": "state.platforms.sync_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "xf",
+          "kind": "actor_column_greater_than",
+          "role": "F",
+          "column": 11
+        },
+        {
+          "dag_node_id": "xw",
+          "kind": "actor_column_greater_than",
+          "role": "W",
+          "column": 11
+        },
+        {
+          "dag_node_id": "g",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "team_success"
+        }
+      ],
+      "controllers": [
+        {
+          "id": "sync_f",
+          "kind": "plate",
+          "role": "F",
+          "position": [
+            1,
+            10
+          ]
+        },
+        {
+          "id": "sync_w",
+          "kind": "plate",
+          "role": "W",
+          "position": [
+            3,
+            10
+          ]
+        }
+      ],
+      "gate": {
+        "id": "sync_gate",
+        "kind": "platform",
+        "column": 11,
+        "positions": [
+          [
+            1,
+            11
+          ],
+          [
+            3,
+            11
+          ]
+        ]
+      },
+      "edge_evidence": [
+        {
+          "from": "s",
+          "to": "cf",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "s",
+          "to": "cw",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "cf",
+          "to": "sync",
+          "verified": true,
+          "method": "explicit_temporal_overlap_binding"
+        },
+        {
+          "from": "cw",
+          "to": "sync",
+          "verified": true,
+          "method": "explicit_temporal_overlap_binding"
+        },
+        {
+          "from": "sync",
+          "to": "gate",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "gate",
+          "to": "xf",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "gate",
+          "to": "xw",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "xf",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "xw",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        }
+      ],
+      "witness_valid": true,
+      "replay_valid": true,
+      "bindings_valid": true,
+      "role_wait_valid": true,
+      "no_bypass_valid": true,
+      "necessity_valid": true,
+      "conformance_valid": true,
+      "dag_metrics": {
+        "nodes": 8,
+        "edges": 9,
+        "longest_path": 5,
+        "max_parallel_width": 2,
+        "branch_nodes": 2,
+        "join_nodes": 2,
+        "any_joins": 0,
+        "handoffs": 0,
+        "maintains": 0
+      },
+      "all_edges_evidenced": true
+    },
+    {
+      "id": "SYNC-03",
+      "suite": "Sync-8",
+      "variant": "asymmetric_F_long",
+      "tier": "medium",
+      "mechanisms": [
+        "M11"
+      ],
+      "map": "eval_private/synchronize_8/maps/SYNC-03.fwmap",
+      "dag": "eval_private/synchronize_8/dags/DAG-SYNC-03.json",
+      "source_agents": [
+        "F",
+        "W"
+      ],
+      "dependency_semantics": [
+        "SYNCHRONIZE"
+      ],
+      "composition_motifs": [
+        "ASYMMETRIC_ARRIVAL"
+      ],
+      "extension_semantics": {
+        "type": "bounded_temporal_synchronize",
+        "synchronization_node_id": "sync",
+        "source_condition_node_ids": {
+          "F": "cf",
+          "W": "cw"
+        },
+        "minimum_overlap_rounds": 1,
+        "requires_live_overlap": true
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "s",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "running"
+        },
+        {
+          "dag_node_id": "cf",
+          "kind": "equals",
+          "observation_path": "state.controllers.sync_f",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "cw",
+          "kind": "equals",
+          "observation_path": "state.controllers.sync_w",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "sync",
+          "kind": "temporal_overlap",
+          "source_agents": [
+            "F",
+            "W"
+          ],
+          "condition_paths": [
+            "state.controllers.sync_f",
+            "state.controllers.sync_w"
+          ],
+          "minimum_overlap_rounds": 1
+        },
+        {
+          "dag_node_id": "gate",
+          "kind": "equals",
+          "observation_path": "state.doors.sync_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "xf",
+          "kind": "actor_column_greater_than",
+          "role": "F",
+          "column": 11
+        },
+        {
+          "dag_node_id": "xw",
+          "kind": "actor_column_greater_than",
+          "role": "W",
+          "column": 11
+        },
+        {
+          "dag_node_id": "g",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "team_success"
+        }
+      ],
+      "controllers": [
+        {
+          "id": "sync_f",
+          "kind": "plate",
+          "role": "F",
+          "position": [
+            1,
+            10
+          ]
+        },
+        {
+          "id": "sync_w",
+          "kind": "plate",
+          "role": "W",
+          "position": [
+            3,
+            10
+          ]
+        }
+      ],
+      "gate": {
+        "id": "sync_gate",
+        "kind": "door",
+        "column": 11,
+        "positions": [
+          [
+            1,
+            11
+          ],
+          [
+            3,
+            11
+          ]
+        ]
+      },
+      "edge_evidence": [
+        {
+          "from": "s",
+          "to": "cf",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "s",
+          "to": "cw",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "cf",
+          "to": "sync",
+          "verified": true,
+          "method": "explicit_temporal_overlap_binding"
+        },
+        {
+          "from": "cw",
+          "to": "sync",
+          "verified": true,
+          "method": "explicit_temporal_overlap_binding"
+        },
+        {
+          "from": "sync",
+          "to": "gate",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "gate",
+          "to": "xf",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "gate",
+          "to": "xw",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "xf",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "xw",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        }
+      ],
+      "witness_valid": true,
+      "replay_valid": true,
+      "bindings_valid": true,
+      "role_wait_valid": true,
+      "no_bypass_valid": true,
+      "necessity_valid": true,
+      "conformance_valid": true,
+      "dag_metrics": {
+        "nodes": 8,
+        "edges": 9,
+        "longest_path": 5,
+        "max_parallel_width": 2,
+        "branch_nodes": 2,
+        "join_nodes": 2,
+        "any_joins": 0,
+        "handoffs": 0,
+        "maintains": 0
+      },
+      "all_edges_evidenced": true
+    },
+    {
+      "id": "SYNC-04",
+      "suite": "Sync-8",
+      "variant": "asymmetric_W_long_K2",
+      "tier": "medium",
+      "mechanisms": [
+        "M14"
+      ],
+      "map": "eval_private/synchronize_8/maps/SYNC-04.fwmap",
+      "dag": "eval_private/synchronize_8/dags/DAG-SYNC-04.json",
+      "source_agents": [
+        "F",
+        "W"
+      ],
+      "dependency_semantics": [
+        "SYNCHRONIZE"
+      ],
+      "composition_motifs": [
+        "ASYMMETRIC_ARRIVAL"
+      ],
+      "extension_semantics": {
+        "type": "bounded_temporal_synchronize",
+        "synchronization_node_id": "sync",
+        "source_condition_node_ids": {
+          "F": "cf",
+          "W": "cw"
+        },
+        "minimum_overlap_rounds": 2,
+        "requires_live_overlap": true
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "s",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "running"
+        },
+        {
+          "dag_node_id": "cf",
+          "kind": "equals",
+          "observation_path": "state.controllers.sync_f",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "cw",
+          "kind": "equals",
+          "observation_path": "state.controllers.sync_w",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "sync",
+          "kind": "temporal_overlap",
+          "source_agents": [
+            "F",
+            "W"
+          ],
+          "condition_paths": [
+            "state.controllers.sync_f",
+            "state.controllers.sync_w"
+          ],
+          "minimum_overlap_rounds": 2
+        },
+        {
+          "dag_node_id": "gate",
+          "kind": "equals",
+          "observation_path": "state.platforms.sync_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "xf",
+          "kind": "actor_column_greater_than",
+          "role": "F",
+          "column": 11
+        },
+        {
+          "dag_node_id": "xw",
+          "kind": "actor_column_greater_than",
+          "role": "W",
+          "column": 11
+        },
+        {
+          "dag_node_id": "g",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "team_success"
+        }
+      ],
+      "controllers": [
+        {
+          "id": "sync_f",
+          "kind": "plate",
+          "role": "F",
+          "position": [
+            1,
+            10
+          ]
+        },
+        {
+          "id": "sync_w",
+          "kind": "plate",
+          "role": "W",
+          "position": [
+            3,
+            10
+          ]
+        }
+      ],
+      "gate": {
+        "id": "sync_gate",
+        "kind": "platform",
+        "column": 11,
+        "positions": [
+          [
+            1,
+            11
+          ],
+          [
+            3,
+            11
+          ]
+        ]
+      },
+      "edge_evidence": [
+        {
+          "from": "s",
+          "to": "cf",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "s",
+          "to": "cw",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "cf",
+          "to": "sync",
+          "verified": true,
+          "method": "explicit_temporal_overlap_binding"
+        },
+        {
+          "from": "cw",
+          "to": "sync",
+          "verified": true,
+          "method": "explicit_temporal_overlap_binding"
+        },
+        {
+          "from": "sync",
+          "to": "gate",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "gate",
+          "to": "xf",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "gate",
+          "to": "xw",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "xf",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "xw",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        }
+      ],
+      "witness_valid": true,
+      "replay_valid": true,
+      "bindings_valid": true,
+      "role_wait_valid": true,
+      "no_bypass_valid": true,
+      "necessity_valid": true,
+      "conformance_valid": true,
+      "dag_metrics": {
+        "nodes": 8,
+        "edges": 9,
+        "longest_path": 5,
+        "max_parallel_width": 2,
+        "branch_nodes": 2,
+        "join_nodes": 2,
+        "any_joins": 0,
+        "handoffs": 0,
+        "maintains": 0
+      },
+      "all_edges_evidenced": true
+    },
+    {
+      "id": "SYNC-05",
+      "suite": "Sync-8",
+      "variant": "bounded_overlap_K3",
+      "tier": "medium",
+      "mechanisms": [
+        "M11"
+      ],
+      "map": "eval_private/synchronize_8/maps/SYNC-05.fwmap",
+      "dag": "eval_private/synchronize_8/dags/DAG-SYNC-05.json",
+      "source_agents": [
+        "F",
+        "W"
+      ],
+      "dependency_semantics": [
+        "SYNCHRONIZE"
+      ],
+      "composition_motifs": [
+        "ASYMMETRIC_ARRIVAL"
+      ],
+      "extension_semantics": {
+        "type": "bounded_temporal_synchronize",
+        "synchronization_node_id": "sync",
+        "source_condition_node_ids": {
+          "F": "cf",
+          "W": "cw"
+        },
+        "minimum_overlap_rounds": 3,
+        "requires_live_overlap": true
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "s",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "running"
+        },
+        {
+          "dag_node_id": "cf",
+          "kind": "equals",
+          "observation_path": "state.controllers.sync_f",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "cw",
+          "kind": "equals",
+          "observation_path": "state.controllers.sync_w",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "sync",
+          "kind": "temporal_overlap",
+          "source_agents": [
+            "F",
+            "W"
+          ],
+          "condition_paths": [
+            "state.controllers.sync_f",
+            "state.controllers.sync_w"
+          ],
+          "minimum_overlap_rounds": 3
+        },
+        {
+          "dag_node_id": "gate",
+          "kind": "equals",
+          "observation_path": "state.doors.sync_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "xf",
+          "kind": "actor_column_greater_than",
+          "role": "F",
+          "column": 11
+        },
+        {
+          "dag_node_id": "xw",
+          "kind": "actor_column_greater_than",
+          "role": "W",
+          "column": 11
+        },
+        {
+          "dag_node_id": "g",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "team_success"
+        }
+      ],
+      "controllers": [
+        {
+          "id": "sync_f",
+          "kind": "plate",
+          "role": "F",
+          "position": [
+            1,
+            10
+          ]
+        },
+        {
+          "id": "sync_w",
+          "kind": "plate",
+          "role": "W",
+          "position": [
+            3,
+            10
+          ]
+        }
+      ],
+      "gate": {
+        "id": "sync_gate",
+        "kind": "door",
+        "column": 11,
+        "positions": [
+          [
+            1,
+            11
+          ],
+          [
+            3,
+            11
+          ]
+        ]
+      },
+      "edge_evidence": [
+        {
+          "from": "s",
+          "to": "cf",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "s",
+          "to": "cw",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "cf",
+          "to": "sync",
+          "verified": true,
+          "method": "explicit_temporal_overlap_binding"
+        },
+        {
+          "from": "cw",
+          "to": "sync",
+          "verified": true,
+          "method": "explicit_temporal_overlap_binding"
+        },
+        {
+          "from": "sync",
+          "to": "gate",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "gate",
+          "to": "xf",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "gate",
+          "to": "xw",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "xf",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "xw",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        }
+      ],
+      "witness_valid": true,
+      "replay_valid": true,
+      "bindings_valid": true,
+      "role_wait_valid": true,
+      "no_bypass_valid": true,
+      "necessity_valid": true,
+      "conformance_valid": true,
+      "dag_metrics": {
+        "nodes": 8,
+        "edges": 9,
+        "longest_path": 5,
+        "max_parallel_width": 2,
+        "branch_nodes": 2,
+        "join_nodes": 2,
+        "any_joins": 0,
+        "handoffs": 0,
+        "maintains": 0
+      },
+      "all_edges_evidenced": true
+    },
+    {
+      "id": "SYNC-06",
+      "suite": "Sync-8",
+      "variant": "enable_W_to_F_then_sync",
+      "tier": "composition",
+      "mechanisms": [
+        "M11",
+        "M17"
+      ],
+      "map": "eval_private/synchronize_8/maps/SYNC-06.fwmap",
+      "dag": "eval_private/synchronize_8/dags/DAG-SYNC-06.json",
+      "source_agents": [
+        "F",
+        "W"
+      ],
+      "dependency_semantics": [
+        "ENABLE",
+        "SYNCHRONIZE"
+      ],
+      "composition_motifs": [
+        "SEQUENTIAL_COMPOSITION"
+      ],
+      "extension_semantics": {
+        "type": "bounded_temporal_synchronize",
+        "synchronization_node_id": "sync",
+        "source_condition_node_ids": {
+          "F": "cf",
+          "W": "cw"
+        },
+        "minimum_overlap_rounds": 2,
+        "requires_live_overlap": true
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "s",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "running"
+        },
+        {
+          "dag_node_id": "pre_c",
+          "kind": "equals",
+          "observation_path": "state.controllers.prefix_controller",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "pre_a",
+          "kind": "equals",
+          "observation_path": "state.doors.prefix_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "pre_x",
+          "kind": "actor_column_greater_than",
+          "role": "F",
+          "column": 6
+        },
+        {
+          "dag_node_id": "cf",
+          "kind": "equals",
+          "observation_path": "state.controllers.sync_f",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "cw",
+          "kind": "equals",
+          "observation_path": "state.controllers.sync_w",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "sync",
+          "kind": "temporal_overlap",
+          "source_agents": [
+            "F",
+            "W"
+          ],
+          "condition_paths": [
+            "state.controllers.sync_f",
+            "state.controllers.sync_w"
+          ],
+          "minimum_overlap_rounds": 2
+        },
+        {
+          "dag_node_id": "gate",
+          "kind": "equals",
+          "observation_path": "state.doors.sync_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "xf",
+          "kind": "actor_column_greater_than",
+          "role": "F",
+          "column": 11
+        },
+        {
+          "dag_node_id": "xw",
+          "kind": "actor_column_greater_than",
+          "role": "W",
+          "column": 11
+        },
+        {
+          "dag_node_id": "g",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "team_success"
+        }
+      ],
+      "controllers": [
+        {
+          "id": "prefix_controller",
+          "kind": "lever",
+          "role": "W",
+          "position": [
+            3,
+            3
+          ]
+        },
+        {
+          "id": "sync_f",
+          "kind": "plate",
+          "role": "F",
+          "position": [
+            1,
+            10
+          ]
+        },
+        {
+          "id": "sync_w",
+          "kind": "plate",
+          "role": "W",
+          "position": [
+            3,
+            10
+          ]
+        }
+      ],
+      "gate": {
+        "id": "sync_gate",
+        "kind": "door",
+        "column": 11,
+        "positions": [
+          [
+            1,
+            11
+          ],
+          [
+            3,
+            11
+          ]
+        ]
+      },
+      "edge_evidence": [
+        {
+          "from": "s",
+          "to": "pre_c",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "pre_c",
+          "to": "pre_a",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "pre_a",
+          "to": "pre_x",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "pre_x",
+          "to": "cf",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "s",
+          "to": "cw",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "cf",
+          "to": "sync",
+          "verified": true,
+          "method": "explicit_temporal_overlap_binding"
+        },
+        {
+          "from": "cw",
+          "to": "sync",
+          "verified": true,
+          "method": "explicit_temporal_overlap_binding"
+        },
+        {
+          "from": "sync",
+          "to": "gate",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "gate",
+          "to": "xf",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "gate",
+          "to": "xw",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "xf",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "xw",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        }
+      ],
+      "witness_valid": true,
+      "replay_valid": true,
+      "bindings_valid": true,
+      "role_wait_valid": true,
+      "no_bypass_valid": true,
+      "necessity_valid": true,
+      "conformance_valid": true,
+      "dag_metrics": {
+        "nodes": 11,
+        "edges": 12,
+        "longest_path": 8,
+        "max_parallel_width": 2,
+        "branch_nodes": 2,
+        "join_nodes": 2,
+        "any_joins": 0,
+        "handoffs": 0,
+        "maintains": 0
+      },
+      "all_edges_evidenced": true
+    },
+    {
+      "id": "SYNC-07",
+      "suite": "Sync-8",
+      "variant": "maintain_W_to_F_then_sync",
+      "tier": "composition",
+      "mechanisms": [
+        "M11",
+        "M14"
+      ],
+      "map": "eval_private/synchronize_8/maps/SYNC-07.fwmap",
+      "dag": "eval_private/synchronize_8/dags/DAG-SYNC-07.json",
+      "source_agents": [
+        "F",
+        "W"
+      ],
+      "dependency_semantics": [
+        "MAINTAIN",
+        "SYNCHRONIZE"
+      ],
+      "composition_motifs": [
+        "SEQUENTIAL_COMPOSITION"
+      ],
+      "extension_semantics": {
+        "type": "bounded_temporal_synchronize",
+        "synchronization_node_id": "sync",
+        "source_condition_node_ids": {
+          "F": "cf",
+          "W": "cw"
+        },
+        "minimum_overlap_rounds": 2,
+        "requires_live_overlap": true
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "s",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "running"
+        },
+        {
+          "dag_node_id": "pre_c",
+          "kind": "equals",
+          "observation_path": "state.controllers.prefix_controller",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "pre_a",
+          "kind": "equals",
+          "observation_path": "state.doors.prefix_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "pre_x",
+          "kind": "actor_column_greater_than",
+          "role": "F",
+          "column": 6
+        },
+        {
+          "dag_node_id": "cf",
+          "kind": "equals",
+          "observation_path": "state.controllers.sync_f",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "cw",
+          "kind": "equals",
+          "observation_path": "state.controllers.sync_w",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "sync",
+          "kind": "temporal_overlap",
+          "source_agents": [
+            "F",
+            "W"
+          ],
+          "condition_paths": [
+            "state.controllers.sync_f",
+            "state.controllers.sync_w"
+          ],
+          "minimum_overlap_rounds": 2
+        },
+        {
+          "dag_node_id": "gate",
+          "kind": "equals",
+          "observation_path": "state.platforms.sync_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "xf",
+          "kind": "actor_column_greater_than",
+          "role": "F",
+          "column": 11
+        },
+        {
+          "dag_node_id": "xw",
+          "kind": "actor_column_greater_than",
+          "role": "W",
+          "column": 11
+        },
+        {
+          "dag_node_id": "g",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "team_success"
+        }
+      ],
+      "controllers": [
+        {
+          "id": "prefix_controller",
+          "kind": "plate",
+          "role": "W",
+          "position": [
+            3,
+            3
+          ]
+        },
+        {
+          "id": "sync_f",
+          "kind": "plate",
+          "role": "F",
+          "position": [
+            1,
+            10
+          ]
+        },
+        {
+          "id": "sync_w",
+          "kind": "plate",
+          "role": "W",
+          "position": [
+            3,
+            10
+          ]
+        }
+      ],
+      "gate": {
+        "id": "sync_gate",
+        "kind": "platform",
+        "column": 11,
+        "positions": [
+          [
+            1,
+            11
+          ],
+          [
+            3,
+            11
+          ]
+        ]
+      },
+      "edge_evidence": [
+        {
+          "from": "s",
+          "to": "pre_c",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "pre_c",
+          "to": "pre_a",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "pre_a",
+          "to": "pre_x",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "pre_c",
+          "to": "pre_x",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "pre_x",
+          "to": "cf",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "s",
+          "to": "cw",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "cf",
+          "to": "sync",
+          "verified": true,
+          "method": "explicit_temporal_overlap_binding"
+        },
+        {
+          "from": "cw",
+          "to": "sync",
+          "verified": true,
+          "method": "explicit_temporal_overlap_binding"
+        },
+        {
+          "from": "sync",
+          "to": "gate",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "gate",
+          "to": "xf",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "gate",
+          "to": "xw",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "xf",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "xw",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        }
+      ],
+      "witness_valid": true,
+      "replay_valid": true,
+      "bindings_valid": true,
+      "role_wait_valid": true,
+      "no_bypass_valid": true,
+      "necessity_valid": true,
+      "conformance_valid": true,
+      "dag_metrics": {
+        "nodes": 11,
+        "edges": 13,
+        "longest_path": 8,
+        "max_parallel_width": 2,
+        "branch_nodes": 3,
+        "join_nodes": 3,
+        "any_joins": 0,
+        "handoffs": 0,
+        "maintains": 2
+      },
+      "all_edges_evidenced": true
+    },
+    {
+      "id": "SYNC-08",
+      "suite": "Sync-8",
+      "variant": "enable_F_to_W_then_sync_K3",
+      "tier": "composition",
+      "mechanisms": [
+        "M11",
+        "M17"
+      ],
+      "map": "eval_private/synchronize_8/maps/SYNC-08.fwmap",
+      "dag": "eval_private/synchronize_8/dags/DAG-SYNC-08.json",
+      "source_agents": [
+        "F",
+        "W"
+      ],
+      "dependency_semantics": [
+        "ENABLE",
+        "SYNCHRONIZE"
+      ],
+      "composition_motifs": [
+        "SEQUENTIAL_COMPOSITION"
+      ],
+      "extension_semantics": {
+        "type": "bounded_temporal_synchronize",
+        "synchronization_node_id": "sync",
+        "source_condition_node_ids": {
+          "F": "cf",
+          "W": "cw"
+        },
+        "minimum_overlap_rounds": 3,
+        "requires_live_overlap": true
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "s",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "running"
+        },
+        {
+          "dag_node_id": "pre_c",
+          "kind": "equals",
+          "observation_path": "state.controllers.prefix_controller",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "pre_a",
+          "kind": "equals",
+          "observation_path": "state.doors.prefix_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "pre_x",
+          "kind": "actor_column_greater_than",
+          "role": "W",
+          "column": 6
+        },
+        {
+          "dag_node_id": "cf",
+          "kind": "equals",
+          "observation_path": "state.controllers.sync_f",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "cw",
+          "kind": "equals",
+          "observation_path": "state.controllers.sync_w",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "sync",
+          "kind": "temporal_overlap",
+          "source_agents": [
+            "F",
+            "W"
+          ],
+          "condition_paths": [
+            "state.controllers.sync_f",
+            "state.controllers.sync_w"
+          ],
+          "minimum_overlap_rounds": 3
+        },
+        {
+          "dag_node_id": "gate",
+          "kind": "equals",
+          "observation_path": "state.doors.sync_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "xf",
+          "kind": "actor_column_greater_than",
+          "role": "F",
+          "column": 11
+        },
+        {
+          "dag_node_id": "xw",
+          "kind": "actor_column_greater_than",
+          "role": "W",
+          "column": 11
+        },
+        {
+          "dag_node_id": "g",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "team_success"
+        }
+      ],
+      "controllers": [
+        {
+          "id": "prefix_controller",
+          "kind": "lever",
+          "role": "F",
+          "position": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "sync_f",
+          "kind": "plate",
+          "role": "F",
+          "position": [
+            1,
+            10
+          ]
+        },
+        {
+          "id": "sync_w",
+          "kind": "plate",
+          "role": "W",
+          "position": [
+            3,
+            10
+          ]
+        }
+      ],
+      "gate": {
+        "id": "sync_gate",
+        "kind": "door",
+        "column": 11,
+        "positions": [
+          [
+            1,
+            11
+          ],
+          [
+            3,
+            11
+          ]
+        ]
+      },
+      "edge_evidence": [
+        {
+          "from": "s",
+          "to": "pre_c",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "pre_c",
+          "to": "pre_a",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "pre_a",
+          "to": "pre_x",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "s",
+          "to": "cf",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "pre_x",
+          "to": "cw",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "cf",
+          "to": "sync",
+          "verified": true,
+          "method": "explicit_temporal_overlap_binding"
+        },
+        {
+          "from": "cw",
+          "to": "sync",
+          "verified": true,
+          "method": "explicit_temporal_overlap_binding"
+        },
+        {
+          "from": "sync",
+          "to": "gate",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "gate",
+          "to": "xf",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "gate",
+          "to": "xw",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "xf",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "xw",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        }
+      ],
+      "witness_valid": true,
+      "replay_valid": true,
+      "bindings_valid": true,
+      "role_wait_valid": true,
+      "no_bypass_valid": true,
+      "necessity_valid": true,
+      "conformance_valid": true,
+      "dag_metrics": {
+        "nodes": 11,
+        "edges": 12,
+        "longest_path": 8,
+        "max_parallel_width": 2,
+        "branch_nodes": 2,
+        "join_nodes": 2,
+        "any_joins": 0,
+        "handoffs": 0,
+        "maintains": 0
+      },
+      "all_edges_evidenced": true
+    }
+  ]
+}

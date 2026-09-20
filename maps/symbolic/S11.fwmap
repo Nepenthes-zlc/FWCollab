@@ -1,0 +1,13 @@
+@format fwcollab.symbol_map.v1
+@id S11
+@title S11 临时门、反向支援和持久门组成三阶段依赖
+@max_steps 1
+@plate 1 opens A accepts F
+@plate 2 opens B accepts W
+@lever L opens C
+---
+#######################
+#F..1..B..L.C....f....#
+#######################
+#W..A..2....C....w....#
+#######################

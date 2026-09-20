@@ -1,0 +1,167 @@
+{
+  "format": "fwcollab.symbolic.state_dag.v1",
+  "id": "DAG-L2-003",
+  "difficulty": "L2",
+  "evaluation_role": "diagnostic",
+  "visibility": "private_reference",
+  "title": "角色压板门 × 二态切换桥",
+  "summary": "以or_tail拓扑组合2种元机关：角色压板门 × 二态切换桥。",
+  "topology_family": "or_tail",
+  "mechanisms": [
+    "M11",
+    "M20"
+  ],
+  "nodes": [
+    {
+      "id": "n000",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "start",
+        "motif": "SYSTEM",
+        "state": "task_ready",
+        "phase": 0
+      },
+      "label": "任务初始状态成立"
+    },
+    {
+      "id": "n001",
+      "kind": "condition",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "occupy",
+        "motif": "M11",
+        "state": "plate_held",
+        "phase": 0
+      },
+      "label": "角色持续占据压力板"
+    },
+    {
+      "id": "n002",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M11",
+        "state": "door_open",
+        "phase": 0
+      },
+      "label": "压力板门保持打开"
+    },
+    {
+      "id": "n003",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M11",
+        "state": "partner_crossed_door",
+        "phase": 0
+      },
+      "label": "搭档通过压力板门"
+    },
+    {
+      "id": "n004",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "toggle",
+        "motif": "M20",
+        "state": "toggle_desired",
+        "phase": 1
+      },
+      "label": "桥切换器进入目标状态"
+    },
+    {
+      "id": "n005",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M20",
+        "state": "bridge_desired_state",
+        "phase": 1
+      },
+      "label": "切换桥状态正确"
+    },
+    {
+      "id": "n006",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M20",
+        "state": "partner_crossed_bridge",
+        "phase": 1
+      },
+      "label": "搭档通过切换桥"
+    },
+    {
+      "id": "n007",
+      "kind": "goal",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "team_success",
+        "motif": "SYSTEM",
+        "state": "all_required_goals",
+        "phase": 3
+      },
+      "label": "双方满足团队成功条件"
+    }
+  ],
+  "edges": [
+    {
+      "from": "n001",
+      "to": "n002",
+      "relation": "enables"
+    },
+    {
+      "from": "n002",
+      "to": "n003",
+      "relation": "enables"
+    },
+    {
+      "from": "n001",
+      "to": "n003",
+      "relation": "maintains"
+    },
+    {
+      "from": "n004",
+      "to": "n005",
+      "relation": "enables"
+    },
+    {
+      "from": "n005",
+      "to": "n006",
+      "relation": "enables"
+    },
+    {
+      "from": "n004",
+      "to": "n006",
+      "relation": "handoff"
+    },
+    {
+      "from": "n003",
+      "to": "n004",
+      "relation": "requires"
+    },
+    {
+      "from": "n000",
+      "to": "n001",
+      "relation": "requires"
+    },
+    {
+      "from": "n006",
+      "to": "n007",
+      "relation": "synchronizes"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+@format fwcollab.symbol_map.v3
+@id C5-006
+@title Private wiring and route handoff
+@max_steps 1
+@controller c_north lever at 2,13
+@controller c_center lever at 4,13
+@controller c_south lever at 6,13
+@actuator gate_alpha door at 10,10 controlled_by all(c_north)
+@actuator gate_beta door at 12,10 controlled_by all(c_south)
+@actuator gate_gamma door at 14,10 controlled_by all(c_center)
+---
+#####################
+#####################
+###..........L#######
+###.#################
+#f.F.........L#######
+###.#################
+###..........L#######
+#####################
+#####################
+#####################
+###.......A.#########
+###.#################
+##W.......B.#####..w#
+###.#############.###
+###.......C.......###
+#####################
+#####################

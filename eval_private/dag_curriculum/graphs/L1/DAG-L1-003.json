@@ -1,0 +1,84 @@
+{
+  "format": "fwcollab.symbolic.state_dag.v1",
+  "id": "DAG-L1-003",
+  "difficulty": "L1",
+  "evaluation_role": "diagnostic",
+  "visibility": "private_reference",
+  "title": "水池差异地形",
+  "summary": "以fork_join_tail拓扑组合1种元机关：水池差异地形。",
+  "topology_family": "fork_join_tail",
+  "mechanisms": [
+    "M03"
+  ],
+  "nodes": [
+    {
+      "id": "n000",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "start",
+        "motif": "SYSTEM",
+        "state": "task_ready",
+        "phase": 0
+      },
+      "label": "任务初始状态成立"
+    },
+    {
+      "id": "n001",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "assign",
+        "motif": "M03",
+        "state": "water_safe_role",
+        "phase": 0
+      },
+      "label": "分配水池安全角色"
+    },
+    {
+      "id": "n002",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M03",
+        "state": "water_crossed",
+        "phase": 0
+      },
+      "label": "安全角色通过水池"
+    },
+    {
+      "id": "n003",
+      "kind": "goal",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "team_success",
+        "motif": "SYSTEM",
+        "state": "all_required_goals",
+        "phase": 2
+      },
+      "label": "双方满足团队成功条件"
+    }
+  ],
+  "edges": [
+    {
+      "from": "n001",
+      "to": "n002",
+      "relation": "enables"
+    },
+    {
+      "from": "n000",
+      "to": "n001",
+      "relation": "requires"
+    },
+    {
+      "from": "n002",
+      "to": "n003",
+      "relation": "synchronizes"
+    }
+  ]
+}

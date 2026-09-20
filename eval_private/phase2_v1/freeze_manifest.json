@@ -1,0 +1,317 @@
+{
+  "format": "fwcollab.symbolic.benchmark_freeze.v1",
+  "benchmark_version": "v1",
+  "created_at": "2026-09-14T15:54:02.369290+00:00",
+  "statement": "The diagnostic subset was selected solely from task structure and collaboration primitives, without access to model performance.",
+  "task_count": 24,
+  "condition_count": 6,
+  "replicates": 3,
+  "expected_episodes": 432,
+  "files": [
+    {
+      "path": "SYMBOL_SPEC.md",
+      "sha256": "c52ac125a8fdf0fa8608f16a9ece59aeffa257f6f67b1206e215c24fafe8c7a3",
+      "bytes": 7014
+    },
+    {
+      "path": "docs/COLLABORATION_EVALUATION_PROTOCOL.md",
+      "sha256": "107550411809b380931c379e45cd3c7a50b0452006fe63884f250e422eb78e42",
+      "bytes": 6261
+    },
+    {
+      "path": "docs/PUBLIC_RULEBOOK.md",
+      "sha256": "859629784be95e6e5a1346fe84ad4ddd9ba4a5c120c218cf61ae2fdca31b69c7",
+      "bytes": 12481
+    },
+    {
+      "path": "eval_private/collaboration_diagnostic_24/manifest.json",
+      "sha256": "e3f0af67a3b123d0d75f816e760f809d8d6d649bd247868e009ca258eb616eda",
+      "bytes": 30375
+    },
+    {
+      "path": "eval_private/phase2_v1/experiment_spec.json",
+      "sha256": "429d5f4a94050888614bca6bd0368cb3115b378e3ef5fa3d62864114fc021451",
+      "bytes": 2636
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L1/DAG-V4-L1-001.json",
+      "sha256": "156bd2479ad9261d969820500a8c259debb404a72d2fd087dd8d48d4b80d7afc",
+      "bytes": 3488
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L1/DAG-V4-L1-002.json",
+      "sha256": "8b36a7b8258be3b7c83cf1d4f502c21bc28dbf090545907ab3eac9018949e426",
+      "bytes": 3468
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-006.json",
+      "sha256": "a981a224f1b61be1fb4de9b15719dcaed1fd1fbc980b9862f9bfec3e6fd4442b",
+      "bytes": 4643
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-007.json",
+      "sha256": "9bf586250979e9cda6ffbe9e9d8d46b3baeac7ac264ffb6365126e4daef61d57",
+      "bytes": 4621
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-008.json",
+      "sha256": "b70adfdb7aeff43c42f3975a82fffe148a131fffe1f4c800a5b8263651386acc",
+      "bytes": 4166
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-004.json",
+      "sha256": "618cf79d15dd32d0a7871e4312037e546921f1199b598596e727ce99864571e2",
+      "bytes": 5319
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-009.json",
+      "sha256": "bef23bb41e50e8906c1154a453dcff05522927747f7b81543306096f66a1ba80",
+      "bytes": 5770
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-010.json",
+      "sha256": "819c50f8b34b6f5a07c59f6f3b77ac185595a243bb37a7e69080ed0bdc1eeffd",
+      "bytes": 5317
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-005.json",
+      "sha256": "05d4dd2fb5b83e5fe92566301ff5ef2cfb139cf99bda32accee7c0804debc55b",
+      "bytes": 7352
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-008.json",
+      "sha256": "60ebadc424ec7e7d06a793db80f21eaaedb968bf8bf39bc4d2fb8ff756b37df3",
+      "bytes": 6444
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-009.json",
+      "sha256": "ef2f51dee2e4859e1cbb9110108a6ef7ca438b75b16082530567ff76384d1dcd",
+      "bytes": 6907
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-012.json",
+      "sha256": "5de3344c3dc0903abb08aa951d60ec38868d3f8528a8e022d4b8538b0e2c3a19",
+      "bytes": 6907
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-004.json",
+      "sha256": "b8b8eef3ea0e158d8ce7ddd89550a7868eb658e7bdd8d9128190e943ee6ccc41",
+      "bytes": 8096
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-005.json",
+      "sha256": "f87a7a08c4435e8d6745732f8b3d2f26c72db44b9934c328db35c1d42c9ecaa1",
+      "bytes": 8120
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-006.json",
+      "sha256": "49c6b56333eb370a78f60856b5f366d162a71dd16633b67801b470ab6bfff2d8",
+      "bytes": 7639
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-011.json",
+      "sha256": "cb8976154a7ea9e9b0a5321432c84714e5d550d67c2407213c470e17d6fb559f",
+      "bytes": 8108
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-007.json",
+      "sha256": "75b1c2c5bf731ba04f7eae0f935bf95c14959a94494dd994e07ca952755ca7b9",
+      "bytes": 9672
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-008.json",
+      "sha256": "5e69b6e905cd22f52fc78840d7bd3e9ec2eeda40d86247295e179e825351d86d",
+      "bytes": 10167
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-009.json",
+      "sha256": "5420eb112ddf6d0256c024eceb23a8e4b092c1a2a76b2d07c0a9a472e07a5bc6",
+      "bytes": 10564
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-010.json",
+      "sha256": "8104cffd663ce47bf9e1da8b15e09976a13bdd5d7a28065563bff0986d6a66e3",
+      "bytes": 10157
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-001.json",
+      "sha256": "eb631c6567817393029544a731baf854c3625c5a61a3942e95ce397045269337",
+      "bytes": 11725
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-002.json",
+      "sha256": "44f95b8de9a9985f7c9b2d3b963608cf3f4e97b6b2d4706c077b73b9cf1c6786",
+      "bytes": 11711
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-003.json",
+      "sha256": "055deb52162a1f8bdb4e2c035c6d214d360613a196f8018cd7fa5d4370f7be3b",
+      "bytes": 11282
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-009.json",
+      "sha256": "411550526431b8e234ac6cbdbb3d55d182f390670ee466f0473eadb322c6290f",
+      "bytes": 10775
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L1/V4-L1-001.fwmap",
+      "sha256": "75127e5e8d72be2b6050848479355cbf1c3081524e6e9da88b786272379537b2",
+      "bytes": 711
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L1/V4-L1-002.fwmap",
+      "sha256": "7df4e8ef7fe96d4306fe82eb532f7c455d15f268baed9b5390fc7bc6cd5bd700",
+      "bytes": 700
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-006.fwmap",
+      "sha256": "a93e6f086de3fcdc7716b2ddbcf9bb17e85b143c301085956b9e53beb2c39e7d",
+      "bytes": 1044
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-007.fwmap",
+      "sha256": "5b7a5f12d5b0e91402449758e323ca8c338b0c92c6c2fc944cb726aeb761016f",
+      "bytes": 953
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-008.fwmap",
+      "sha256": "e81f06d214b3c892d3508848c2012d2bfd2b638a377516e1cdef88da520ade45",
+      "bytes": 920
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-004.fwmap",
+      "sha256": "8ff2fa62abb95662f8b8dfb4c04af3ad5728a769fa034fa742f7c25b5db6cafa",
+      "bytes": 1120
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-009.fwmap",
+      "sha256": "3b15c8f56fe721a0e3c9410438b10d4ed12f9664fd303f9fc70090b90e6ff7da",
+      "bytes": 1154
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-010.fwmap",
+      "sha256": "e68ceec3d3532b50e4b5fecdd3e30ff266f5679db1c3bef9d130efb97e1ebdbd",
+      "bytes": 1086
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-005.fwmap",
+      "sha256": "bcdd2db59efb7b04cb785b5c7145cd77d5057e2f12d93634e681ab5714c453d5",
+      "bytes": 1471
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-008.fwmap",
+      "sha256": "febb5fa8a0a136694bc29a6b817b73a3df471752640eafcc16f00a44c41ab90c",
+      "bytes": 1400
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-009.fwmap",
+      "sha256": "7a775609914ecfc8a1c1202d2d2f739ba50459872b7fc3e588724295bacc8ed4",
+      "bytes": 1362
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-012.fwmap",
+      "sha256": "8d98b7871834457c3e45229f59052dfb518d5cfb080a803eb8e37e6a8ddb7eb2",
+      "bytes": 1458
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-004.fwmap",
+      "sha256": "7e78d2663df9374b98492f5624ba9df2fc71921af58391bd450cd5ab23ba2566",
+      "bytes": 1526
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-005.fwmap",
+      "sha256": "ac26f706e8ac4e45ef948369672d71252e838635581ccdab3402d25453057401",
+      "bytes": 1553
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-006.fwmap",
+      "sha256": "1c8d7216c35eaa7aab66fc4c38a83bf2abcc38bec9c5822f9b1216068235bb0a",
+      "bytes": 1538
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-011.fwmap",
+      "sha256": "03d2df6433559201474a345f1d55b220032be8fdd5cac58aea2b4658d4e16b78",
+      "bytes": 1602
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-007.fwmap",
+      "sha256": "6a7888db49981b5c614d4b9e39d9f8084b425c7ea397423607ccfd25a326a2db",
+      "bytes": 1832
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-008.fwmap",
+      "sha256": "4189aa0d57e8f2b9d63739b30910057d1b7eefd3b32f577757aaf16bbaae90ae",
+      "bytes": 2012
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-009.fwmap",
+      "sha256": "00d256011a29cb7d6b0d832d69f3f9df4d301eea933dd9892ffcd020d699cee7",
+      "bytes": 2000
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-010.fwmap",
+      "sha256": "41dc632274cbadb960c48e130de730904654af33156f4436ec25bbc5b30cbcbd",
+      "bytes": 2008
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-001.fwmap",
+      "sha256": "14684e992f2f05f913effc97e2f3518c4e889461cc4002e73849dd5cbd19b901",
+      "bytes": 2131
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-002.fwmap",
+      "sha256": "bc8807f016a5062cb0c2ca4946e54864a0e8ca99d43a842d76d3240e15d30b6f",
+      "bytes": 2116
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-003.fwmap",
+      "sha256": "2a66cf1db0a991588594a782aba003d8c9a1286a32aa609f91c22e581e7c3f80",
+      "bytes": 2087
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-009.fwmap",
+      "sha256": "67806d607a5fe1b3a4d9c89c7136027e1c4c4d1752b714e28615284665b5bfe8",
+      "bytes": 2093
+    },
+    {
+      "path": "schemas/collaboration_evaluation.schema.json",
+      "sha256": "d5e081126fa7b1873dbe96da78d088fb5911bb5ed0664fa42bbb598748c840ca",
+      "bytes": 1355
+    },
+    {
+      "path": "scripts/run_phase2_causal_suite.py",
+      "sha256": "06887db6f35fd89634c298545ff1e53e1efe03d104478eccfd8a6e6d3b728fdd",
+      "bytes": 9980
+    },
+    {
+      "path": "src/fwcollab/symbolic/agents.py",
+      "sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3",
+      "bytes": 18153
+    },
+    {
+      "path": "src/fwcollab/symbolic/collaboration_eval.py",
+      "sha256": "55617c74f3c38b641424add50f217bb43a8677d5b31253918724fb9afa30eced",
+      "bytes": 29132
+    },
+    {
+      "path": "src/fwcollab/symbolic/map.py",
+      "sha256": "a7f971a5523396d3ec561c9df902d8e31a24fa6639313f1d437bd7b92833ac5a",
+      "bytes": 24956
+    },
+    {
+      "path": "src/fwcollab/symbolic/rules.py",
+      "sha256": "350e5b68ac8b88da11aabd577f7a68168f524debcd8dea0ca2f68fa0fe46da4e",
+      "bytes": 4885
+    },
+    {
+      "path": "src/fwcollab/symbolic/runner.py",
+      "sha256": "6556a92d7e570b249091d979591a71dda15b84da767ec208ce0c8380e240b100",
+      "bytes": 35874
+    },
+    {
+      "path": "src/fwcollab/symbolic/world.py",
+      "sha256": "914b990467d18857d28d254f05927083ffbdb7ddfd07bf8c5064f06801be5a04",
+      "bytes": 33874
+    }
+  ]
+}

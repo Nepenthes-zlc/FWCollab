@@ -1,0 +1,32 @@
+@format fwcollab.symbol_map.v3
+@id V4-L6-004
+@title constructive L6 full-mechanism curriculum 004; orb-cleared light door
+@max_steps 1
+@controller c1_plate plate at 6,5 accepts W
+@actuator a1_platform platform at 2,9 controlled_by all(c1_plate)
+@controller c2_lever lever at 3,14
+@controller c3_lever lever at 1,15
+@actuator a2_door door at 7,18 controlled_by all(c2_lever,c3_lever)
+@controller c4_plate plate at 6,23 accepts W
+@actuator a3_door door at 2,27 controlled_by all(c4_plate)
+@controller c5_lever lever at 3,32
+@actuator a4_door door at 7,36 controlled_by all(c5_lever)
+@controller c6_toggle toggle at 6,41
+@controller c7_plate plate at 8,42 accepts W
+@actuator a5_platform platform at 2,45 controlled_by all(c6_toggle,c7_plate)
+@controller c8_lever lever at 3,50
+@controller c9_plate plate at 1,51 accepts F
+@actuator a6_door door at 7,54 controlled_by all(c8_lever,c9_plate)
+@light + direction RIGHT sensor S opens A
+---
+#################################################################################
+#......#.#.....L..#........#........#......#.#.....4..#.........................#
+#F...#...=....##.......##..C....#........#...=....###..............+..o..S.....f#
+#..#.....#....L...#........#....L.#.#........#....L...#.........................#
+#........#........#........#........#........#........#.........................#
+#################################################################################
+#....1.#.#........#....2...#........#....T.#.#........#.....................#...#
+#W...#........##..B....##.......#...D....#........###.A.....................A..w#
+#..#.....#........#........#......#.#.....3..#........#.....................#...#
+#........#........#........#........#........#........#.....................#...#
+#################################################################################

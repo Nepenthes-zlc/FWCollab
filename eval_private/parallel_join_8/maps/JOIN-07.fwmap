@@ -1,0 +1,15 @@
+@format fwcollab.symbol_map.v3
+@id JOIN-07
+@title join_then_maintain_W_to_F
+@max_steps 1
+@controller branch_f toggle at 1,4
+@controller branch_w lever at 3,3
+@actuator join_gate platform at 1,10;3,10 controlled_by all(branch_f,branch_w)
+@controller final_hold plate at 3,14 accepts W
+@actuator final_gate door at 1,15 controlled_by all(final_hold)
+---
+#####################
+#F..T.....=....B...f#
+#####################
+#W.L......=...3....w#
+#####################

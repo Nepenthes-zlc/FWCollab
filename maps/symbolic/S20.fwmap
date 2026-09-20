@@ -1,0 +1,12 @@
+@format fwcollab.symbol_map.v2
+@id S20
+@title S20 把箱子移出光路，使感应器持续开门
+@max_steps 1
+@light + direction RIGHT sensor S opens A
+---
+#####################
+#...................#
+#+...O...S..........#
+#F...W...A..f..w....#
+#........#..........#
+#####################

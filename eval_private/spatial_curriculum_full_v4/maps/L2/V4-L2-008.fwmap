@@ -1,0 +1,21 @@
+@format fwcollab.symbol_map.v3
+@id V4-L2-008
+@title constructive L2 full-mechanism curriculum 008; freeze-thaw route
+@max_steps 1
+@controller c1_plate plate at 6,5 accepts W
+@actuator a1_platform platform at 2,9 controlled_by all(c1_plate)
+@controller c2_plate plate at 3,14 accepts F
+@actuator a2_door door at 7,18 controlled_by all(c2_plate)
+@thermal I initial liquid heater H freezer K
+---
+#############################################
+#......#.#........#...................#.....#
+#F...#...=....##......................I....f#
+#..#.....#....2...#...................#.....#
+#........#........#...................#.....#
+#############################################
+#....1.#.#........#..............H..........#
+#W...#........##..B........................w#
+#..#.....#........#..............K..........#
+#........#........#.........................#
+#############################################

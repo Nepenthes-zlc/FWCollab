@@ -1,0 +1,12 @@
+@format fwcollab.symbol_map.v1
+@id S04
+@title S04 用箱子替代角色持续压板
+@max_steps 1
+@plate 1 opens A accepts O
+---
+#################
+#W.O1.....w.....#
+#...............#
+#################
+#F...A....f.....#
+#################

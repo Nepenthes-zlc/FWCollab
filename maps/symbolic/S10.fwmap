@@ -1,0 +1,12 @@
+@format fwcollab.symbol_map.v1
+@id S10
+@title S10 利用各自安全元素区完成交叉解锁
+@max_steps 1
+@plate 1 opens A accepts W
+@lever L opens B
+---
+#####################
+#F.^^.L..A....f.....#
+#####################
+#W.~~.1..B....w.....#
+#####################

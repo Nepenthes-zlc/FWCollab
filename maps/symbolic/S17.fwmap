@@ -1,0 +1,12 @@
+@format fwcollab.symbol_map.v2
+@id S17
+@title S17 通过单向门后无法原路返回的承诺规划
+@max_steps 1
+@plate 1 opens A accepts F
+@oneway J allows RIGHT
+---
+###################
+#F..1.......f.....#
+###################
+#W..A.J.....w.....#
+###################

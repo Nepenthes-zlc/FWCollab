@@ -1,0 +1,315 @@
+{
+  "format": "fwcollab.symbolic.state_dag.v1",
+  "id": "DAG-L4-001",
+  "difficulty": "L4",
+  "evaluation_role": "scored",
+  "visibility": "private_reference",
+  "title": "三门接力：压板支援、拨杆回援与箱子占板",
+  "summary": "火方保持角色压板帮助水方触发拨杆，水方永久开门回援火方，随后箱子占板打开共同终门并分流到专属出口。",
+  "topology_family": "multi_stage_relay",
+  "mechanisms": [
+    "M11",
+    "M17",
+    "M12",
+    "M03",
+    "M04",
+    "M10"
+  ],
+  "nodes": [
+    {
+      "id": "n000",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "start",
+        "motif": "SYSTEM",
+        "state": "task_ready",
+        "phase": 0
+      },
+      "label": "任务初始状态成立"
+    },
+    {
+      "id": "n001",
+      "kind": "condition",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "occupy",
+        "motif": "M11",
+        "state": "plate_held",
+        "phase": 0
+      },
+      "label": "角色持续占据压力板"
+    },
+    {
+      "id": "n002",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M11",
+        "state": "door_open",
+        "phase": 0
+      },
+      "label": "压力板门保持打开"
+    },
+    {
+      "id": "n003",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M11",
+        "state": "partner_crossed_door",
+        "phase": 0
+      },
+      "label": "搭档通过压力板门"
+    },
+    {
+      "id": "n004",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "reach",
+        "motif": "M17",
+        "state": "lever_reached",
+        "phase": 1
+      },
+      "label": "角色到达持久拨杆"
+    },
+    {
+      "id": "n005",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "latch",
+        "motif": "M17",
+        "state": "door_latched_open",
+        "phase": 1
+      },
+      "label": "拨杆门永久打开"
+    },
+    {
+      "id": "n006",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M17",
+        "state": "partner_crossed_door",
+        "phase": 1
+      },
+      "label": "搭档通过拨杆门"
+    },
+    {
+      "id": "n007",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "position",
+        "motif": "M12",
+        "state": "crate_on_plate",
+        "phase": 2
+      },
+      "label": "箱子到达压力板"
+    },
+    {
+      "id": "n008",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M12",
+        "state": "door_open",
+        "phase": 2
+      },
+      "label": "箱子压力板门打开"
+    },
+    {
+      "id": "n009",
+      "kind": "event",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M12",
+        "state": "team_crossed_door",
+        "phase": 2
+      },
+      "label": "所需角色通过箱子门"
+    },
+    {
+      "id": "n010",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "assign",
+        "motif": "M03",
+        "state": "water_safe_role",
+        "phase": 3
+      },
+      "label": "分配水池安全角色"
+    },
+    {
+      "id": "n011",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M03",
+        "state": "water_crossed",
+        "phase": 3
+      },
+      "label": "安全角色通过水池"
+    },
+    {
+      "id": "n012",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "assign",
+        "motif": "M04",
+        "state": "lava_safe_role",
+        "phase": 4
+      },
+      "label": "分配熔岩安全角色"
+    },
+    {
+      "id": "n013",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M04",
+        "state": "lava_crossed",
+        "phase": 4
+      },
+      "label": "安全角色通过熔岩"
+    },
+    {
+      "id": "n014",
+      "kind": "goal",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "goal",
+        "motif": "M10",
+        "state": "both_agents_at_exits",
+        "phase": 5
+      },
+      "label": "双方到达各自专属出口"
+    },
+    {
+      "id": "n015",
+      "kind": "goal",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "team_success",
+        "motif": "SYSTEM",
+        "state": "all_required_goals",
+        "phase": 7
+      },
+      "label": "双方满足团队成功条件"
+    }
+  ],
+  "edges": [
+    {
+      "from": "n001",
+      "to": "n002",
+      "relation": "enables"
+    },
+    {
+      "from": "n002",
+      "to": "n003",
+      "relation": "enables"
+    },
+    {
+      "from": "n001",
+      "to": "n003",
+      "relation": "maintains"
+    },
+    {
+      "from": "n004",
+      "to": "n005",
+      "relation": "enables"
+    },
+    {
+      "from": "n005",
+      "to": "n006",
+      "relation": "enables"
+    },
+    {
+      "from": "n004",
+      "to": "n006",
+      "relation": "handoff"
+    },
+    {
+      "from": "n007",
+      "to": "n008",
+      "relation": "enables"
+    },
+    {
+      "from": "n008",
+      "to": "n009",
+      "relation": "enables"
+    },
+    {
+      "from": "n010",
+      "to": "n011",
+      "relation": "enables"
+    },
+    {
+      "from": "n012",
+      "to": "n013",
+      "relation": "enables"
+    },
+    {
+      "from": "n003",
+      "to": "n004",
+      "relation": "requires"
+    },
+    {
+      "from": "n006",
+      "to": "n007",
+      "relation": "requires"
+    },
+    {
+      "from": "n009",
+      "to": "n010",
+      "relation": "requires"
+    },
+    {
+      "from": "n011",
+      "to": "n012",
+      "relation": "requires"
+    },
+    {
+      "from": "n013",
+      "to": "n014",
+      "relation": "requires"
+    },
+    {
+      "from": "n000",
+      "to": "n001",
+      "relation": "requires"
+    },
+    {
+      "from": "n014",
+      "to": "n015",
+      "relation": "synchronizes"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "format": "fwcollab.c5_experiment.v1",
+  "benchmark_version": "c5-v1",
+  "task_manifest": "eval_private/c5_information_12/manifest.json",
+  "selection_uses_model_outcomes": false,
+  "replicates": [1, 2, 3],
+  "request_seeds": {
+    "1": 2026091601,
+    "2": 2026091602,
+    "3": 2026091603
+  },
+  "sampling": {
+    "temperature": 1.0,
+    "seed_is_requested_from_provider": true,
+    "seed_reproducibility_guaranteed": false
+  },
+  "runner": {
+    "max_rounds": 30,
+    "movement_steps": 1,
+    "message_delay_rounds": 1,
+    "request_timeout_seconds": 120.0,
+    "max_output_tokens": 800,
+    "max_retries": 1,
+    "episode_concurrency": 4
+  },
+  "conditions": [
+    {
+      "id": "gpt_comm",
+      "label": "GPT Comm",
+      "communication_enabled": true,
+      "F": {"model": "gpt-5.5", "api_style": "responses"},
+      "W": {"model": "gpt-5.5", "api_style": "responses"}
+    },
+    {
+      "id": "gpt_no_comm",
+      "label": "GPT No-Comm",
+      "communication_enabled": false,
+      "F": {"model": "gpt-5.5", "api_style": "responses"},
+      "W": {"model": "gpt-5.5", "api_style": "responses"}
+    },
+    {
+      "id": "gemini_comm",
+      "label": "Gemini Comm",
+      "communication_enabled": true,
+      "F": {"model": "gemini-3.7-flash", "api_style": "chat_completions"},
+      "W": {"model": "gemini-3.7-flash", "api_style": "chat_completions"}
+    },
+    {
+      "id": "gemini_no_comm",
+      "label": "Gemini No-Comm",
+      "communication_enabled": false,
+      "F": {"model": "gemini-3.7-flash", "api_style": "chat_completions"},
+      "W": {"model": "gemini-3.7-flash", "api_style": "chat_completions"}
+    }
+  ],
+  "primary_metrics": [
+    "success_rate",
+    "dag_completion",
+    "dag_progress_auc",
+    "clean_information_handoff_rate",
+    "dependency_violation_rate",
+    "rounds_to_success"
+  ],
+  "statistics": {
+    "task_is_bootstrap_unit": true,
+    "average_replicates_within_task_first": true,
+    "paired_bootstrap_samples": 10000,
+    "confidence_level": 0.95
+  }
+}

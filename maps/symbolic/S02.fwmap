@@ -1,0 +1,11 @@
+@format fwcollab.symbol_map.v1
+@id S02
+@title S02 一方持续守住压板，另一方过门
+@max_steps 1
+@plate 1 opens A accepts F
+---
+#################
+#F..1....f......#
+#################
+#W..A....w......#
+#################

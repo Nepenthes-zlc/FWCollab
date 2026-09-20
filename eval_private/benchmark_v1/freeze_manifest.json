@@ -1,0 +1,1253 @@
+{
+  "format": "fwcollab.symbolic.benchmark_freeze.v1",
+  "benchmark_version": "v1",
+  "scope": "full_72_task_benchmark",
+  "created_at": "2026-09-15T07:58:51.957948+00:00",
+  "statement": "The diagnostic subset was selected solely from task structure and collaboration primitives, without access to model performance.",
+  "source_manifests": {
+    "full_benchmark": {
+      "path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "sha256": "1d7e4240da3fff204fb820f0704501564c05cfa5dc0630644d10382df57c19d0",
+      "bytes": 1098294
+    },
+    "diagnostic_subset": {
+      "path": "eval_private/collaboration_diagnostic_24/manifest.json",
+      "sha256": "e3f0af67a3b123d0d75f816e760f809d8d6d649bd247868e009ca258eb616eda",
+      "bytes": 30375
+    }
+  },
+  "linked_phase2_freeze": {
+    "path": "eval_private/phase2_v1/freeze_manifest.json",
+    "sha256": "29b93111afd874cda37e848bacd184da4b799bde8faf4a0912dfd27f008830d6",
+    "bytes": 12496,
+    "declared_file_count": 61,
+    "task_count": 24,
+    "condition_count": 6,
+    "replicates": 3,
+    "expected_episodes": 432
+  },
+  "invariants": {
+    "full_task_count": 72,
+    "diagnostic_task_count": 24,
+    "map_count": 72,
+    "dag_count": 72,
+    "asset_file_count": 144,
+    "phase2_file_count": 61,
+    "selection_uses_model_outcomes": false,
+    "condition_count": 6,
+    "replicates": 3,
+    "expected_episodes": 432,
+    "difficulty_distribution": {
+      "L1": 4,
+      "L2": 8,
+      "L3": 10,
+      "L4": 12,
+      "L5": 14,
+      "L6": 14,
+      "L7": 10
+    },
+    "diagnostic_difficulty_quotas": {
+      "L1": 2,
+      "L2": 3,
+      "L3": 3,
+      "L4": 4,
+      "L5": 4,
+      "L6": 4,
+      "L7": 4
+    },
+    "mechanism_coverage": [
+      "M01",
+      "M02",
+      "M03",
+      "M04",
+      "M05",
+      "M06",
+      "M07",
+      "M08",
+      "M09",
+      "M10",
+      "M11",
+      "M12",
+      "M13",
+      "M14",
+      "M15",
+      "M16",
+      "M17",
+      "M18",
+      "M19",
+      "M20",
+      "M21",
+      "M22",
+      "M23",
+      "M24",
+      "M25",
+      "M26",
+      "M27",
+      "M28",
+      "M29",
+      "M30"
+    ],
+    "spatial_semantic_unique": 72,
+    "spatial_topology_unique": 72,
+    "all_dags_schema_valid": true,
+    "all_nodes_bound": true,
+    "all_edges_verified": true,
+    "all_capabilities_verified": true
+  },
+  "tasks": [
+    {
+      "id": "V4-L1-001",
+      "difficulty": "L1",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L1/V4-L1-001.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L1/DAG-V4-L1-001.json"
+    },
+    {
+      "id": "V4-L1-002",
+      "difficulty": "L1",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L1/V4-L1-002.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L1/DAG-V4-L1-002.json"
+    },
+    {
+      "id": "V4-L1-003",
+      "difficulty": "L1",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L1/V4-L1-003.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L1/DAG-V4-L1-003.json"
+    },
+    {
+      "id": "V4-L1-004",
+      "difficulty": "L1",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L1/V4-L1-004.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L1/DAG-V4-L1-004.json"
+    },
+    {
+      "id": "V4-L2-001",
+      "difficulty": "L2",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-001.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-001.json"
+    },
+    {
+      "id": "V4-L2-002",
+      "difficulty": "L2",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-002.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-002.json"
+    },
+    {
+      "id": "V4-L2-003",
+      "difficulty": "L2",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-003.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-003.json"
+    },
+    {
+      "id": "V4-L2-004",
+      "difficulty": "L2",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-004.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-004.json"
+    },
+    {
+      "id": "V4-L2-005",
+      "difficulty": "L2",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-005.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-005.json"
+    },
+    {
+      "id": "V4-L2-006",
+      "difficulty": "L2",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-006.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-006.json"
+    },
+    {
+      "id": "V4-L2-007",
+      "difficulty": "L2",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-007.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-007.json"
+    },
+    {
+      "id": "V4-L2-008",
+      "difficulty": "L2",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-008.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-008.json"
+    },
+    {
+      "id": "V4-L3-001",
+      "difficulty": "L3",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-001.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-001.json"
+    },
+    {
+      "id": "V4-L3-002",
+      "difficulty": "L3",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-002.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-002.json"
+    },
+    {
+      "id": "V4-L3-003",
+      "difficulty": "L3",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-003.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-003.json"
+    },
+    {
+      "id": "V4-L3-004",
+      "difficulty": "L3",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-004.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-004.json"
+    },
+    {
+      "id": "V4-L3-005",
+      "difficulty": "L3",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-005.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-005.json"
+    },
+    {
+      "id": "V4-L3-006",
+      "difficulty": "L3",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-006.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-006.json"
+    },
+    {
+      "id": "V4-L3-007",
+      "difficulty": "L3",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-007.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-007.json"
+    },
+    {
+      "id": "V4-L3-008",
+      "difficulty": "L3",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-008.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-008.json"
+    },
+    {
+      "id": "V4-L3-009",
+      "difficulty": "L3",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-009.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-009.json"
+    },
+    {
+      "id": "V4-L3-010",
+      "difficulty": "L3",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-010.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-010.json"
+    },
+    {
+      "id": "V4-L4-001",
+      "difficulty": "L4",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-001.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-001.json"
+    },
+    {
+      "id": "V4-L4-002",
+      "difficulty": "L4",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-002.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-002.json"
+    },
+    {
+      "id": "V4-L4-003",
+      "difficulty": "L4",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-003.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-003.json"
+    },
+    {
+      "id": "V4-L4-004",
+      "difficulty": "L4",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-004.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-004.json"
+    },
+    {
+      "id": "V4-L4-005",
+      "difficulty": "L4",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-005.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-005.json"
+    },
+    {
+      "id": "V4-L4-006",
+      "difficulty": "L4",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-006.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-006.json"
+    },
+    {
+      "id": "V4-L4-007",
+      "difficulty": "L4",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-007.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-007.json"
+    },
+    {
+      "id": "V4-L4-008",
+      "difficulty": "L4",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-008.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-008.json"
+    },
+    {
+      "id": "V4-L4-009",
+      "difficulty": "L4",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-009.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-009.json"
+    },
+    {
+      "id": "V4-L4-010",
+      "difficulty": "L4",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-010.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-010.json"
+    },
+    {
+      "id": "V4-L4-011",
+      "difficulty": "L4",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-011.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-011.json"
+    },
+    {
+      "id": "V4-L4-012",
+      "difficulty": "L4",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-012.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-012.json"
+    },
+    {
+      "id": "V4-L5-001",
+      "difficulty": "L5",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-001.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-001.json"
+    },
+    {
+      "id": "V4-L5-002",
+      "difficulty": "L5",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-002.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-002.json"
+    },
+    {
+      "id": "V4-L5-003",
+      "difficulty": "L5",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-003.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-003.json"
+    },
+    {
+      "id": "V4-L5-004",
+      "difficulty": "L5",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-004.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-004.json"
+    },
+    {
+      "id": "V4-L5-005",
+      "difficulty": "L5",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-005.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-005.json"
+    },
+    {
+      "id": "V4-L5-006",
+      "difficulty": "L5",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-006.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-006.json"
+    },
+    {
+      "id": "V4-L5-007",
+      "difficulty": "L5",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-007.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-007.json"
+    },
+    {
+      "id": "V4-L5-008",
+      "difficulty": "L5",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-008.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-008.json"
+    },
+    {
+      "id": "V4-L5-009",
+      "difficulty": "L5",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-009.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-009.json"
+    },
+    {
+      "id": "V4-L5-010",
+      "difficulty": "L5",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-010.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-010.json"
+    },
+    {
+      "id": "V4-L5-011",
+      "difficulty": "L5",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-011.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-011.json"
+    },
+    {
+      "id": "V4-L5-012",
+      "difficulty": "L5",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-012.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-012.json"
+    },
+    {
+      "id": "V4-L5-013",
+      "difficulty": "L5",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-013.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-013.json"
+    },
+    {
+      "id": "V4-L5-014",
+      "difficulty": "L5",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-014.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-014.json"
+    },
+    {
+      "id": "V4-L6-001",
+      "difficulty": "L6",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-001.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-001.json"
+    },
+    {
+      "id": "V4-L6-002",
+      "difficulty": "L6",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-002.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-002.json"
+    },
+    {
+      "id": "V4-L6-003",
+      "difficulty": "L6",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-003.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-003.json"
+    },
+    {
+      "id": "V4-L6-004",
+      "difficulty": "L6",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-004.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-004.json"
+    },
+    {
+      "id": "V4-L6-005",
+      "difficulty": "L6",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-005.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-005.json"
+    },
+    {
+      "id": "V4-L6-006",
+      "difficulty": "L6",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-006.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-006.json"
+    },
+    {
+      "id": "V4-L6-007",
+      "difficulty": "L6",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-007.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-007.json"
+    },
+    {
+      "id": "V4-L6-008",
+      "difficulty": "L6",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-008.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-008.json"
+    },
+    {
+      "id": "V4-L6-009",
+      "difficulty": "L6",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-009.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-009.json"
+    },
+    {
+      "id": "V4-L6-010",
+      "difficulty": "L6",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-010.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-010.json"
+    },
+    {
+      "id": "V4-L6-011",
+      "difficulty": "L6",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-011.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-011.json"
+    },
+    {
+      "id": "V4-L6-012",
+      "difficulty": "L6",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-012.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-012.json"
+    },
+    {
+      "id": "V4-L6-013",
+      "difficulty": "L6",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-013.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-013.json"
+    },
+    {
+      "id": "V4-L6-014",
+      "difficulty": "L6",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-014.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-014.json"
+    },
+    {
+      "id": "V4-L7-001",
+      "difficulty": "L7",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-001.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-001.json"
+    },
+    {
+      "id": "V4-L7-002",
+      "difficulty": "L7",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-002.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-002.json"
+    },
+    {
+      "id": "V4-L7-003",
+      "difficulty": "L7",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-003.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-003.json"
+    },
+    {
+      "id": "V4-L7-004",
+      "difficulty": "L7",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-004.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-004.json"
+    },
+    {
+      "id": "V4-L7-005",
+      "difficulty": "L7",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-005.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-005.json"
+    },
+    {
+      "id": "V4-L7-006",
+      "difficulty": "L7",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-006.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-006.json"
+    },
+    {
+      "id": "V4-L7-007",
+      "difficulty": "L7",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-007.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-007.json"
+    },
+    {
+      "id": "V4-L7-008",
+      "difficulty": "L7",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-008.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-008.json"
+    },
+    {
+      "id": "V4-L7-009",
+      "difficulty": "L7",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-009.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-009.json"
+    },
+    {
+      "id": "V4-L7-010",
+      "difficulty": "L7",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-010.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-010.json"
+    }
+  ],
+  "files": [
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L1/DAG-V4-L1-001.json",
+      "sha256": "156bd2479ad9261d969820500a8c259debb404a72d2fd087dd8d48d4b80d7afc",
+      "bytes": 3488
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L1/DAG-V4-L1-002.json",
+      "sha256": "8b36a7b8258be3b7c83cf1d4f502c21bc28dbf090545907ab3eac9018949e426",
+      "bytes": 3468
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L1/DAG-V4-L1-003.json",
+      "sha256": "d456eaf042d018402fd4a602e78dbfc3c427129119bf79030a758206fc6bdb9d",
+      "bytes": 3038
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L1/DAG-V4-L1-004.json",
+      "sha256": "3d375b771c1eb586b8fe7aa518c9d5479ab71abd8fbe480af16772febec1d858",
+      "bytes": 3036
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-001.json",
+      "sha256": "8667970b0ccdce359d2352dfc42bb9e61c73a659f510c77f734253282fc44a19",
+      "bytes": 4629
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-002.json",
+      "sha256": "0579681a0c48a3b227493c1ca15697ebebfe3bd47dca8503283ab359c9b17b47",
+      "bytes": 4182
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-003.json",
+      "sha256": "6621fa6254283afa9122f4a72c1fa616217acbeab12281d7739551204e24a4fe",
+      "bytes": 4192
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-004.json",
+      "sha256": "1d5fd07af0a91ba9ba44c3e96844319985636ee7328bbb47d02c09c96d29b9ae",
+      "bytes": 4166
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-005.json",
+      "sha256": "31195a901c69320f3b4487d8adc7d25bbe0b6bdf2412fef3321d3e4306bea387",
+      "bytes": 4168
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-006.json",
+      "sha256": "a981a224f1b61be1fb4de9b15719dcaed1fd1fbc980b9862f9bfec3e6fd4442b",
+      "bytes": 4643
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-007.json",
+      "sha256": "9bf586250979e9cda6ffbe9e9d8d46b3baeac7ac264ffb6365126e4daef61d57",
+      "bytes": 4621
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-008.json",
+      "sha256": "b70adfdb7aeff43c42f3975a82fffe148a131fffe1f4c800a5b8263651386acc",
+      "bytes": 4166
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-001.json",
+      "sha256": "b91a80afc21e0c57508c47c69a4449141e70b0f54403631831fd5fde2511419f",
+      "bytes": 5341
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-002.json",
+      "sha256": "aa366d9e1cfa2476c06faf38845e04ff64bb1a2e13140f1f712d99a7309665c3",
+      "bytes": 5325
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-003.json",
+      "sha256": "4cdc0212d806293ea04e2616f19ae73c410e60e53d66c1b720c63536430bd798",
+      "bytes": 5774
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-004.json",
+      "sha256": "618cf79d15dd32d0a7871e4312037e546921f1199b598596e727ce99864571e2",
+      "bytes": 5319
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-005.json",
+      "sha256": "b660b3eb6e8015dabcb188dc3a8438f7804768e244dafef5ae593d5615f55981",
+      "bytes": 5776
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-006.json",
+      "sha256": "0c7061c33e934b251a161d99b5b9ab1f749f8e4d073805b6d4e836cfa0e22315",
+      "bytes": 6229
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-007.json",
+      "sha256": "f0663982806df5e77caec3c564de75f6f3edc929809c94214608ee856262aca9",
+      "bytes": 5335
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-008.json",
+      "sha256": "62c95838121b7712bdae61779005c16469332efca8c8361ea32c7d6f97727af3",
+      "bytes": 5327
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-009.json",
+      "sha256": "bef23bb41e50e8906c1154a453dcff05522927747f7b81543306096f66a1ba80",
+      "bytes": 5770
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-010.json",
+      "sha256": "819c50f8b34b6f5a07c59f6f3b77ac185595a243bb37a7e69080ed0bdc1eeffd",
+      "bytes": 5317
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-001.json",
+      "sha256": "0bff0a96a72b9b8d609d79c7bfffe450b7e689212d91f5ad90d88cadac19adb8",
+      "bytes": 6482
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-002.json",
+      "sha256": "0bebac08e9621d88453fd7fb946e839832c7edd76fbcfed7e153ff61ee234cf2",
+      "bytes": 6492
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-003.json",
+      "sha256": "ae8ea6f7fa2a0a9894e4b1be5642c407dc53cfc3d3cd523d7c8050e005d8c460",
+      "bytes": 6953
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-004.json",
+      "sha256": "ff869c0c71f062b66a06c3d0dd8fb50f5785260e7cac654625493cda50ac0543",
+      "bytes": 6961
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-005.json",
+      "sha256": "05d4dd2fb5b83e5fe92566301ff5ef2cfb139cf99bda32accee7c0804debc55b",
+      "bytes": 7352
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-006.json",
+      "sha256": "ef7b7e63d136059bba682f544bfd444f91bc9079872f8b8751193fae6c359b7c",
+      "bytes": 7348
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-007.json",
+      "sha256": "28209263a0f75e89c8e69d43aa7de274d03963b3becf850f0bf1094ba7ad443f",
+      "bytes": 6927
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-008.json",
+      "sha256": "60ebadc424ec7e7d06a793db80f21eaaedb968bf8bf39bc4d2fb8ff756b37df3",
+      "bytes": 6444
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-009.json",
+      "sha256": "ef2f51dee2e4859e1cbb9110108a6ef7ca438b75b16082530567ff76384d1dcd",
+      "bytes": 6907
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-010.json",
+      "sha256": "a28dc3ead6ceb3003b77be4e94f768217c338b94f2115c3baf1bcc9be3570cfb",
+      "bytes": 6917
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-011.json",
+      "sha256": "ebe4dce0e7305b4fe6c11c882bfac76e308a5d59e9b045483a75a62bfddbb49a",
+      "bytes": 6935
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-012.json",
+      "sha256": "5de3344c3dc0903abb08aa951d60ec38868d3f8528a8e022d4b8538b0e2c3a19",
+      "bytes": 6907
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-001.json",
+      "sha256": "a238339d8374422a53f0d2468fef5792f24077fc43b88db13a8f0920b9f44b33",
+      "bytes": 8010
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-002.json",
+      "sha256": "2d5c5e85b6e65216fd628896cc78e9100d86fa683cf51b8e17952155c4c548b2",
+      "bytes": 8525
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-003.json",
+      "sha256": "9b7555e7e30dba6bf99b8d4c8e24fc05f96064c65514d15b984fb596862b17d2",
+      "bytes": 8100
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-004.json",
+      "sha256": "b8b8eef3ea0e158d8ce7ddd89550a7868eb658e7bdd8d9128190e943ee6ccc41",
+      "bytes": 8096
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-005.json",
+      "sha256": "f87a7a08c4435e8d6745732f8b3d2f26c72db44b9934c328db35c1d42c9ecaa1",
+      "bytes": 8120
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-006.json",
+      "sha256": "49c6b56333eb370a78f60856b5f366d162a71dd16633b67801b470ab6bfff2d8",
+      "bytes": 7639
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-007.json",
+      "sha256": "9998b78fb82f0bc4a2d51d5fe27d5d9f60269a13d8d59f67ad3c7047ccbd734c",
+      "bytes": 8026
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-008.json",
+      "sha256": "0855f4392a87e6631cec6306dc658eb40b2b91467fa1fe07eb9b206e1cd0494e",
+      "bytes": 8539
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-009.json",
+      "sha256": "a61662ffd924246d3fb92eec7c369a0671f6349532e46f5747ebe3dc45228d2e",
+      "bytes": 8551
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-010.json",
+      "sha256": "2990b19be217d8bad8ff03693f44b1054639b8e1f362931cc7c7d39e9669311c",
+      "bytes": 8074
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-011.json",
+      "sha256": "cb8976154a7ea9e9b0a5321432c84714e5d550d67c2407213c470e17d6fb559f",
+      "bytes": 8108
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-012.json",
+      "sha256": "fe423e478273c4c4a777369c94acc77cf2e2c4b7cc78eb851410b82ffd73aca6",
+      "bytes": 7639
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-013.json",
+      "sha256": "71ca54eb90e4b4e5d192cfc50b8b8f0fd132d29571fc76c777db802225ca3028",
+      "bytes": 7625
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-014.json",
+      "sha256": "cd0c58fdc42c1a5d269dbf1b352f19118406d9d34c96edddc5ef73e0bd0cde57",
+      "bytes": 8062
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-001.json",
+      "sha256": "74b7f2416f0c86fa3b12af327fcac2ad3bc392069fefa7e4324c9e9c0a06c545",
+      "bytes": 10137
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-002.json",
+      "sha256": "12074dce51ea6b3d04acf5e1a4ef2f21d209fd30d3557576f4bbd0e955903a26",
+      "bytes": 11021
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-003.json",
+      "sha256": "1164624bddf97520056824e1a006264efd9cf1291e78eb9c4f36faf607e12972",
+      "bytes": 10518
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-004.json",
+      "sha256": "58a6c718f3ee5902d2ccf15d998033c0ec5ebdd20723fdc3b7a58dca0fd6ba7f",
+      "bytes": 10111
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-005.json",
+      "sha256": "fc0575a0bca85e64589c0332dc4394ebaa267963aecd65b350f98bdbe1186ed0",
+      "bytes": 10093
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-006.json",
+      "sha256": "df6e4599460b63f71e05dc31e7df924fa6564141f2ce9538f69a44881c0ffc61",
+      "bytes": 9694
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-007.json",
+      "sha256": "75b1c2c5bf731ba04f7eae0f935bf95c14959a94494dd994e07ca952755ca7b9",
+      "bytes": 9672
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-008.json",
+      "sha256": "5e69b6e905cd22f52fc78840d7bd3e9ec2eeda40d86247295e179e825351d86d",
+      "bytes": 10167
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-009.json",
+      "sha256": "5420eb112ddf6d0256c024eceb23a8e4b092c1a2a76b2d07c0a9a472e07a5bc6",
+      "bytes": 10564
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-010.json",
+      "sha256": "8104cffd663ce47bf9e1da8b15e09976a13bdd5d7a28065563bff0986d6a66e3",
+      "bytes": 10157
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-011.json",
+      "sha256": "965858ea0607c0f90336e6e3a51bdd62f1f9b22c781166a8cd08d015ccd87ce2",
+      "bytes": 10135
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-012.json",
+      "sha256": "714511e6394f66c05e15ac8517802bda5df7f0273e6f787d0905cf3ad5768a13",
+      "bytes": 8790
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-013.json",
+      "sha256": "17b485b2a832543e2812d02f1deb0358058e6aca2115fdf98a09afe9b78cba39",
+      "bytes": 8748
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-014.json",
+      "sha256": "8998d44b34c5ec767fcd46c6028389a26d1575d2c28ab4c293af825a73720a0f",
+      "bytes": 10089
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-001.json",
+      "sha256": "eb631c6567817393029544a731baf854c3625c5a61a3942e95ce397045269337",
+      "bytes": 11725
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-002.json",
+      "sha256": "44f95b8de9a9985f7c9b2d3b963608cf3f4e97b6b2d4706c077b73b9cf1c6786",
+      "bytes": 11711
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-003.json",
+      "sha256": "055deb52162a1f8bdb4e2c035c6d214d360613a196f8018cd7fa5d4370f7be3b",
+      "bytes": 11282
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-004.json",
+      "sha256": "4f0e91035f3a92c4681b97e15bfe1356ee1ffb9da2dc0448e3960a481c6bd8b6",
+      "bytes": 11743
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-005.json",
+      "sha256": "22f8606e0f79f4598011a93292d82008492a8b163ff5a668a38d45a6c3dbe977",
+      "bytes": 10821
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-006.json",
+      "sha256": "123da3f346602f635f5948bd3446d0c281048b9ad1bb0f1b5fdfc1366590bbf3",
+      "bytes": 10825
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-007.json",
+      "sha256": "d00e6b2d9463936ef02591e0e1b3db72f83a931904b0d04fec62894c5a8723fa",
+      "bytes": 12148
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-008.json",
+      "sha256": "07e8e59acc7cec78a6f5efa648682ad4c8d614589e9f125313ba36555ba6628e",
+      "bytes": 11701
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-009.json",
+      "sha256": "411550526431b8e234ac6cbdbb3d55d182f390670ee466f0473eadb322c6290f",
+      "bytes": 10775
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-010.json",
+      "sha256": "4e1bf29a639f53709b082dbb4a53091ba28597542835aa5fab8cd826a7407b5c",
+      "bytes": 11272
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L1/V4-L1-001.fwmap",
+      "sha256": "75127e5e8d72be2b6050848479355cbf1c3081524e6e9da88b786272379537b2",
+      "bytes": 711
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L1/V4-L1-002.fwmap",
+      "sha256": "7df4e8ef7fe96d4306fe82eb532f7c455d15f268baed9b5390fc7bc6cd5bd700",
+      "bytes": 700
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L1/V4-L1-003.fwmap",
+      "sha256": "68babda3dcbec4f51fc2bc850856f44b4a40783f67f1f34e04f0a8cc088447f7",
+      "bytes": 700
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L1/V4-L1-004.fwmap",
+      "sha256": "a481eac9af3dea0059d82c230707d53b3443bdefeac83e04638dde6d84e50098",
+      "bytes": 712
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-001.fwmap",
+      "sha256": "e558ba45324f647f80746a3a7cafde0c16aa09103f53f540ecc2d10467510a71",
+      "bytes": 907
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-002.fwmap",
+      "sha256": "cb5634c5b73644aa500dd8f4f907b47d48bca586f372fe73212b30693990078a",
+      "bytes": 875
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-003.fwmap",
+      "sha256": "a3e743ae42821911c5941d2fe1be62a7b75771a0e1264639079677894fa38623",
+      "bytes": 874
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-004.fwmap",
+      "sha256": "26f09c37dff3f90fe7699ce6f76dbdfb6c8fb5ff27e26d21568680577a80c697",
+      "bytes": 871
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-005.fwmap",
+      "sha256": "b04aa9b09fb1235601f0cd2d2872e6129d2de0db891ec33d5f158b0fd40ae057",
+      "bytes": 989
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-006.fwmap",
+      "sha256": "a93e6f086de3fcdc7716b2ddbcf9bb17e85b143c301085956b9e53beb2c39e7d",
+      "bytes": 1044
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-007.fwmap",
+      "sha256": "5b7a5f12d5b0e91402449758e323ca8c338b0c92c6c2fc944cb726aeb761016f",
+      "bytes": 953
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-008.fwmap",
+      "sha256": "e81f06d214b3c892d3508848c2012d2bfd2b638a377516e1cdef88da520ade45",
+      "bytes": 920
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-001.fwmap",
+      "sha256": "482590264686aacefd314cc6c1b3aec94a0836397f6170b8583f7315bd643574",
+      "bytes": 1223
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-002.fwmap",
+      "sha256": "2cd989a6579a44a185d2e4fc6640aa856fb54bbe31fc232782975e604b091b61",
+      "bytes": 1196
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-003.fwmap",
+      "sha256": "ec618c89ce4c8946ab0ed122f770b8ece3ee699b7e99f0c63bc1656db0002277",
+      "bytes": 1157
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-004.fwmap",
+      "sha256": "8ff2fa62abb95662f8b8dfb4c04af3ad5728a769fa034fa742f7c25b5db6cafa",
+      "bytes": 1120
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-005.fwmap",
+      "sha256": "b72c5878c1444b9e7ea1974dc9e9259d8ab260014efc5d93180639dc48242943",
+      "bytes": 1259
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-006.fwmap",
+      "sha256": "6f9dc7e8fec8521eda41e01b40d2d06c350dc57ec11a03e97337811318056e7d",
+      "bytes": 1157
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-007.fwmap",
+      "sha256": "0926e59c9c7392b330e53c63f140c05e3cadc5cc683a84ae745e56adda1b52c3",
+      "bytes": 1090
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-008.fwmap",
+      "sha256": "16f31bb9831d256af6614ac6758226b747ed0e6d819d7cfcbfe71940437cc8e2",
+      "bytes": 1091
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-009.fwmap",
+      "sha256": "3b15c8f56fe721a0e3c9410438b10d4ed12f9664fd303f9fc70090b90e6ff7da",
+      "bytes": 1154
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-010.fwmap",
+      "sha256": "e68ceec3d3532b50e4b5fecdd3e30ff266f5679db1c3bef9d130efb97e1ebdbd",
+      "bytes": 1086
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-001.fwmap",
+      "sha256": "c0d8db24f549ca49edcac997d097411b2f50508b4af185529cf60a9a4cfc6bed",
+      "bytes": 1327
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-002.fwmap",
+      "sha256": "c09bef4eb62350c1dbcfbe6d49d5c04532f6c548a1fa4c442ef8fc0593c7dd47",
+      "bytes": 1332
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-003.fwmap",
+      "sha256": "cea0ec39a8fa54b188346265e07dde3ea824a8b37517c95dce4bd368ae57990b",
+      "bytes": 1482
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-004.fwmap",
+      "sha256": "5c87f77c6c518030ad5977ed3a6f84ca1d6e8ffec237757d00d602987d639813",
+      "bytes": 1493
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-005.fwmap",
+      "sha256": "bcdd2db59efb7b04cb785b5c7145cd77d5057e2f12d93634e681ab5714c453d5",
+      "bytes": 1471
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-006.fwmap",
+      "sha256": "fed6a68575c0b70cd6440046ab9e16d9cc859cb8db20d91529c35a213e8c1fc1",
+      "bytes": 1470
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-007.fwmap",
+      "sha256": "7c90d84fadbe424d9f26d22f17d348c9e2b20c7c9baf89c6fc105209684a2365",
+      "bytes": 1454
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-008.fwmap",
+      "sha256": "febb5fa8a0a136694bc29a6b817b73a3df471752640eafcc16f00a44c41ab90c",
+      "bytes": 1400
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-009.fwmap",
+      "sha256": "7a775609914ecfc8a1c1202d2d2f739ba50459872b7fc3e588724295bacc8ed4",
+      "bytes": 1362
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-010.fwmap",
+      "sha256": "81b38bae1bdb5106269d64f7fa272a699b1a6b0f60505bb070bdc732908da3d2",
+      "bytes": 1360
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-011.fwmap",
+      "sha256": "81edb5cf2c7c9ee507268696e2bb718c1df1896d51f321e9f89589009b3dce3a",
+      "bytes": 1362
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-012.fwmap",
+      "sha256": "8d98b7871834457c3e45229f59052dfb518d5cfb080a803eb8e37e6a8ddb7eb2",
+      "bytes": 1458
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-001.fwmap",
+      "sha256": "68c9e2980e3bb15bd4adb5577fa770438ecd1206ea674265cdef9d73e5b6b5d5",
+      "bytes": 1495
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-002.fwmap",
+      "sha256": "e23c7602f203434f41f71e1899e1a506811e108f2b453f6aa2d7c3e411ccc2c5",
+      "bytes": 1578
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-003.fwmap",
+      "sha256": "2f1be4bfd3786321e2b1c7446c4390ceda123925056bdb0578ed61b314da31f3",
+      "bytes": 1541
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-004.fwmap",
+      "sha256": "7e78d2663df9374b98492f5624ba9df2fc71921af58391bd450cd5ab23ba2566",
+      "bytes": 1526
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-005.fwmap",
+      "sha256": "ac26f706e8ac4e45ef948369672d71252e838635581ccdab3402d25453057401",
+      "bytes": 1553
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-006.fwmap",
+      "sha256": "1c8d7216c35eaa7aab66fc4c38a83bf2abcc38bec9c5822f9b1216068235bb0a",
+      "bytes": 1538
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-007.fwmap",
+      "sha256": "bce91b6b4234eaaba988cf45139a97a0b2f9771f3e30278be989ebdda4253a81",
+      "bytes": 1514
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-008.fwmap",
+      "sha256": "3065293ccc2e7c576c2c6bbd3083778a6995fb491696a28ff2e8c3a72422cfbe",
+      "bytes": 1706
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-009.fwmap",
+      "sha256": "1b458cd5a9ed973951ebb960e60df6845780f98cdca8c04a17528d88d7c8f914",
+      "bytes": 1706
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-010.fwmap",
+      "sha256": "d9596944cf595e515b742040007f88b55aeb1375ca73221acc9ba0a4035e2910",
+      "bytes": 1564
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-011.fwmap",
+      "sha256": "03d2df6433559201474a345f1d55b220032be8fdd5cac58aea2b4658d4e16b78",
+      "bytes": 1602
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-012.fwmap",
+      "sha256": "a299c8f65f06fad5d30c7e1763eab6fa7990be416a322b094d9bc42e1c1c1436",
+      "bytes": 1538
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-013.fwmap",
+      "sha256": "c6c1488e76cf534bc37246f80ae4a3b5c81ac75bf75bafc5be66a052e35d2173",
+      "bytes": 1633
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-014.fwmap",
+      "sha256": "ffaf25d99b11dee4ac7bcb12b2e2d650242ace97f5d8152f8592a05da96a2410",
+      "bytes": 1577
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-001.fwmap",
+      "sha256": "0075ce4750a91a06e4b4f709cd717d3aacabc45acd22da451a586c05e7e908c2",
+      "bytes": 1969
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-002.fwmap",
+      "sha256": "53efa57240c5aaee6b25f156fa5ba1108bf331a3eb38aebeee7a1cb479d5fe3d",
+      "bytes": 2036
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-003.fwmap",
+      "sha256": "4559b7ae20428601147fb359b9e9755807ef40641b37a272147e579344aa305e",
+      "bytes": 1880
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-004.fwmap",
+      "sha256": "b46bc95f7da2050f2361ed4a51d2762fc265b702be2d31b28f4d03ed1182269a",
+      "bytes": 1868
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-005.fwmap",
+      "sha256": "1a779fac1b04953d48429442a2015d9148a6c91c9020ee538d4a73681a5f3265",
+      "bytes": 1845
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-006.fwmap",
+      "sha256": "be9a97e75e7e26c498e70060808967f1410e1c66060fe43cb45fc1cbecba4dd8",
+      "bytes": 1818
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-007.fwmap",
+      "sha256": "6a7888db49981b5c614d4b9e39d9f8084b425c7ea397423607ccfd25a326a2db",
+      "bytes": 1832
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-008.fwmap",
+      "sha256": "4189aa0d57e8f2b9d63739b30910057d1b7eefd3b32f577757aaf16bbaae90ae",
+      "bytes": 2012
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-009.fwmap",
+      "sha256": "00d256011a29cb7d6b0d832d69f3f9df4d301eea933dd9892ffcd020d699cee7",
+      "bytes": 2000
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-010.fwmap",
+      "sha256": "41dc632274cbadb960c48e130de730904654af33156f4436ec25bbc5b30cbcbd",
+      "bytes": 2008
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-011.fwmap",
+      "sha256": "3c2f995b374fbb11045a751287050002488f9eae3c5459deee5212398b0a8067",
+      "bytes": 1832
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-012.fwmap",
+      "sha256": "cc89e3f1a428566da21b8fdd90c913b2a74f4c671551cdb5da12163701728e13",
+      "bytes": 1703
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-013.fwmap",
+      "sha256": "bbadf149de556391718e2034b83fb7793ee5d22240c93beb086687206647f4d9",
+      "bytes": 1717
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-014.fwmap",
+      "sha256": "3078f66ae632ce41d2c80694a3144a9dee09f9d3618918b3f86da7d3cb9e8baa",
+      "bytes": 1840
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-001.fwmap",
+      "sha256": "14684e992f2f05f913effc97e2f3518c4e889461cc4002e73849dd5cbd19b901",
+      "bytes": 2131
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-002.fwmap",
+      "sha256": "bc8807f016a5062cb0c2ca4946e54864a0e8ca99d43a842d76d3240e15d30b6f",
+      "bytes": 2116
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-003.fwmap",
+      "sha256": "2a66cf1db0a991588594a782aba003d8c9a1286a32aa609f91c22e581e7c3f80",
+      "bytes": 2087
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-004.fwmap",
+      "sha256": "25014545955c5301097d6ccd03a7aabd71f4873288d87db40c44fd9916fd1e39",
+      "bytes": 2122
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-005.fwmap",
+      "sha256": "f2279229c07815fe89e3d94623a3911ae7da742a0b9188e91d18398f7986d06d",
+      "bytes": 2130
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-006.fwmap",
+      "sha256": "33f540aa83ed5e94927fad7acc99f9d11c1485529ba8735256ac1b27e78e0324",
+      "bytes": 2130
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-007.fwmap",
+      "sha256": "3dda1a5edbed7391a0781f63562e2d1554ae4ae9c484c81840173f5e6f3cb93d",
+      "bytes": 2242
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-008.fwmap",
+      "sha256": "b550fc7470cab19ff2c3dc5252559d7495eb8af968996bb060abb4c0ab1ea39b",
+      "bytes": 2171
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-009.fwmap",
+      "sha256": "67806d607a5fe1b3a4d9c89c7136027e1c4c4d1752b714e28615284665b5bfe8",
+      "bytes": 2093
+    },
+    {
+      "path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-010.fwmap",
+      "sha256": "dc99c745c067603c9d75b41fc3f4528214ff2520e08bfa135475745097705950",
+      "bytes": 2086
+    }
+  ]
+}

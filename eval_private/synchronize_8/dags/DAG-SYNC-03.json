@@ -1,0 +1,166 @@
+{
+  "format": "fwcollab.symbolic.state_dag.v1",
+  "id": "DAG-SYNC-03",
+  "difficulty": "L3",
+  "evaluation_role": "diagnostic",
+  "visibility": "private_reference",
+  "title": "asymmetric_F_long",
+  "summary": "Bounded temporal synchronization extension DAG.",
+  "topology_family": "sync_medium",
+  "mechanisms": [
+    "M11"
+  ],
+  "nodes": [
+    {
+      "id": "s",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "start",
+        "motif": "SYSTEM",
+        "state": "task_ready",
+        "phase": 0
+      },
+      "label": "start:task_ready"
+    },
+    {
+      "id": "cf",
+      "kind": "condition",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "occupy",
+        "motif": "M11",
+        "state": "sync_f_on",
+        "phase": 1
+      },
+      "label": "occupy:sync_f_on"
+    },
+    {
+      "id": "cw",
+      "kind": "condition",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "occupy",
+        "motif": "M11",
+        "state": "sync_w_on",
+        "phase": 1
+      },
+      "label": "occupy:sync_w_on"
+    },
+    {
+      "id": "sync",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "synchronize_window",
+        "motif": "M11",
+        "state": "bounded_overlap_met",
+        "phase": 2
+      },
+      "label": "synchronize_window:bounded_overlap_met"
+    },
+    {
+      "id": "gate",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M11",
+        "state": "sync_gate_on",
+        "phase": 3
+      },
+      "label": "activate:sync_gate_on"
+    },
+    {
+      "id": "xf",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M11",
+        "state": "sync_gate_F_crossed",
+        "phase": 4
+      },
+      "label": "traverse:sync_gate_F_crossed"
+    },
+    {
+      "id": "xw",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M11",
+        "state": "sync_gate_W_crossed",
+        "phase": 4
+      },
+      "label": "traverse:sync_gate_W_crossed"
+    },
+    {
+      "id": "g",
+      "kind": "goal",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "team_success",
+        "motif": "SYSTEM",
+        "state": "all_required_goals",
+        "phase": 5
+      },
+      "label": "team_success:all_required_goals"
+    }
+  ],
+  "edges": [
+    {
+      "from": "s",
+      "to": "cf",
+      "relation": "requires"
+    },
+    {
+      "from": "s",
+      "to": "cw",
+      "relation": "requires"
+    },
+    {
+      "from": "cf",
+      "to": "sync",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "cw",
+      "to": "sync",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "sync",
+      "to": "gate",
+      "relation": "enables"
+    },
+    {
+      "from": "gate",
+      "to": "xf",
+      "relation": "enables"
+    },
+    {
+      "from": "gate",
+      "to": "xw",
+      "relation": "enables"
+    },
+    {
+      "from": "xf",
+      "to": "g",
+      "relation": "requires"
+    },
+    {
+      "from": "xw",
+      "to": "g",
+      "relation": "requires"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+@format fwcollab.symbol_map.v2
+@id S23
+@title S23 在临时桥门开启窗口中进入传送链
+@max_steps 1
+@plate 1 opens A accepts F
+@platform = controlled_by 1
+@portal P
+---
+#######################
+#F..1.........f.......#
+#######################
+#W..A.===.P###P.w.....#
+#######################

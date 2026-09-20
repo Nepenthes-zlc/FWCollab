@@ -1,0 +1,66 @@
+{
+  "format": "fwcollab.leaderboard.model_matrix.v1_TEMPLATE_NOT_FROZEN",
+  "status": "NEEDS_AUTHOR_CONFIRMATION_AND_NON_BENCHMARK_PREFLIGHT",
+  "warning": "Copy to model_matrix.json only after every selected model passes preflight; this template has no execution authority.",
+  "recommended_slot_count": 6,
+  "reasoning_policy": "NEEDS_AUTHOR_CONFIRMATION; prefer off for all, otherwise documented minimum/low common compute",
+  "prompt_contract_hash": "862349ef54d6991f1b20102ac6936edde93bb7a0be8d1f849e993dd1e67b9831",
+  "prompt_snapshot_manifest_hash": "781b153a2e3103faff1fa4b6959b5335e644fa9166e9ce741aa8087cde0c7f12",
+  "standard52_manifest_hash": "b3970fdd31ef2259d477a33801c7442be92df6ed3cd7bb3cb07399eaa21a0716",
+  "models": [
+    {
+      "slot": 1,
+      "slot_class": "frontier_closed_A",
+      "model_id": "NEEDS_AUTHOR_CONFIRMATION",
+      "resolved_model_id": "NEEDS_PREFLIGHT",
+      "provider": "NEEDS_AUTHOR_CONFIRMATION",
+      "endpoint_identity": "NEEDS_AUTHOR_CONFIRMATION_NO_SECRET",
+      "api_style": "responses|chat_completions_NEEDS_CONFIRMATION",
+      "reasoning_setting": "NEEDS_AUTHOR_CONFIRMATION",
+      "temperature": 1.0,
+      "seed_behavior": "NEEDS_PREFLIGHT",
+      "max_output_tokens": 800,
+      "concurrency": "NEEDS_AUTHOR_CONFIRMATION",
+      "retry_policy": "one model-behavior retry; one infrastructure retry",
+      "error_policy": "docs/LEADERBOARD_RUN_PLAN.md section 5",
+      "prompt_contract_hash": "862349ef54d6991f1b20102ac6936edde93bb7a0be8d1f849e993dd1e67b9831",
+      "standard52_manifest_hash": "b3970fdd31ef2259d477a33801c7442be92df6ed3cd7bb3cb07399eaa21a0716",
+      "preflight_status": "NOT_RUN"
+    },
+    {
+      "slot": 2, "slot_class": "frontier_closed_B", "model_id": "NEEDS_AUTHOR_CONFIRMATION", "resolved_model_id": "NEEDS_PREFLIGHT",
+      "provider": "NEEDS_AUTHOR_CONFIRMATION", "endpoint_identity": "NEEDS_AUTHOR_CONFIRMATION_NO_SECRET", "api_style": "NEEDS_AUTHOR_CONFIRMATION",
+      "reasoning_setting": "NEEDS_AUTHOR_CONFIRMATION", "temperature": 1.0, "seed_behavior": "NEEDS_PREFLIGHT", "max_output_tokens": 800,
+      "concurrency": "NEEDS_AUTHOR_CONFIRMATION", "retry_policy": "one model-behavior retry; one infrastructure retry", "error_policy": "docs/LEADERBOARD_RUN_PLAN.md section 5",
+      "prompt_contract_hash": "862349ef54d6991f1b20102ac6936edde93bb7a0be8d1f849e993dd1e67b9831", "standard52_manifest_hash": "b3970fdd31ef2259d477a33801c7442be92df6ed3cd7bb3cb07399eaa21a0716", "preflight_status": "NOT_RUN"
+    },
+    {
+      "slot": 3, "slot_class": "strong_open_weight_A", "model_id": "NEEDS_AUTHOR_CONFIRMATION", "resolved_model_id": "NEEDS_PREFLIGHT",
+      "provider": "NEEDS_AUTHOR_CONFIRMATION", "endpoint_identity": "NEEDS_AUTHOR_CONFIRMATION_NO_SECRET", "api_style": "NEEDS_AUTHOR_CONFIRMATION",
+      "reasoning_setting": "NEEDS_AUTHOR_CONFIRMATION", "temperature": 1.0, "seed_behavior": "NEEDS_PREFLIGHT", "max_output_tokens": 800,
+      "concurrency": "NEEDS_AUTHOR_CONFIRMATION", "retry_policy": "one model-behavior retry; one infrastructure retry", "error_policy": "docs/LEADERBOARD_RUN_PLAN.md section 5",
+      "prompt_contract_hash": "862349ef54d6991f1b20102ac6936edde93bb7a0be8d1f849e993dd1e67b9831", "standard52_manifest_hash": "b3970fdd31ef2259d477a33801c7442be92df6ed3cd7bb3cb07399eaa21a0716", "preflight_status": "NOT_RUN"
+    },
+    {
+      "slot": 4, "slot_class": "strong_open_weight_B", "model_id": "NEEDS_AUTHOR_CONFIRMATION", "resolved_model_id": "NEEDS_PREFLIGHT",
+      "provider": "NEEDS_AUTHOR_CONFIRMATION", "endpoint_identity": "NEEDS_AUTHOR_CONFIRMATION_NO_SECRET", "api_style": "NEEDS_AUTHOR_CONFIRMATION",
+      "reasoning_setting": "NEEDS_AUTHOR_CONFIRMATION", "temperature": 1.0, "seed_behavior": "NEEDS_PREFLIGHT", "max_output_tokens": 800,
+      "concurrency": "NEEDS_AUTHOR_CONFIRMATION", "retry_policy": "one model-behavior retry; one infrastructure retry", "error_policy": "docs/LEADERBOARD_RUN_PLAN.md section 5",
+      "prompt_contract_hash": "862349ef54d6991f1b20102ac6936edde93bb7a0be8d1f849e993dd1e67b9831", "standard52_manifest_hash": "b3970fdd31ef2259d477a33801c7442be92df6ed3cd7bb3cb07399eaa21a0716", "preflight_status": "NOT_RUN"
+    },
+    {
+      "slot": 5, "slot_class": "medium_model", "model_id": "NEEDS_AUTHOR_CONFIRMATION", "resolved_model_id": "NEEDS_PREFLIGHT",
+      "provider": "NEEDS_AUTHOR_CONFIRMATION", "endpoint_identity": "NEEDS_AUTHOR_CONFIRMATION_NO_SECRET", "api_style": "NEEDS_AUTHOR_CONFIRMATION",
+      "reasoning_setting": "NEEDS_AUTHOR_CONFIRMATION", "temperature": 1.0, "seed_behavior": "NEEDS_PREFLIGHT", "max_output_tokens": 800,
+      "concurrency": "NEEDS_AUTHOR_CONFIRMATION", "retry_policy": "one model-behavior retry; one infrastructure retry", "error_policy": "docs/LEADERBOARD_RUN_PLAN.md section 5",
+      "prompt_contract_hash": "862349ef54d6991f1b20102ac6936edde93bb7a0be8d1f849e993dd1e67b9831", "standard52_manifest_hash": "b3970fdd31ef2259d477a33801c7442be92df6ed3cd7bb3cb07399eaa21a0716", "preflight_status": "NOT_RUN"
+    },
+    {
+      "slot": 6, "slot_class": "small_weak_baseline", "model_id": "NEEDS_AUTHOR_CONFIRMATION", "resolved_model_id": "NEEDS_PREFLIGHT",
+      "provider": "NEEDS_AUTHOR_CONFIRMATION", "endpoint_identity": "NEEDS_AUTHOR_CONFIRMATION_NO_SECRET", "api_style": "NEEDS_AUTHOR_CONFIRMATION",
+      "reasoning_setting": "NEEDS_AUTHOR_CONFIRMATION", "temperature": 1.0, "seed_behavior": "NEEDS_PREFLIGHT", "max_output_tokens": 800,
+      "concurrency": "NEEDS_AUTHOR_CONFIRMATION", "retry_policy": "one model-behavior retry; one infrastructure retry", "error_policy": "docs/LEADERBOARD_RUN_PLAN.md section 5",
+      "prompt_contract_hash": "862349ef54d6991f1b20102ac6936edde93bb7a0be8d1f849e993dd1e67b9831", "standard52_manifest_hash": "b3970fdd31ef2259d477a33801c7442be92df6ed3cd7bb3cb07399eaa21a0716", "preflight_status": "NOT_RUN"
+    }
+  ]
+}

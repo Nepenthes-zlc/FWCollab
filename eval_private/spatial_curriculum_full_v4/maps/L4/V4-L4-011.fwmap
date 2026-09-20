@@ -1,0 +1,26 @@
+@format fwcollab.symbol_map.v3
+@id V4-L4-011
+@title constructive L4 full-mechanism curriculum 011; fixed-reflection light door
+@max_steps 1
+@controller c1_lever lever at 3,5
+@controller c2_lever lever at 1,6
+@actuator a1_door door at 7,9 controlled_by all(c1_lever,c2_lever)
+@controller c3_lever lever at 6,14
+@actuator a2_platform platform at 2,18 controlled_by all(c3_lever)
+@controller c4_plate plate at 3,23 accepts F
+@actuator a3_door door at 7,27 controlled_by all(c4_plate)
+@controller c5_toggle toggle at 6,32
+@actuator a4_platform platform at 2,36 controlled_by all(c5_toggle)
+@light + direction RIGHT sensor S opens A
+---
+###############################################################
+#.....L#.#........#......#.#........#............+...\........#
+#F...#........#...=....#........##..=........................f#
+#....L...#......#.#..#.1...#........#.........................#
+#........#........#........#........#................S........#
+###############################################################
+#......#.#....L...#......#.#....T...#.....................#...#
+#W...#...A....#........#...C....##........................A..w#
+#........#......#.#..#.....#........#.....................#...#
+#........#........#........#........#.....................#...#
+###############################################################

@@ -1,0 +1,927 @@
+{
+  "format": "fwcollab.symbolic.collaboration_diagnostic_set.v1",
+  "source_manifest": "eval_private/spatial_curriculum_full_v4/manifest.json",
+  "selection_policy": {
+    "uses_model_outcomes": false,
+    "target_size": 24,
+    "difficulty_quotas": {
+      "L1": 2,
+      "L2": 3,
+      "L3": 3,
+      "L4": 4,
+      "L5": 4,
+      "L6": 4,
+      "L7": 4
+    },
+    "objective": "maximize collaboration taxonomy, join, and controller-pattern diversity"
+  },
+  "full_benchmark_taxonomy_coverage": {
+    "C1_hold_and_pass": 65,
+    "C2_sequential_handoff": 70,
+    "C3_mutual_unlock": 68,
+    "C4_synchronized_action": 0,
+    "C5_information_dependent": 0,
+    "C6_multi_stage_alternating": 60,
+    "C7_parallel_subgoal_merge": 0
+  },
+  "diagnostic_taxonomy_coverage": {
+    "C1_hold_and_pass": 23,
+    "C2_sequential_handoff": 23,
+    "C3_mutual_unlock": 22,
+    "C4_synchronized_action": 0,
+    "C5_information_dependent": 0,
+    "C6_multi_stage_alternating": 19,
+    "C7_parallel_subgoal_merge": 0
+  },
+  "known_coverage_gaps": [
+    "C4_synchronized_action",
+    "C5_information_dependent",
+    "C7_parallel_subgoal_merge"
+  ],
+  "records": [
+    {
+      "id": "V4-L1-001",
+      "difficulty": "L1",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L1/V4-L1-001.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L1/DAG-V4-L1-001.json",
+      "primary_capability": "M03",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff"
+        ],
+        "stage_count": 1,
+        "plate_stages": 1,
+        "persistent_stages": 1,
+        "role_alternations": 0,
+        "has_any_join": false,
+        "has_multi_controller_join": true,
+        "coverage_gaps": [
+          "C3_mutual_unlock",
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C6_multi_stage_alternating",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:lever+plate",
+        "join:multi_controller",
+        "mode_pattern:all",
+        "primary_capability:M03",
+        "stage_count:1",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff"
+      ]
+    },
+    {
+      "id": "V4-L1-002",
+      "difficulty": "L1",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L1/V4-L1-002.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L1/DAG-V4-L1-002.json",
+      "primary_capability": "M04",
+      "taxonomy": {
+        "tags": [
+          "C2_sequential_handoff"
+        ],
+        "stage_count": 1,
+        "plate_stages": 0,
+        "persistent_stages": 1,
+        "role_alternations": 0,
+        "has_any_join": true,
+        "has_multi_controller_join": true,
+        "coverage_gaps": [
+          "C1_hold_and_pass",
+          "C3_mutual_unlock",
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C6_multi_stage_alternating",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:lever+lever",
+        "join:any",
+        "join:multi_controller",
+        "mode_pattern:any",
+        "primary_capability:M04",
+        "stage_count:1",
+        "taxonomy:C2_sequential_handoff"
+      ]
+    },
+    {
+      "id": "V4-L2-008",
+      "difficulty": "L2",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-008.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-008.json",
+      "primary_capability": "M30",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C3_mutual_unlock"
+        ],
+        "stage_count": 2,
+        "plate_stages": 2,
+        "persistent_stages": 0,
+        "role_alternations": 1,
+        "has_any_join": false,
+        "has_multi_controller_join": false,
+        "coverage_gaps": [
+          "C2_sequential_handoff",
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C6_multi_stage_alternating",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:plate>plate",
+        "mode_pattern:all>all",
+        "primary_capability:M30",
+        "stage_count:2",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C3_mutual_unlock"
+      ]
+    },
+    {
+      "id": "V4-L2-006",
+      "difficulty": "L2",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-006.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-006.json",
+      "primary_capability": "M13",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock"
+        ],
+        "stage_count": 2,
+        "plate_stages": 2,
+        "persistent_stages": 1,
+        "role_alternations": 1,
+        "has_any_join": false,
+        "has_multi_controller_join": true,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C6_multi_stage_alternating",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:plate+toggle>plate",
+        "join:multi_controller",
+        "mode_pattern:all>all",
+        "primary_capability:M13",
+        "stage_count:2",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock"
+      ]
+    },
+    {
+      "id": "V4-L2-007",
+      "difficulty": "L2",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-007.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-007.json",
+      "primary_capability": "M24",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock"
+        ],
+        "stage_count": 2,
+        "plate_stages": 1,
+        "persistent_stages": 1,
+        "role_alternations": 1,
+        "has_any_join": false,
+        "has_multi_controller_join": true,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C6_multi_stage_alternating",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:lever+lever>plate",
+        "join:multi_controller",
+        "mode_pattern:all>all",
+        "primary_capability:M24",
+        "stage_count:2",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock"
+      ]
+    },
+    {
+      "id": "V4-L3-010",
+      "difficulty": "L3",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-010.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-010.json",
+      "primary_capability": "M09",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock",
+          "C6_multi_stage_alternating"
+        ],
+        "stage_count": 3,
+        "plate_stages": 2,
+        "persistent_stages": 1,
+        "role_alternations": 2,
+        "has_any_join": false,
+        "has_multi_controller_join": false,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:plate>lever>plate",
+        "mode_pattern:all>all>all",
+        "primary_capability:M09",
+        "stage_count:3",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock",
+        "taxonomy:C6_multi_stage_alternating"
+      ]
+    },
+    {
+      "id": "V4-L3-004",
+      "difficulty": "L3",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-004.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-004.json",
+      "primary_capability": "M23",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock",
+          "C6_multi_stage_alternating"
+        ],
+        "stage_count": 3,
+        "plate_stages": 2,
+        "persistent_stages": 1,
+        "role_alternations": 2,
+        "has_any_join": false,
+        "has_multi_controller_join": false,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:plate>toggle>plate",
+        "mode_pattern:all>all>all",
+        "primary_capability:M23",
+        "stage_count:3",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock",
+        "taxonomy:C6_multi_stage_alternating"
+      ]
+    },
+    {
+      "id": "V4-L3-009",
+      "difficulty": "L3",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-009.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-009.json",
+      "primary_capability": "M21",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock",
+          "C6_multi_stage_alternating"
+        ],
+        "stage_count": 3,
+        "plate_stages": 1,
+        "persistent_stages": 3,
+        "role_alternations": 2,
+        "has_any_join": false,
+        "has_multi_controller_join": true,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:lever>lever>lever+plate",
+        "join:multi_controller",
+        "mode_pattern:all>all>all",
+        "primary_capability:M21",
+        "stage_count:3",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock",
+        "taxonomy:C6_multi_stage_alternating"
+      ]
+    },
+    {
+      "id": "V4-L4-009",
+      "difficulty": "L4",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-009.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-009.json",
+      "primary_capability": "M22",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock",
+          "C6_multi_stage_alternating"
+        ],
+        "stage_count": 4,
+        "plate_stages": 2,
+        "persistent_stages": 2,
+        "role_alternations": 3,
+        "has_any_join": false,
+        "has_multi_controller_join": true,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:plate>toggle>lever+lever>plate",
+        "join:multi_controller",
+        "mode_pattern:all>all>all>all",
+        "primary_capability:M22",
+        "stage_count:4",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock",
+        "taxonomy:C6_multi_stage_alternating"
+      ]
+    },
+    {
+      "id": "V4-L4-012",
+      "difficulty": "L4",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-012.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-012.json",
+      "primary_capability": "M27",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock",
+          "C6_multi_stage_alternating"
+        ],
+        "stage_count": 4,
+        "plate_stages": 1,
+        "persistent_stages": 3,
+        "role_alternations": 3,
+        "has_any_join": true,
+        "has_multi_controller_join": true,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:plate>lever>lever+lever>toggle",
+        "join:any",
+        "join:multi_controller",
+        "mode_pattern:all>all>any>all",
+        "primary_capability:M27",
+        "stage_count:4",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock",
+        "taxonomy:C6_multi_stage_alternating"
+      ]
+    },
+    {
+      "id": "V4-L4-005",
+      "difficulty": "L4",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-005.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-005.json",
+      "primary_capability": "M12",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock",
+          "C6_multi_stage_alternating"
+        ],
+        "stage_count": 4,
+        "plate_stages": 1,
+        "persistent_stages": 3,
+        "role_alternations": 3,
+        "has_any_join": true,
+        "has_multi_controller_join": true,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:lever+lever>toggle>plate>lever+lever",
+        "join:any",
+        "join:multi_controller",
+        "mode_pattern:all>all>all>any",
+        "primary_capability:M12",
+        "stage_count:4",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock",
+        "taxonomy:C6_multi_stage_alternating"
+      ]
+    },
+    {
+      "id": "V4-L4-008",
+      "difficulty": "L4",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-008.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-008.json",
+      "primary_capability": "M16",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock",
+          "C6_multi_stage_alternating"
+        ],
+        "stage_count": 4,
+        "plate_stages": 2,
+        "persistent_stages": 2,
+        "role_alternations": 3,
+        "has_any_join": false,
+        "has_multi_controller_join": false,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:lever>toggle>plate>plate",
+        "mode_pattern:all>all>all>all",
+        "primary_capability:M16",
+        "stage_count:4",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock",
+        "taxonomy:C6_multi_stage_alternating"
+      ]
+    },
+    {
+      "id": "V4-L5-011",
+      "difficulty": "L5",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-011.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-011.json",
+      "primary_capability": "M25",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock",
+          "C6_multi_stage_alternating"
+        ],
+        "stage_count": 5,
+        "plate_stages": 4,
+        "persistent_stages": 2,
+        "role_alternations": 4,
+        "has_any_join": false,
+        "has_multi_controller_join": true,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:plate>toggle>lever+plate>plate>plate",
+        "join:multi_controller",
+        "mode_pattern:all>all>all>all>all",
+        "primary_capability:M25",
+        "stage_count:5",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock",
+        "taxonomy:C6_multi_stage_alternating"
+      ]
+    },
+    {
+      "id": "V4-L5-004",
+      "difficulty": "L5",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-004.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-004.json",
+      "primary_capability": "M06",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock",
+          "C6_multi_stage_alternating"
+        ],
+        "stage_count": 5,
+        "plate_stages": 1,
+        "persistent_stages": 4,
+        "role_alternations": 4,
+        "has_any_join": true,
+        "has_multi_controller_join": true,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:lever+lever>plate>lever>toggle>toggle",
+        "join:any",
+        "join:multi_controller",
+        "mode_pattern:any>all>all>all>all",
+        "primary_capability:M06",
+        "stage_count:5",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock",
+        "taxonomy:C6_multi_stage_alternating"
+      ]
+    },
+    {
+      "id": "V4-L5-006",
+      "difficulty": "L5",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-006.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-006.json",
+      "primary_capability": "M08",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock",
+          "C6_multi_stage_alternating"
+        ],
+        "stage_count": 5,
+        "plate_stages": 3,
+        "persistent_stages": 2,
+        "role_alternations": 4,
+        "has_any_join": false,
+        "has_multi_controller_join": false,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:toggle>plate>plate>plate>toggle",
+        "mode_pattern:all>all>all>all>all",
+        "primary_capability:M08",
+        "stage_count:5",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock",
+        "taxonomy:C6_multi_stage_alternating"
+      ]
+    },
+    {
+      "id": "V4-L5-005",
+      "difficulty": "L5",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-005.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-005.json",
+      "primary_capability": "M07",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock",
+          "C6_multi_stage_alternating"
+        ],
+        "stage_count": 5,
+        "plate_stages": 3,
+        "persistent_stages": 3,
+        "role_alternations": 4,
+        "has_any_join": false,
+        "has_multi_controller_join": true,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:plate>plate>lever+plate>toggle>toggle",
+        "join:multi_controller",
+        "mode_pattern:all>all>all>all>all",
+        "primary_capability:M07",
+        "stage_count:5",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock",
+        "taxonomy:C6_multi_stage_alternating"
+      ]
+    },
+    {
+      "id": "V4-L6-010",
+      "difficulty": "L6",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-010.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-010.json",
+      "primary_capability": "M29",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock",
+          "C6_multi_stage_alternating"
+        ],
+        "stage_count": 6,
+        "plate_stages": 6,
+        "persistent_stages": 3,
+        "role_alternations": 5,
+        "has_any_join": false,
+        "has_multi_controller_join": true,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:plate>plate>plate>lever+plate>plate+toggle>lever+plate",
+        "join:multi_controller",
+        "mode_pattern:all>all>all>all>all>all",
+        "primary_capability:M29",
+        "stage_count:6",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock",
+        "taxonomy:C6_multi_stage_alternating"
+      ]
+    },
+    {
+      "id": "V4-L6-007",
+      "difficulty": "L6",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-007.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-007.json",
+      "primary_capability": "M26",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock",
+          "C6_multi_stage_alternating"
+        ],
+        "stage_count": 6,
+        "plate_stages": 4,
+        "persistent_stages": 3,
+        "role_alternations": 5,
+        "has_any_join": true,
+        "has_multi_controller_join": true,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:plate>lever+lever>plate>plate>lever+plate>toggle",
+        "join:any",
+        "join:multi_controller",
+        "mode_pattern:all>any>all>all>all>all",
+        "primary_capability:M26",
+        "stage_count:6",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock",
+        "taxonomy:C6_multi_stage_alternating"
+      ]
+    },
+    {
+      "id": "V4-L6-009",
+      "difficulty": "L6",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-009.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-009.json",
+      "primary_capability": "M28",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock",
+          "C6_multi_stage_alternating"
+        ],
+        "stage_count": 6,
+        "plate_stages": 2,
+        "persistent_stages": 5,
+        "role_alternations": 5,
+        "has_any_join": true,
+        "has_multi_controller_join": true,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:lever+lever>plate>toggle>lever+lever>lever+plate>lever+lever",
+        "join:any",
+        "join:multi_controller",
+        "mode_pattern:all>all>all>any>all>any",
+        "primary_capability:M28",
+        "stage_count:6",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock",
+        "taxonomy:C6_multi_stage_alternating"
+      ]
+    },
+    {
+      "id": "V4-L6-008",
+      "difficulty": "L6",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-008.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-008.json",
+      "primary_capability": "M27",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock",
+          "C6_multi_stage_alternating"
+        ],
+        "stage_count": 6,
+        "plate_stages": 5,
+        "persistent_stages": 3,
+        "role_alternations": 5,
+        "has_any_join": true,
+        "has_multi_controller_join": true,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:plate+toggle>plate>lever+lever>plate>plate+toggle>plate",
+        "join:any",
+        "join:multi_controller",
+        "mode_pattern:all>all>any>all>all>all",
+        "primary_capability:M27",
+        "stage_count:6",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock",
+        "taxonomy:C6_multi_stage_alternating"
+      ]
+    },
+    {
+      "id": "V4-L7-001",
+      "difficulty": "L7",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-001.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-001.json",
+      "primary_capability": "M22",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock",
+          "C6_multi_stage_alternating"
+        ],
+        "stage_count": 7,
+        "plate_stages": 5,
+        "persistent_stages": 5,
+        "role_alternations": 6,
+        "has_any_join": true,
+        "has_multi_controller_join": true,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:lever+plate>plate+toggle>lever+plate>plate>lever>lever+lever>plate",
+        "join:any",
+        "join:multi_controller",
+        "mode_pattern:all>all>all>all>all>any>all",
+        "primary_capability:M22",
+        "stage_count:7",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock",
+        "taxonomy:C6_multi_stage_alternating"
+      ]
+    },
+    {
+      "id": "V4-L7-009",
+      "difficulty": "L7",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-009.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-009.json",
+      "primary_capability": "M13",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock",
+          "C6_multi_stage_alternating"
+        ],
+        "stage_count": 7,
+        "plate_stages": 4,
+        "persistent_stages": 4,
+        "role_alternations": 6,
+        "has_any_join": true,
+        "has_multi_controller_join": true,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:plate>lever+lever>lever>plate>toggle>plate>lever+plate",
+        "join:any",
+        "join:multi_controller",
+        "mode_pattern:all>any>all>all>all>all>all",
+        "primary_capability:M13",
+        "stage_count:7",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock",
+        "taxonomy:C6_multi_stage_alternating"
+      ]
+    },
+    {
+      "id": "V4-L7-003",
+      "difficulty": "L7",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-003.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-003.json",
+      "primary_capability": "M25",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock",
+          "C6_multi_stage_alternating"
+        ],
+        "stage_count": 7,
+        "plate_stages": 4,
+        "persistent_stages": 5,
+        "role_alternations": 6,
+        "has_any_join": false,
+        "has_multi_controller_join": true,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:plate>plate+toggle>lever>plate+toggle>lever>plate>lever+lever",
+        "join:multi_controller",
+        "mode_pattern:all>all>all>all>all>all>all",
+        "primary_capability:M25",
+        "stage_count:7",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock",
+        "taxonomy:C6_multi_stage_alternating"
+      ]
+    },
+    {
+      "id": "V4-L7-002",
+      "difficulty": "L7",
+      "map": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-002.fwmap",
+      "dag": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-002.json",
+      "primary_capability": "M23",
+      "taxonomy": {
+        "tags": [
+          "C1_hold_and_pass",
+          "C2_sequential_handoff",
+          "C3_mutual_unlock",
+          "C6_multi_stage_alternating"
+        ],
+        "stage_count": 7,
+        "plate_stages": 4,
+        "persistent_stages": 5,
+        "role_alternations": 6,
+        "has_any_join": true,
+        "has_multi_controller_join": true,
+        "coverage_gaps": [
+          "C4_synchronized_action",
+          "C5_information_dependent",
+          "C7_parallel_subgoal_merge"
+        ]
+      },
+      "selection_features": [
+        "controller_pattern:lever+lever>lever+plate>plate>lever+lever>lever>lever+plate>plate",
+        "join:any",
+        "join:multi_controller",
+        "mode_pattern:any>all>all>all>all>all>all",
+        "primary_capability:M23",
+        "stage_count:7",
+        "taxonomy:C1_hold_and_pass",
+        "taxonomy:C2_sequential_handoff",
+        "taxonomy:C3_mutual_unlock",
+        "taxonomy:C6_multi_stage_alternating"
+      ]
+    }
+  ]
+}

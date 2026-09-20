@@ -1,0 +1,12 @@
+@format fwcollab.symbol_map.v2
+@id S13
+@title S13 识别成对传送门并规划传送后的剩余移动
+@max_steps 1
+@portal P
+@portal Q
+---
+#################
+#F.P.......P.f..#
+#################
+#W.Q.......Q.w..#
+#################

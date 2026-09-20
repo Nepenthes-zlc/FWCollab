@@ -1,0 +1,1424 @@
+{
+  "format": "fwcollab.extension_suite_manifest.v1",
+  "suite": "Join-8",
+  "version": "v1",
+  "task_count": 8,
+  "records": [
+    {
+      "id": "JOIN-01",
+      "suite": "Join-8",
+      "variant": "primitive_symmetric_levers",
+      "tier": "primitive",
+      "mechanisms": [
+        "M17"
+      ],
+      "map": "eval_private/parallel_join_8/maps/JOIN-01.fwmap",
+      "dag": "eval_private/parallel_join_8/dags/DAG-JOIN-01.json",
+      "source_agents": [
+        "F",
+        "W"
+      ],
+      "dependency_semantics": [],
+      "composition_motifs": [
+        "PARALLEL_JOIN"
+      ],
+      "extension_semantics": {
+        "type": "parallel_join",
+        "branch_node_ids": {
+          "F": "bf",
+          "W": "bw"
+        },
+        "join_node_id": "join",
+        "join_mode": "all",
+        "requires_temporal_overlap": false,
+        "order_invariant": true
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "s",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "running"
+        },
+        {
+          "dag_node_id": "bf",
+          "kind": "equals",
+          "observation_path": "state.controllers.branch_f",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "bw",
+          "kind": "equals",
+          "observation_path": "state.controllers.branch_w",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "join",
+          "kind": "equals",
+          "observation_path": "state.doors.join_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "xf",
+          "kind": "actor_column_greater_than",
+          "role": "F",
+          "column": 10
+        },
+        {
+          "dag_node_id": "xw",
+          "kind": "actor_column_greater_than",
+          "role": "W",
+          "column": 10
+        },
+        {
+          "dag_node_id": "g",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "team_success"
+        }
+      ],
+      "gate": {
+        "id": "join_gate",
+        "kind": "door",
+        "column": 10,
+        "positions": [
+          [
+            1,
+            10
+          ],
+          [
+            3,
+            10
+          ]
+        ]
+      },
+      "final_supporter": null,
+      "edge_evidence": [
+        {
+          "from": "s",
+          "to": "bf",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "s",
+          "to": "bw",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "bf",
+          "to": "join",
+          "verified": true,
+          "method": "boolean_truth_table_both_inputs_necessary"
+        },
+        {
+          "from": "bw",
+          "to": "join",
+          "verified": true,
+          "method": "boolean_truth_table_both_inputs_necessary"
+        },
+        {
+          "from": "join",
+          "to": "xf",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "join",
+          "to": "xw",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "xf",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "xw",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        }
+      ],
+      "witness_valid": true,
+      "replay_valid": true,
+      "bindings_valid": true,
+      "role_wait_valid": true,
+      "no_bypass_valid": true,
+      "necessity_valid": true,
+      "conformance_valid": true,
+      "dag_metrics": {
+        "nodes": 7,
+        "edges": 8,
+        "longest_path": 4,
+        "max_parallel_width": 2,
+        "branch_nodes": 2,
+        "join_nodes": 2,
+        "any_joins": 0,
+        "handoffs": 0,
+        "maintains": 0
+      },
+      "all_edges_evidenced": true
+    },
+    {
+      "id": "JOIN-02",
+      "suite": "Join-8",
+      "variant": "primitive_symmetric_toggles",
+      "tier": "primitive",
+      "mechanisms": [
+        "M20"
+      ],
+      "map": "eval_private/parallel_join_8/maps/JOIN-02.fwmap",
+      "dag": "eval_private/parallel_join_8/dags/DAG-JOIN-02.json",
+      "source_agents": [
+        "F",
+        "W"
+      ],
+      "dependency_semantics": [],
+      "composition_motifs": [
+        "PARALLEL_JOIN"
+      ],
+      "extension_semantics": {
+        "type": "parallel_join",
+        "branch_node_ids": {
+          "F": "bf",
+          "W": "bw"
+        },
+        "join_node_id": "join",
+        "join_mode": "all",
+        "requires_temporal_overlap": false,
+        "order_invariant": true
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "s",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "running"
+        },
+        {
+          "dag_node_id": "bf",
+          "kind": "equals",
+          "observation_path": "state.controllers.branch_f",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "bw",
+          "kind": "equals",
+          "observation_path": "state.controllers.branch_w",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "join",
+          "kind": "equals",
+          "observation_path": "state.platforms.join_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "xf",
+          "kind": "actor_column_greater_than",
+          "role": "F",
+          "column": 10
+        },
+        {
+          "dag_node_id": "xw",
+          "kind": "actor_column_greater_than",
+          "role": "W",
+          "column": 10
+        },
+        {
+          "dag_node_id": "g",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "team_success"
+        }
+      ],
+      "gate": {
+        "id": "join_gate",
+        "kind": "platform",
+        "column": 10,
+        "positions": [
+          [
+            1,
+            10
+          ],
+          [
+            3,
+            10
+          ]
+        ]
+      },
+      "final_supporter": null,
+      "edge_evidence": [
+        {
+          "from": "s",
+          "to": "bf",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "s",
+          "to": "bw",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "bf",
+          "to": "join",
+          "verified": true,
+          "method": "boolean_truth_table_both_inputs_necessary"
+        },
+        {
+          "from": "bw",
+          "to": "join",
+          "verified": true,
+          "method": "boolean_truth_table_both_inputs_necessary"
+        },
+        {
+          "from": "join",
+          "to": "xf",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "join",
+          "to": "xw",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "xf",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "xw",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        }
+      ],
+      "witness_valid": true,
+      "replay_valid": true,
+      "bindings_valid": true,
+      "role_wait_valid": true,
+      "no_bypass_valid": true,
+      "necessity_valid": true,
+      "conformance_valid": true,
+      "dag_metrics": {
+        "nodes": 7,
+        "edges": 8,
+        "longest_path": 4,
+        "max_parallel_width": 2,
+        "branch_nodes": 2,
+        "join_nodes": 2,
+        "any_joins": 0,
+        "handoffs": 0,
+        "maintains": 0
+      },
+      "all_edges_evidenced": true
+    },
+    {
+      "id": "JOIN-03",
+      "suite": "Join-8",
+      "variant": "asymmetric_lever_toggle",
+      "tier": "asymmetric",
+      "mechanisms": [
+        "M17",
+        "M19"
+      ],
+      "map": "eval_private/parallel_join_8/maps/JOIN-03.fwmap",
+      "dag": "eval_private/parallel_join_8/dags/DAG-JOIN-03.json",
+      "source_agents": [
+        "F",
+        "W"
+      ],
+      "dependency_semantics": [],
+      "composition_motifs": [
+        "PARALLEL_JOIN"
+      ],
+      "extension_semantics": {
+        "type": "parallel_join",
+        "branch_node_ids": {
+          "F": "bf",
+          "W": "bw"
+        },
+        "join_node_id": "join",
+        "join_mode": "all",
+        "requires_temporal_overlap": false,
+        "order_invariant": true
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "s",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "running"
+        },
+        {
+          "dag_node_id": "bf",
+          "kind": "equals",
+          "observation_path": "state.controllers.branch_f",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "bw",
+          "kind": "equals",
+          "observation_path": "state.controllers.branch_w",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "join",
+          "kind": "equals",
+          "observation_path": "state.doors.join_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "xf",
+          "kind": "actor_column_greater_than",
+          "role": "F",
+          "column": 10
+        },
+        {
+          "dag_node_id": "xw",
+          "kind": "actor_column_greater_than",
+          "role": "W",
+          "column": 10
+        },
+        {
+          "dag_node_id": "g",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "team_success"
+        }
+      ],
+      "gate": {
+        "id": "join_gate",
+        "kind": "door",
+        "column": 10,
+        "positions": [
+          [
+            1,
+            10
+          ],
+          [
+            3,
+            10
+          ]
+        ]
+      },
+      "final_supporter": null,
+      "edge_evidence": [
+        {
+          "from": "s",
+          "to": "bf",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "s",
+          "to": "bw",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "bf",
+          "to": "join",
+          "verified": true,
+          "method": "boolean_truth_table_both_inputs_necessary"
+        },
+        {
+          "from": "bw",
+          "to": "join",
+          "verified": true,
+          "method": "boolean_truth_table_both_inputs_necessary"
+        },
+        {
+          "from": "join",
+          "to": "xf",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "join",
+          "to": "xw",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "xf",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "xw",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        }
+      ],
+      "witness_valid": true,
+      "replay_valid": true,
+      "bindings_valid": true,
+      "role_wait_valid": true,
+      "no_bypass_valid": true,
+      "necessity_valid": true,
+      "conformance_valid": true,
+      "dag_metrics": {
+        "nodes": 7,
+        "edges": 8,
+        "longest_path": 4,
+        "max_parallel_width": 2,
+        "branch_nodes": 2,
+        "join_nodes": 2,
+        "any_joins": 0,
+        "handoffs": 0,
+        "maintains": 0
+      },
+      "all_edges_evidenced": true
+    },
+    {
+      "id": "JOIN-04",
+      "suite": "Join-8",
+      "variant": "asymmetric_path_lengths",
+      "tier": "asymmetric",
+      "mechanisms": [
+        "M18",
+        "M20"
+      ],
+      "map": "eval_private/parallel_join_8/maps/JOIN-04.fwmap",
+      "dag": "eval_private/parallel_join_8/dags/DAG-JOIN-04.json",
+      "source_agents": [
+        "F",
+        "W"
+      ],
+      "dependency_semantics": [],
+      "composition_motifs": [
+        "PARALLEL_JOIN"
+      ],
+      "extension_semantics": {
+        "type": "parallel_join",
+        "branch_node_ids": {
+          "F": "bf",
+          "W": "bw"
+        },
+        "join_node_id": "join",
+        "join_mode": "all",
+        "requires_temporal_overlap": false,
+        "order_invariant": true
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "s",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "running"
+        },
+        {
+          "dag_node_id": "bf",
+          "kind": "equals",
+          "observation_path": "state.controllers.branch_f",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "bw",
+          "kind": "equals",
+          "observation_path": "state.controllers.branch_w",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "join",
+          "kind": "equals",
+          "observation_path": "state.platforms.join_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "xf",
+          "kind": "actor_column_greater_than",
+          "role": "F",
+          "column": 10
+        },
+        {
+          "dag_node_id": "xw",
+          "kind": "actor_column_greater_than",
+          "role": "W",
+          "column": 10
+        },
+        {
+          "dag_node_id": "g",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "team_success"
+        }
+      ],
+      "gate": {
+        "id": "join_gate",
+        "kind": "platform",
+        "column": 10,
+        "positions": [
+          [
+            1,
+            10
+          ],
+          [
+            3,
+            10
+          ]
+        ]
+      },
+      "final_supporter": null,
+      "edge_evidence": [
+        {
+          "from": "s",
+          "to": "bf",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "s",
+          "to": "bw",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "bf",
+          "to": "join",
+          "verified": true,
+          "method": "boolean_truth_table_both_inputs_necessary"
+        },
+        {
+          "from": "bw",
+          "to": "join",
+          "verified": true,
+          "method": "boolean_truth_table_both_inputs_necessary"
+        },
+        {
+          "from": "join",
+          "to": "xf",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "join",
+          "to": "xw",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "xf",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "xw",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        }
+      ],
+      "witness_valid": true,
+      "replay_valid": true,
+      "bindings_valid": true,
+      "role_wait_valid": true,
+      "no_bypass_valid": true,
+      "necessity_valid": true,
+      "conformance_valid": true,
+      "dag_metrics": {
+        "nodes": 7,
+        "edges": 8,
+        "longest_path": 4,
+        "max_parallel_width": 2,
+        "branch_nodes": 2,
+        "join_nodes": 2,
+        "any_joins": 0,
+        "handoffs": 0,
+        "maintains": 0
+      },
+      "all_edges_evidenced": true
+    },
+    {
+      "id": "JOIN-05",
+      "suite": "Join-8",
+      "variant": "asymmetric_reversed_mechanisms",
+      "tier": "asymmetric",
+      "mechanisms": [
+        "M17",
+        "M19"
+      ],
+      "map": "eval_private/parallel_join_8/maps/JOIN-05.fwmap",
+      "dag": "eval_private/parallel_join_8/dags/DAG-JOIN-05.json",
+      "source_agents": [
+        "F",
+        "W"
+      ],
+      "dependency_semantics": [],
+      "composition_motifs": [
+        "PARALLEL_JOIN"
+      ],
+      "extension_semantics": {
+        "type": "parallel_join",
+        "branch_node_ids": {
+          "F": "bf",
+          "W": "bw"
+        },
+        "join_node_id": "join",
+        "join_mode": "all",
+        "requires_temporal_overlap": false,
+        "order_invariant": true
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "s",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "running"
+        },
+        {
+          "dag_node_id": "bf",
+          "kind": "equals",
+          "observation_path": "state.controllers.branch_f",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "bw",
+          "kind": "equals",
+          "observation_path": "state.controllers.branch_w",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "join",
+          "kind": "equals",
+          "observation_path": "state.doors.join_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "xf",
+          "kind": "actor_column_greater_than",
+          "role": "F",
+          "column": 10
+        },
+        {
+          "dag_node_id": "xw",
+          "kind": "actor_column_greater_than",
+          "role": "W",
+          "column": 10
+        },
+        {
+          "dag_node_id": "g",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "team_success"
+        }
+      ],
+      "gate": {
+        "id": "join_gate",
+        "kind": "door",
+        "column": 10,
+        "positions": [
+          [
+            1,
+            10
+          ],
+          [
+            3,
+            10
+          ]
+        ]
+      },
+      "final_supporter": null,
+      "edge_evidence": [
+        {
+          "from": "s",
+          "to": "bf",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "s",
+          "to": "bw",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "bf",
+          "to": "join",
+          "verified": true,
+          "method": "boolean_truth_table_both_inputs_necessary"
+        },
+        {
+          "from": "bw",
+          "to": "join",
+          "verified": true,
+          "method": "boolean_truth_table_both_inputs_necessary"
+        },
+        {
+          "from": "join",
+          "to": "xf",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "join",
+          "to": "xw",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "xf",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "xw",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        }
+      ],
+      "witness_valid": true,
+      "replay_valid": true,
+      "bindings_valid": true,
+      "role_wait_valid": true,
+      "no_bypass_valid": true,
+      "necessity_valid": true,
+      "conformance_valid": true,
+      "dag_metrics": {
+        "nodes": 7,
+        "edges": 8,
+        "longest_path": 4,
+        "max_parallel_width": 2,
+        "branch_nodes": 2,
+        "join_nodes": 2,
+        "any_joins": 0,
+        "handoffs": 0,
+        "maintains": 0
+      },
+      "all_edges_evidenced": true
+    },
+    {
+      "id": "JOIN-06",
+      "suite": "Join-8",
+      "variant": "join_then_maintain_F_to_W",
+      "tier": "composition",
+      "mechanisms": [
+        "M11",
+        "M17",
+        "M19"
+      ],
+      "map": "eval_private/parallel_join_8/maps/JOIN-06.fwmap",
+      "dag": "eval_private/parallel_join_8/dags/DAG-JOIN-06.json",
+      "source_agents": [
+        "F",
+        "W"
+      ],
+      "dependency_semantics": [
+        "MAINTAIN"
+      ],
+      "composition_motifs": [
+        "PARALLEL_JOIN",
+        "JOIN_THEN_MAINTAIN"
+      ],
+      "extension_semantics": {
+        "type": "parallel_join",
+        "branch_node_ids": {
+          "F": "bf",
+          "W": "bw"
+        },
+        "join_node_id": "join",
+        "join_mode": "all",
+        "requires_temporal_overlap": false,
+        "order_invariant": true
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "s",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "running"
+        },
+        {
+          "dag_node_id": "bf",
+          "kind": "equals",
+          "observation_path": "state.controllers.branch_f",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "bw",
+          "kind": "equals",
+          "observation_path": "state.controllers.branch_w",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "join",
+          "kind": "equals",
+          "observation_path": "state.doors.join_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "xf",
+          "kind": "actor_column_greater_than",
+          "role": "F",
+          "column": 10
+        },
+        {
+          "dag_node_id": "xw",
+          "kind": "actor_column_greater_than",
+          "role": "W",
+          "column": 10
+        },
+        {
+          "dag_node_id": "hold",
+          "kind": "equals",
+          "observation_path": "state.controllers.final_hold",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "final_gate",
+          "kind": "equals",
+          "observation_path": "state.doors.final_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "final_x",
+          "kind": "actor_column_greater_than",
+          "role": "W",
+          "column": 15
+        },
+        {
+          "dag_node_id": "g",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "team_success"
+        }
+      ],
+      "gate": {
+        "id": "join_gate",
+        "kind": "door",
+        "column": 10,
+        "positions": [
+          [
+            1,
+            10
+          ],
+          [
+            3,
+            10
+          ]
+        ]
+      },
+      "final_supporter": "F",
+      "edge_evidence": [
+        {
+          "from": "s",
+          "to": "bf",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "s",
+          "to": "bw",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "bf",
+          "to": "join",
+          "verified": true,
+          "method": "boolean_truth_table_both_inputs_necessary"
+        },
+        {
+          "from": "bw",
+          "to": "join",
+          "verified": true,
+          "method": "boolean_truth_table_both_inputs_necessary"
+        },
+        {
+          "from": "join",
+          "to": "xf",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "join",
+          "to": "xw",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "xf",
+          "to": "hold",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "hold",
+          "to": "final_gate",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "final_gate",
+          "to": "final_x",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "hold",
+          "to": "final_x",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "final_x",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "xw",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        }
+      ],
+      "witness_valid": true,
+      "replay_valid": true,
+      "bindings_valid": true,
+      "role_wait_valid": true,
+      "no_bypass_valid": true,
+      "necessity_valid": true,
+      "conformance_valid": true,
+      "dag_metrics": {
+        "nodes": 10,
+        "edges": 12,
+        "longest_path": 7,
+        "max_parallel_width": 2,
+        "branch_nodes": 3,
+        "join_nodes": 3,
+        "any_joins": 0,
+        "handoffs": 0,
+        "maintains": 2
+      },
+      "all_edges_evidenced": true
+    },
+    {
+      "id": "JOIN-07",
+      "suite": "Join-8",
+      "variant": "join_then_maintain_W_to_F",
+      "tier": "composition",
+      "mechanisms": [
+        "M11",
+        "M18",
+        "M20"
+      ],
+      "map": "eval_private/parallel_join_8/maps/JOIN-07.fwmap",
+      "dag": "eval_private/parallel_join_8/dags/DAG-JOIN-07.json",
+      "source_agents": [
+        "F",
+        "W"
+      ],
+      "dependency_semantics": [
+        "MAINTAIN"
+      ],
+      "composition_motifs": [
+        "PARALLEL_JOIN",
+        "JOIN_THEN_MAINTAIN"
+      ],
+      "extension_semantics": {
+        "type": "parallel_join",
+        "branch_node_ids": {
+          "F": "bf",
+          "W": "bw"
+        },
+        "join_node_id": "join",
+        "join_mode": "all",
+        "requires_temporal_overlap": false,
+        "order_invariant": true
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "s",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "running"
+        },
+        {
+          "dag_node_id": "bf",
+          "kind": "equals",
+          "observation_path": "state.controllers.branch_f",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "bw",
+          "kind": "equals",
+          "observation_path": "state.controllers.branch_w",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "join",
+          "kind": "equals",
+          "observation_path": "state.platforms.join_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "xf",
+          "kind": "actor_column_greater_than",
+          "role": "F",
+          "column": 10
+        },
+        {
+          "dag_node_id": "xw",
+          "kind": "actor_column_greater_than",
+          "role": "W",
+          "column": 10
+        },
+        {
+          "dag_node_id": "hold",
+          "kind": "equals",
+          "observation_path": "state.controllers.final_hold",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "final_gate",
+          "kind": "equals",
+          "observation_path": "state.doors.final_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "final_x",
+          "kind": "actor_column_greater_than",
+          "role": "F",
+          "column": 15
+        },
+        {
+          "dag_node_id": "g",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "team_success"
+        }
+      ],
+      "gate": {
+        "id": "join_gate",
+        "kind": "platform",
+        "column": 10,
+        "positions": [
+          [
+            1,
+            10
+          ],
+          [
+            3,
+            10
+          ]
+        ]
+      },
+      "final_supporter": "W",
+      "edge_evidence": [
+        {
+          "from": "s",
+          "to": "bf",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "s",
+          "to": "bw",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "bf",
+          "to": "join",
+          "verified": true,
+          "method": "boolean_truth_table_both_inputs_necessary"
+        },
+        {
+          "from": "bw",
+          "to": "join",
+          "verified": true,
+          "method": "boolean_truth_table_both_inputs_necessary"
+        },
+        {
+          "from": "join",
+          "to": "xf",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "join",
+          "to": "xw",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "xw",
+          "to": "hold",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "hold",
+          "to": "final_gate",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "final_gate",
+          "to": "final_x",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "hold",
+          "to": "final_x",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "final_x",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "xf",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        }
+      ],
+      "witness_valid": true,
+      "replay_valid": true,
+      "bindings_valid": true,
+      "role_wait_valid": true,
+      "no_bypass_valid": true,
+      "necessity_valid": true,
+      "conformance_valid": true,
+      "dag_metrics": {
+        "nodes": 10,
+        "edges": 12,
+        "longest_path": 7,
+        "max_parallel_width": 2,
+        "branch_nodes": 3,
+        "join_nodes": 3,
+        "any_joins": 0,
+        "handoffs": 0,
+        "maintains": 2
+      },
+      "all_edges_evidenced": true
+    },
+    {
+      "id": "JOIN-08",
+      "suite": "Join-8",
+      "variant": "asymmetric_join_then_maintain",
+      "tier": "composition",
+      "mechanisms": [
+        "M11",
+        "M17",
+        "M19"
+      ],
+      "map": "eval_private/parallel_join_8/maps/JOIN-08.fwmap",
+      "dag": "eval_private/parallel_join_8/dags/DAG-JOIN-08.json",
+      "source_agents": [
+        "F",
+        "W"
+      ],
+      "dependency_semantics": [
+        "MAINTAIN"
+      ],
+      "composition_motifs": [
+        "PARALLEL_JOIN",
+        "JOIN_THEN_MAINTAIN"
+      ],
+      "extension_semantics": {
+        "type": "parallel_join",
+        "branch_node_ids": {
+          "F": "bf",
+          "W": "bw"
+        },
+        "join_node_id": "join",
+        "join_mode": "all",
+        "requires_temporal_overlap": false,
+        "order_invariant": true
+      },
+      "node_bindings": [
+        {
+          "dag_node_id": "s",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "running"
+        },
+        {
+          "dag_node_id": "bf",
+          "kind": "equals",
+          "observation_path": "state.controllers.branch_f",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "bw",
+          "kind": "equals",
+          "observation_path": "state.controllers.branch_w",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "join",
+          "kind": "equals",
+          "observation_path": "state.doors.join_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "xf",
+          "kind": "actor_column_greater_than",
+          "role": "F",
+          "column": 10
+        },
+        {
+          "dag_node_id": "xw",
+          "kind": "actor_column_greater_than",
+          "role": "W",
+          "column": 10
+        },
+        {
+          "dag_node_id": "hold",
+          "kind": "equals",
+          "observation_path": "state.controllers.final_hold",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "final_gate",
+          "kind": "equals",
+          "observation_path": "state.doors.final_gate",
+          "expected_value": true
+        },
+        {
+          "dag_node_id": "final_x",
+          "kind": "actor_column_greater_than",
+          "role": "W",
+          "column": 15
+        },
+        {
+          "dag_node_id": "g",
+          "kind": "equals",
+          "observation_path": "status",
+          "expected_value": "team_success"
+        }
+      ],
+      "gate": {
+        "id": "join_gate",
+        "kind": "door",
+        "column": 10,
+        "positions": [
+          [
+            1,
+            10
+          ],
+          [
+            3,
+            10
+          ]
+        ]
+      },
+      "final_supporter": "F",
+      "edge_evidence": [
+        {
+          "from": "s",
+          "to": "bf",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "s",
+          "to": "bw",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "bf",
+          "to": "join",
+          "verified": true,
+          "method": "boolean_truth_table_both_inputs_necessary"
+        },
+        {
+          "from": "bw",
+          "to": "join",
+          "verified": true,
+          "method": "boolean_truth_table_both_inputs_necessary"
+        },
+        {
+          "from": "join",
+          "to": "xf",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "join",
+          "to": "xw",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "xf",
+          "to": "hold",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "hold",
+          "to": "final_gate",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "final_gate",
+          "to": "final_x",
+          "verified": true,
+          "method": "single_lane_corridor_cut"
+        },
+        {
+          "from": "hold",
+          "to": "final_x",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "final_x",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        },
+        {
+          "from": "xw",
+          "to": "g",
+          "verified": true,
+          "method": "executable_precedence"
+        }
+      ],
+      "witness_valid": true,
+      "replay_valid": true,
+      "bindings_valid": true,
+      "role_wait_valid": true,
+      "no_bypass_valid": true,
+      "necessity_valid": true,
+      "conformance_valid": true,
+      "dag_metrics": {
+        "nodes": 10,
+        "edges": 12,
+        "longest_path": 7,
+        "max_parallel_width": 2,
+        "branch_nodes": 3,
+        "join_nodes": 3,
+        "any_joins": 0,
+        "handoffs": 0,
+        "maintains": 2
+      },
+      "all_edges_evidenced": true
+    }
+  ]
+}

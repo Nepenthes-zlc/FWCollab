@@ -1,0 +1,29 @@
+{
+  "format": "fwcollab.leaderboard.final6_matrix_plan.v1",
+  "status": "closed4_frozen_open_weight_slots_preregistered_pending",
+  "selection_basis": "author-specified Closed-4 plus prospectively registered open-weight policy; slot 4 was author-revised from unavailable gemini-3.1-pro to exact gemini-3.5-flash before matrix freeze; no valid Standard-52 closed-model episode had started at freeze",
+  "open_weight_selection_policy": {
+    "path": "docs/OPEN_WEIGHT_MODEL_SELECTION_POLICY.md",
+    "sha256": "d1bd01b916d98490c38b24323706e5305870374ca87b6384a82446f39d5d66e3"
+  },
+  "prompt_contract_hash": "862349ef54d6991f1b20102ac6936edde93bb7a0be8d1f849e993dd1e67b9831",
+  "standard52_manifest_hash": "b3970fdd31ef2259d477a33801c7442be92df6ed3cd7bb3cb07399eaa21a0716",
+  "closed4_matrix": {
+    "path": "eval_private/leaderboard_v1/closed4_model_matrix.json",
+    "sha256": "934b4eb25c436a661fe995e0b4177614f1ad799ea86b2debebc5adf7420e3cff"
+  },
+  "slots": [
+    {"slot": 1, "model_id": "gpt-5.5", "status": "FROZEN_PREFLIGHT_PASS"},
+    {"slot": 2, "model_id": "gpt-5-mini", "status": "FROZEN_PREFLIGHT_PASS"},
+    {"slot": 3, "model_id": "gemini-3.7-flash", "status": "FROZEN_PREFLIGHT_PASS"},
+    {"slot": 4, "model_id": "gemini-3.5-flash", "status": "FROZEN_PREFLIGHT_PASS"},
+    {"slot": 5, "model_id": "OPEN_WEIGHT_A_PENDING", "status": "PENDING_AUTHOR_SELECTION_UNDER_PREREGISTERED_POLICY"},
+    {"slot": 6, "model_id": "OPEN_WEIGHT_B_PENDING", "status": "PENDING_AUTHOR_SELECTION_UNDER_PREREGISTERED_POLICY"}
+  ],
+  "prohibitions": [
+    "do not change Closed-4 after matrix freeze",
+    "do not use Closed-4 results to select open-weight models",
+    "do not tune prompts per model",
+    "do not change Standard-52 protocol when filling slots 5 and 6"
+  ]
+}

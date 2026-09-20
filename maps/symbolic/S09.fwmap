@@ -1,0 +1,13 @@
+@format fwcollab.symbol_map.v1
+@id S09
+@title S09 同一箱子在两个压板间迁移，门按顺序开启
+@max_steps 1
+@plate 1 opens A accepts O
+@plate 2 opens B accepts O
+---
+#####################
+#F.O1..2.B....f.....#
+#........#..........#
+#####################
+#W..A..........w....#
+#####################

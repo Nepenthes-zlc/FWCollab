@@ -1,0 +1,19 @@
+@format fwcollab.symbol_map.v2
+@id S24
+@title S24 桥门、旋镜光路、热相与传送的综合依赖链
+@max_steps 1
+@plate 1 opens A accepts F
+@platform = controlled_by 1
+@toggle T toggles M
+@light + direction RIGHT sensor S opens B
+@mirror M initial slash
+@thermal I initial liquid heater H freezer K
+@portal P
+---
+#############################
+#+.......M..................#
+#........T..................#
+#F..1....S.B...K.III...f....#
+#########.###################
+#W..A.===......P......P.w.H.#
+#############################

@@ -1,0 +1,12 @@
+@format fwcollab.symbol_map.v2
+@id S14
+@title S14 持续守门期间完成远距离传送
+@max_steps 1
+@plate 1 opens A accepts F
+@portal P
+---
+#####################
+#F..1.........f.....#
+#####################
+#W..A.P.###.P.w.....#
+#####################

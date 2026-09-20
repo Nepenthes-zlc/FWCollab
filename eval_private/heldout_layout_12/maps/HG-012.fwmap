@@ -1,0 +1,35 @@
+@format fwcollab.symbol_map.v3
+@id HG-012
+@title held-out layout paired with V4-L7-002; orb-cleared light door
+@max_steps 1
+@controller c1_lever lever at 8,5
+@controller c2_lever lever at 6,6
+@actuator a1_door door at 2,9 controlled_by any(c1_lever,c2_lever)
+@controller c3_lever lever at 1,14
+@controller c4_plate plate at 3,15 accepts F
+@actuator a2_door door at 7,18 controlled_by all(c3_lever,c4_plate)
+@controller c5_plate plate at 8,23 accepts W
+@actuator a3_platform platform at 2,27 controlled_by all(c5_plate)
+@controller c6_lever lever at 1,32
+@controller c7_lever lever at 3,33
+@actuator a4_door door at 7,36 controlled_by all(c6_lever,c7_lever)
+@controller c8_lever lever at 8,41
+@actuator a5_platform platform at 2,45 controlled_by all(c8_lever)
+@controller c9_lever lever at 1,50
+@controller c10_plate plate at 3,51 accepts F
+@actuator a6_door door at 7,54 controlled_by all(c9_lever,c10_plate)
+@controller c11_plate plate at 8,59 accepts W
+@actuator a7_platform platform at 2,63 controlled_by all(c11_plate)
+@light + direction RIGHT sensor S opens A
+---
+##########################################################################################
+#......#.#....L...#........#....L.#.#........#....L.#.#......#.#.........................#
+#F...#...A....#........#...=....#........##..=....#........#...=............+..o..S.....f#
+#........#.....1#.#........#.....L..#........#.....3..#..#.....#.........................#
+#........#........#........#........#........#........#........#.........................#
+##########################################################################################
+#.....L#.#........#........#......#.#........#......#.#......#.#.....................#...#
+#W...#........#...B....#........#...D....##.......#...A....#.........................A..w#
+#....L...#......#.#....2...#........#....L...#........#..#.4...#.....................#...#
+#........#........#........#........#........#........#........#.....................#...#
+##########################################################################################

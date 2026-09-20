@@ -1,0 +1,143 @@
+{
+  "format": "fwcollab.extension_freeze.v1",
+  "suite": "Join-8",
+  "version": "v1",
+  "task_count": 8,
+  "files": [
+    {
+      "path": "artifacts/audits/parallel_join_8/REPORT.md",
+      "sha256": "866de42c5103dc0708b473e750ce758ed25c41e31b7594f73b6d21dbab24e253",
+      "bytes": 371
+    },
+    {
+      "path": "artifacts/audits/parallel_join_8/summary.json",
+      "sha256": "59a8ec85e67d8b6c16016f32fa76897ab9cdcfbebdced3bf519cf5ab07c54ef9",
+      "bytes": 242
+    },
+    {
+      "path": "artifacts/evaluations/parallel_join_conformance_v1/cases.json",
+      "sha256": "b4bff5dfb4dbc239ed3842d22ba51f4ab9bcf2febf3efcd5dfb747b696262e00",
+      "bytes": 12749
+    },
+    {
+      "path": "artifacts/evaluations/parallel_join_conformance_v1/summary.json",
+      "sha256": "553559998c9ed06073a46f0ff7998fb9e7a99c73cee6aba1b825ab91ada3e4ba",
+      "bytes": 205
+    },
+    {
+      "path": "docs/EXTENSION_SUITE_CHANGELOG.md",
+      "sha256": "f15aaa9b43e45abe8ebadff5657b9523a7cf21d23af0564d147f586a8d670ce6",
+      "bytes": 1111
+    },
+    {
+      "path": "docs/PARALLEL_JOIN_SUITE_SPEC.md",
+      "sha256": "537dd567142afe7a09dca83840722363b2981180a8363faf54b8ac39ad1b36d9",
+      "bytes": 2102
+    },
+    {
+      "path": "eval_private/parallel_join_8/dags/DAG-JOIN-01.json",
+      "sha256": "2bd983b364baad39ec22fd3092189a9063c03e473ce130febd99488f32b7c100",
+      "bytes": 3099
+    },
+    {
+      "path": "eval_private/parallel_join_8/dags/DAG-JOIN-02.json",
+      "sha256": "9d3c6fc02740acdbc7455117bc134e9bae0ab06cadc02a48ff4f549e5ccbd89c",
+      "bytes": 3100
+    },
+    {
+      "path": "eval_private/parallel_join_8/dags/DAG-JOIN-03.json",
+      "sha256": "801db358c2b1e95381cc86a76658ff828f848fe12d68c9d17ff06ea2592dcb5f",
+      "bytes": 3109
+    },
+    {
+      "path": "eval_private/parallel_join_8/dags/DAG-JOIN-04.json",
+      "sha256": "25414e232eb5faca88d9d6dc85d8ce48ac1e9a021c4225a5f35e1c3999e4a959",
+      "bytes": 3109
+    },
+    {
+      "path": "eval_private/parallel_join_8/dags/DAG-JOIN-05.json",
+      "sha256": "09b5621bb6eed9c7beb9f6ea17d032d0a4920c49eb11cab770b67bf8a1d7a04f",
+      "bytes": 3116
+    },
+    {
+      "path": "eval_private/parallel_join_8/dags/DAG-JOIN-06.json",
+      "sha256": "02e3deafb66faee08d14ec80179771df736cd29cd0f07492d26eff4b16d6b7f3",
+      "bytes": 4392
+    },
+    {
+      "path": "eval_private/parallel_join_8/dags/DAG-JOIN-07.json",
+      "sha256": "526fa4f27869cec4405b6690e88da0d0af65e45ecd5bd5e7a8d832c277f671fd",
+      "bytes": 4392
+    },
+    {
+      "path": "eval_private/parallel_join_8/dags/DAG-JOIN-08.json",
+      "sha256": "9942101f321e2c9ad723e7b7b2e703ba440eadbad8d8574b8705345f8a210a23",
+      "bytes": 4396
+    },
+    {
+      "path": "eval_private/parallel_join_8/manifest.json",
+      "sha256": "7cefbdc6ea27f52eb14e5fd264cd4e7fff9e43dc4a54a57565ca2589412886c8",
+      "bytes": 36252
+    },
+    {
+      "path": "eval_private/parallel_join_8/maps/JOIN-01.fwmap",
+      "sha256": "ff3d8b8a136036b038c6ae0d171bfaaf5800ffa001b414f5b3838f2ec1c7d36b",
+      "bytes": 347
+    },
+    {
+      "path": "eval_private/parallel_join_8/maps/JOIN-02.fwmap",
+      "sha256": "bc3152051ce5eecc0f8862027dd66b02099cf7d0b7c66d882103b17d42655510",
+      "bytes": 354
+    },
+    {
+      "path": "eval_private/parallel_join_8/maps/JOIN-03.fwmap",
+      "sha256": "0802acee8120fb00adf4ec9fd9f531f06db7950d8e7c1d3202042ba897b8793b",
+      "bytes": 345
+    },
+    {
+      "path": "eval_private/parallel_join_8/maps/JOIN-04.fwmap",
+      "sha256": "6d6222b8d53c4e696f129d133e824605d0e003eef4fa1bf531d643a86f30a8fe",
+      "bytes": 349
+    },
+    {
+      "path": "eval_private/parallel_join_8/maps/JOIN-05.fwmap",
+      "sha256": "9ae17e918a32560611fc9f4b9082846c5e9ab82163cc12ee61d45e3a66c9325b",
+      "bytes": 352
+    },
+    {
+      "path": "eval_private/parallel_join_8/maps/JOIN-06.fwmap",
+      "sha256": "0ec52af491b28ad5763f3dd7959a6c6c62cdf358036fd4cf62fda13f0562f5ab",
+      "bytes": 458
+    },
+    {
+      "path": "eval_private/parallel_join_8/maps/JOIN-07.fwmap",
+      "sha256": "67a0a08e384667d7644fa8bb6ae1178fe4a220ed60aadb426642c07e84e27e45",
+      "bytes": 462
+    },
+    {
+      "path": "eval_private/parallel_join_8/maps/JOIN-08.fwmap",
+      "sha256": "2d1749aafc61a2641905d8c94fb99d9aa1f7ad9d27a40834dd3b08f98d27a52d",
+      "bytes": 462
+    },
+    {
+      "path": "eval_private/parallel_join_8/witnesses.json",
+      "sha256": "78133ec9f1464e1a9669c08ddf5e2c56fbd2534cd3e3fabeea6cbdbd66cfc149",
+      "bytes": 221718
+    },
+    {
+      "path": "scripts/build_extension_suites.py",
+      "sha256": "7d95c24df1e576e8d9b0c61db7592c02d6da714f0368c94cf9945c51926a6e8c",
+      "bytes": 534
+    },
+    {
+      "path": "src/fwcollab/symbolic/extension_eval.py",
+      "sha256": "c69c74a54cdeedff0b709a6ed236f9972b7a11e9a619cfd192e51f101dff4f35",
+      "bytes": 11396
+    },
+    {
+      "path": "src/fwcollab/symbolic/extension_suites.py",
+      "sha256": "0946a30c2e961cd8fbf40853ba9d0d0ef36190a16eb481e45cb50148aeaf365c",
+      "bytes": 46301
+    }
+  ]
+}

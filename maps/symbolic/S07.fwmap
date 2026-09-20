@@ -1,0 +1,12 @@
+@format fwcollab.symbol_map.v1
+@id S07
+@title S07 双方同轮离开压板并进入对方打开的门
+@max_steps 1
+@plate 1 opens A accepts F
+@plate 2 opens B accepts W
+---
+###############
+#F..1B...f....#
+###############
+#W..2A...w....#
+###############

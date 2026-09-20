@@ -1,0 +1,45 @@
+{
+  "additionalProperties": false,
+  "description": "Small public protocol payload; the runner adds round and hash metadata.",
+  "properties": {
+    "fact": {
+      "default": "",
+      "maxLength": 256,
+      "title": "Fact",
+      "type": "string"
+    },
+    "request": {
+      "default": "",
+      "maxLength": 256,
+      "title": "Request",
+      "type": "string"
+    },
+    "stage": {
+      "default": "",
+      "maxLength": 64,
+      "title": "Stage",
+      "type": "string"
+    },
+    "status": {
+      "default": "INFO",
+      "enum": [
+        "INFO",
+        "READY",
+        "HOLDING",
+        "CROSSED",
+        "RELEASE",
+        "BLOCKED"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "until": {
+      "default": "",
+      "maxLength": 128,
+      "title": "Until",
+      "type": "string"
+    }
+  },
+  "title": "CoordinationMessage",
+  "type": "object"
+}

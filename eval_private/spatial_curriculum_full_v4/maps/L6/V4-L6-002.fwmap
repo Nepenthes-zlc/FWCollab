@@ -1,0 +1,35 @@
+@format fwcollab.symbol_map.v3
+@id V4-L6-002
+@title constructive L6 full-mechanism curriculum 002; orb-held plate bridge
+@max_steps 1
+@controller c1_toggle toggle at 6,5
+@controller c2_plate plate at 8,6 accepts W
+@actuator a1_platform platform at 2,9 controlled_by all(c1_toggle,c2_plate)
+@controller c3_lever lever at 3,14
+@controller c4_lever lever at 1,15
+@actuator a2_door door at 7,18 controlled_by all(c3_lever,c4_lever)
+@controller c5_lever lever at 6,23
+@controller c6_lever lever at 8,24
+@actuator a3_door door at 2,27 controlled_by any(c5_lever,c6_lever)
+@controller c7_lever lever at 3,32
+@controller c8_plate plate at 1,33 accepts F
+@actuator a4_door door at 7,36 controlled_by all(c7_lever,c8_plate)
+@controller c9_lever lever at 6,41
+@controller c10_lever lever at 8,42
+@actuator a5_door door at 2,45 controlled_by any(c9_lever,c10_lever)
+@controller c11_plate plate at 3,50 accepts F
+@actuator a6_platform platform at 7,54 controlled_by all(c11_plate)
+@controller cap_heavy_plate plate at 2,70 accepts O
+@actuator cap_platform platform at 7,74 controlled_by all(cap_heavy_plate)
+---
+#################################################################################
+#........#.....L..#........#.....2..#......#.#........#.........................#
+#F...#...=....#........#...C....#........#...E....###...............o.4#.......f#
+#......#.#....L.#.#........#....L.#.#........#....3...#.........................#
+#........#........#........#........#........#........#.........................#
+#################################################################################
+#....T...#........#....L...#........#....L.#.#........#...................#.....#
+#W...#........#...B....#........#...D....#........###.=...................=....w#
+#.....1#.#......#.#.....L..#......#.#.....L..#........#...................#.....#
+#........#........#........#........#........#........#...................#.....#
+#################################################################################

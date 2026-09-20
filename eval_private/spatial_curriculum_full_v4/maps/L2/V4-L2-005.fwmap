@@ -1,0 +1,22 @@
+@format fwcollab.symbol_map.v3
+@id V4-L2-005
+@title constructive L2 full-mechanism curriculum 005; crate-held plate door
+@max_steps 1
+@controller c1_plate plate at 3,5 accepts F
+@actuator a1_door door at 7,9 controlled_by all(c1_plate)
+@controller c2_lever lever at 6,14
+@actuator a2_platform platform at 2,18 controlled_by all(c2_lever)
+@controller cap_heavy_plate plate at 2,33 accepts O
+@actuator cap_door door at 7,38 controlled_by all(cap_heavy_plate)
+---
+#############################################
+#........#........#.........................#
+#F...#........#...=.............O2#........f#
+#....1...#......#.#.........................#
+#........#........#.........................#
+#############################################
+#........#....L...#...................#.....#
+#W...#...A....#.......................E....w#
+#........#......#.#...................#.....#
+#........#........#...................#.....#
+#############################################

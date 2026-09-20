@@ -1,0 +1,19 @@
+@format fwcollab.symbol_map.v3
+@id V4-L1-004
+@title constructive L1 full-mechanism curriculum 004; direct light sensor door
+@max_steps 1
+@controller c1_toggle toggle at 8,5
+@actuator a1_platform platform at 2,9 controlled_by all(c1_toggle)
+@light + direction RIGHT sensor S opens A
+---
+####################################
+#........#.........................#
+#F...###.=............+.....S.....f#
+#........#.........................#
+#........#.........................#
+####################################
+#........#.....................#...#
+#W...###.......................A..w#
+#....T...#.....................#...#
+#........#.....................#...#
+####################################

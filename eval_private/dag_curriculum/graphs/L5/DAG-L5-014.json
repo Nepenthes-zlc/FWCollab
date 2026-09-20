@@ -1,0 +1,388 @@
+{
+  "format": "fwcollab.symbolic.state_dag.v1",
+  "id": "DAG-L5-014",
+  "difficulty": "L5",
+  "evaluation_role": "scored",
+  "visibility": "private_reference",
+  "title": "配对传送 × 机关球压板门 × 持久拨杆门 × 直射光感门 × 固定反射箱子遮光门",
+  "summary": "以parallel_all拓扑组合5种元机关：配对传送 × 机关球压板门 × 持久拨杆门 × 直射光感门 × 固定反射箱子遮光门。",
+  "topology_family": "parallel_all",
+  "mechanisms": [
+    "M09",
+    "M13",
+    "M17",
+    "M21",
+    "M25"
+  ],
+  "nodes": [
+    {
+      "id": "n000",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "start",
+        "motif": "SYSTEM",
+        "state": "task_ready",
+        "phase": 0
+      },
+      "label": "任务初始状态成立"
+    },
+    {
+      "id": "n001",
+      "kind": "condition",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "reach",
+        "motif": "M09",
+        "state": "portal_entry_reached",
+        "phase": 0
+      },
+      "label": "到达传送门入口"
+    },
+    {
+      "id": "n002",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "transport",
+        "motif": "M09",
+        "state": "portal_exit_reached",
+        "phase": 0
+      },
+      "label": "从配对出口出现"
+    },
+    {
+      "id": "n003",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "position",
+        "motif": "M13",
+        "state": "orb_on_plate",
+        "phase": 1
+      },
+      "label": "机关球停在压力板"
+    },
+    {
+      "id": "n004",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M13",
+        "state": "door_open",
+        "phase": 1
+      },
+      "label": "机关球压力板门打开"
+    },
+    {
+      "id": "n005",
+      "kind": "event",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M13",
+        "state": "team_crossed_door",
+        "phase": 1
+      },
+      "label": "所需角色通过机关球门"
+    },
+    {
+      "id": "n006",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "reach",
+        "motif": "M17",
+        "state": "lever_reached",
+        "phase": 2
+      },
+      "label": "角色到达持久拨杆"
+    },
+    {
+      "id": "n007",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "latch",
+        "motif": "M17",
+        "state": "door_latched_open",
+        "phase": 2
+      },
+      "label": "拨杆门永久打开"
+    },
+    {
+      "id": "n008",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M17",
+        "state": "partner_crossed_door",
+        "phase": 2
+      },
+      "label": "搭档通过拨杆门"
+    },
+    {
+      "id": "n009",
+      "kind": "condition",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "align",
+        "motif": "M21",
+        "state": "direct_beam_clear",
+        "phase": 3
+      },
+      "label": "直射光路保持连通"
+    },
+    {
+      "id": "n010",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "sense",
+        "motif": "M21",
+        "state": "sensor_lit",
+        "phase": 3
+      },
+      "label": "光传感器点亮"
+    },
+    {
+      "id": "n011",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M21",
+        "state": "door_open",
+        "phase": 3
+      },
+      "label": "光感门打开"
+    },
+    {
+      "id": "n012",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M21",
+        "state": "agent_crossed_door",
+        "phase": 3
+      },
+      "label": "角色通过光感门"
+    },
+    {
+      "id": "n013",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "position",
+        "motif": "M25",
+        "state": "crate_reflection_state",
+        "phase": 4
+      },
+      "label": "箱子对齐反射光路"
+    },
+    {
+      "id": "n014",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "route",
+        "motif": "M25",
+        "state": "fixed_reflection_desired",
+        "phase": 4
+      },
+      "label": "固定反射光路达到目标状态"
+    },
+    {
+      "id": "n015",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "sense",
+        "motif": "M25",
+        "state": "sensor_desired",
+        "phase": 4
+      },
+      "label": "反射传感器状态正确"
+    },
+    {
+      "id": "n016",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M25",
+        "state": "door_desired_state",
+        "phase": 4
+      },
+      "label": "反射遮光门状态正确"
+    },
+    {
+      "id": "n017",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M25",
+        "state": "partner_crossed_door",
+        "phase": 4
+      },
+      "label": "搭档通过反射遮光门"
+    },
+    {
+      "id": "n018",
+      "kind": "goal",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "team_success",
+        "motif": "SYSTEM",
+        "state": "all_required_goals",
+        "phase": 6
+      },
+      "label": "双方满足团队成功条件"
+    }
+  ],
+  "edges": [
+    {
+      "from": "n001",
+      "to": "n002",
+      "relation": "enables"
+    },
+    {
+      "from": "n003",
+      "to": "n004",
+      "relation": "enables"
+    },
+    {
+      "from": "n004",
+      "to": "n005",
+      "relation": "enables"
+    },
+    {
+      "from": "n006",
+      "to": "n007",
+      "relation": "enables"
+    },
+    {
+      "from": "n007",
+      "to": "n008",
+      "relation": "enables"
+    },
+    {
+      "from": "n006",
+      "to": "n008",
+      "relation": "handoff"
+    },
+    {
+      "from": "n009",
+      "to": "n010",
+      "relation": "enables"
+    },
+    {
+      "from": "n010",
+      "to": "n011",
+      "relation": "enables"
+    },
+    {
+      "from": "n011",
+      "to": "n012",
+      "relation": "enables"
+    },
+    {
+      "from": "n013",
+      "to": "n014",
+      "relation": "enables"
+    },
+    {
+      "from": "n014",
+      "to": "n015",
+      "relation": "enables"
+    },
+    {
+      "from": "n015",
+      "to": "n016",
+      "relation": "enables"
+    },
+    {
+      "from": "n016",
+      "to": "n017",
+      "relation": "enables"
+    },
+    {
+      "from": "n013",
+      "to": "n017",
+      "relation": "handoff"
+    },
+    {
+      "from": "n000",
+      "to": "n001",
+      "relation": "requires"
+    },
+    {
+      "from": "n000",
+      "to": "n003",
+      "relation": "requires"
+    },
+    {
+      "from": "n000",
+      "to": "n006",
+      "relation": "requires"
+    },
+    {
+      "from": "n000",
+      "to": "n009",
+      "relation": "requires"
+    },
+    {
+      "from": "n000",
+      "to": "n013",
+      "relation": "requires"
+    },
+    {
+      "from": "n002",
+      "to": "n018",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "n005",
+      "to": "n018",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "n008",
+      "to": "n018",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "n012",
+      "to": "n018",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "n017",
+      "to": "n018",
+      "relation": "synchronizes"
+    }
+  ]
+}

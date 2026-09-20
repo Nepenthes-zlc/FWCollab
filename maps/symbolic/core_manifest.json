@@ -1,0 +1,31 @@
+{
+  "format": "fwcollab.symbolic.core_manifest.v2",
+  "split": "development_public",
+  "difficulty_status": "provisional_not_empirically_calibrated",
+  "maps": [
+    {"id": "S01", "difficulty": 1, "focus": "角色专属危险区与出口", "tags": ["hazard", "role_specialization"]},
+    {"id": "S02", "difficulty": 1, "focus": "一方持续守住压板，另一方过门", "tags": ["plate", "support"]},
+    {"id": "S03", "difficulty": 2, "focus": "双方依次为对方开门", "tags": ["plate", "relay", "ordering"]},
+    {"id": "S04", "difficulty": 2, "focus": "用箱子替代角色持续压板", "tags": ["crate", "plate", "delegation"]},
+    {"id": "S05", "difficulty": 2, "focus": "先触发持久拨杆，再分头到出口", "tags": ["lever", "persistent_state"]},
+    {"id": "S06", "difficulty": 3, "focus": "临时压板解锁拨杆，再永久开门", "tags": ["plate", "lever", "chain"]},
+    {"id": "S07", "difficulty": 3, "focus": "双方同轮离开压板并进入对方打开的门", "tags": ["synchronization", "plate", "simultaneous"]},
+    {"id": "S08", "difficulty": 3, "focus": "先由角色开门，再由箱子接续支持", "tags": ["crate", "handoff", "relay"]},
+    {"id": "S09", "difficulty": 4, "focus": "同一箱子在两个压板间迁移，门按顺序开启", "tags": ["crate", "resource_reuse", "ordering"]},
+    {"id": "S10", "difficulty": 4, "focus": "利用各自安全元素区完成交叉解锁", "tags": ["hazard", "role_specialization", "cross_support"]},
+    {"id": "S11", "difficulty": 5, "focus": "临时门、反向支援和持久门组成三阶段依赖", "tags": ["multi_stage", "relay", "lever"]},
+    {"id": "S12", "difficulty": 5, "focus": "压板、箱子、拨杆和共同终门的综合规划", "tags": ["multi_stage", "crate", "plate", "lever", "finale"]},
+    {"id": "S13", "difficulty": 2, "focus": "识别成对传送门并规划传送后的剩余移动", "comparison_reference": null, "controlled_counterfactual": false, "tags": ["portal", "routing"]},
+    {"id": "S14", "difficulty": 3, "focus": "持续守门期间完成远距离传送", "comparison_reference": "S02", "controlled_counterfactual": false, "tags": ["portal", "plate", "support"]},
+    {"id": "S15", "difficulty": 4, "focus": "箱子穿越传送门后由另一角色接力推动", "comparison_reference": "S04", "controlled_counterfactual": false, "tags": ["portal", "crate", "handoff"]},
+    {"id": "S16", "difficulty": 2, "focus": "切换开关持久改变两条通道的门状态", "comparison_reference": "S05", "controlled_counterfactual": false, "tags": ["toggle", "persistent_state"]},
+    {"id": "S17", "difficulty": 3, "focus": "通过单向门后无法原路返回的承诺规划", "comparison_reference": "S02", "controlled_counterfactual": false, "tags": ["one_way", "commitment", "plate"]},
+    {"id": "S18", "difficulty": 3, "focus": "一方维持压力板，另一方穿越临时移动桥", "comparison_reference": "S02", "controlled_counterfactual": false, "tags": ["platform", "plate", "support"]},
+    {"id": "S19", "difficulty": 3, "focus": "冻结液态通路后让火娃安全通过", "comparison_reference": "S10", "controlled_counterfactual": false, "tags": ["thermal", "hazard", "role_specialization"]},
+    {"id": "S20", "difficulty": 4, "focus": "把箱子移出光路，使感应器持续开门", "comparison_reference": "S04", "controlled_counterfactual": false, "tags": ["light", "crate", "sensor"]},
+    {"id": "S21", "difficulty": 4, "focus": "操作切换器旋转镜面并接通光感门", "comparison_reference": "S05", "controlled_counterfactual": false, "tags": ["light", "mirror", "toggle"]},
+    {"id": "S22", "difficulty": 4, "focus": "预判机关球滚动终点并使其停在压力板", "comparison_reference": "S04", "controlled_counterfactual": false, "tags": ["orb", "plate", "prediction"]},
+    {"id": "S23", "difficulty": 5, "focus": "在临时桥门开启窗口中进入传送链", "comparison_reference": "S18", "controlled_counterfactual": false, "tags": ["platform", "portal", "timing"]},
+    {"id": "S24", "difficulty": 6, "focus": "桥门、旋镜光路、热相与传送的综合依赖链", "comparison_reference": "S12", "controlled_counterfactual": false, "tags": ["platform", "light", "mirror", "thermal", "portal", "finale"]}
+  ]
+}

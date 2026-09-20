@@ -1,0 +1,187 @@
+{
+  "format": "fwcollab.heldout_layout_freeze.v1",
+  "benchmark_version": "heldout-layout-v1",
+  "created_at": "2026-09-15T22:13:40.707550+00:00",
+  "statement": "Source selection and all held-out layouts were frozen before any held-out model episode was run.",
+  "task_count": 12,
+  "condition_count": 2,
+  "replicates": 3,
+  "expected_episodes": 72,
+  "files": [
+    {
+      "path": "docs/HELDOUT_LAYOUT_12_SPEC.md",
+      "sha256": "216d3b7868a2e136e423fc408615262ffc8744cb7976f09a26d336b97dd52342",
+      "bytes": 2764
+    },
+    {
+      "path": "scripts/build_heldout_layout_12.py",
+      "sha256": "5d2c132c379dc41ffdcda3749b6b66e72a27b90c91719543213d60f307f53ed9",
+      "bytes": 8057
+    },
+    {
+      "path": "scripts/run_phase2_causal_suite.py",
+      "sha256": "06887db6f35fd89634c298545ff1e53e1efe03d104478eccfd8a6e6d3b728fdd",
+      "bytes": 9980
+    },
+    {
+      "path": "src/fwcollab/symbolic/agents.py",
+      "sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3",
+      "bytes": 18153
+    },
+    {
+      "path": "src/fwcollab/symbolic/runner.py",
+      "sha256": "6556a92d7e570b249091d979591a71dda15b84da767ec208ce0c8380e240b100",
+      "bytes": 35874
+    },
+    {
+      "path": "src/fwcollab/symbolic/world.py",
+      "sha256": "914b990467d18857d28d254f05927083ffbdb7ddfd07bf8c5064f06801be5a04",
+      "bytes": 33874
+    },
+    {
+      "path": "src/fwcollab/symbolic/map.py",
+      "sha256": "a7f971a5523396d3ec561c9df902d8e31a24fa6639313f1d437bd7b92833ac5a",
+      "bytes": 24956
+    },
+    {
+      "path": "src/fwcollab/symbolic/collaboration_eval.py",
+      "sha256": "55617c74f3c38b641424add50f217bb43a8677d5b31253918724fb9afa30eced",
+      "bytes": 29132
+    },
+    {
+      "path": "eval_private/heldout_layout_12/manifest.json",
+      "sha256": "d996964b1f9022c2fd09fcfa08267d0577ee5599079e092a1299305208d4c01e",
+      "bytes": 185652
+    },
+    {
+      "path": "eval_private/heldout_layout_12/witnesses.json",
+      "sha256": "86ca95a36f3d50bf0bc0be23842678e3f40f059c232cfd189719f2ead94f0807",
+      "bytes": 250295
+    },
+    {
+      "path": "eval_private/heldout_layout_12/experiment_spec.json",
+      "sha256": "05671865b06106685f35e50fdf12e41c45ad7af9acde38baeff762f7e41f8408",
+      "bytes": 1846
+    },
+    {
+      "path": "eval_private/heldout_layout_12/maps/HG-001.fwmap",
+      "sha256": "d3e04e56063dbb4473971a5e6bd2a55872596b3d95b80dc4faf9d0f2fb293b69",
+      "bytes": 700
+    },
+    {
+      "path": "eval_private/heldout_layout_12/maps/HG-002.fwmap",
+      "sha256": "473be8cbb4dac2faa1f7a48a4363e8282d5d50d196dbb8f86e726e008f41a416",
+      "bytes": 909
+    },
+    {
+      "path": "eval_private/heldout_layout_12/maps/HG-003.fwmap",
+      "sha256": "151d0051c5764c485525821d311020b475d30dd2cba6001a79f5e245c31df129",
+      "bytes": 1075
+    },
+    {
+      "path": "eval_private/heldout_layout_12/maps/HG-004.fwmap",
+      "sha256": "175676e0b911ecb5837db80171011cbc5014fcf6ffb94fe55280718135c13f95",
+      "bytes": 1109
+    },
+    {
+      "path": "eval_private/heldout_layout_12/maps/HG-005.fwmap",
+      "sha256": "9134ebade82e032cea3562ce6949e507fdb7ddf6b903c6e4d6f1fd3611d897aa",
+      "bytes": 1351
+    },
+    {
+      "path": "eval_private/heldout_layout_12/maps/HG-006.fwmap",
+      "sha256": "4b3c207e4d85ccf7074964b8e2630ec3a4e1f7fbc3d345efa82fef747133102f",
+      "bytes": 1447
+    },
+    {
+      "path": "eval_private/heldout_layout_12/maps/HG-007.fwmap",
+      "sha256": "1777c4a4c590d4e2699c55378ae55e8f23e758717f23825d766e022862bf3fb5",
+      "bytes": 1591
+    },
+    {
+      "path": "eval_private/heldout_layout_12/maps/HG-008.fwmap",
+      "sha256": "822a2b2dcdb9b97cce6ae30baf2453fa4b4e1f1b048846a61f9993189af2368c",
+      "bytes": 1515
+    },
+    {
+      "path": "eval_private/heldout_layout_12/maps/HG-009.fwmap",
+      "sha256": "03d40704ea0c1baa272108655aab009ee0e0cc7d6090986c9ab7b3aa30e09663",
+      "bytes": 1997
+    },
+    {
+      "path": "eval_private/heldout_layout_12/maps/HG-010.fwmap",
+      "sha256": "a871ad4ef6befc36a20389de35b03cc75543f2430064e35152a5068a7d1f9ceb",
+      "bytes": 1821
+    },
+    {
+      "path": "eval_private/heldout_layout_12/maps/HG-011.fwmap",
+      "sha256": "d4daf299ecbc5552617575e42a33f3772edf3c5e841c173890ba6f7f012a2784",
+      "bytes": 2082
+    },
+    {
+      "path": "eval_private/heldout_layout_12/maps/HG-012.fwmap",
+      "sha256": "08d6c47a2acfc2a20f0b0b9e1caea02e65ac822724ac2e30b739f2fcdd96ddb1",
+      "bytes": 2105
+    },
+    {
+      "path": "eval_private/heldout_layout_12/dags/DAG-HG-001.json",
+      "sha256": "88dbe7683125ee49b56aa14dc6d7916273dc6e7e9d4dbe3d891e18e7d6861543",
+      "bytes": 3481
+    },
+    {
+      "path": "eval_private/heldout_layout_12/dags/DAG-HG-002.json",
+      "sha256": "4d46a0cfa0c57e33d6aed854c848588fedcdd7192f43adba47be60d8283068f3",
+      "bytes": 4159
+    },
+    {
+      "path": "eval_private/heldout_layout_12/dags/DAG-HG-003.json",
+      "sha256": "7b1348c4e56e78f6bf385351249ba70b0b37881117d0c78268fbb6a667129b02",
+      "bytes": 5310
+    },
+    {
+      "path": "eval_private/heldout_layout_12/dags/DAG-HG-004.json",
+      "sha256": "f275d19fb851f6dc0cbf0604aba36e92604c3adce1ad98b3bfea9ea3964f041f",
+      "bytes": 5312
+    },
+    {
+      "path": "eval_private/heldout_layout_12/dags/DAG-HG-005.json",
+      "sha256": "139c4154103d64dd806a4b3d37e9d3298e2cc3bbce84638ba351c44447f86276",
+      "bytes": 6900
+    },
+    {
+      "path": "eval_private/heldout_layout_12/dags/DAG-HG-006.json",
+      "sha256": "15a33f46dc9b4ba24fb60156058517a8841052ce2dc3616ee1f6bd62911d1646",
+      "bytes": 6900
+    },
+    {
+      "path": "eval_private/heldout_layout_12/dags/DAG-HG-007.json",
+      "sha256": "f3568ed6c2e398031956dcbd797cc617fb5b2b33a100efa1b4cb54d62fcfd546",
+      "bytes": 8101
+    },
+    {
+      "path": "eval_private/heldout_layout_12/dags/DAG-HG-008.json",
+      "sha256": "7ff1e30a2a6edbdceb68faacfff92585136646ce4be058027f9ea1e37e531f55",
+      "bytes": 8089
+    },
+    {
+      "path": "eval_private/heldout_layout_12/dags/DAG-HG-009.json",
+      "sha256": "6966f336794a30c41559de53db15bef932ff6e8fd54f3d0078bb2452a787e1b0",
+      "bytes": 10150
+    },
+    {
+      "path": "eval_private/heldout_layout_12/dags/DAG-HG-010.json",
+      "sha256": "b6d44bfd3e0ec5de25974b708a594882a4bc6ebb5af71414f82d73a7845dc95d",
+      "bytes": 9665
+    },
+    {
+      "path": "eval_private/heldout_layout_12/dags/DAG-HG-011.json",
+      "sha256": "51b7979360740604ed04d3ee904ec69782d36754d2558dcf923ee41eebaa1b32",
+      "bytes": 10768
+    },
+    {
+      "path": "eval_private/heldout_layout_12/dags/DAG-HG-012.json",
+      "sha256": "373a706dc691802c5511067112f617cb6209d257eacd10635949a0448b3e1e85",
+      "bytes": 11704
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "format": "fwcollab.leaderboard.closed4_run_metadata.v1",
+  "status": "FORMAL_EXECUTION_STARTED",
+  "started_at": "2026-09-20T02:45:09+08:00",
+  "target_episode_count": 624,
+  "replicate_1_episode_count": 208,
+  "replicates": [1, 2, 3],
+  "models": [
+    {"slot": 1, "requested_id": "gpt-5.5", "resolved_id": "gpt-5.5"},
+    {"slot": 2, "requested_id": "gpt-5-mini", "resolved_id": "gpt-5-mini"},
+    {"slot": 3, "requested_id": "gemini-3.7-flash", "resolved_id": "gemini-3.7-flash"},
+    {"slot": 4, "requested_id": "gemini-3.5-flash", "resolved_id": "gemini-3.5-flash"}
+  ],
+  "closed4_matrix": {
+    "path": "eval_private/leaderboard_v1/closed4_model_matrix.json",
+    "sha256": "934b4eb25c436a661fe995e0b4177614f1ad799ea86b2debebc5adf7420e3cff"
+  },
+  "standard52_manifest": {
+    "path": "eval_private/leaderboard_v1/standard_52_run_manifest.json",
+    "sha256": "b3970fdd31ef2259d477a33801c7442be92df6ed3cd7bb3cb07399eaa21a0716"
+  },
+  "prompt_contract_sha256": "862349ef54d6991f1b20102ac6936edde93bb7a0be8d1f849e993dd1e67b9831",
+  "benchmark_v2_manifest_sha256": "1173b4f4e574aa50bd31f82306da0e76f170130d5077347bfb00773f728e383c",
+  "endpoint_identity": "http://127.0.0.1:23333/api/openai",
+  "concurrency_per_model": 2,
+  "automatic_replicate_continuation": true,
+  "completed_valid_episode_policy": "never overwrite or rerun",
+  "infrastructure_recovery_policy": "resume only the original incomplete key",
+  "output_root": "artifacts/runs/leaderboard_v1",
+  "historical_invalid_attempt": {
+    "path": "artifacts/audits/invalid_closed4_attempt_20260920",
+    "status": "EXCLUDED_UNCHANGED"
+  },
+  "open_weight_slots": ["OPEN_WEIGHT_A_PENDING", "OPEN_WEIGHT_B_PENDING"]
+}

@@ -1,0 +1,2838 @@
+{
+  "format": "fwcollab.benchmark.v2",
+  "benchmark_name": "FWCollab Benchmark v2",
+  "description": "Four separately reported evaluation tracks; this benchmark is not named Full-100.",
+  "protocol_version": "fwcollab.leaderboard_protocol.v1",
+  "task_count": 100,
+  "track_count": 4,
+  "tracks": [
+    {
+      "suite_name": "Core-72",
+      "task_count": 72,
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_manifest_sha256": "1d7e4240da3fff204fb820f0704501564c05cfa5dc0630644d10382df57c19d0",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+      "suite_freeze_path": "eval_private/benchmark_v1/freeze_manifest.json",
+      "suite_sha256": "f375d465e798e1bdc8161f9662565768299d488c34dc3783c774d22e2847799f",
+      "evaluator_type": "collaboration_evaluator_v1",
+      "observation_format": "fwcollab.agent_observation.v1"
+    },
+    {
+      "suite_name": "Information-12",
+      "task_count": 12,
+      "source_manifest_path": "eval_private/c5_information_12/manifest.json",
+      "source_manifest_sha256": "cc3861f656c37b4447d8ddd913856923f4d3510f4f649b43432b0319f4197721",
+      "witness_path": "eval_private/c5_information_12/manifest.json",
+      "witness_sha256": "cc3861f656c37b4447d8ddd913856923f4d3510f4f649b43432b0319f4197721",
+      "suite_freeze_path": "eval_private/c5_information_12/freeze_manifest.json",
+      "suite_sha256": "743353e67bc6ad63646199212d2874e3f6d65a7657a766841ac9f08f1475b3e3",
+      "evaluator_type": "information_evaluator_v1",
+      "observation_format": "fwcollab.c5_agent_observation.v1"
+    },
+    {
+      "suite_name": "Sync-8",
+      "task_count": 8,
+      "source_manifest_path": "eval_private/synchronize_8/manifest.json",
+      "source_manifest_sha256": "c18afcdbba2ee70f807e11b2198247d9a5bce27fc0187564e76ee67e12b1b90a",
+      "witness_path": "eval_private/synchronize_8/witnesses.json",
+      "witness_sha256": "2cb0977eb2a1403b3b6b3817af717fadf7c136a6946022107519a65cfe26f3c5",
+      "suite_freeze_path": "eval_private/synchronize_8/freeze_manifest.json",
+      "suite_sha256": "31ff5bb16bfa68039de19ef3ef0b281b24bf7a84df4f65f096914fd570d19f4c",
+      "evaluator_type": "extension_evaluator_v1",
+      "observation_format": "fwcollab.agent_observation.v1"
+    },
+    {
+      "suite_name": "Join-8",
+      "task_count": 8,
+      "source_manifest_path": "eval_private/parallel_join_8/manifest.json",
+      "source_manifest_sha256": "7cefbdc6ea27f52eb14e5fd264cd4e7fff9e43dc4a54a57565ca2589412886c8",
+      "witness_path": "eval_private/parallel_join_8/witnesses.json",
+      "witness_sha256": "78133ec9f1464e1a9669c08ddf5e2c56fbd2534cd3e3fabeea6cbdbd66cfc149",
+      "suite_freeze_path": "eval_private/parallel_join_8/freeze_manifest.json",
+      "suite_sha256": "f00aee35a7d37e8c5676d5db9ff50190dd430262d5fe27d5f4ef889bddc59d4c",
+      "evaluator_type": "extension_evaluator_v1",
+      "observation_format": "fwcollab.agent_observation.v1"
+    }
+  ],
+  "evaluation_profiles": {
+    "standard": {
+      "label": "Standard Track",
+      "task_count": 52,
+      "task_ids": [
+        "V4-L1-001",
+        "V4-L1-002",
+        "V4-L2-008",
+        "V4-L2-006",
+        "V4-L2-007",
+        "V4-L3-010",
+        "V4-L3-004",
+        "V4-L3-009",
+        "V4-L4-009",
+        "V4-L4-012",
+        "V4-L4-005",
+        "V4-L4-008",
+        "V4-L5-011",
+        "V4-L5-004",
+        "V4-L5-006",
+        "V4-L5-005",
+        "V4-L6-010",
+        "V4-L6-007",
+        "V4-L6-009",
+        "V4-L6-008",
+        "V4-L7-001",
+        "V4-L7-009",
+        "V4-L7-003",
+        "V4-L7-002",
+        "C5-001",
+        "C5-002",
+        "C5-003",
+        "C5-004",
+        "C5-005",
+        "C5-006",
+        "C5-007",
+        "C5-008",
+        "C5-009",
+        "C5-010",
+        "C5-011",
+        "C5-012",
+        "SYNC-01",
+        "SYNC-02",
+        "SYNC-03",
+        "SYNC-04",
+        "SYNC-05",
+        "SYNC-06",
+        "SYNC-07",
+        "SYNC-08",
+        "JOIN-01",
+        "JOIN-02",
+        "JOIN-03",
+        "JOIN-04",
+        "JOIN-05",
+        "JOIN-06",
+        "JOIN-07",
+        "JOIN-08"
+      ],
+      "core_selection_manifest": "eval_private/collaboration_diagnostic_24/manifest.json"
+    },
+    "full": {
+      "label": "Full Track",
+      "task_count": 100,
+      "task_ids": [
+        "V4-L1-001",
+        "V4-L1-002",
+        "V4-L1-003",
+        "V4-L1-004",
+        "V4-L2-001",
+        "V4-L2-002",
+        "V4-L2-003",
+        "V4-L2-004",
+        "V4-L2-005",
+        "V4-L2-006",
+        "V4-L2-007",
+        "V4-L2-008",
+        "V4-L3-001",
+        "V4-L3-002",
+        "V4-L3-003",
+        "V4-L3-004",
+        "V4-L3-005",
+        "V4-L3-006",
+        "V4-L3-007",
+        "V4-L3-008",
+        "V4-L3-009",
+        "V4-L3-010",
+        "V4-L4-001",
+        "V4-L4-002",
+        "V4-L4-003",
+        "V4-L4-004",
+        "V4-L4-005",
+        "V4-L4-006",
+        "V4-L4-007",
+        "V4-L4-008",
+        "V4-L4-009",
+        "V4-L4-010",
+        "V4-L4-011",
+        "V4-L4-012",
+        "V4-L5-001",
+        "V4-L5-002",
+        "V4-L5-003",
+        "V4-L5-004",
+        "V4-L5-005",
+        "V4-L5-006",
+        "V4-L5-007",
+        "V4-L5-008",
+        "V4-L5-009",
+        "V4-L5-010",
+        "V4-L5-011",
+        "V4-L5-012",
+        "V4-L5-013",
+        "V4-L5-014",
+        "V4-L6-001",
+        "V4-L6-002",
+        "V4-L6-003",
+        "V4-L6-004",
+        "V4-L6-005",
+        "V4-L6-006",
+        "V4-L6-007",
+        "V4-L6-008",
+        "V4-L6-009",
+        "V4-L6-010",
+        "V4-L6-011",
+        "V4-L6-012",
+        "V4-L6-013",
+        "V4-L6-014",
+        "V4-L7-001",
+        "V4-L7-002",
+        "V4-L7-003",
+        "V4-L7-004",
+        "V4-L7-005",
+        "V4-L7-006",
+        "V4-L7-007",
+        "V4-L7-008",
+        "V4-L7-009",
+        "V4-L7-010",
+        "C5-001",
+        "C5-002",
+        "C5-003",
+        "C5-004",
+        "C5-005",
+        "C5-006",
+        "C5-007",
+        "C5-008",
+        "C5-009",
+        "C5-010",
+        "C5-011",
+        "C5-012",
+        "SYNC-01",
+        "SYNC-02",
+        "SYNC-03",
+        "SYNC-04",
+        "SYNC-05",
+        "SYNC-06",
+        "SYNC-07",
+        "SYNC-08",
+        "JOIN-01",
+        "JOIN-02",
+        "JOIN-03",
+        "JOIN-04",
+        "JOIN-05",
+        "JOIN-06",
+        "JOIN-07",
+        "JOIN-08"
+      ]
+    }
+  },
+  "tasks": [
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L1-001",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L1/V4-L1-001.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L1/DAG-V4-L1-001.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L1-001",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 0,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 108,
+      "hashes": {
+        "map_sha256": "75127e5e8d72be2b6050848479355cbf1c3081524e6e9da88b786272379537b2",
+        "dag_sha256": "156bd2479ad9261d969820500a8c259debb404a72d2fd087dd8d48d4b80d7afc",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "fc17f1af7d8e3dcd57863eaf215904d6e4d2e3d86505e2974f278a4ba5a81660"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L1-002",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L1/V4-L1-002.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L1/DAG-V4-L1-002.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L1-002",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 1,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 108,
+      "hashes": {
+        "map_sha256": "7df4e8ef7fe96d4306fe82eb532f7c455d15f268baed9b5390fc7bc6cd5bd700",
+        "dag_sha256": "8b36a7b8258be3b7c83cf1d4f502c21bc28dbf090545907ab3eac9018949e426",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "6eac459baabbf5ff58dc8835ce520e34f4892e60c84912d7dbc64a798beb4e4b"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L1-003",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L1/V4-L1-003.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L1/DAG-V4-L1-003.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L1-003",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 2,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 105,
+      "hashes": {
+        "map_sha256": "68babda3dcbec4f51fc2bc850856f44b4a40783f67f1f34e04f0a8cc088447f7",
+        "dag_sha256": "d456eaf042d018402fd4a602e78dbfc3c427129119bf79030a758206fc6bdb9d",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "512a90a1ed3e133f6279926a58b514e868cd5b9436fd9424e41caec36be3f5cf"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L1-004",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L1/V4-L1-004.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L1/DAG-V4-L1-004.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L1-004",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 3,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 105,
+      "hashes": {
+        "map_sha256": "a481eac9af3dea0059d82c230707d53b3443bdefeac83e04638dde6d84e50098",
+        "dag_sha256": "3d375b771c1eb586b8fe7aa518c9d5479ab71abd8fbe480af16772febec1d858",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "23d30381b0e204f53345f097f658543469a5a3a30ca0c2d6fe9c656536490f5c"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L2-001",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-001.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-001.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L2-001",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 4,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 144,
+      "hashes": {
+        "map_sha256": "e558ba45324f647f80746a3a7cafde0c16aa09103f53f540ecc2d10467510a71",
+        "dag_sha256": "8667970b0ccdce359d2352dfc42bb9e61c73a659f510c77f734253282fc44a19",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "a155d2219ffcea489569061af1872849d95586a99c4790fddad6f9544cd56dd0"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L2-002",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-002.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-002.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L2-002",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 5,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 141,
+      "hashes": {
+        "map_sha256": "cb5634c5b73644aa500dd8f4f907b47d48bca586f372fe73212b30693990078a",
+        "dag_sha256": "0579681a0c48a3b227493c1ca15697ebebfe3bd47dca8503283ab359c9b17b47",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "81b79283e68d87805ca3d9a0424edc351fbd233cb004609e476e8fce25ac5541"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L2-003",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-003.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-003.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L2-003",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 6,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 141,
+      "hashes": {
+        "map_sha256": "a3e743ae42821911c5941d2fe1be62a7b75771a0e1264639079677894fa38623",
+        "dag_sha256": "6621fa6254283afa9122f4a72c1fa616217acbeab12281d7739551204e24a4fe",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "b353f58ff6e570e4962be039665d2eec23489ee07ae18aaf582f18560652368f"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L2-004",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-004.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-004.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L2-004",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 7,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 138,
+      "hashes": {
+        "map_sha256": "26f09c37dff3f90fe7699ce6f76dbdfb6c8fb5ff27e26d21568680577a80c697",
+        "dag_sha256": "1d5fd07af0a91ba9ba44c3e96844319985636ee7328bbb47d02c09c96d29b9ae",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "b5bba1c0e256e70e09c895142d11ea550bcf2d173b69ea8218d06363bb1f0ea1"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L2-005",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-005.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-005.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L2-005",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 8,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 141,
+      "hashes": {
+        "map_sha256": "b04aa9b09fb1235601f0cd2d2872e6129d2de0db891ec33d5f158b0fd40ae057",
+        "dag_sha256": "31195a901c69320f3b4487d8adc7d25bbe0b6bdf2412fef3321d3e4306bea387",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "442828f36751aa4e1d816932f983834032844355c2b89776a6622728ba73eec3"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L2-006",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-006.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-006.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L2-006",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 9,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 144,
+      "hashes": {
+        "map_sha256": "a93e6f086de3fcdc7716b2ddbcf9bb17e85b143c301085956b9e53beb2c39e7d",
+        "dag_sha256": "a981a224f1b61be1fb4de9b15719dcaed1fd1fbc980b9862f9bfec3e6fd4442b",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "d6d47f782cbc10ea6dd880b45af26b3a0484082968197083353989f1ad9fb097"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L2-007",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-007.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-007.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L2-007",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 10,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 141,
+      "hashes": {
+        "map_sha256": "5b7a5f12d5b0e91402449758e323ca8c338b0c92c6c2fc944cb726aeb761016f",
+        "dag_sha256": "9bf586250979e9cda6ffbe9e9d8d46b3baeac7ac264ffb6365126e4daef61d57",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "5d7047b1ac9ebc81e4a083b186a6ed05dc98488baaff3e88b75365365e2e532b"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L2-008",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L2/V4-L2-008.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L2/DAG-V4-L2-008.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L2-008",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 11,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 141,
+      "hashes": {
+        "map_sha256": "e81f06d214b3c892d3508848c2012d2bfd2b638a377516e1cdef88da520ade45",
+        "dag_sha256": "b70adfdb7aeff43c42f3975a82fffe148a131fffe1f4c800a5b8263651386acc",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "a17f97af9148eab6a7297c30f40ae3552c09b4aa2295e7debfdd488b0231b5c7"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L3-001",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-001.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-001.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L3-001",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 12,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 174,
+      "hashes": {
+        "map_sha256": "482590264686aacefd314cc6c1b3aec94a0836397f6170b8583f7315bd643574",
+        "dag_sha256": "b91a80afc21e0c57508c47c69a4449141e70b0f54403631831fd5fde2511419f",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "bcae62efee2c6aa534bba857670449347f14b361b8f452d5636f26add1193177"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L3-002",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-002.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-002.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L3-002",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 13,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 174,
+      "hashes": {
+        "map_sha256": "2cd989a6579a44a185d2e4fc6640aa856fb54bbe31fc232782975e604b091b61",
+        "dag_sha256": "aa366d9e1cfa2476c06faf38845e04ff64bb1a2e13140f1f712d99a7309665c3",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "a72ede447d1deea44b6a8d0474d01c07fc28d4146ea3489c9de5047703fcffca"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L3-003",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-003.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-003.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L3-003",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 14,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 177,
+      "hashes": {
+        "map_sha256": "ec618c89ce4c8946ab0ed122f770b8ece3ee699b7e99f0c63bc1656db0002277",
+        "dag_sha256": "4cdc0212d806293ea04e2616f19ae73c410e60e53d66c1b720c63536430bd798",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "820a4006073bd9c7870750d0139414d2a0be06da62ab49e686519bd104dd6c24"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L3-004",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-004.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-004.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L3-004",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 15,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 174,
+      "hashes": {
+        "map_sha256": "8ff2fa62abb95662f8b8dfb4c04af3ad5728a769fa034fa742f7c25b5db6cafa",
+        "dag_sha256": "618cf79d15dd32d0a7871e4312037e546921f1199b598596e727ce99864571e2",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "1b7c301370c2e050f6e91628b60582b11928ac474ef2cc3eeba9a2ddf88e2a93"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L3-005",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-005.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-005.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L3-005",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 16,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 177,
+      "hashes": {
+        "map_sha256": "b72c5878c1444b9e7ea1974dc9e9259d8ab260014efc5d93180639dc48242943",
+        "dag_sha256": "b660b3eb6e8015dabcb188dc3a8438f7804768e244dafef5ae593d5615f55981",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "27dce14f4253049be6db526d66d7590186f0f63662226d6ae1a8185e579e3008"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L3-006",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-006.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-006.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L3-006",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 17,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 177,
+      "hashes": {
+        "map_sha256": "6f9dc7e8fec8521eda41e01b40d2d06c350dc57ec11a03e97337811318056e7d",
+        "dag_sha256": "0c7061c33e934b251a161d99b5b9ab1f749f8e4d073805b6d4e836cfa0e22315",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "888a47f792175a36d699d31a288d33e02c8b7da68fea626bf9a6277b52be022e"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L3-007",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-007.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-007.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L3-007",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 18,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 171,
+      "hashes": {
+        "map_sha256": "0926e59c9c7392b330e53c63f140c05e3cadc5cc683a84ae745e56adda1b52c3",
+        "dag_sha256": "f0663982806df5e77caec3c564de75f6f3edc929809c94214608ee856262aca9",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "7b411814d0b7944f4b132e79e3392a133940284fffd83cbc23ff8def6af15656"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L3-008",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-008.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-008.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L3-008",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 19,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 171,
+      "hashes": {
+        "map_sha256": "16f31bb9831d256af6614ac6758226b747ed0e6d819d7cfcbfe71940437cc8e2",
+        "dag_sha256": "62c95838121b7712bdae61779005c16469332efca8c8361ea32c7d6f97727af3",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "e397b0f437d372092956bfe3a99408a05e75cb20d07e2d725be29c6391b3aff5"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L3-009",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-009.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-009.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L3-009",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 20,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 174,
+      "hashes": {
+        "map_sha256": "3b15c8f56fe721a0e3c9410438b10d4ed12f9664fd303f9fc70090b90e6ff7da",
+        "dag_sha256": "bef23bb41e50e8906c1154a453dcff05522927747f7b81543306096f66a1ba80",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "b84aac48612c71b30853a57b2240857b909a720fb77f4b506f3191090fe25ab2"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L3-010",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L3/V4-L3-010.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L3/DAG-V4-L3-010.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L3-010",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 21,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 171,
+      "hashes": {
+        "map_sha256": "e68ceec3d3532b50e4b5fecdd3e30ff266f5679db1c3bef9d130efb97e1ebdbd",
+        "dag_sha256": "819c50f8b34b6f5a07c59f6f3b77ac185595a243bb37a7e69080ed0bdc1eeffd",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "bb1c5ad557d658d707c0d97c0c0a912317bedee0d75fdddf4b5b7bf4a657d366"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L4-001",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-001.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-001.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L4-001",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 22,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 207,
+      "hashes": {
+        "map_sha256": "c0d8db24f549ca49edcac997d097411b2f50508b4af185529cf60a9a4cfc6bed",
+        "dag_sha256": "0bff0a96a72b9b8d609d79c7bfffe450b7e689212d91f5ad90d88cadac19adb8",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "8dce68dbc1d1ac3d4b838bf19f4b075096d1f18da49cfbd176d7a8342b2b82b0"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L4-002",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-002.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-002.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L4-002",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 23,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 207,
+      "hashes": {
+        "map_sha256": "c09bef4eb62350c1dbcfbe6d49d5c04532f6c548a1fa4c442ef8fc0593c7dd47",
+        "dag_sha256": "0bebac08e9621d88453fd7fb946e839832c7edd76fbcfed7e153ff61ee234cf2",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "2486d25f5f7a2a93b51395c82deba3c50eb4436e3a40311ce8cde4c7216648d8"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L4-003",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-003.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-003.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L4-003",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 24,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 216,
+      "hashes": {
+        "map_sha256": "cea0ec39a8fa54b188346265e07dde3ea824a8b37517c95dce4bd368ae57990b",
+        "dag_sha256": "ae8ea6f7fa2a0a9894e4b1be5642c407dc53cfc3d3cd523d7c8050e005d8c460",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "03974920c8d369c59e1e1f3c1586a9231dc2b0156c6c0a139acef15ce30f9f4c"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L4-004",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-004.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-004.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L4-004",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 25,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 213,
+      "hashes": {
+        "map_sha256": "5c87f77c6c518030ad5977ed3a6f84ca1d6e8ffec237757d00d602987d639813",
+        "dag_sha256": "ff869c0c71f062b66a06c3d0dd8fb50f5785260e7cac654625493cda50ac0543",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "3c0e2d8af37cea8e300c3c49d08bbf10b1fbcfffc9b9551bb4e8786d0b6db530"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L4-005",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-005.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-005.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L4-005",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 26,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 216,
+      "hashes": {
+        "map_sha256": "bcdd2db59efb7b04cb785b5c7145cd77d5057e2f12d93634e681ab5714c453d5",
+        "dag_sha256": "05d4dd2fb5b83e5fe92566301ff5ef2cfb139cf99bda32accee7c0804debc55b",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "1e46846a7ba1a1d83d7c5448f4fcabd3a1c25d7205bfac26f88ea576518f5c91"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L4-006",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-006.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-006.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L4-006",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 27,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 216,
+      "hashes": {
+        "map_sha256": "fed6a68575c0b70cd6440046ab9e16d9cc859cb8db20d91529c35a213e8c1fc1",
+        "dag_sha256": "ef7b7e63d136059bba682f544bfd444f91bc9079872f8b8751193fae6c359b7c",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "18cfd7a94180c279a356b2dfced9e5bd805032bf481984850a6f337bec5a84d0"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L4-007",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-007.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-007.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L4-007",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 28,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 213,
+      "hashes": {
+        "map_sha256": "7c90d84fadbe424d9f26d22f17d348c9e2b20c7c9baf89c6fc105209684a2365",
+        "dag_sha256": "28209263a0f75e89c8e69d43aa7de274d03963b3becf850f0bf1094ba7ad443f",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "ddf629b8fd4eb3d9394aca508dcc03eb6980bf18310f050716ee377054e593aa"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L4-008",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-008.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-008.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L4-008",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 29,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 207,
+      "hashes": {
+        "map_sha256": "febb5fa8a0a136694bc29a6b817b73a3df471752640eafcc16f00a44c41ab90c",
+        "dag_sha256": "60ebadc424ec7e7d06a793db80f21eaaedb968bf8bf39bc4d2fb8ff756b37df3",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "ccb494deb13d84ea6df79f6b3a6624ba36475a76911f577d83d6d476207bd0de"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L4-009",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-009.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-009.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L4-009",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 30,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 210,
+      "hashes": {
+        "map_sha256": "7a775609914ecfc8a1c1202d2d2f739ba50459872b7fc3e588724295bacc8ed4",
+        "dag_sha256": "ef2f51dee2e4859e1cbb9110108a6ef7ca438b75b16082530567ff76384d1dcd",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "735ba4c7ff7b9756421ec16d0a4683abbe586c452f61ce38d3948bc52a67fa28"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L4-010",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-010.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-010.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L4-010",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 31,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 210,
+      "hashes": {
+        "map_sha256": "81b38bae1bdb5106269d64f7fa272a699b1a6b0f60505bb070bdc732908da3d2",
+        "dag_sha256": "a28dc3ead6ceb3003b77be4e94f768217c338b94f2115c3baf1bcc9be3570cfb",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "2a2066f65221439bff0085b421ac76e24646e953ce98b55e7ea52a43a09f0aed"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L4-011",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-011.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-011.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L4-011",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 32,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 207,
+      "hashes": {
+        "map_sha256": "81edb5cf2c7c9ee507268696e2bb718c1df1896d51f321e9f89589009b3dce3a",
+        "dag_sha256": "ebe4dce0e7305b4fe6c11c882bfac76e308a5d59e9b045483a75a62bfddbb49a",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "5d3ee25bc1744f33092bd81878b0fbcf0142d24ffc3acbd87206eeba0c3f77f0"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L4-012",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L4/V4-L4-012.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L4/DAG-V4-L4-012.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L4-012",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 33,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 210,
+      "hashes": {
+        "map_sha256": "8d98b7871834457c3e45229f59052dfb518d5cfb080a803eb8e37e6a8ddb7eb2",
+        "dag_sha256": "5de3344c3dc0903abb08aa951d60ec38868d3f8528a8e022d4b8538b0e2c3a19",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "5abca0a49c596835d05ab74cf19cac0e3db1d3b3101864aa637388d03cb32893"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L5-001",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-001.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-001.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L5-001",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 34,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 240,
+      "hashes": {
+        "map_sha256": "68c9e2980e3bb15bd4adb5577fa770438ecd1206ea674265cdef9d73e5b6b5d5",
+        "dag_sha256": "a238339d8374422a53f0d2468fef5792f24077fc43b88db13a8f0920b9f44b33",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "cf9cb00a8d1d81342760cadf172156b30898573cd41d55231c66bd6d8c58e645"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L5-002",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-002.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-002.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L5-002",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 35,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 246,
+      "hashes": {
+        "map_sha256": "e23c7602f203434f41f71e1899e1a506811e108f2b453f6aa2d7c3e411ccc2c5",
+        "dag_sha256": "2d5c5e85b6e65216fd628896cc78e9100d86fa683cf51b8e17952155c4c548b2",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "2a6ce7eaffc776e735ae48440b68aeb1514c5a289e673432df96d0be743529cb"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L5-003",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-003.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-003.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L5-003",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 36,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 243,
+      "hashes": {
+        "map_sha256": "2f1be4bfd3786321e2b1c7446c4390ceda123925056bdb0578ed61b314da31f3",
+        "dag_sha256": "9b7555e7e30dba6bf99b8d4c8e24fc05f96064c65514d15b984fb596862b17d2",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "0ccc84b172fa783b3f1713bde10544cd4082dffe9eb6e75ff2d5cfdd7ca1c28c"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L5-004",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-004.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-004.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L5-004",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 37,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 243,
+      "hashes": {
+        "map_sha256": "7e78d2663df9374b98492f5624ba9df2fc71921af58391bd450cd5ab23ba2566",
+        "dag_sha256": "b8b8eef3ea0e158d8ce7ddd89550a7868eb658e7bdd8d9128190e943ee6ccc41",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "45ef4f8a4667dd8e76db9e58eb0829e203cd6916f0b0874c9c6d4a1868f84d46"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L5-005",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-005.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-005.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L5-005",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 38,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 246,
+      "hashes": {
+        "map_sha256": "ac26f706e8ac4e45ef948369672d71252e838635581ccdab3402d25453057401",
+        "dag_sha256": "f87a7a08c4435e8d6745732f8b3d2f26c72db44b9934c328db35c1d42c9ecaa1",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "8d0fe4a264556e99ec72d67eab98b0fe1d68767a00b662c167bf81ccdb5ac0cb"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L5-006",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-006.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-006.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L5-006",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 39,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 237,
+      "hashes": {
+        "map_sha256": "1c8d7216c35eaa7aab66fc4c38a83bf2abcc38bec9c5822f9b1216068235bb0a",
+        "dag_sha256": "49c6b56333eb370a78f60856b5f366d162a71dd16633b67801b470ab6bfff2d8",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "815251553d4ee8ad42b9dd67adb22e08260b2f99a08940724e25d55378170d30"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L5-007",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-007.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-007.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L5-007",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 40,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 240,
+      "hashes": {
+        "map_sha256": "bce91b6b4234eaaba988cf45139a97a0b2f9771f3e30278be989ebdda4253a81",
+        "dag_sha256": "9998b78fb82f0bc4a2d51d5fe27d5d9f60269a13d8d59f67ad3c7047ccbd734c",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "1f7e1c1c39bb830dab12878c6e7dcb816ab4f84be7440e80d55da4a5299c5519"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L5-008",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-008.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-008.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L5-008",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 41,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 249,
+      "hashes": {
+        "map_sha256": "3065293ccc2e7c576c2c6bbd3083778a6995fb491696a28ff2e8c3a72422cfbe",
+        "dag_sha256": "0855f4392a87e6631cec6306dc658eb40b2b91467fa1fe07eb9b206e1cd0494e",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "d8c74a7cf666e912b1f1ecd58ba59c6f4bc66b11f8348f8b35e45c0359b023aa"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L5-009",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-009.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-009.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L5-009",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 42,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 246,
+      "hashes": {
+        "map_sha256": "1b458cd5a9ed973951ebb960e60df6845780f98cdca8c04a17528d88d7c8f914",
+        "dag_sha256": "a61662ffd924246d3fb92eec7c369a0671f6349532e46f5747ebe3dc45228d2e",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "e2665460c06ecc8d31fcc6d2263d7dcd2a9806e9888fcd0bf573d8b6a3c68988"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L5-010",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-010.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-010.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L5-010",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 43,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 240,
+      "hashes": {
+        "map_sha256": "d9596944cf595e515b742040007f88b55aeb1375ca73221acc9ba0a4035e2910",
+        "dag_sha256": "2990b19be217d8bad8ff03693f44b1054639b8e1f362931cc7c7d39e9669311c",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "7251f4206ea2d1116885bb4d4cc76dbe5af2caab4131fb2177d5c4f7bc2b1313"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L5-011",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-011.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-011.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L5-011",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 44,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 243,
+      "hashes": {
+        "map_sha256": "03d2df6433559201474a345f1d55b220032be8fdd5cac58aea2b4658d4e16b78",
+        "dag_sha256": "cb8976154a7ea9e9b0a5321432c84714e5d550d67c2407213c470e17d6fb559f",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "806fcf09c9e2b62c46b117c261c8a9e648727b60c00cfb199cff828475107828"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L5-012",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-012.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-012.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L5-012",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 45,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 240,
+      "hashes": {
+        "map_sha256": "a299c8f65f06fad5d30c7e1763eab6fa7990be416a322b094d9bc42e1c1c1436",
+        "dag_sha256": "fe423e478273c4c4a777369c94acc77cf2e2c4b7cc78eb851410b82ffd73aca6",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "296bb6f8b210bc7f14fa00e6198b829fe3bdd6f914439eb287d285af9aa883b8"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L5-013",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-013.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-013.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L5-013",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 46,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 243,
+      "hashes": {
+        "map_sha256": "c6c1488e76cf534bc37246f80ae4a3b5c81ac75bf75bafc5be66a052e35d2173",
+        "dag_sha256": "71ca54eb90e4b4e5d192cfc50b8b8f0fd132d29571fc76c777db802225ca3028",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "5241de381d31aa15d0efba5bc23c0ccae54a7fc4cbe3fd9f05e5e7f1f524e777"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L5-014",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L5/V4-L5-014.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L5/DAG-V4-L5-014.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L5-014",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 47,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 243,
+      "hashes": {
+        "map_sha256": "ffaf25d99b11dee4ac7bcb12b2e2d650242ace97f5d8152f8592a05da96a2410",
+        "dag_sha256": "cd0c58fdc42c1a5d269dbf1b352f19118406d9d34c96edddc5ef73e0bd0cde57",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "579761f7d1ac14a52aa42427bf0649b1d126945cb6837b771d4884c286f12cac"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L6-001",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-001.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-001.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L6-001",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 48,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 282,
+      "hashes": {
+        "map_sha256": "0075ce4750a91a06e4b4f709cd717d3aacabc45acd22da451a586c05e7e908c2",
+        "dag_sha256": "74b7f2416f0c86fa3b12af327fcac2ad3bc392069fefa7e4324c9e9c0a06c545",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "5a0b0b4064180b1f94672fb79a780d7cd7de02d0076b62d7a50eda4056b35fbb"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L6-002",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-002.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-002.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L6-002",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 49,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 288,
+      "hashes": {
+        "map_sha256": "53efa57240c5aaee6b25f156fa5ba1108bf331a3eb38aebeee7a1cb479d5fe3d",
+        "dag_sha256": "12074dce51ea6b3d04acf5e1a4ef2f21d209fd30d3557576f4bbd0e955903a26",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "9d6ae5948b24a73194e3243226a71b021090d2963d8d8393a953d35961b23def"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L6-003",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-003.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-003.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L6-003",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 50,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 288,
+      "hashes": {
+        "map_sha256": "4559b7ae20428601147fb359b9e9755807ef40641b37a272147e579344aa305e",
+        "dag_sha256": "1164624bddf97520056824e1a006264efd9cf1291e78eb9c4f36faf607e12972",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "5b855eb4cfb1bcaa76674740c7e228303b04447ab828c8f3969b38b6961d17b6"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L6-004",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-004.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-004.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L6-004",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 51,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 288,
+      "hashes": {
+        "map_sha256": "b46bc95f7da2050f2361ed4a51d2762fc265b702be2d31b28f4d03ed1182269a",
+        "dag_sha256": "58a6c718f3ee5902d2ccf15d998033c0ec5ebdd20723fdc3b7a58dca0fd6ba7f",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "0866b2a2c2baffb34e73ab1e3e80950751d591129d13372f9f63aef0412b7d9b"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L6-005",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-005.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-005.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L6-005",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 52,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 285,
+      "hashes": {
+        "map_sha256": "1a779fac1b04953d48429442a2015d9148a6c91c9020ee538d4a73681a5f3265",
+        "dag_sha256": "fc0575a0bca85e64589c0332dc4394ebaa267963aecd65b350f98bdbe1186ed0",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "52d07039abf3a12f728bff6ba1920fb9c47ae3ebc83e39ea8bb1b2c9504c4f7e"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L6-006",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-006.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-006.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L6-006",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 53,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 279,
+      "hashes": {
+        "map_sha256": "be9a97e75e7e26c498e70060808967f1410e1c66060fe43cb45fc1cbecba4dd8",
+        "dag_sha256": "df6e4599460b63f71e05dc31e7df924fa6564141f2ce9538f69a44881c0ffc61",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "934ac172cf43e371f841b14bf190c419afd6d2b99a52ccaeaad76a6e092b82b6"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L6-007",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-007.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-007.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L6-007",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 54,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 279,
+      "hashes": {
+        "map_sha256": "6a7888db49981b5c614d4b9e39d9f8084b425c7ea397423607ccfd25a326a2db",
+        "dag_sha256": "75b1c2c5bf731ba04f7eae0f935bf95c14959a94494dd994e07ca952755ca7b9",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "5ffbbe74ad44e36b23ed54157f300ef6dced541b30265cfba4b8868a2e181b86"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L6-008",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-008.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-008.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L6-008",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 55,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 285,
+      "hashes": {
+        "map_sha256": "4189aa0d57e8f2b9d63739b30910057d1b7eefd3b32f577757aaf16bbaae90ae",
+        "dag_sha256": "5e69b6e905cd22f52fc78840d7bd3e9ec2eeda40d86247295e179e825351d86d",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "a63c8382e2862e4df2b1e0a6436b4ad0048abd3922ba4f83746d2febd78d38b2"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L6-009",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-009.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-009.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L6-009",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 56,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 291,
+      "hashes": {
+        "map_sha256": "00d256011a29cb7d6b0d832d69f3f9df4d301eea933dd9892ffcd020d699cee7",
+        "dag_sha256": "5420eb112ddf6d0256c024eceb23a8e4b092c1a2a76b2d07c0a9a472e07a5bc6",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "30b512d2c20e4351b2304f2c0877b5c92535a2d5baefba1a3f1549a51fb54be7"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L6-010",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-010.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-010.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L6-010",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 57,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 288,
+      "hashes": {
+        "map_sha256": "41dc632274cbadb960c48e130de730904654af33156f4436ec25bbc5b30cbcbd",
+        "dag_sha256": "8104cffd663ce47bf9e1da8b15e09976a13bdd5d7a28065563bff0986d6a66e3",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "6fae92bccd861160cbe95dfe1caa19a974b638adf3f7e816f8cfc357f83b3f46"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L6-011",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-011.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-011.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L6-011",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 58,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 285,
+      "hashes": {
+        "map_sha256": "3c2f995b374fbb11045a751287050002488f9eae3c5459deee5212398b0a8067",
+        "dag_sha256": "965858ea0607c0f90336e6e3a51bdd62f1f9b22c781166a8cd08d015ccd87ce2",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "cbbec5fd2d8979c23cc0fb9419689ad31b6e4ea60737c11c2bbbcca3d6d1e76e"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L6-012",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-012.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-012.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L6-012",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 59,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 273,
+      "hashes": {
+        "map_sha256": "cc89e3f1a428566da21b8fdd90c913b2a74f4c671551cdb5da12163701728e13",
+        "dag_sha256": "714511e6394f66c05e15ac8517802bda5df7f0273e6f787d0905cf3ad5768a13",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "e4ec243dd18ba1f6b5bb477eaeebdd93153b6efa3d25b80e2395ce0b95e70704"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L6-013",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-013.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-013.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L6-013",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 60,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 270,
+      "hashes": {
+        "map_sha256": "bbadf149de556391718e2034b83fb7793ee5d22240c93beb086687206647f4d9",
+        "dag_sha256": "17b485b2a832543e2812d02f1deb0358058e6aca2115fdf98a09afe9b78cba39",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "c842ad7319571537618f477cbffde6ce4d9a4accbc642a6faab34c06578f06a8"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L6-014",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L6/V4-L6-014.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L6/DAG-V4-L6-014.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L6-014",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 61,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 288,
+      "hashes": {
+        "map_sha256": "3078f66ae632ce41d2c80694a3144a9dee09f9d3618918b3f86da7d3cb9e8baa",
+        "dag_sha256": "8998d44b34c5ec767fcd46c6028389a26d1575d2c28ab4c293af825a73720a0f",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "51c63555569c7035194b5aeac3fa0cccee4ab9c3813a65cd895872edaf136d96"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L7-001",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-001.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-001.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L7-001",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 62,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 318,
+      "hashes": {
+        "map_sha256": "14684e992f2f05f913effc97e2f3518c4e889461cc4002e73849dd5cbd19b901",
+        "dag_sha256": "eb631c6567817393029544a731baf854c3625c5a61a3942e95ce397045269337",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "08f44f7bcf3c0427cc5b53c2e59099e151fbf424613e4d9b44e409caf6d1c2ed"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L7-002",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-002.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-002.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L7-002",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 63,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 318,
+      "hashes": {
+        "map_sha256": "bc8807f016a5062cb0c2ca4946e54864a0e8ca99d43a842d76d3240e15d30b6f",
+        "dag_sha256": "44f95b8de9a9985f7c9b2d3b963608cf3f4e97b6b2d4706c077b73b9cf1c6786",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "4ce869bec0bd84ba82dc2d00070a9bd2bf9415314eaccf5fc0aa4b54930234a7"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L7-003",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-003.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-003.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L7-003",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 64,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 318,
+      "hashes": {
+        "map_sha256": "2a66cf1db0a991588594a782aba003d8c9a1286a32aa609f91c22e581e7c3f80",
+        "dag_sha256": "055deb52162a1f8bdb4e2c035c6d214d360613a196f8018cd7fa5d4370f7be3b",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "0b20c80ba24ef52967155e828f06eac6bf99a91597236ad17510398510ddacfd"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L7-004",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-004.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-004.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L7-004",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 65,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 321,
+      "hashes": {
+        "map_sha256": "25014545955c5301097d6ccd03a7aabd71f4873288d87db40c44fd9916fd1e39",
+        "dag_sha256": "4f0e91035f3a92c4681b97e15bfe1356ee1ffb9da2dc0448e3960a481c6bd8b6",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "1fb952702a4925edc8817722ed66f84eabe2d2dbb776a5c35867e2628cf420ff"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L7-005",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-005.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-005.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L7-005",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 66,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 312,
+      "hashes": {
+        "map_sha256": "f2279229c07815fe89e3d94623a3911ae7da742a0b9188e91d18398f7986d06d",
+        "dag_sha256": "22f8606e0f79f4598011a93292d82008492a8b163ff5a668a38d45a6c3dbe977",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "e4df01e2ee097c9e7863aadb3b2be678d1bcb6c1bffbe7def3c1a28cbecbbc55"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L7-006",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-006.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-006.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L7-006",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 67,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 315,
+      "hashes": {
+        "map_sha256": "33f540aa83ed5e94927fad7acc99f9d11c1485529ba8735256ac1b27e78e0324",
+        "dag_sha256": "123da3f346602f635f5948bd3446d0c281048b9ad1bb0f1b5fdfc1366590bbf3",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "8ad9e15ee4768aa05aa7f6af969abe0a5a6d2951b73bf7f2a04c60c2428f8b4f"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L7-007",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-007.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-007.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L7-007",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 68,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 324,
+      "hashes": {
+        "map_sha256": "3dda1a5edbed7391a0781f63562e2d1554ae4ae9c484c81840173f5e6f3cb93d",
+        "dag_sha256": "d00e6b2d9463936ef02591e0e1b3db72f83a931904b0d04fec62894c5a8723fa",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "d28838ed71ec7168c6b144f51560bfb9e55e53ab02cd7e7b1b5856c272bb09de"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L7-008",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-008.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-008.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L7-008",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 69,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 318,
+      "hashes": {
+        "map_sha256": "b550fc7470cab19ff2c3dc5252559d7495eb8af968996bb060abb4c0ab1ea39b",
+        "dag_sha256": "07e8e59acc7cec78a6f5efa648682ad4c8d614589e9f125313ba36555ba6628e",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "51b8f845a089cca5a90854fedc55fcdca8626e5bdb2fa9a548995d3a2a5aaabe"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L7-009",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-009.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-009.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L7-009",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 70,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 312,
+      "hashes": {
+        "map_sha256": "67806d607a5fe1b3a4d9c89c7136027e1c4c4d1752b714e28615284665b5bfe8",
+        "dag_sha256": "411550526431b8e234ac6cbdbb3d55d182f390670ee466f0473eadb322c6290f",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "541d285d0dbe135379a489064aafcdf13b6a7b6547d55e5f2367bbb21c43e20b"
+      }
+    },
+    {
+      "suite_name": "Core-72",
+      "task_id": "V4-L7-010",
+      "map_path": "eval_private/spatial_curriculum_full_v4/maps/L7/V4-L7-010.fwmap",
+      "dag_path": "eval_private/spatial_curriculum_full_v4/dags/L7/DAG-V4-L7-010.json",
+      "witness_path": "eval_private/spatial_curriculum_full_v4/witnesses.json",
+      "witness_key": "maps.V4-L7-010",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/spatial_curriculum_full_v4/manifest.json",
+      "source_record_index": 71,
+      "evaluator_type": "collaboration_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "MAINTAIN"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 321,
+      "hashes": {
+        "map_sha256": "dc99c745c067603c9d75b41fc3f4528214ff2520e08bfa135475745097705950",
+        "dag_sha256": "4e1bf29a639f53709b082dbb4a53091ba28597542835aa5fab8cd826a7407b5c",
+        "witness_source_sha256": "19827795fc4d3ebe94d075e335764b3b1f663461cb339b81d01f5d915c867298",
+        "witness_entry_sha256": "17377894fad6ef83c89afe92ecab3f9754f1c9697da55592e5b67f29198dbded"
+      }
+    },
+    {
+      "suite_name": "Information-12",
+      "task_id": "C5-001",
+      "map_path": "eval_private/c5_information_12/maps/C5-001.fwmap",
+      "dag_path": "eval_private/c5_information_12/dags/C5-001.json",
+      "witness_path": "eval_private/c5_information_12/manifest.json",
+      "witness_key": "tasks.0.budget_certificate",
+      "witness_kind": "frozen_constructor_certificate",
+      "source_manifest_path": "eval_private/c5_information_12/manifest.json",
+      "source_record_index": 0,
+      "evaluator_type": "information_evaluator_v1",
+      "dependency_semantics": [
+        "INFORMATION"
+      ],
+      "composition_motifs": [
+        "INFORMATION_HANDOFF"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.c5_agent_observation.v1",
+      "round_budget": 30,
+      "hashes": {
+        "map_sha256": "b34b1a155d0bccfe9e38e702b2010d5c447be0f6a3ff1fae243e8a11aaabe136",
+        "dag_sha256": "4bd0df42318b14ffedd1a2461eaec7db3d993cc3251c54ed9c58fa75ac0ec773",
+        "witness_source_sha256": "cc3861f656c37b4447d8ddd913856923f4d3510f4f649b43432b0319f4197721",
+        "witness_entry_sha256": "00c08a0b76854e480cf4c6a467374610072a537c6a49f1212c6550247c97c371"
+      }
+    },
+    {
+      "suite_name": "Information-12",
+      "task_id": "C5-002",
+      "map_path": "eval_private/c5_information_12/maps/C5-002.fwmap",
+      "dag_path": "eval_private/c5_information_12/dags/C5-002.json",
+      "witness_path": "eval_private/c5_information_12/manifest.json",
+      "witness_key": "tasks.1.budget_certificate",
+      "witness_kind": "frozen_constructor_certificate",
+      "source_manifest_path": "eval_private/c5_information_12/manifest.json",
+      "source_record_index": 1,
+      "evaluator_type": "information_evaluator_v1",
+      "dependency_semantics": [
+        "INFORMATION"
+      ],
+      "composition_motifs": [
+        "INFORMATION_HANDOFF"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.c5_agent_observation.v1",
+      "round_budget": 30,
+      "hashes": {
+        "map_sha256": "726ea09dacc7e917212aed514d0026026bf5952480878b41d81bc6eed0e12880",
+        "dag_sha256": "bf9f2d7ff6963752303af6a096b7ac9409b3a0bdaa366826f2182b1bad1a1efa",
+        "witness_source_sha256": "cc3861f656c37b4447d8ddd913856923f4d3510f4f649b43432b0319f4197721",
+        "witness_entry_sha256": "73c07bb597ee23af324f9af351daa7ca5b427fa41cf9594d01c4bd3fee03a2ce"
+      }
+    },
+    {
+      "suite_name": "Information-12",
+      "task_id": "C5-003",
+      "map_path": "eval_private/c5_information_12/maps/C5-003.fwmap",
+      "dag_path": "eval_private/c5_information_12/dags/C5-003.json",
+      "witness_path": "eval_private/c5_information_12/manifest.json",
+      "witness_key": "tasks.2.budget_certificate",
+      "witness_kind": "frozen_constructor_certificate",
+      "source_manifest_path": "eval_private/c5_information_12/manifest.json",
+      "source_record_index": 2,
+      "evaluator_type": "information_evaluator_v1",
+      "dependency_semantics": [
+        "INFORMATION"
+      ],
+      "composition_motifs": [
+        "INFORMATION_HANDOFF"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.c5_agent_observation.v1",
+      "round_budget": 30,
+      "hashes": {
+        "map_sha256": "5cf8150c78e7b6492cf944748c86519ed5d21fbd3719ac2eb82d695e1f3c785a",
+        "dag_sha256": "94f468ded3349156c21a895ab533dde8429416ecccddc028dfa6c559212afcf3",
+        "witness_source_sha256": "cc3861f656c37b4447d8ddd913856923f4d3510f4f649b43432b0319f4197721",
+        "witness_entry_sha256": "158c5a0bed1c442e1b76f6d16c3fc0e1d1202a3ab2bc8480a8b009e193f4ffa9"
+      }
+    },
+    {
+      "suite_name": "Information-12",
+      "task_id": "C5-004",
+      "map_path": "eval_private/c5_information_12/maps/C5-004.fwmap",
+      "dag_path": "eval_private/c5_information_12/dags/C5-004.json",
+      "witness_path": "eval_private/c5_information_12/manifest.json",
+      "witness_key": "tasks.3.budget_certificate",
+      "witness_kind": "frozen_constructor_certificate",
+      "source_manifest_path": "eval_private/c5_information_12/manifest.json",
+      "source_record_index": 3,
+      "evaluator_type": "information_evaluator_v1",
+      "dependency_semantics": [
+        "INFORMATION"
+      ],
+      "composition_motifs": [
+        "INFORMATION_HANDOFF"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.c5_agent_observation.v1",
+      "round_budget": 30,
+      "hashes": {
+        "map_sha256": "d1e032b28d108736609b3eb0a918f87d406f8fdc329b7f7f6248c1024e0ac02f",
+        "dag_sha256": "15a533d707487f442b39ce55f61e4454d050dc7c2dd8e1b263c9a761d0323eb3",
+        "witness_source_sha256": "cc3861f656c37b4447d8ddd913856923f4d3510f4f649b43432b0319f4197721",
+        "witness_entry_sha256": "00c08a0b76854e480cf4c6a467374610072a537c6a49f1212c6550247c97c371"
+      }
+    },
+    {
+      "suite_name": "Information-12",
+      "task_id": "C5-005",
+      "map_path": "eval_private/c5_information_12/maps/C5-005.fwmap",
+      "dag_path": "eval_private/c5_information_12/dags/C5-005.json",
+      "witness_path": "eval_private/c5_information_12/manifest.json",
+      "witness_key": "tasks.4.budget_certificate",
+      "witness_kind": "frozen_constructor_certificate",
+      "source_manifest_path": "eval_private/c5_information_12/manifest.json",
+      "source_record_index": 4,
+      "evaluator_type": "information_evaluator_v1",
+      "dependency_semantics": [
+        "INFORMATION"
+      ],
+      "composition_motifs": [
+        "INFORMATION_HANDOFF"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.c5_agent_observation.v1",
+      "round_budget": 30,
+      "hashes": {
+        "map_sha256": "225b46f3f549a0737752cb6b49e3e6d62459943e65274360e6ed8d68552246d6",
+        "dag_sha256": "8cdd4cb6fa94f45b3544acd5d8133d6c6bfe278d8eb87b5c57b0e290ae6a0e37",
+        "witness_source_sha256": "cc3861f656c37b4447d8ddd913856923f4d3510f4f649b43432b0319f4197721",
+        "witness_entry_sha256": "158c5a0bed1c442e1b76f6d16c3fc0e1d1202a3ab2bc8480a8b009e193f4ffa9"
+      }
+    },
+    {
+      "suite_name": "Information-12",
+      "task_id": "C5-006",
+      "map_path": "eval_private/c5_information_12/maps/C5-006.fwmap",
+      "dag_path": "eval_private/c5_information_12/dags/C5-006.json",
+      "witness_path": "eval_private/c5_information_12/manifest.json",
+      "witness_key": "tasks.5.budget_certificate",
+      "witness_kind": "frozen_constructor_certificate",
+      "source_manifest_path": "eval_private/c5_information_12/manifest.json",
+      "source_record_index": 5,
+      "evaluator_type": "information_evaluator_v1",
+      "dependency_semantics": [
+        "INFORMATION"
+      ],
+      "composition_motifs": [
+        "INFORMATION_HANDOFF"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.c5_agent_observation.v1",
+      "round_budget": 30,
+      "hashes": {
+        "map_sha256": "f32ff042d8f2de63559325b3fac5973685519cfd8a4f3d8b281639b741f94516",
+        "dag_sha256": "5f106c448197dc40ff48360a2e20343b7ea8c78a21c580ea49ded61c5fe23c13",
+        "witness_source_sha256": "cc3861f656c37b4447d8ddd913856923f4d3510f4f649b43432b0319f4197721",
+        "witness_entry_sha256": "00c08a0b76854e480cf4c6a467374610072a537c6a49f1212c6550247c97c371"
+      }
+    },
+    {
+      "suite_name": "Information-12",
+      "task_id": "C5-007",
+      "map_path": "eval_private/c5_information_12/maps/C5-007.fwmap",
+      "dag_path": "eval_private/c5_information_12/dags/C5-007.json",
+      "witness_path": "eval_private/c5_information_12/manifest.json",
+      "witness_key": "tasks.6.budget_certificate",
+      "witness_kind": "frozen_constructor_certificate",
+      "source_manifest_path": "eval_private/c5_information_12/manifest.json",
+      "source_record_index": 6,
+      "evaluator_type": "information_evaluator_v1",
+      "dependency_semantics": [
+        "INFORMATION"
+      ],
+      "composition_motifs": [
+        "INFORMATION_HANDOFF"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.c5_agent_observation.v1",
+      "round_budget": 30,
+      "hashes": {
+        "map_sha256": "8f35b12b392ae6d2537debb3ecee7e6d0ea9809488faf78b1c9d9623e1d0292b",
+        "dag_sha256": "6e5b6bf909cd125312fde1b268526b4f263b989e62d624461265a17d74228f09",
+        "witness_source_sha256": "cc3861f656c37b4447d8ddd913856923f4d3510f4f649b43432b0319f4197721",
+        "witness_entry_sha256": "00c08a0b76854e480cf4c6a467374610072a537c6a49f1212c6550247c97c371"
+      }
+    },
+    {
+      "suite_name": "Information-12",
+      "task_id": "C5-008",
+      "map_path": "eval_private/c5_information_12/maps/C5-008.fwmap",
+      "dag_path": "eval_private/c5_information_12/dags/C5-008.json",
+      "witness_path": "eval_private/c5_information_12/manifest.json",
+      "witness_key": "tasks.7.budget_certificate",
+      "witness_kind": "frozen_constructor_certificate",
+      "source_manifest_path": "eval_private/c5_information_12/manifest.json",
+      "source_record_index": 7,
+      "evaluator_type": "information_evaluator_v1",
+      "dependency_semantics": [
+        "INFORMATION"
+      ],
+      "composition_motifs": [
+        "INFORMATION_HANDOFF"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.c5_agent_observation.v1",
+      "round_budget": 30,
+      "hashes": {
+        "map_sha256": "42dd9063526ddc8b6c6272c106f4066662baffad54a442331082996321dc270f",
+        "dag_sha256": "02279c97631885c1e4725a3b7145c442139c648398102310712469079de1f316",
+        "witness_source_sha256": "cc3861f656c37b4447d8ddd913856923f4d3510f4f649b43432b0319f4197721",
+        "witness_entry_sha256": "00c08a0b76854e480cf4c6a467374610072a537c6a49f1212c6550247c97c371"
+      }
+    },
+    {
+      "suite_name": "Information-12",
+      "task_id": "C5-009",
+      "map_path": "eval_private/c5_information_12/maps/C5-009.fwmap",
+      "dag_path": "eval_private/c5_information_12/dags/C5-009.json",
+      "witness_path": "eval_private/c5_information_12/manifest.json",
+      "witness_key": "tasks.8.budget_certificate",
+      "witness_kind": "frozen_constructor_certificate",
+      "source_manifest_path": "eval_private/c5_information_12/manifest.json",
+      "source_record_index": 8,
+      "evaluator_type": "information_evaluator_v1",
+      "dependency_semantics": [
+        "INFORMATION"
+      ],
+      "composition_motifs": [
+        "INFORMATION_HANDOFF"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.c5_agent_observation.v1",
+      "round_budget": 30,
+      "hashes": {
+        "map_sha256": "7d8dd5f0ece9b512bcb41b83bce613a69c630c299265808e06f7c72480873007",
+        "dag_sha256": "e251cb10576942d245822b1feba21d9c2f816608ca3869d9c8bf121ce5346bf1",
+        "witness_source_sha256": "cc3861f656c37b4447d8ddd913856923f4d3510f4f649b43432b0319f4197721",
+        "witness_entry_sha256": "158c5a0bed1c442e1b76f6d16c3fc0e1d1202a3ab2bc8480a8b009e193f4ffa9"
+      }
+    },
+    {
+      "suite_name": "Information-12",
+      "task_id": "C5-010",
+      "map_path": "eval_private/c5_information_12/maps/C5-010.fwmap",
+      "dag_path": "eval_private/c5_information_12/dags/C5-010.json",
+      "witness_path": "eval_private/c5_information_12/manifest.json",
+      "witness_key": "tasks.9.budget_certificate",
+      "witness_kind": "frozen_constructor_certificate",
+      "source_manifest_path": "eval_private/c5_information_12/manifest.json",
+      "source_record_index": 9,
+      "evaluator_type": "information_evaluator_v1",
+      "dependency_semantics": [
+        "INFORMATION"
+      ],
+      "composition_motifs": [
+        "INFORMATION_HANDOFF"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.c5_agent_observation.v1",
+      "round_budget": 30,
+      "hashes": {
+        "map_sha256": "6eb2abc2edd6d16262c971c5034dd26c87a7b1ee7f80271dc97b111ca5ddbbff",
+        "dag_sha256": "2a4df1806ee0fd280fa52f630fbc48de40a4de1c9527192398be2225f6d5167e",
+        "witness_source_sha256": "cc3861f656c37b4447d8ddd913856923f4d3510f4f649b43432b0319f4197721",
+        "witness_entry_sha256": "158c5a0bed1c442e1b76f6d16c3fc0e1d1202a3ab2bc8480a8b009e193f4ffa9"
+      }
+    },
+    {
+      "suite_name": "Information-12",
+      "task_id": "C5-011",
+      "map_path": "eval_private/c5_information_12/maps/C5-011.fwmap",
+      "dag_path": "eval_private/c5_information_12/dags/C5-011.json",
+      "witness_path": "eval_private/c5_information_12/manifest.json",
+      "witness_key": "tasks.10.budget_certificate",
+      "witness_kind": "frozen_constructor_certificate",
+      "source_manifest_path": "eval_private/c5_information_12/manifest.json",
+      "source_record_index": 10,
+      "evaluator_type": "information_evaluator_v1",
+      "dependency_semantics": [
+        "INFORMATION"
+      ],
+      "composition_motifs": [
+        "INFORMATION_HANDOFF"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.c5_agent_observation.v1",
+      "round_budget": 30,
+      "hashes": {
+        "map_sha256": "739323d392a9bee73cffd675d65b17a93394073db987008c95a7bc1660763746",
+        "dag_sha256": "9d9c6000df4e83e45876accaa2f66e44ed8bc0f14214e4fb97947d59583ef9d4",
+        "witness_source_sha256": "cc3861f656c37b4447d8ddd913856923f4d3510f4f649b43432b0319f4197721",
+        "witness_entry_sha256": "00c08a0b76854e480cf4c6a467374610072a537c6a49f1212c6550247c97c371"
+      }
+    },
+    {
+      "suite_name": "Information-12",
+      "task_id": "C5-012",
+      "map_path": "eval_private/c5_information_12/maps/C5-012.fwmap",
+      "dag_path": "eval_private/c5_information_12/dags/C5-012.json",
+      "witness_path": "eval_private/c5_information_12/manifest.json",
+      "witness_key": "tasks.11.budget_certificate",
+      "witness_kind": "frozen_constructor_certificate",
+      "source_manifest_path": "eval_private/c5_information_12/manifest.json",
+      "source_record_index": 11,
+      "evaluator_type": "information_evaluator_v1",
+      "dependency_semantics": [
+        "INFORMATION"
+      ],
+      "composition_motifs": [
+        "INFORMATION_HANDOFF"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.c5_agent_observation.v1",
+      "round_budget": 30,
+      "hashes": {
+        "map_sha256": "dd000dd74512335b5eb7f1ea2a404e6b39881a5b95db6e0c59412754e51e850a",
+        "dag_sha256": "0f1318fe0ac1f63f4b387387eb01652d696132adda2f577d2ce46a0ab812b8b1",
+        "witness_source_sha256": "cc3861f656c37b4447d8ddd913856923f4d3510f4f649b43432b0319f4197721",
+        "witness_entry_sha256": "00c08a0b76854e480cf4c6a467374610072a537c6a49f1212c6550247c97c371"
+      }
+    },
+    {
+      "suite_name": "Sync-8",
+      "task_id": "SYNC-01",
+      "map_path": "eval_private/synchronize_8/maps/SYNC-01.fwmap",
+      "dag_path": "eval_private/synchronize_8/dags/DAG-SYNC-01.json",
+      "witness_path": "eval_private/synchronize_8/witnesses.json",
+      "witness_key": "tasks.SYNC-01.primary",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/synchronize_8/manifest.json",
+      "source_record_index": 0,
+      "evaluator_type": "extension_evaluator_v1",
+      "dependency_semantics": [
+        "SYNCHRONIZE"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 80,
+      "hashes": {
+        "map_sha256": "39c5a56c967b99747cd60d521afc6f9e778dc639a83e1de82aa93586ed6d2476",
+        "dag_sha256": "54314c443ccfaff9a3985b891e04f1c451997448467623f420e2692543f24fed",
+        "witness_source_sha256": "2cb0977eb2a1403b3b6b3817af717fadf7c136a6946022107519a65cfe26f3c5",
+        "witness_entry_sha256": "5eebec349d2a462c695430f4204d342bb68ebca14ddc02a11bf9eb8ed4c69d6c"
+      }
+    },
+    {
+      "suite_name": "Sync-8",
+      "task_id": "SYNC-02",
+      "map_path": "eval_private/synchronize_8/maps/SYNC-02.fwmap",
+      "dag_path": "eval_private/synchronize_8/dags/DAG-SYNC-02.json",
+      "witness_path": "eval_private/synchronize_8/witnesses.json",
+      "witness_key": "tasks.SYNC-02.primary",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/synchronize_8/manifest.json",
+      "source_record_index": 1,
+      "evaluator_type": "extension_evaluator_v1",
+      "dependency_semantics": [
+        "SYNCHRONIZE"
+      ],
+      "composition_motifs": [],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 80,
+      "hashes": {
+        "map_sha256": "04028229efdf1ee8f6c29f6fb70266af1ed7715999317dbf97e4a39415142691",
+        "dag_sha256": "84b0e41f9184a2defdf8d0ba00c90a45fe3608e8fc9027960f10ed0af67f1ade",
+        "witness_source_sha256": "2cb0977eb2a1403b3b6b3817af717fadf7c136a6946022107519a65cfe26f3c5",
+        "witness_entry_sha256": "674493a6718ff02f4a84ac1de94db48079765454d8ef4a1aee36c536e8346fdc"
+      }
+    },
+    {
+      "suite_name": "Sync-8",
+      "task_id": "SYNC-03",
+      "map_path": "eval_private/synchronize_8/maps/SYNC-03.fwmap",
+      "dag_path": "eval_private/synchronize_8/dags/DAG-SYNC-03.json",
+      "witness_path": "eval_private/synchronize_8/witnesses.json",
+      "witness_key": "tasks.SYNC-03.primary",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/synchronize_8/manifest.json",
+      "source_record_index": 2,
+      "evaluator_type": "extension_evaluator_v1",
+      "dependency_semantics": [
+        "SYNCHRONIZE"
+      ],
+      "composition_motifs": [
+        "ASYMMETRIC_ARRIVAL"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 80,
+      "hashes": {
+        "map_sha256": "a2a4634ad1cfbe1db6ff8c2b6f84de5abada2f21c5d4e2bb2edee9fa983f2781",
+        "dag_sha256": "01edef43cfa0c13b83b4d2bde0f8821bc9c9e5834fe150055dd81a36b927b1d4",
+        "witness_source_sha256": "2cb0977eb2a1403b3b6b3817af717fadf7c136a6946022107519a65cfe26f3c5",
+        "witness_entry_sha256": "352847ffaa57751a3716f637f378d02b6b57da8c58954203f2433ce44613caff"
+      }
+    },
+    {
+      "suite_name": "Sync-8",
+      "task_id": "SYNC-04",
+      "map_path": "eval_private/synchronize_8/maps/SYNC-04.fwmap",
+      "dag_path": "eval_private/synchronize_8/dags/DAG-SYNC-04.json",
+      "witness_path": "eval_private/synchronize_8/witnesses.json",
+      "witness_key": "tasks.SYNC-04.primary",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/synchronize_8/manifest.json",
+      "source_record_index": 3,
+      "evaluator_type": "extension_evaluator_v1",
+      "dependency_semantics": [
+        "SYNCHRONIZE"
+      ],
+      "composition_motifs": [
+        "ASYMMETRIC_ARRIVAL"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 80,
+      "hashes": {
+        "map_sha256": "24ed5c717b65fa0c9d8a9c87507b9fdf63ca9b942ff8d2cc554740927c3d046f",
+        "dag_sha256": "579cf47b7b2a7777373495b3967a80060d6b294efdadc42c30b0c5915eb62f10",
+        "witness_source_sha256": "2cb0977eb2a1403b3b6b3817af717fadf7c136a6946022107519a65cfe26f3c5",
+        "witness_entry_sha256": "546415e12f7be3d3d45636fbad63eadaa28307005c17265dc97ae5366c42af43"
+      }
+    },
+    {
+      "suite_name": "Sync-8",
+      "task_id": "SYNC-05",
+      "map_path": "eval_private/synchronize_8/maps/SYNC-05.fwmap",
+      "dag_path": "eval_private/synchronize_8/dags/DAG-SYNC-05.json",
+      "witness_path": "eval_private/synchronize_8/witnesses.json",
+      "witness_key": "tasks.SYNC-05.primary",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/synchronize_8/manifest.json",
+      "source_record_index": 4,
+      "evaluator_type": "extension_evaluator_v1",
+      "dependency_semantics": [
+        "SYNCHRONIZE"
+      ],
+      "composition_motifs": [
+        "ASYMMETRIC_ARRIVAL"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 80,
+      "hashes": {
+        "map_sha256": "b647b716eee20e29341a9057743fb4cebaa06953d2684aea037f273a3664ef2b",
+        "dag_sha256": "d3b2854462dd03597b05ccab74f2f1d942a97fc3a0cf10ae5339ed6e3319dec5",
+        "witness_source_sha256": "2cb0977eb2a1403b3b6b3817af717fadf7c136a6946022107519a65cfe26f3c5",
+        "witness_entry_sha256": "2e23a5f59832e503edcaeea6e751ccfc76c3e199fdadafbc9e4353e3585505e8"
+      }
+    },
+    {
+      "suite_name": "Sync-8",
+      "task_id": "SYNC-06",
+      "map_path": "eval_private/synchronize_8/maps/SYNC-06.fwmap",
+      "dag_path": "eval_private/synchronize_8/dags/DAG-SYNC-06.json",
+      "witness_path": "eval_private/synchronize_8/witnesses.json",
+      "witness_key": "tasks.SYNC-06.primary",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/synchronize_8/manifest.json",
+      "source_record_index": 5,
+      "evaluator_type": "extension_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "SYNCHRONIZE"
+      ],
+      "composition_motifs": [
+        "SEQUENTIAL_COMPOSITION"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 80,
+      "hashes": {
+        "map_sha256": "586eeeaccb1305939a8aa4eabb24201065af3f1cb90102a0f37c83e92ada301e",
+        "dag_sha256": "e85aa9476d5f36e9f4e6de8ceee8b38de79b91ce78a219eacac9657eb3703f75",
+        "witness_source_sha256": "2cb0977eb2a1403b3b6b3817af717fadf7c136a6946022107519a65cfe26f3c5",
+        "witness_entry_sha256": "98a7cb964a41b7ef80cd93a402d75267baed6f918e62a4ae2662c19e40b90426"
+      }
+    },
+    {
+      "suite_name": "Sync-8",
+      "task_id": "SYNC-07",
+      "map_path": "eval_private/synchronize_8/maps/SYNC-07.fwmap",
+      "dag_path": "eval_private/synchronize_8/dags/DAG-SYNC-07.json",
+      "witness_path": "eval_private/synchronize_8/witnesses.json",
+      "witness_key": "tasks.SYNC-07.primary",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/synchronize_8/manifest.json",
+      "source_record_index": 6,
+      "evaluator_type": "extension_evaluator_v1",
+      "dependency_semantics": [
+        "MAINTAIN",
+        "SYNCHRONIZE"
+      ],
+      "composition_motifs": [
+        "SEQUENTIAL_COMPOSITION"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 80,
+      "hashes": {
+        "map_sha256": "481312c6037d9a3194ae8f367a1a7756ce84ca6633b84c020f3094d914464ec7",
+        "dag_sha256": "531a7f0426a2919fb16128d245e76539bb0f425c769d2d37ce7e9bd90e9507e3",
+        "witness_source_sha256": "2cb0977eb2a1403b3b6b3817af717fadf7c136a6946022107519a65cfe26f3c5",
+        "witness_entry_sha256": "98a7cb964a41b7ef80cd93a402d75267baed6f918e62a4ae2662c19e40b90426"
+      }
+    },
+    {
+      "suite_name": "Sync-8",
+      "task_id": "SYNC-08",
+      "map_path": "eval_private/synchronize_8/maps/SYNC-08.fwmap",
+      "dag_path": "eval_private/synchronize_8/dags/DAG-SYNC-08.json",
+      "witness_path": "eval_private/synchronize_8/witnesses.json",
+      "witness_key": "tasks.SYNC-08.primary",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/synchronize_8/manifest.json",
+      "source_record_index": 7,
+      "evaluator_type": "extension_evaluator_v1",
+      "dependency_semantics": [
+        "ENABLE",
+        "SYNCHRONIZE"
+      ],
+      "composition_motifs": [
+        "SEQUENTIAL_COMPOSITION"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 80,
+      "hashes": {
+        "map_sha256": "a6e6226581fe60f4031fe6b9eca003b72fc28a29313a9ee4771add230a2d5c42",
+        "dag_sha256": "99972ca274e76b18eee04ba933f04182ce373da280484b57197840bc86150cb3",
+        "witness_source_sha256": "2cb0977eb2a1403b3b6b3817af717fadf7c136a6946022107519a65cfe26f3c5",
+        "witness_entry_sha256": "5376bbfd91b69f68f8f1042f633a4cb514eeeaafa1d9be171b3583eea5e84651"
+      }
+    },
+    {
+      "suite_name": "Join-8",
+      "task_id": "JOIN-01",
+      "map_path": "eval_private/parallel_join_8/maps/JOIN-01.fwmap",
+      "dag_path": "eval_private/parallel_join_8/dags/DAG-JOIN-01.json",
+      "witness_path": "eval_private/parallel_join_8/witnesses.json",
+      "witness_key": "tasks.JOIN-01.primary",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/parallel_join_8/manifest.json",
+      "source_record_index": 0,
+      "evaluator_type": "extension_evaluator_v1",
+      "dependency_semantics": [],
+      "composition_motifs": [
+        "PARALLEL_JOIN"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 80,
+      "hashes": {
+        "map_sha256": "ff3d8b8a136036b038c6ae0d171bfaaf5800ffa001b414f5b3838f2ec1c7d36b",
+        "dag_sha256": "2bd983b364baad39ec22fd3092189a9063c03e473ce130febd99488f32b7c100",
+        "witness_source_sha256": "78133ec9f1464e1a9669c08ddf5e2c56fbd2534cd3e3fabeea6cbdbd66cfc149",
+        "witness_entry_sha256": "ae3aee5253baf6bfbcfb6e381a935618868b69ed4f967fcd25258b7bafaf633a"
+      }
+    },
+    {
+      "suite_name": "Join-8",
+      "task_id": "JOIN-02",
+      "map_path": "eval_private/parallel_join_8/maps/JOIN-02.fwmap",
+      "dag_path": "eval_private/parallel_join_8/dags/DAG-JOIN-02.json",
+      "witness_path": "eval_private/parallel_join_8/witnesses.json",
+      "witness_key": "tasks.JOIN-02.primary",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/parallel_join_8/manifest.json",
+      "source_record_index": 1,
+      "evaluator_type": "extension_evaluator_v1",
+      "dependency_semantics": [],
+      "composition_motifs": [
+        "PARALLEL_JOIN"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 80,
+      "hashes": {
+        "map_sha256": "bc3152051ce5eecc0f8862027dd66b02099cf7d0b7c66d882103b17d42655510",
+        "dag_sha256": "9d3c6fc02740acdbc7455117bc134e9bae0ab06cadc02a48ff4f549e5ccbd89c",
+        "witness_source_sha256": "78133ec9f1464e1a9669c08ddf5e2c56fbd2534cd3e3fabeea6cbdbd66cfc149",
+        "witness_entry_sha256": "ae3aee5253baf6bfbcfb6e381a935618868b69ed4f967fcd25258b7bafaf633a"
+      }
+    },
+    {
+      "suite_name": "Join-8",
+      "task_id": "JOIN-03",
+      "map_path": "eval_private/parallel_join_8/maps/JOIN-03.fwmap",
+      "dag_path": "eval_private/parallel_join_8/dags/DAG-JOIN-03.json",
+      "witness_path": "eval_private/parallel_join_8/witnesses.json",
+      "witness_key": "tasks.JOIN-03.primary",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/parallel_join_8/manifest.json",
+      "source_record_index": 2,
+      "evaluator_type": "extension_evaluator_v1",
+      "dependency_semantics": [],
+      "composition_motifs": [
+        "PARALLEL_JOIN"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 80,
+      "hashes": {
+        "map_sha256": "0802acee8120fb00adf4ec9fd9f531f06db7950d8e7c1d3202042ba897b8793b",
+        "dag_sha256": "801db358c2b1e95381cc86a76658ff828f848fe12d68c9d17ff06ea2592dcb5f",
+        "witness_source_sha256": "78133ec9f1464e1a9669c08ddf5e2c56fbd2534cd3e3fabeea6cbdbd66cfc149",
+        "witness_entry_sha256": "43a23a0269beaebe72d18e14febd5b7797d9c876c277a2068a22d33d19575cd7"
+      }
+    },
+    {
+      "suite_name": "Join-8",
+      "task_id": "JOIN-04",
+      "map_path": "eval_private/parallel_join_8/maps/JOIN-04.fwmap",
+      "dag_path": "eval_private/parallel_join_8/dags/DAG-JOIN-04.json",
+      "witness_path": "eval_private/parallel_join_8/witnesses.json",
+      "witness_key": "tasks.JOIN-04.primary",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/parallel_join_8/manifest.json",
+      "source_record_index": 3,
+      "evaluator_type": "extension_evaluator_v1",
+      "dependency_semantics": [],
+      "composition_motifs": [
+        "PARALLEL_JOIN"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 80,
+      "hashes": {
+        "map_sha256": "6d6222b8d53c4e696f129d133e824605d0e003eef4fa1bf531d643a86f30a8fe",
+        "dag_sha256": "25414e232eb5faca88d9d6dc85d8ce48ac1e9a021c4225a5f35e1c3999e4a959",
+        "witness_source_sha256": "78133ec9f1464e1a9669c08ddf5e2c56fbd2534cd3e3fabeea6cbdbd66cfc149",
+        "witness_entry_sha256": "b4b96e21570703d7086416285f27cd75f356772f18abec6e015ae31b2d920b61"
+      }
+    },
+    {
+      "suite_name": "Join-8",
+      "task_id": "JOIN-05",
+      "map_path": "eval_private/parallel_join_8/maps/JOIN-05.fwmap",
+      "dag_path": "eval_private/parallel_join_8/dags/DAG-JOIN-05.json",
+      "witness_path": "eval_private/parallel_join_8/witnesses.json",
+      "witness_key": "tasks.JOIN-05.primary",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/parallel_join_8/manifest.json",
+      "source_record_index": 4,
+      "evaluator_type": "extension_evaluator_v1",
+      "dependency_semantics": [],
+      "composition_motifs": [
+        "PARALLEL_JOIN"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 80,
+      "hashes": {
+        "map_sha256": "9ae17e918a32560611fc9f4b9082846c5e9ab82163cc12ee61d45e3a66c9325b",
+        "dag_sha256": "09b5621bb6eed9c7beb9f6ea17d032d0a4920c49eb11cab770b67bf8a1d7a04f",
+        "witness_source_sha256": "78133ec9f1464e1a9669c08ddf5e2c56fbd2534cd3e3fabeea6cbdbd66cfc149",
+        "witness_entry_sha256": "f67b0187a675de4d39bc7b9d52af7a4261b96b021ade9b00818fa63084f4fa96"
+      }
+    },
+    {
+      "suite_name": "Join-8",
+      "task_id": "JOIN-06",
+      "map_path": "eval_private/parallel_join_8/maps/JOIN-06.fwmap",
+      "dag_path": "eval_private/parallel_join_8/dags/DAG-JOIN-06.json",
+      "witness_path": "eval_private/parallel_join_8/witnesses.json",
+      "witness_key": "tasks.JOIN-06.primary",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/parallel_join_8/manifest.json",
+      "source_record_index": 5,
+      "evaluator_type": "extension_evaluator_v1",
+      "dependency_semantics": [
+        "MAINTAIN"
+      ],
+      "composition_motifs": [
+        "PARALLEL_JOIN",
+        "JOIN_THEN_MAINTAIN"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 80,
+      "hashes": {
+        "map_sha256": "0ec52af491b28ad5763f3dd7959a6c6c62cdf358036fd4cf62fda13f0562f5ab",
+        "dag_sha256": "02e3deafb66faee08d14ec80179771df736cd29cd0f07492d26eff4b16d6b7f3",
+        "witness_source_sha256": "78133ec9f1464e1a9669c08ddf5e2c56fbd2534cd3e3fabeea6cbdbd66cfc149",
+        "witness_entry_sha256": "35a7d77b9c9820be03f28bcf5c5504272372c8b16362bb70b909db6b757bac85"
+      }
+    },
+    {
+      "suite_name": "Join-8",
+      "task_id": "JOIN-07",
+      "map_path": "eval_private/parallel_join_8/maps/JOIN-07.fwmap",
+      "dag_path": "eval_private/parallel_join_8/dags/DAG-JOIN-07.json",
+      "witness_path": "eval_private/parallel_join_8/witnesses.json",
+      "witness_key": "tasks.JOIN-07.primary",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/parallel_join_8/manifest.json",
+      "source_record_index": 6,
+      "evaluator_type": "extension_evaluator_v1",
+      "dependency_semantics": [
+        "MAINTAIN"
+      ],
+      "composition_motifs": [
+        "PARALLEL_JOIN",
+        "JOIN_THEN_MAINTAIN"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 80,
+      "hashes": {
+        "map_sha256": "67a0a08e384667d7644fa8bb6ae1178fe4a220ed60aadb426642c07e84e27e45",
+        "dag_sha256": "526fa4f27869cec4405b6690e88da0d0af65e45ecd5bd5e7a8d832c277f671fd",
+        "witness_source_sha256": "78133ec9f1464e1a9669c08ddf5e2c56fbd2534cd3e3fabeea6cbdbd66cfc149",
+        "witness_entry_sha256": "43cda6a58acaa42d712d176db2e485613e5518e73d0eaf21b8e73e373e176674"
+      }
+    },
+    {
+      "suite_name": "Join-8",
+      "task_id": "JOIN-08",
+      "map_path": "eval_private/parallel_join_8/maps/JOIN-08.fwmap",
+      "dag_path": "eval_private/parallel_join_8/dags/DAG-JOIN-08.json",
+      "witness_path": "eval_private/parallel_join_8/witnesses.json",
+      "witness_key": "tasks.JOIN-08.primary",
+      "witness_kind": "stored_action_sequence",
+      "source_manifest_path": "eval_private/parallel_join_8/manifest.json",
+      "source_record_index": 7,
+      "evaluator_type": "extension_evaluator_v1",
+      "dependency_semantics": [
+        "MAINTAIN"
+      ],
+      "composition_motifs": [
+        "PARALLEL_JOIN",
+        "JOIN_THEN_MAINTAIN"
+      ],
+      "protocol_version": "fwcollab.leaderboard_protocol.v1",
+      "observation_format": "fwcollab.agent_observation.v1",
+      "round_budget": 80,
+      "hashes": {
+        "map_sha256": "2d1749aafc61a2641905d8c94fb99d9aa1f7ad9d27a40834dd3b08f98d27a52d",
+        "dag_sha256": "9942101f321e2c9ad723e7b7b2e703ba440eadbad8d8574b8705345f8a210a23",
+        "witness_source_sha256": "78133ec9f1464e1a9669c08ddf5e2c56fbd2534cd3e3fabeea6cbdbd66cfc149",
+        "witness_entry_sha256": "97536d2d809aeff276ae9dc3e47a12bd2144fe1631dce718eb144ac86dd66a19"
+      }
+    }
+  ]
+}

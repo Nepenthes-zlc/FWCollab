@@ -1,0 +1,27 @@
+@format fwcollab.symbol_map.v3
+@id V4-L4-007
+@title constructive L4 full-mechanism curriculum 007; crate-held plate bridge
+@max_steps 1
+@controller c1_toggle toggle at 3,5
+@actuator a1_door door at 7,9 controlled_by all(c1_toggle)
+@controller c2_toggle toggle at 6,14
+@actuator a2_platform platform at 2,18 controlled_by all(c2_toggle)
+@controller c3_toggle toggle at 3,23
+@actuator a3_door door at 7,27 controlled_by all(c3_toggle)
+@controller c4_toggle toggle at 6,32
+@controller c5_plate plate at 8,33 accepts W
+@actuator a4_platform platform at 2,36 controlled_by all(c4_toggle,c5_plate)
+@controller cap_heavy_plate plate at 2,51 accepts O
+@actuator cap_platform platform at 7,56 controlled_by all(cap_heavy_plate)
+---
+###############################################################
+#........#........#......#.#........#.........................#
+#F...###......###.=....#........##..=.............O2#........f#
+#....T...#........#..#.T...#........#.........................#
+#........#........#........#........#.........................#
+###############################################################
+#........#....T...#......#.#....T...#...................#.....#
+#W...###.A....###......#...C....##......................=....w#
+#........#........#..#.....#.....1..#...................#.....#
+#........#........#........#........#...................#.....#
+###############################################################

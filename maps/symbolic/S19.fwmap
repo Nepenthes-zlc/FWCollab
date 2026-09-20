@@ -1,0 +1,11 @@
+@format fwcollab.symbol_map.v2
+@id S19
+@title S19 冻结液态通路后让火娃安全通过
+@max_steps 1
+@thermal I initial liquid heater H freezer K
+---
+#####################
+#F....III....f......#
+#####################
+#W.K....H...w.......#
+#####################

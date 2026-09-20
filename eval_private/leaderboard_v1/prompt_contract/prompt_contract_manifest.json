@@ -1,0 +1,187 @@
+{
+  "benchmark_content_used": false,
+  "files": [
+    {
+      "bytes": 2706,
+      "file": "action_schema.json",
+      "prompt_builder": null,
+      "prompt_builder_source_sha256": null,
+      "role": null,
+      "sha256": "d55699622f9ef017a52c98a6720708e5444efab257a8a5c9f173c9d2b227cb84",
+      "track": null
+    },
+    {
+      "bytes": 0,
+      "file": "core_F_system.txt",
+      "prompt_builder": "fwcollab.symbolic.agents.build_agent_prompt",
+      "prompt_builder_source_sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3",
+      "role": "F",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "track": "core"
+    },
+    {
+      "bytes": 9819,
+      "file": "core_F_user.txt",
+      "prompt_builder": "fwcollab.symbolic.agents.build_agent_prompt",
+      "prompt_builder_source_sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3",
+      "role": "F",
+      "sha256": "74eb90dd97f6e5ffe964645c157427c47978bb66968cbfc1db789a009dfe9d6e",
+      "track": "core"
+    },
+    {
+      "bytes": 0,
+      "file": "core_W_system.txt",
+      "prompt_builder": "fwcollab.symbolic.agents.build_agent_prompt",
+      "prompt_builder_source_sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3",
+      "role": "W",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "track": "core"
+    },
+    {
+      "bytes": 9819,
+      "file": "core_W_user.txt",
+      "prompt_builder": "fwcollab.symbolic.agents.build_agent_prompt",
+      "prompt_builder_source_sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3",
+      "role": "W",
+      "sha256": "e76d1a6e31adedba9c0c5e9027876600baac196b2d480dff19ede494fb0c967e",
+      "track": "core"
+    },
+    {
+      "bytes": 0,
+      "file": "information_F_system.txt",
+      "prompt_builder": "fwcollab.symbolic.agents.build_agent_prompt",
+      "prompt_builder_source_sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3",
+      "role": "F",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "track": "information"
+    },
+    {
+      "bytes": 9950,
+      "file": "information_F_user.txt",
+      "prompt_builder": "fwcollab.symbolic.agents.build_agent_prompt",
+      "prompt_builder_source_sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3",
+      "role": "F",
+      "sha256": "0cd045291329e3ace5d3de68e642dc787ca838c9df44c0e486b917f78d6e357c",
+      "track": "information"
+    },
+    {
+      "bytes": 0,
+      "file": "information_W_system.txt",
+      "prompt_builder": "fwcollab.symbolic.agents.build_agent_prompt",
+      "prompt_builder_source_sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3",
+      "role": "W",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "track": "information"
+    },
+    {
+      "bytes": 9863,
+      "file": "information_W_user.txt",
+      "prompt_builder": "fwcollab.symbolic.agents.build_agent_prompt",
+      "prompt_builder_source_sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3",
+      "role": "W",
+      "sha256": "903625d8e2a8900a4330db5e0a63800ee08233c4506923de818e78794d69af5e",
+      "track": "information"
+    },
+    {
+      "bytes": 0,
+      "file": "join_F_system.txt",
+      "prompt_builder": "fwcollab.symbolic.agents.build_agent_prompt",
+      "prompt_builder_source_sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3",
+      "role": "F",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "track": "join"
+    },
+    {
+      "bytes": 9819,
+      "file": "join_F_user.txt",
+      "prompt_builder": "fwcollab.symbolic.agents.build_agent_prompt",
+      "prompt_builder_source_sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3",
+      "role": "F",
+      "sha256": "32f8ffabc8d304da707b78faf84c45656721e44788e2511023bc763274349482",
+      "track": "join"
+    },
+    {
+      "bytes": 0,
+      "file": "join_W_system.txt",
+      "prompt_builder": "fwcollab.symbolic.agents.build_agent_prompt",
+      "prompt_builder_source_sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3",
+      "role": "W",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "track": "join"
+    },
+    {
+      "bytes": 9819,
+      "file": "join_W_user.txt",
+      "prompt_builder": "fwcollab.symbolic.agents.build_agent_prompt",
+      "prompt_builder_source_sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3",
+      "role": "W",
+      "sha256": "415fae0c175a854edc79dac6078eacd9b16a30ba7f99f087a4f92f76477760a4",
+      "track": "join"
+    },
+    {
+      "bytes": 890,
+      "file": "message_schema.json",
+      "prompt_builder": null,
+      "prompt_builder_source_sha256": null,
+      "role": null,
+      "sha256": "a9e0e6bf614aa223c277de66af9108096a9d5393e24ea15a573de92db4ea336e",
+      "track": null
+    },
+    {
+      "bytes": 971,
+      "file": "observation_contract.json",
+      "prompt_builder": null,
+      "prompt_builder_source_sha256": null,
+      "role": null,
+      "sha256": "6b7942030e1d3f25f7473086d7b238d11670e08ae1b908c2268484388f8dcef0",
+      "track": null
+    },
+    {
+      "bytes": 0,
+      "file": "sync_F_system.txt",
+      "prompt_builder": "fwcollab.symbolic.agents.build_agent_prompt",
+      "prompt_builder_source_sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3",
+      "role": "F",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "track": "sync"
+    },
+    {
+      "bytes": 9819,
+      "file": "sync_F_user.txt",
+      "prompt_builder": "fwcollab.symbolic.agents.build_agent_prompt",
+      "prompt_builder_source_sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3",
+      "role": "F",
+      "sha256": "a5423622c94e959a98e98eac01a449c6c7fcd26c94aac09383d7ab98cfd1ecdb",
+      "track": "sync"
+    },
+    {
+      "bytes": 0,
+      "file": "sync_W_system.txt",
+      "prompt_builder": "fwcollab.symbolic.agents.build_agent_prompt",
+      "prompt_builder_source_sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3",
+      "role": "W",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "track": "sync"
+    },
+    {
+      "bytes": 9819,
+      "file": "sync_W_user.txt",
+      "prompt_builder": "fwcollab.symbolic.agents.build_agent_prompt",
+      "prompt_builder_source_sha256": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3",
+      "role": "W",
+      "sha256": "9000442d639288cc9393acf5ac5c2cc29cd7e320150ed2543cecfb6b9d74cffd",
+      "track": "sync"
+    }
+  ],
+  "fixture": "fixed synthetic non-benchmark observation/inbox/history",
+  "format": "fwcollab.leaderboard.prompt_contract.v1",
+  "model_api_calls": 0,
+  "source_hashes": {
+    "src/fwcollab/c5.py": "a3b1d5bc7b51cef3ab22bbda349123378061b435c9aeb103a1adbd07253e7629",
+    "src/fwcollab/symbolic/agents.py": "a6d06b75e3c8dc9ee16b4fa9f8c431c37412170a05143abbb9740623e9fdd4f3",
+    "src/fwcollab/symbolic/rules.py": "350e5b68ac8b88da11aabd577f7a68168f524debcd8dea0ca2f68fa0fe46da4e",
+    "src/fwcollab/symbolic/runner.py": "6556a92d7e570b249091d979591a71dda15b84da767ec208ce0c8380e240b100"
+  },
+  "status": "frozen_reproducibility_snapshot",
+  "system_prompt": "No system message is sent; system snapshot files are exactly zero bytes."
+}

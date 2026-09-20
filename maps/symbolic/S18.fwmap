@@ -1,0 +1,12 @@
+@format fwcollab.symbol_map.v2
+@id S18
+@title S18 一方维持压力板，另一方穿越临时移动桥
+@max_steps 1
+@plate 1 opens A accepts F
+@platform = controlled_by 1
+---
+#####################
+#F..1.........f.....#
+#####################
+#W..A.===....w......#
+#####################

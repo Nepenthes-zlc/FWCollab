@@ -1,0 +1,13 @@
+@format fwcollab.symbol_map.v3
+@id SYNC-01
+@title primitive_symmetric_door
+@max_steps 1
+@controller sync_f plate at 1,10 accepts F
+@controller sync_w plate at 3,10 accepts W
+@actuator sync_gate door at 1,11;3,11 controlled_by all(sync_f,sync_w)
+---
+#####################
+#F........1A.......f#
+#####################
+#W........2A.......w#
+#####################

@@ -1,0 +1,23 @@
+@format fwcollab.symbol_map.v3
+@id V4-L3-008
+@title constructive L3 full-mechanism curriculum 008; one-way route commitment
+@max_steps 1
+@controller c1_toggle toggle at 8,5
+@actuator a1_platform platform at 2,9 controlled_by all(c1_toggle)
+@controller c2_lever lever at 1,14
+@actuator a2_door door at 7,18 controlled_by all(c2_lever)
+@controller c3_lever lever at 8,23
+@actuator a3_platform platform at 2,27 controlled_by all(c3_lever)
+@oneway J allows RIGHT
+---
+######################################################
+#........#....L...#......#.#...................#.....#
+#F...###.=....###......#...=...................J....f#
+#........#........#........#...................#.....#
+#........#........#........#...................#.....#
+######################################################
+#........#........#......#.#.........................#
+#W...###......###.B....#............................w#
+#....T...#........#....L...#.........................#
+#........#........#........#.........................#
+######################################################

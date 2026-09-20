@@ -1,0 +1,402 @@
+{
+  "format": "fwcollab.c5_suite.v1",
+  "selection": "structural_only_without_model_performance",
+  "task_count": 12,
+  "experimental_matrix": {
+    "conditions": [
+      "GPT_Comm",
+      "GPT_NoComm",
+      "Gemini_Comm",
+      "Gemini_NoComm"
+    ],
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "episodes": 144
+  },
+  "certificate": {
+    "format": "fwcollab.c5_information_certificate.v1",
+    "valid": true,
+    "task_count": 12,
+    "f_equivalence_classes": 4,
+    "w_equivalence_classes": 3,
+    "joint_states": 12,
+    "claims": {
+      "F_alone_entails_solution": false,
+      "W_alone_entails_solution": false,
+      "F_union_W_entails_unique_solution": true
+    },
+    "initial_projection_noninterference": {
+      "F": true,
+      "W": true
+    },
+    "deterministic_witnesses": {
+      "all_correct_routes_solve_within_budget": true,
+      "all_wrong_first_routes_fail_within_budget": true
+    }
+  },
+  "tasks": [
+    {
+      "task_id": "C5-001",
+      "map": "maps/C5-001.fwmap",
+      "dag": "dags/C5-001.json",
+      "family": "C5_information_dependent",
+      "f_view_id": "wiring-1",
+      "w_view_id": "route-gate_alpha",
+      "wiring": {
+        "c_north": "gate_alpha",
+        "c_center": "gate_beta",
+        "c_south": "gate_gamma"
+      },
+      "required_actuator": "gate_alpha",
+      "answer_controller": "c_north",
+      "f_exit": [
+        4,
+        1
+      ],
+      "w_exit": [
+        12,
+        19
+      ],
+      "max_rounds": 30,
+      "message_delay_rounds": 1,
+      "budget_certificate": {
+        "correct_witness_rounds": 27,
+        "wrong_first_lower_bound_rounds": 47,
+        "wrong_first_success_within_budget": false
+      }
+    },
+    {
+      "task_id": "C5-002",
+      "map": "maps/C5-002.fwmap",
+      "dag": "dags/C5-002.json",
+      "family": "C5_information_dependent",
+      "f_view_id": "wiring-1",
+      "w_view_id": "route-gate_beta",
+      "wiring": {
+        "c_north": "gate_alpha",
+        "c_center": "gate_beta",
+        "c_south": "gate_gamma"
+      },
+      "required_actuator": "gate_beta",
+      "answer_controller": "c_center",
+      "f_exit": [
+        4,
+        1
+      ],
+      "w_exit": [
+        12,
+        19
+      ],
+      "max_rounds": 30,
+      "message_delay_rounds": 1,
+      "budget_certificate": {
+        "correct_witness_rounds": 23,
+        "wrong_first_lower_bound_rounds": 47,
+        "wrong_first_success_within_budget": false
+      }
+    },
+    {
+      "task_id": "C5-003",
+      "map": "maps/C5-003.fwmap",
+      "dag": "dags/C5-003.json",
+      "family": "C5_information_dependent",
+      "f_view_id": "wiring-1",
+      "w_view_id": "route-gate_gamma",
+      "wiring": {
+        "c_north": "gate_alpha",
+        "c_center": "gate_beta",
+        "c_south": "gate_gamma"
+      },
+      "required_actuator": "gate_gamma",
+      "answer_controller": "c_south",
+      "f_exit": [
+        4,
+        1
+      ],
+      "w_exit": [
+        12,
+        19
+      ],
+      "max_rounds": 30,
+      "message_delay_rounds": 1,
+      "budget_certificate": {
+        "correct_witness_rounds": 27,
+        "wrong_first_lower_bound_rounds": 51,
+        "wrong_first_success_within_budget": false
+      }
+    },
+    {
+      "task_id": "C5-004",
+      "map": "maps/C5-004.fwmap",
+      "dag": "dags/C5-004.json",
+      "family": "C5_information_dependent",
+      "f_view_id": "wiring-2",
+      "w_view_id": "route-gate_alpha",
+      "wiring": {
+        "c_north": "gate_alpha",
+        "c_center": "gate_gamma",
+        "c_south": "gate_beta"
+      },
+      "required_actuator": "gate_alpha",
+      "answer_controller": "c_north",
+      "f_exit": [
+        4,
+        1
+      ],
+      "w_exit": [
+        12,
+        19
+      ],
+      "max_rounds": 30,
+      "message_delay_rounds": 1,
+      "budget_certificate": {
+        "correct_witness_rounds": 27,
+        "wrong_first_lower_bound_rounds": 47,
+        "wrong_first_success_within_budget": false
+      }
+    },
+    {
+      "task_id": "C5-005",
+      "map": "maps/C5-005.fwmap",
+      "dag": "dags/C5-005.json",
+      "family": "C5_information_dependent",
+      "f_view_id": "wiring-2",
+      "w_view_id": "route-gate_beta",
+      "wiring": {
+        "c_north": "gate_alpha",
+        "c_center": "gate_gamma",
+        "c_south": "gate_beta"
+      },
+      "required_actuator": "gate_beta",
+      "answer_controller": "c_south",
+      "f_exit": [
+        4,
+        1
+      ],
+      "w_exit": [
+        12,
+        19
+      ],
+      "max_rounds": 30,
+      "message_delay_rounds": 1,
+      "budget_certificate": {
+        "correct_witness_rounds": 27,
+        "wrong_first_lower_bound_rounds": 51,
+        "wrong_first_success_within_budget": false
+      }
+    },
+    {
+      "task_id": "C5-006",
+      "map": "maps/C5-006.fwmap",
+      "dag": "dags/C5-006.json",
+      "family": "C5_information_dependent",
+      "f_view_id": "wiring-2",
+      "w_view_id": "route-gate_gamma",
+      "wiring": {
+        "c_north": "gate_alpha",
+        "c_center": "gate_gamma",
+        "c_south": "gate_beta"
+      },
+      "required_actuator": "gate_gamma",
+      "answer_controller": "c_center",
+      "f_exit": [
+        4,
+        1
+      ],
+      "w_exit": [
+        12,
+        19
+      ],
+      "max_rounds": 30,
+      "message_delay_rounds": 1,
+      "budget_certificate": {
+        "correct_witness_rounds": 27,
+        "wrong_first_lower_bound_rounds": 47,
+        "wrong_first_success_within_budget": false
+      }
+    },
+    {
+      "task_id": "C5-007",
+      "map": "maps/C5-007.fwmap",
+      "dag": "dags/C5-007.json",
+      "family": "C5_information_dependent",
+      "f_view_id": "wiring-3",
+      "w_view_id": "route-gate_alpha",
+      "wiring": {
+        "c_north": "gate_beta",
+        "c_center": "gate_alpha",
+        "c_south": "gate_gamma"
+      },
+      "required_actuator": "gate_alpha",
+      "answer_controller": "c_center",
+      "f_exit": [
+        4,
+        1
+      ],
+      "w_exit": [
+        12,
+        19
+      ],
+      "max_rounds": 30,
+      "message_delay_rounds": 1,
+      "budget_certificate": {
+        "correct_witness_rounds": 27,
+        "wrong_first_lower_bound_rounds": 47,
+        "wrong_first_success_within_budget": false
+      }
+    },
+    {
+      "task_id": "C5-008",
+      "map": "maps/C5-008.fwmap",
+      "dag": "dags/C5-008.json",
+      "family": "C5_information_dependent",
+      "f_view_id": "wiring-3",
+      "w_view_id": "route-gate_beta",
+      "wiring": {
+        "c_north": "gate_beta",
+        "c_center": "gate_alpha",
+        "c_south": "gate_gamma"
+      },
+      "required_actuator": "gate_beta",
+      "answer_controller": "c_north",
+      "f_exit": [
+        4,
+        1
+      ],
+      "w_exit": [
+        12,
+        19
+      ],
+      "max_rounds": 30,
+      "message_delay_rounds": 1,
+      "budget_certificate": {
+        "correct_witness_rounds": 27,
+        "wrong_first_lower_bound_rounds": 47,
+        "wrong_first_success_within_budget": false
+      }
+    },
+    {
+      "task_id": "C5-009",
+      "map": "maps/C5-009.fwmap",
+      "dag": "dags/C5-009.json",
+      "family": "C5_information_dependent",
+      "f_view_id": "wiring-3",
+      "w_view_id": "route-gate_gamma",
+      "wiring": {
+        "c_north": "gate_beta",
+        "c_center": "gate_alpha",
+        "c_south": "gate_gamma"
+      },
+      "required_actuator": "gate_gamma",
+      "answer_controller": "c_south",
+      "f_exit": [
+        4,
+        1
+      ],
+      "w_exit": [
+        12,
+        19
+      ],
+      "max_rounds": 30,
+      "message_delay_rounds": 1,
+      "budget_certificate": {
+        "correct_witness_rounds": 27,
+        "wrong_first_lower_bound_rounds": 51,
+        "wrong_first_success_within_budget": false
+      }
+    },
+    {
+      "task_id": "C5-010",
+      "map": "maps/C5-010.fwmap",
+      "dag": "dags/C5-010.json",
+      "family": "C5_information_dependent",
+      "f_view_id": "wiring-4",
+      "w_view_id": "route-gate_alpha",
+      "wiring": {
+        "c_north": "gate_beta",
+        "c_center": "gate_gamma",
+        "c_south": "gate_alpha"
+      },
+      "required_actuator": "gate_alpha",
+      "answer_controller": "c_south",
+      "f_exit": [
+        4,
+        1
+      ],
+      "w_exit": [
+        12,
+        19
+      ],
+      "max_rounds": 30,
+      "message_delay_rounds": 1,
+      "budget_certificate": {
+        "correct_witness_rounds": 27,
+        "wrong_first_lower_bound_rounds": 51,
+        "wrong_first_success_within_budget": false
+      }
+    },
+    {
+      "task_id": "C5-011",
+      "map": "maps/C5-011.fwmap",
+      "dag": "dags/C5-011.json",
+      "family": "C5_information_dependent",
+      "f_view_id": "wiring-4",
+      "w_view_id": "route-gate_beta",
+      "wiring": {
+        "c_north": "gate_beta",
+        "c_center": "gate_gamma",
+        "c_south": "gate_alpha"
+      },
+      "required_actuator": "gate_beta",
+      "answer_controller": "c_north",
+      "f_exit": [
+        4,
+        1
+      ],
+      "w_exit": [
+        12,
+        19
+      ],
+      "max_rounds": 30,
+      "message_delay_rounds": 1,
+      "budget_certificate": {
+        "correct_witness_rounds": 27,
+        "wrong_first_lower_bound_rounds": 47,
+        "wrong_first_success_within_budget": false
+      }
+    },
+    {
+      "task_id": "C5-012",
+      "map": "maps/C5-012.fwmap",
+      "dag": "dags/C5-012.json",
+      "family": "C5_information_dependent",
+      "f_view_id": "wiring-4",
+      "w_view_id": "route-gate_gamma",
+      "wiring": {
+        "c_north": "gate_beta",
+        "c_center": "gate_gamma",
+        "c_south": "gate_alpha"
+      },
+      "required_actuator": "gate_gamma",
+      "answer_controller": "c_center",
+      "f_exit": [
+        4,
+        1
+      ],
+      "w_exit": [
+        12,
+        19
+      ],
+      "max_rounds": 30,
+      "message_delay_rounds": 1,
+      "budget_certificate": {
+        "correct_witness_rounds": 27,
+        "wrong_first_lower_bound_rounds": 47,
+        "wrong_first_success_within_budget": false
+      }
+    }
+  ]
+}

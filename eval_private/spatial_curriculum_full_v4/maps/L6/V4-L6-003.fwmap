@@ -1,0 +1,33 @@
+@format fwcollab.symbol_map.v3
+@id V4-L6-003
+@title constructive L6 full-mechanism curriculum 003; crate-cleared light door
+@max_steps 1
+@controller c1_lever lever at 3,5
+@controller c2_lever lever at 1,6
+@actuator a1_door door at 7,9 controlled_by all(c1_lever,c2_lever)
+@controller c3_lever lever at 6,14
+@controller c4_lever lever at 8,15
+@actuator a2_door door at 2,18 controlled_by any(c3_lever,c4_lever)
+@controller c5_toggle toggle at 3,23
+@actuator a3_door door at 7,27 controlled_by all(c5_toggle)
+@controller c6_plate plate at 6,32 accepts W
+@actuator a4_door door at 2,36 controlled_by all(c6_plate)
+@controller c7_lever lever at 3,41
+@controller c8_plate plate at 1,42 accepts F
+@actuator a5_door door at 7,45 controlled_by all(c7_lever,c8_plate)
+@controller c9_lever lever at 6,50
+@controller c10_lever lever at 8,51
+@actuator a6_door door at 2,54 controlled_by any(c9_lever,c10_lever)
+@light + direction RIGHT sensor S opens A
+---
+#################################################################################
+#.....L#.#........#........#........#.....2#.#........#.........................#
+#F...#........#...B....##.......#...D....#........###.A............+..O..S.....f#
+#....L...#........#....T...#......#.#....L...#........#.........................#
+#........#........#........#........#........#........#.........................#
+#################################################################################
+#......#.#....L...#........#....1...#......#.#....L...#.....................#...#
+#W...#...A....#........##..C....#........#...E....###.......................A..w#
+#........#.....L..#........#......#.#........#.....L..#.....................#...#
+#........#........#........#........#........#........#.....................#...#
+#################################################################################

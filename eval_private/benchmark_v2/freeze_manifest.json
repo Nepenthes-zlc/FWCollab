@@ -1,0 +1,68 @@
+{
+  "format": "fwcollab.benchmark_v2_freeze.v1",
+  "benchmark_version": "v2",
+  "frozen_on": "2026-09-18",
+  "task_count": 100,
+  "track_count": 4,
+  "statement": "Reference-only four-track freeze; no task, DAG, witness, evaluator semantic, or prior result is rewritten.",
+  "source_suites": {
+    "Core-72": {
+      "path": "eval_private/benchmark_v1/freeze_manifest.json",
+      "sha256": "f375d465e798e1bdc8161f9662565768299d488c34dc3783c774d22e2847799f"
+    },
+    "Information-12": {
+      "path": "eval_private/c5_information_12/freeze_manifest.json",
+      "sha256": "743353e67bc6ad63646199212d2874e3f6d65a7657a766841ac9f08f1475b3e3"
+    },
+    "Sync-8": {
+      "path": "eval_private/synchronize_8/freeze_manifest.json",
+      "sha256": "31ff5bb16bfa68039de19ef3ef0b281b24bf7a84df4f65f096914fd570d19f4c"
+    },
+    "Join-8": {
+      "path": "eval_private/parallel_join_8/freeze_manifest.json",
+      "sha256": "f00aee35a7d37e8c5676d5db9ff50190dd430262d5fe27d5f4ef889bddc59d4c"
+    }
+  },
+  "files": [
+    {
+      "path": "eval_private/benchmark_v2/manifest.json",
+      "sha256": "1173b4f4e574aa50bd31f82306da0e76f170130d5077347bfb00773f728e383c",
+      "bytes": 133708
+    },
+    {
+      "path": "src/fwcollab/benchmark_v2.py",
+      "sha256": "ab145f81f66e34f7acd4c4037576d4f57f68e349302a730010837f1e04ab173a",
+      "bytes": 10463
+    },
+    {
+      "path": "src/fwcollab/unified_eval.py",
+      "sha256": "5b965d7bbd7610a7bfb54bba426cf8f649dce418eee2dfe4888712cd364b08b1",
+      "bytes": 10274
+    },
+    {
+      "path": "schemas/unified_evaluation.schema.json",
+      "sha256": "e151d1334241b6bc479a3a3d28792a6e953f4bc1da75570cc5a330ba2cbdad22",
+      "bytes": 1839
+    },
+    {
+      "path": "docs/LEADERBOARD_PROTOCOL_V1.md",
+      "sha256": "e23c0ab8204d2e24db6cd4d3b42626f85e89c99d120304ba7cdd104b31e3a62d",
+      "bytes": 8872
+    },
+    {
+      "path": "scripts/build_benchmark_v2.py",
+      "sha256": "a2e9dbfb74dacb8e27773472493d9d27119d226a2f69bbf30d5d753a0c29245a",
+      "bytes": 499
+    },
+    {
+      "path": "scripts/audit_benchmark_v2.py",
+      "sha256": "1e409fe5027bcc447ac863eee6c473fd79a1ce04f2bd128c1a602080d85b43bc",
+      "bytes": 12915
+    },
+    {
+      "path": "tests/unit/test_benchmark_v2.py",
+      "sha256": "92b4a86744795b687c55907cb5c9d3ba527ffa4f719aad358131a6f26fd9136b",
+      "bytes": 6681
+    }
+  ]
+}

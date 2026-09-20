@@ -1,0 +1,237 @@
+{
+  "format": "fwcollab.leaderboard.non_benchmark_preflight.v1",
+  "created_at": "2026-09-19T18:37:14.746950+00:00",
+  "endpoint_identity": "http://127.0.0.1:23333/api/openai",
+  "benchmark_content_used": false,
+  "prompt_contract_hash": "862349ef54d6991f1b20102ac6936edde93bb7a0be8d1f849e993dd1e67b9831",
+  "standard52_manifest_hash": "b3970fdd31ef2259d477a33801c7442be92df6ed3cd7bb3cb07399eaa21a0716",
+  "models": [
+    {
+      "model_id": "gpt-5.5",
+      "provider": "local_copilot_gateway",
+      "api_style": "responses",
+      "endpoint_identity": "http://127.0.0.1:23333/api/openai",
+      "authentication": "pass",
+      "baseline": {
+        "ok": true,
+        "resolved_model_id": "gpt-5.5",
+        "latency_ms": 1367,
+        "schema_valid": true,
+        "usage_present": true
+      },
+      "benchmark_content_used": false,
+      "catalog_exact_match": true,
+      "catalog_record": {
+        "id": "gpt-5.5",
+        "family": "gpt-5.5",
+        "version": "",
+        "vendor": "copilotcli",
+        "maxInputTokens": 922000
+      },
+      "max_output_tokens": 800,
+      "retry_error_classification": "local_conformance_16_of_16_pass",
+      "resolved_model_id": "gpt-5.5",
+      "structured_output_compatibility": "pass",
+      "temperature": {
+        "requested": 1.0,
+        "supported": true,
+        "probe": {
+          "ok": true,
+          "resolved_model_id": "gpt-5.5",
+          "latency_ms": 1343,
+          "schema_valid": true,
+          "usage_present": true
+        }
+      },
+      "seed": {
+        "requested": 2026091801,
+        "accepted": true,
+        "determinism_guaranteed": false,
+        "probe": {
+          "ok": true,
+          "resolved_model_id": "gpt-5.5",
+          "latency_ms": 1189,
+          "schema_valid": true,
+          "usage_present": true
+        }
+      },
+      "reasoning": {
+        "preferred": "off",
+        "off_probe": {
+          "ok": true,
+          "resolved_model_id": "gpt-5.5",
+          "latency_ms": 1162,
+          "schema_valid": true,
+          "usage_present": true
+        },
+        "low_probe": null,
+        "selected": "none"
+      },
+      "preflight_status": "PASS"
+    },
+    {
+      "model_id": "gpt-5-mini",
+      "provider": "local_copilot_gateway",
+      "api_style": "responses",
+      "endpoint_identity": "http://127.0.0.1:23333/api/openai",
+      "authentication": "pass",
+      "baseline": {
+        "ok": true,
+        "resolved_model_id": "gpt-5-mini",
+        "latency_ms": 58315,
+        "schema_valid": true,
+        "usage_present": true
+      },
+      "benchmark_content_used": false,
+      "catalog_exact_match": true,
+      "catalog_record": {
+        "id": "gpt-5-mini",
+        "family": "gpt-5-mini",
+        "version": "",
+        "vendor": "copilotcli",
+        "maxInputTokens": 128000
+      },
+      "max_output_tokens": 800,
+      "retry_error_classification": "local_conformance_16_of_16_pass",
+      "resolved_model_id": "gpt-5-mini",
+      "structured_output_compatibility": "pass",
+      "temperature": {
+        "requested": 1.0,
+        "supported": true,
+        "probe": {
+          "ok": true,
+          "resolved_model_id": "gpt-5-mini",
+          "latency_ms": 2011,
+          "schema_valid": true,
+          "usage_present": true
+        }
+      },
+      "seed": {
+        "requested": 2026091801,
+        "accepted": true,
+        "determinism_guaranteed": false,
+        "probe": {
+          "ok": true,
+          "resolved_model_id": "gpt-5-mini",
+          "latency_ms": 1880,
+          "schema_valid": true,
+          "usage_present": true
+        }
+      },
+      "reasoning": {
+        "preferred": "off",
+        "off_probe": {
+          "ok": false,
+          "error_class": "InfrastructureFailure",
+          "error_type": "http_500",
+          "message": "{\"error\":{\"type\":\"internal_error\",\"message\":\"Request Failed: 400 {\\\"error\\\":{\\\"message\\\":\\\"Unsupported value: 'none' is not supported with the 'gpt-5-mini-2025-08-07' model. Supported values are: 'minimal', 'low', 'medium', and 'high'.\\\",\\\"code\\\":\\\"invalid_request_body\\\"}}\\n\",\"param\":null,\"code\":null,\"log_file\":\"c:\\\\paper\\\\2026-09-17_15-25-23-439-debug.log\"}}",
+          "latency_ms": 994
+        },
+        "low_probe": {
+          "ok": true,
+          "resolved_model_id": "gpt-5-mini",
+          "latency_ms": 2276,
+          "schema_valid": true,
+          "usage_present": true
+        },
+        "selected": "low"
+      },
+      "preflight_status": "PASS"
+    },
+    {
+      "model_id": "gemini-3.7-flash",
+      "provider": "local_copilot_gateway",
+      "api_style": "chat_completions",
+      "endpoint_identity": "http://127.0.0.1:23333/api/openai",
+      "authentication": "pass",
+      "baseline": {
+        "ok": true,
+        "resolved_model_id": "gemini-3.7-flash",
+        "latency_ms": 1938,
+        "schema_valid": true,
+        "usage_present": true
+      },
+      "benchmark_content_used": false,
+      "catalog_exact_match": true,
+      "catalog_record": {
+        "id": "gemini-3.7-flash",
+        "family": "gemini-3.7-flash",
+        "version": "",
+        "vendor": "copilotcli",
+        "maxInputTokens": 936000
+      },
+      "max_output_tokens": 800,
+      "retry_error_classification": "local_conformance_16_of_16_pass",
+      "resolved_model_id": "gemini-3.7-flash",
+      "structured_output_compatibility": "pass",
+      "temperature": {
+        "requested": 1.0,
+        "supported": true,
+        "probe": {
+          "ok": true,
+          "resolved_model_id": "gemini-3.7-flash",
+          "latency_ms": 2989,
+          "schema_valid": true,
+          "usage_present": true
+        }
+      },
+      "seed": {
+        "requested": 2026091801,
+        "accepted": true,
+        "determinism_guaranteed": false,
+        "probe": {
+          "ok": true,
+          "resolved_model_id": "gemini-3.7-flash",
+          "latency_ms": 2752,
+          "schema_valid": true,
+          "usage_present": true
+        }
+      },
+      "reasoning": {
+        "preferred": "off",
+        "off_probe": {
+          "ok": true,
+          "resolved_model_id": "gemini-3.7-flash",
+          "latency_ms": 3235,
+          "schema_valid": true,
+          "usage_present": true
+        },
+        "low_probe": null,
+        "selected": "none"
+      },
+      "preflight_status": "PASS"
+    },
+    {
+      "model_id": "gemini-3.5-flash",
+      "provider": "local_copilot_gateway",
+      "api_style": "chat_completions",
+      "endpoint_identity": "http://127.0.0.1:23333/api/openai",
+      "authentication": "fail",
+      "baseline": {
+        "ok": false,
+        "error_class": "JSONDecodeError",
+        "error_type": null,
+        "message": "Expecting ',' delimiter: line 5 column 4 (char 54)",
+        "latency_ms": 4635
+      },
+      "benchmark_content_used": false,
+      "catalog_exact_match": true,
+      "catalog_record": {
+        "id": "gemini-3.5-flash",
+        "family": "gemini-3.5-flash",
+        "version": "",
+        "vendor": "copilotcli",
+        "maxInputTokens": 936000
+      },
+      "max_output_tokens": 800,
+      "retry_error_classification": "local_conformance_16_of_16_pass",
+      "resolved_model_id": null,
+      "structured_output_compatibility": "fail",
+      "temperature": null,
+      "seed": null,
+      "reasoning": null,
+      "preflight_status": "FAIL"
+    }
+  ],
+  "all_pass": false
+}

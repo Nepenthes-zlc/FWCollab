@@ -1,0 +1,556 @@
+{
+  "format": "fwcollab.symbolic.state_dag.v1",
+  "id": "DAG-L5-006",
+  "difficulty": "L5",
+  "evaluation_role": "scored",
+  "visibility": "private_reference",
+  "title": "固定反射机关球遮光门 × 角色压板桥 × 可旋转反射光感门 × 箱子压板桥 × 可旋转反射箱子遮光门 × 机关球压板桥",
+  "summary": "以fork_join_tail拓扑组合6种元机关：固定反射机关球遮光门 × 角色压板桥 × 可旋转反射光感门 × 箱子压板桥 × 可旋转反射箱子遮光门 × 机关球压板桥。",
+  "topology_family": "fork_join_tail",
+  "mechanisms": [
+    "M26",
+    "M14",
+    "M27",
+    "M15",
+    "M28",
+    "M16"
+  ],
+  "nodes": [
+    {
+      "id": "n000",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "start",
+        "motif": "SYSTEM",
+        "state": "task_ready",
+        "phase": 0
+      },
+      "label": "任务初始状态成立"
+    },
+    {
+      "id": "n001",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "position",
+        "motif": "M26",
+        "state": "orb_reflection_state",
+        "phase": 0
+      },
+      "label": "机关球对齐反射光路"
+    },
+    {
+      "id": "n002",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "route",
+        "motif": "M26",
+        "state": "fixed_reflection_desired",
+        "phase": 0
+      },
+      "label": "固定反射光路达到目标状态"
+    },
+    {
+      "id": "n003",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "sense",
+        "motif": "M26",
+        "state": "sensor_desired",
+        "phase": 0
+      },
+      "label": "反射传感器状态正确"
+    },
+    {
+      "id": "n004",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M26",
+        "state": "door_desired_state",
+        "phase": 0
+      },
+      "label": "反射遮光门状态正确"
+    },
+    {
+      "id": "n005",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M26",
+        "state": "partner_crossed_door",
+        "phase": 0
+      },
+      "label": "搭档通过反射遮光门"
+    },
+    {
+      "id": "n006",
+      "kind": "condition",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "occupy",
+        "motif": "M14",
+        "state": "plate_held",
+        "phase": 1
+      },
+      "label": "角色持续占据桥压力板"
+    },
+    {
+      "id": "n007",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M14",
+        "state": "bridge_deployed",
+        "phase": 1
+      },
+      "label": "压力板桥保持展开"
+    },
+    {
+      "id": "n008",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M14",
+        "state": "partner_crossed_bridge",
+        "phase": 1
+      },
+      "label": "搭档通过压力板桥"
+    },
+    {
+      "id": "n009",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "toggle",
+        "motif": "M27",
+        "state": "mirror_toggle_desired",
+        "phase": 2
+      },
+      "label": "镜面切换器状态正确"
+    },
+    {
+      "id": "n010",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "orient",
+        "motif": "M27",
+        "state": "mirror_oriented",
+        "phase": 2
+      },
+      "label": "可旋转镜面对准"
+    },
+    {
+      "id": "n011",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "sense",
+        "motif": "M27",
+        "state": "sensor_lit",
+        "phase": 2
+      },
+      "label": "旋转光路点亮传感器"
+    },
+    {
+      "id": "n012",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M27",
+        "state": "door_open",
+        "phase": 2
+      },
+      "label": "旋镜光感门打开"
+    },
+    {
+      "id": "n013",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M27",
+        "state": "partner_crossed_door",
+        "phase": 2
+      },
+      "label": "搭档通过旋镜光感门"
+    },
+    {
+      "id": "n014",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "position",
+        "motif": "M15",
+        "state": "crate_on_plate",
+        "phase": 3
+      },
+      "label": "箱子到达桥压力板"
+    },
+    {
+      "id": "n015",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M15",
+        "state": "bridge_deployed",
+        "phase": 3
+      },
+      "label": "箱子压力板桥展开"
+    },
+    {
+      "id": "n016",
+      "kind": "event",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M15",
+        "state": "team_crossed_bridge",
+        "phase": 3
+      },
+      "label": "所需角色通过箱子桥"
+    },
+    {
+      "id": "n017",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "position",
+        "motif": "M28",
+        "state": "crate_beam_state",
+        "phase": 4
+      },
+      "label": "箱子设置目标遮光状态"
+    },
+    {
+      "id": "n018",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "toggle",
+        "motif": "M28",
+        "state": "mirror_toggle_desired",
+        "phase": 4
+      },
+      "label": "镜面切换器状态正确"
+    },
+    {
+      "id": "n019",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "orient",
+        "motif": "M28",
+        "state": "mirror_oriented",
+        "phase": 4
+      },
+      "label": "可旋转镜面对准"
+    },
+    {
+      "id": "n020",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "sense",
+        "motif": "M28",
+        "state": "sensor_desired",
+        "phase": 4
+      },
+      "label": "旋转传感器状态正确"
+    },
+    {
+      "id": "n021",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M28",
+        "state": "door_desired_state",
+        "phase": 4
+      },
+      "label": "旋转遮光门状态正确"
+    },
+    {
+      "id": "n022",
+      "kind": "event",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M28",
+        "state": "team_crossed_door",
+        "phase": 4
+      },
+      "label": "所需角色通过组合光门"
+    },
+    {
+      "id": "n023",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "position",
+        "motif": "M16",
+        "state": "orb_on_plate",
+        "phase": 5
+      },
+      "label": "机关球停在桥压力板"
+    },
+    {
+      "id": "n024",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M16",
+        "state": "bridge_deployed",
+        "phase": 5
+      },
+      "label": "机关球压力板桥展开"
+    },
+    {
+      "id": "n025",
+      "kind": "event",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M16",
+        "state": "team_crossed_bridge",
+        "phase": 5
+      },
+      "label": "所需角色通过机关球桥"
+    },
+    {
+      "id": "n026",
+      "kind": "state",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "synchronize",
+        "motif": "SYSTEM",
+        "state": "fork_join",
+        "phase": 6
+      },
+      "label": "并行分支全部完成"
+    },
+    {
+      "id": "n027",
+      "kind": "goal",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "team_success",
+        "motif": "SYSTEM",
+        "state": "all_required_goals",
+        "phase": 7
+      },
+      "label": "双方满足团队成功条件"
+    }
+  ],
+  "edges": [
+    {
+      "from": "n001",
+      "to": "n002",
+      "relation": "enables"
+    },
+    {
+      "from": "n002",
+      "to": "n003",
+      "relation": "enables"
+    },
+    {
+      "from": "n003",
+      "to": "n004",
+      "relation": "enables"
+    },
+    {
+      "from": "n004",
+      "to": "n005",
+      "relation": "enables"
+    },
+    {
+      "from": "n001",
+      "to": "n005",
+      "relation": "handoff"
+    },
+    {
+      "from": "n006",
+      "to": "n007",
+      "relation": "enables"
+    },
+    {
+      "from": "n007",
+      "to": "n008",
+      "relation": "enables"
+    },
+    {
+      "from": "n006",
+      "to": "n008",
+      "relation": "maintains"
+    },
+    {
+      "from": "n009",
+      "to": "n010",
+      "relation": "enables"
+    },
+    {
+      "from": "n010",
+      "to": "n011",
+      "relation": "enables"
+    },
+    {
+      "from": "n011",
+      "to": "n012",
+      "relation": "enables"
+    },
+    {
+      "from": "n012",
+      "to": "n013",
+      "relation": "enables"
+    },
+    {
+      "from": "n009",
+      "to": "n013",
+      "relation": "handoff"
+    },
+    {
+      "from": "n014",
+      "to": "n015",
+      "relation": "enables"
+    },
+    {
+      "from": "n015",
+      "to": "n016",
+      "relation": "enables"
+    },
+    {
+      "from": "n017",
+      "to": "n018",
+      "relation": "enables"
+    },
+    {
+      "from": "n018",
+      "to": "n019",
+      "relation": "enables"
+    },
+    {
+      "from": "n019",
+      "to": "n020",
+      "relation": "enables"
+    },
+    {
+      "from": "n020",
+      "to": "n021",
+      "relation": "enables"
+    },
+    {
+      "from": "n021",
+      "to": "n022",
+      "relation": "enables"
+    },
+    {
+      "from": "n017",
+      "to": "n022",
+      "relation": "handoff"
+    },
+    {
+      "from": "n023",
+      "to": "n024",
+      "relation": "enables"
+    },
+    {
+      "from": "n024",
+      "to": "n025",
+      "relation": "enables"
+    },
+    {
+      "from": "n005",
+      "to": "n006",
+      "relation": "requires"
+    },
+    {
+      "from": "n005",
+      "to": "n009",
+      "relation": "handoff"
+    },
+    {
+      "from": "n005",
+      "to": "n014",
+      "relation": "requires"
+    },
+    {
+      "from": "n005",
+      "to": "n017",
+      "relation": "handoff"
+    },
+    {
+      "from": "n008",
+      "to": "n026",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "n013",
+      "to": "n026",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "n016",
+      "to": "n026",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "n022",
+      "to": "n026",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "n026",
+      "to": "n023",
+      "relation": "enables"
+    },
+    {
+      "from": "n000",
+      "to": "n001",
+      "relation": "requires"
+    },
+    {
+      "from": "n025",
+      "to": "n027",
+      "relation": "synchronizes"
+    }
+  ]
+}

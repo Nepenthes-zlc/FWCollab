@@ -1,0 +1,14 @@
+@format fwcollab.symbol_map.v1
+@id S12
+@title S12 压板、箱子、拨杆和共同终门的综合规划
+@max_steps 1
+@plate 1 opens A accepts F
+@plate 2 opens B accepts O
+@lever L opens C
+---
+#########################
+#F..1...B..L.C....f.....#
+#########################
+#W..A.O2.....C....w.....#
+#####........############
+#########################

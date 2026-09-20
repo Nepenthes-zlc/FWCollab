@@ -1,0 +1,28 @@
+@format fwcollab.symbol_map.v3
+@id V4-L4-006
+@title constructive L4 full-mechanism curriculum 006; orb-held plate door
+@max_steps 1
+@controller c1_plate plate at 6,5 accepts W
+@actuator a1_platform platform at 2,9 controlled_by all(c1_plate)
+@controller c2_toggle toggle at 3,14
+@actuator a2_door door at 7,18 controlled_by all(c2_toggle)
+@controller c3_lever lever at 6,23
+@controller c4_lever lever at 8,24
+@actuator a3_door door at 2,27 controlled_by any(c3_lever,c4_lever)
+@controller c5_lever lever at 3,32
+@controller c6_lever lever at 1,33
+@actuator a4_door door at 7,36 controlled_by all(c5_lever,c6_lever)
+@controller cap_heavy_plate plate at 2,52 accepts O
+@actuator cap_door door at 7,56 controlled_by all(cap_heavy_plate)
+---
+###############################################################
+#......#.#........#......#.#.....L..#.........................#
+#F...#...=....##.......#...C....##................o.2#.......f#
+#..#.....#....T...#..#.....#....L...#.........................#
+#........#........#........#........#.........................#
+###############################################################
+#....1.#.#........#....L.#.#........#...................#.....#
+#W...#........##..B....#........##..D...................E....w#
+#..#.....#........#..#..L..#........#...................#.....#
+#........#........#........#........#...................#.....#
+###############################################################

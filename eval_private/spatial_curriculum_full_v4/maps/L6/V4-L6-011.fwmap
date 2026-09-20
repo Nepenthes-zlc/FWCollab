@@ -1,0 +1,31 @@
+@format fwcollab.symbol_map.v3
+@id V4-L6-011
+@title constructive L6 full-mechanism curriculum 011; universal hazard avoidance
+@max_steps 1
+@controller c1_toggle toggle at 3,5
+@actuator a1_door door at 7,9 controlled_by all(c1_toggle)
+@controller c2_plate plate at 6,14 accepts W
+@actuator a2_platform platform at 2,18 controlled_by all(c2_plate)
+@controller c3_lever lever at 3,23
+@controller c4_lever lever at 1,24
+@actuator a3_door door at 7,27 controlled_by all(c3_lever,c4_lever)
+@controller c5_toggle toggle at 6,32
+@controller c6_plate plate at 8,33 accepts W
+@actuator a4_platform platform at 2,36 controlled_by all(c5_toggle,c6_plate)
+@controller c7_lever lever at 3,41
+@controller c8_plate plate at 1,42 accepts F
+@actuator a5_door door at 7,45 controlled_by all(c7_lever,c8_plate)
+@controller c9_plate plate at 6,50 accepts W
+@actuator a6_door door at 2,54 controlled_by all(c9_plate)
+---
+#################################################################################
+#........#........#.....L..#........#.....3#.#........#.........................#
+#F...###......##..=....###......#...=....#........###.A........................f#
+#....T...#........#....L...#......#.#....L...#........#.........................#
+#........#........#........#........#........#........#.........................#
+#################################################################################
+#........#....1...#........#....T...#......#.#....4...#..............#..........#
+#W...###.A....##.......###.C....#........#...E....###.................x........w#
+#........#........#........#.....2#.#........#........#.........................#
+#........#........#........#........#........#........#.........................#
+#################################################################################

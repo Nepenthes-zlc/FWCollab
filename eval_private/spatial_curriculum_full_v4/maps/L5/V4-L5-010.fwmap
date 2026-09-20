@@ -1,0 +1,28 @@
+@format fwcollab.symbol_map.v3
+@id V4-L5-010
+@title constructive L5 full-mechanism curriculum 010; direct light sensor door
+@max_steps 1
+@controller c1_lever lever at 8,5
+@controller c2_lever lever at 6,6
+@actuator a1_door door at 2,9 controlled_by any(c1_lever,c2_lever)
+@controller c3_toggle toggle at 1,14
+@actuator a2_door door at 7,18 controlled_by all(c3_toggle)
+@controller c4_lever lever at 8,23
+@actuator a3_platform platform at 2,27 controlled_by all(c4_lever)
+@controller c5_plate plate at 1,32 accepts F
+@actuator a4_door door at 7,36 controlled_by all(c5_plate)
+@controller c6_plate plate at 8,41 accepts W
+@actuator a5_platform platform at 2,45 controlled_by all(c6_plate)
+@light + direction RIGHT sensor S opens A
+---
+########################################################################
+#......#.#....T...#........#....1...#........#.........................#
+#F...#...A....#........###.=....#........###.=............+.....S.....f#
+#........#......#.#........#........#........#.........................#
+#........#........#........#........#........#.........................#
+########################################################################
+#.....L#.#........#........#........#........#.....................#...#
+#W...#........#...B....###......#...D....###.......................A..w#
+#....L...#......#.#....L...#........#....2...#.....................#...#
+#........#........#........#........#........#.....................#...#
+########################################################################

@@ -1,0 +1,32 @@
+@format fwcollab.symbol_map.v3
+@id V4-L6-005
+@title constructive L6 full-mechanism curriculum 005; fixed-reflection light door
+@max_steps 1
+@controller c1_toggle toggle at 3,5
+@actuator a1_door door at 7,9 controlled_by all(c1_toggle)
+@controller c2_lever lever at 6,14
+@controller c3_lever lever at 8,15
+@actuator a2_door door at 2,18 controlled_by any(c2_lever,c3_lever)
+@controller c4_lever lever at 3,23
+@controller c5_lever lever at 1,24
+@actuator a3_door door at 7,27 controlled_by all(c4_lever,c5_lever)
+@controller c6_lever lever at 6,32
+@actuator a4_platform platform at 2,36 controlled_by all(c6_lever)
+@controller c7_lever lever at 3,41
+@controller c8_plate plate at 1,42 accepts F
+@actuator a5_door door at 7,45 controlled_by all(c7_lever,c8_plate)
+@controller c9_plate plate at 6,50 accepts W
+@actuator a6_door door at 2,54 controlled_by all(c9_plate)
+@light + direction RIGHT sensor S opens A
+---
+#################################################################################
+#........#........#.....L..#........#.....1#.#........#............+...\........#
+#F...###......###.B....##.......#...=....#........###.A........................f#
+#....T...#........#....L...#......#.#....L...#........#.........................#
+#........#........#........#........#........#........#................S........#
+#################################################################################
+#........#....L...#........#....L...#......#.#....2...#.....................#...#
+#W...###.A....###......##..C....#........#...E....###.......................A..w#
+#........#.....L..#........#......#.#........#........#.....................#...#
+#........#........#........#........#........#........#.....................#...#
+#################################################################################

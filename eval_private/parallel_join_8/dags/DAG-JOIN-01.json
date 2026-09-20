@@ -1,0 +1,148 @@
+{
+  "format": "fwcollab.symbolic.state_dag.v1",
+  "id": "DAG-JOIN-01",
+  "difficulty": "L2",
+  "evaluation_role": "diagnostic",
+  "visibility": "private_reference",
+  "title": "primitive_symmetric_levers",
+  "summary": "Role-owned Parallel Join extension DAG.",
+  "topology_family": "parallel_join_primitive",
+  "mechanisms": [
+    "M17"
+  ],
+  "nodes": [
+    {
+      "id": "s",
+      "kind": "condition",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "start",
+        "motif": "SYSTEM",
+        "state": "task_ready",
+        "phase": 0
+      },
+      "label": "start:task_ready"
+    },
+    {
+      "id": "bf",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "latch",
+        "motif": "M17",
+        "state": "branch_f_on",
+        "phase": 1
+      },
+      "label": "latch:branch_f_on"
+    },
+    {
+      "id": "bw",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "latch",
+        "motif": "M17",
+        "state": "branch_w_on",
+        "phase": 1
+      },
+      "label": "latch:branch_w_on"
+    },
+    {
+      "id": "join",
+      "kind": "state",
+      "owner": "environment",
+      "join": "all",
+      "predicate": {
+        "op": "activate",
+        "motif": "M17",
+        "state": "join_gate_on",
+        "phase": 2
+      },
+      "label": "activate:join_gate_on"
+    },
+    {
+      "id": "xf",
+      "kind": "event",
+      "owner": "agent_a",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M17",
+        "state": "join_gate_F_crossed",
+        "phase": 3
+      },
+      "label": "traverse:join_gate_F_crossed"
+    },
+    {
+      "id": "xw",
+      "kind": "event",
+      "owner": "agent_b",
+      "join": "all",
+      "predicate": {
+        "op": "traverse",
+        "motif": "M17",
+        "state": "join_gate_W_crossed",
+        "phase": 3
+      },
+      "label": "traverse:join_gate_W_crossed"
+    },
+    {
+      "id": "g",
+      "kind": "goal",
+      "owner": "team",
+      "join": "all",
+      "predicate": {
+        "op": "team_success",
+        "motif": "SYSTEM",
+        "state": "all_required_goals",
+        "phase": 4
+      },
+      "label": "team_success:all_required_goals"
+    }
+  ],
+  "edges": [
+    {
+      "from": "s",
+      "to": "bf",
+      "relation": "requires"
+    },
+    {
+      "from": "s",
+      "to": "bw",
+      "relation": "requires"
+    },
+    {
+      "from": "bf",
+      "to": "join",
+      "relation": "enables"
+    },
+    {
+      "from": "bw",
+      "to": "join",
+      "relation": "enables"
+    },
+    {
+      "from": "join",
+      "to": "xf",
+      "relation": "enables"
+    },
+    {
+      "from": "join",
+      "to": "xw",
+      "relation": "enables"
+    },
+    {
+      "from": "xf",
+      "to": "g",
+      "relation": "requires"
+    },
+    {
+      "from": "xw",
+      "to": "g",
+      "relation": "requires"
+    }
+  ]
+}
